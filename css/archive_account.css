@@ -1,0 +1,520 @@
+/* =========================================================
+   SPIS ACCOUNT ARCHIVE
+   POLISHED FINAL LEDGER
+========================================================= */
+
+:root {
+    --archive-account-green: #8ca15b;
+    --archive-account-green-dark: #6f8347;
+    --archive-account-green-deep: #566938;
+
+    --archive-account-cream: #fdfbd4;
+    --archive-account-soft: #f8faf4;
+
+    --archive-account-text: #2d3029;
+    --archive-account-muted: #666c60;
+
+    --archive-account-line:
+        rgba(140, 161, 91, 0.16);
+}
+
+
+/* =========================================================
+   ACCOUNT ARCHIVE TABLE
+========================================================= */
+
+.archive-table {
+    --account-archive-columns:
+        minmax(90px, .85fr)
+        minmax(150px, 1.35fr)
+        minmax(190px, 1.70fr)
+        minmax(115px, 1fr)
+        minmax(145px, 1.20fr)
+        minmax(110px, .90fr);
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.account-header {
+    min-height: 72px;
+
+    display: grid;
+
+    grid-template-columns:
+        var(--account-archive-columns);
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+
+    padding:
+        0
+        16px;
+
+    color:#ffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--archive-account-green) 0%,
+            #839850 100%
+        );
+
+    border:
+        1px solid
+        rgba(86, 105, 56, 0.20);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(72, 87, 45, 0.13),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.10);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .35px;
+
+    text-align: center;
+}
+
+
+.account-header > div {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   ACCOUNT ARCHIVE ROW
+========================================================= */
+
+.account-row {
+    min-height: 82px;
+
+    display: grid;
+
+    grid-template-columns:
+        var(--account-archive-columns);
+
+    align-items: center;
+
+    gap: 10px;
+
+    position: relative;
+
+    margin-bottom: 10px;
+
+    padding:
+        10px
+        16px;
+
+    overflow: hidden;
+
+    color:
+        var(--archive-account-text);
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        var(--archive-account-line);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.035);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transition:
+        transform .20s ease,
+        background .20s ease,
+        border-color .20s ease,
+        box-shadow .20s ease;
+}
+
+
+/* =========================================================
+   LEFT ARCHIVED ACCENT
+========================================================= */
+
+.account-row::before {
+    content: "";
+
+    width: 4px;
+
+    position: absolute;
+
+    top: 16px;
+    bottom: 16px;
+    left: 0;
+
+    background:
+        var(--archive-account-green);
+
+    border-radius:
+        0
+        5px
+        5px
+        0;
+
+    opacity: .50;
+
+    transition:
+        opacity .20s ease,
+        top .20s ease,
+        bottom .20s ease;
+}
+
+
+/* =========================================================
+   ROW HOVER
+========================================================= */
+
+.account-row:hover {
+    background:
+        var(--archive-account-soft);
+
+    border-color:
+        rgba(140, 161, 91, 0.32);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(63, 77, 39, 0.09);
+}
+
+
+.account-row:hover::before {
+    top: 11px;
+    bottom: 11px;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   GENERAL CELLS
+========================================================= */
+
+.account-row > div {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   RECORD ID
+========================================================= */
+
+.account-row > div:nth-child(1) {
+    width: max-content;
+
+    min-width: 54px;
+
+    justify-self: center;
+
+    padding:
+        6px
+        11px;
+
+    color:
+        var(--archive-account-green-deep);
+
+    background:
+        rgba(140, 161, 91, 0.11);
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.22);
+
+    border-radius: 18px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .45px;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.account-row > div:nth-child(2) {
+    color:
+        #25291f;
+
+    font-size: 13.5px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.account-row > div:nth-child(3) {
+    color:
+        #5d6257;
+
+    font-size: 12.5px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.account-row > div:nth-child(4) {
+    width: max-content;
+    max-width: 100%;
+
+    justify-self: center;
+
+    padding:
+        6px
+        12px;
+
+    color:
+        var(--archive-account-green-deep);
+
+    background:
+        rgba(140, 161, 91, 0.13);
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.24);
+
+    border-radius: 20px;
+
+    font-size: 10.5px;
+    font-weight: 800;
+
+    letter-spacing: .25px;
+}
+
+
+/* =========================================================
+   ACTION BY
+========================================================= */
+
+.account-row > div:nth-child(5) {
+    color:
+        #596151;
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   ACTION CELL
+========================================================= */
+
+.account-row > div:nth-child(6) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   RETRIEVE BUTTON
+========================================================= */
+
+.account-retrieve-btn {
+    min-width: 94px;
+    height: 38px;
+
+    padding:
+        0
+        16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--archive-account-cream);
+
+    background:
+        var(--archive-account-green);
+
+    border:
+        1px solid
+        rgba(86, 105, 56, 0.18);
+
+    border-radius: 12px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .30px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px
+        rgba(86, 105, 56, 0.15);
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.account-retrieve-btn:hover {
+    color:
+        var(--archive-account-cream);
+
+    background:
+        var(--archive-account-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(86, 105, 56, 0.24);
+
+    text-decoration: none;
+}
+
+
+.account-retrieve-btn:active {
+    transform:
+        translateY(0)
+        scale(.97);
+}
+
+
+.account-retrieve-btn:focus-visible {
+    outline:
+        3px solid
+        rgba(140, 161, 91, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.archive-empty {
+    min-height: 120px;
+
+    padding: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        #68705d;
+
+    background:
+        rgba(255, 255, 255, 0.76);
+
+    border:
+        1px dashed
+        rgba(140, 161, 91, 0.38);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE TUNING
+========================================================= */
+
+@media (max-width: 1250px) {
+
+    .archive-table {
+        --account-archive-columns:
+            minmax(75px, .75fr)
+            minmax(125px, 1.25fr)
+            minmax(155px, 1.55fr)
+            minmax(95px, .90fr)
+            minmax(115px, 1fr)
+            minmax(92px, .82fr);
+    }
+
+
+    .account-header {
+        gap: 7px;
+
+        padding:
+            0
+            12px;
+
+        font-size: 10.5px;
+    }
+
+
+    .account-row {
+        gap: 7px;
+
+        padding:
+            10px
+            12px;
+    }
+
+
+    .account-row > div:nth-child(2) {
+        font-size: 12.5px;
+    }
+
+
+    .account-row > div:nth-child(3),
+    .account-row > div:nth-child(5) {
+        font-size: 11px;
+    }
+
+
+    .account-retrieve-btn {
+        min-width: 82px;
+
+        padding:
+            0
+            11px;
+
+        font-size: 10px;
+    }
+
+}

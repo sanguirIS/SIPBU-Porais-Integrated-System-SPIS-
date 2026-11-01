@@ -1,0 +1,395 @@
+/* =====================================================
+   ARCHIVE MODULE TABS
+===================================================== */
+
+.archive-tabs{
+
+    width:100%;
+
+    display:flex;
+
+    flex-wrap:nowrap;
+
+    align-items:stretch;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+
+.archive-tab{
+
+    min-width:0;
+
+    min-height:58px;
+
+    flex:1 1 0;
+
+    padding:0 14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#35530A;
+
+    background:#FDFBD4;
+
+    border:2px solid #8CA15B;
+
+    border-radius:17px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 2px 6px
+        rgba(53,83,10,.04);
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+
+}
+
+
+.archive-tab:hover{
+
+    color:#35530A;
+
+    background:#F3F2CF;
+
+    border-color:#758A49;
+
+    box-shadow:
+        0 5px 12px
+        rgba(53,83,10,.10);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.archive-tab.active{
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border-color:#8CA15B;
+
+    box-shadow:
+        0 5px 14px
+        rgba(140,161,91,.30);
+
+    transform:none;
+
+}
+
+
+/* =====================================================
+   TOTAL ARCHIVES SUMMARY
+===================================================== */
+
+.archive-total-tab{
+
+    min-width:210px;
+
+    min-height:58px;
+
+    flex:0 0 210px;
+
+    padding:
+        0 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    color:#5C6255;
+
+    background:#E3E5DC;
+
+    border:
+        1px solid #C8CCBF;
+
+    border-left:
+        5px solid #8CA15B;
+
+    border-radius:15px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+    white-space:nowrap;
+
+    cursor:default;
+
+    box-shadow:
+        0 3px 10px
+        rgba(53,83,10,.07);
+
+}
+
+
+.archive-total-tab span{
+
+    flex:0 0 auto;
+
+    min-width:max-content;
+
+    margin:0;
+
+    padding:0;
+
+    display:inline;
+
+    color:#35530A;
+
+    background:transparent;
+
+    border-radius:0;
+
+    font-size:20px;
+
+    font-weight:800;
+
+}
+
+
+/* =====================================================
+   ARCHIVE TABLE
+===================================================== */
+
+.archive-table{
+
+    width:100%;
+
+    margin-top:30px;
+
+}
+
+
+/* =====================================================
+   RETRIEVE BUTTON
+===================================================== */
+
+.retrieve-btn{
+
+    width:100px;
+
+    padding:10px 0;
+
+    display:inline-block;
+
+    background:#8CA15B;
+
+    color:#fff;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.retrieve-btn:hover{
+
+    background:#758A49;
+
+    color:#fff;
+
+    transform:
+    scale(1.1);
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.archive-empty{
+
+    margin-top:15px;
+
+    padding:45px 20px;
+
+    background:#D9D9D9;
+
+    border-radius:18px;
+
+    color:#35530A;
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+/* =====================================================
+   ARCHIVE TABS RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px){
+
+    .archive-tabs{
+
+        flex-wrap:wrap;
+
+    }
+
+
+    .archive-tab{
+
+        min-width:170px;
+
+        flex:
+            1 1
+            calc(
+                33.333% - 12px
+            );
+
+    }
+
+
+    .archive-total-tab{
+
+        margin-left:auto;
+
+    }
+
+}
+
+
+@media (max-width: 700px){
+
+    .archive-tab{
+
+        min-width:
+            calc(
+                50% - 6px
+            );
+
+        flex:
+            1 1
+            calc(
+                50% - 6px
+            );
+
+    }
+
+
+    .archive-total-tab{
+
+        width:100%;
+
+        min-width:100%;
+
+        flex:
+            1 1 100%;
+
+        margin-left:0;
+
+    }
+
+}
+
+/* =====================================================
+   ARCHIVE RECORDS SCROLL
+===================================================== */
+
+.archive-table{
+
+    max-height:
+        calc(
+            100vh - 200px
+        );
+
+    overflow-x:auto;
+
+    overflow-y:auto;
+
+    padding-right:6px;
+
+    padding-bottom:15px;
+
+    overscroll-behavior:contain;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        #8CA15B
+        transparent;
+
+}
+
+
+.archive-table::-webkit-scrollbar{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+
+.archive-table::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+.archive-table::-webkit-scrollbar-thumb{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .65
+        );
+
+    border-radius:20px;
+
+}
+
+
+.archive-table::-webkit-scrollbar-thumb:hover{
+
+    background:#758A49;
+
+}

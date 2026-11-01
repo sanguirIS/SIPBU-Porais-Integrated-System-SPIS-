@@ -1,0 +1,1918 @@
+/* =========================================================
+   SPIS LOGIN
+   SIPBU-MPC PORAIS
+========================================================= */
+
+:root {
+    --cream: #fdfbd4;
+    --cream-soft: #fffde5;
+
+    --green: #8ca15b;
+    --green-light: #a7bb69;
+    --green-dark: #667b40;
+
+    --dark: #2e352b;
+    --dark-deep: #172014;
+
+    --text-muted: rgba(253, 251, 212, 0.62);
+
+    --error: #ff7777;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+body.login-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin: 0;
+    padding: 30px;
+
+    overflow: hidden;
+
+    color: var(--cream);
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 14% 18%,
+            rgba(140, 161, 91, 0.22),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 88% 84%,
+            rgba(140, 161, 91, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #182115 0%,
+            #202b1b 45%,
+            #11180f 100%
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.login-background {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.login-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.045;
+
+    background-image:
+        linear-gradient(
+            rgba(253, 251, 212, 0.25) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(253, 251, 212, 0.25) 1px,
+            transparent 1px
+        );
+
+    background-size: 46px 46px;
+}
+
+.login-orb {
+    position: absolute;
+
+    border-radius: 50%;
+    filter: blur(6px);
+
+    pointer-events: none;
+}
+
+.login-orb-one {
+    width: 430px;
+    height: 430px;
+
+    top: -190px;
+    left: -130px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(140, 161, 91, 0.42),
+            transparent 68%
+        );
+
+    animation:
+        orbOne 10s ease-in-out infinite alternate;
+}
+
+.login-orb-two {
+    width: 520px;
+    height: 520px;
+
+    right: -200px;
+    bottom: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(253, 251, 212, 0.12),
+            transparent 68%
+        );
+
+    animation:
+        orbTwo 12s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   MAIN LOGIN WINDOW
+
+   IMPORTANT:
+   The dark → olive transition is on the WHOLE shell.
+   This removes the ugly hard divider in the middle.
+========================================================= */
+
+.login-shell {
+    width: min(1120px, 94vw);
+    min-height: 620px;
+
+    position: relative;
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns:
+        1.08fr
+        0.92fr;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            #30372d 0%,
+            #30372d 43%,
+
+            #33402f 51%,
+
+            #455739 59%,
+
+            #667c44 68%,
+
+            #829850 82%,
+            #879d55 100%
+        );
+
+    border:
+        4px solid
+        rgba(140, 161, 91, 0.94);
+
+    border-radius: 34px;
+
+    box-shadow:
+        0 30px 85px rgba(0, 0, 0, 0.47),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    animation:
+        shellEntrance
+        0.8s
+        cubic-bezier(0.2, 0.85, 0.25, 1)
+        both;
+
+    transition:
+        opacity 0.32s ease,
+        transform 0.32s ease,
+        filter 0.32s ease;
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.login-panel {
+    min-width: 0;
+    position: relative;
+}
+
+
+/* =========================================================
+   LEFT FORM PANEL
+========================================================= */
+
+.login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 58px 62px;
+
+    /*
+     * Transparent intentionally.
+     * Parent shell handles the smooth blend.
+     */
+    background: transparent;
+}
+
+.login-form-inner {
+    width: 100%;
+    max-width: 500px;
+
+    position: relative;
+    z-index: 2;
+
+    animation:
+        formEntrance
+        0.75s
+        0.12s
+        cubic-bezier(0.2, 0.85, 0.25, 1)
+        both;
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.login-eyebrow {
+    width: max-content;
+    max-width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 27px;
+    padding: 8px 13px;
+
+    color: rgba(253, 251, 212, 0.78);
+
+    background:
+        rgba(253, 251, 212, 0.055);
+
+    border:
+        1px solid
+        rgba(253, 251, 212, 0.13);
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.9px;
+
+    white-space: nowrap;
+}
+
+.login-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 auto;
+
+    background: var(--green-light);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 5px rgba(168, 189, 108, 0.09);
+
+    animation:
+        statusPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LOGIN TITLE
+========================================================= */
+
+.login-heading {
+    margin-bottom: 34px;
+}
+
+.login-heading h1 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(37px, 4vw, 51px);
+    font-weight: 700;
+
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.login-heading p {
+    max-width: 430px;
+
+    margin: 15px 0 0;
+
+    color: var(--text-muted);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SERVER ERROR
+========================================================= */
+
+.login-server-error {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin: -10px 0 20px;
+    padding: 11px 13px;
+
+    color: #ffd0d0;
+
+    background:
+        rgba(170, 53, 53, 0.15);
+
+    border:
+        1px solid
+        rgba(255, 119, 119, 0.27);
+
+    border-radius: 13px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    animation:
+        errorEntrance 0.32s ease both;
+}
+
+.login-server-error-icon {
+    width: 24px;
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #411d1d;
+
+    background: #ff9292;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+#loginForm {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.login-field {
+    position: relative;
+
+    margin-bottom: 21px;
+}
+
+.login-field > label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        rgba(253, 251, 212, 0.86);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.55px;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.login-input-wrap {
+    min-height: 57px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        rgba(253, 251, 212, 0.97);
+
+    border:
+        2px solid transparent;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.07);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.login-input-wrap:focus-within {
+    background: #fffde5;
+
+    border-color: var(--green-light);
+
+    box-shadow:
+        0 0 0 4px rgba(168, 189, 108, 0.11),
+        0 6px 17px rgba(0, 0, 0, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   INPUT
+
+   No left icons anymore, so text starts naturally.
+========================================================= */
+
+.login-input-wrap input {
+    width: 100%;
+    height: 55px;
+
+    padding:
+        0
+        18px;
+
+    color: #252b21;
+
+    background: transparent;
+
+    border: 0;
+    outline: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0;
+}
+
+.login-input-wrap input::placeholder {
+    color: #8b8f82;
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   PASSWORD FIELD
+========================================================= */
+
+.login-input-wrap input[type="password"],
+.login-input-wrap input[type="text"] {
+    padding-left: 18px;
+    padding-right: 55px;
+}
+
+
+/* =========================================================
+   HIDE EDGE / IE NATIVE PASSWORD BUTTON
+
+   Leaves only the custom SPIS eye icon.
+========================================================= */
+
+.login-input-wrap input::-ms-reveal,
+.login-input-wrap input::-ms-clear {
+    display: none !important;
+}
+
+.login-input-wrap input[type="password"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   CUSTOM PASSWORD EYE
+========================================================= */
+
+.login-password-toggle {
+    width: 39px;
+    height: 39px;
+
+    position: absolute;
+
+    top: 50%;
+    right: 9px;
+
+    transform:
+        translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    color: #69715c;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 10px;
+
+    outline: 0;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease;
+}
+
+.login-password-toggle:hover {
+    color: #475932;
+
+    background:
+        rgba(140, 161, 91, 0.11);
+}
+
+.login-password-toggle:focus-visible {
+    outline:
+        2px solid
+        rgba(140, 161, 91, 0.45);
+
+    outline-offset: 1px;
+}
+
+.login-eye {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* =========================================================
+   INLINE VALIDATION
+========================================================= */
+
+.login-field-error {
+    min-height: 15px;
+
+    display: block;
+
+    margin-top: 6px;
+    padding-left: 4px;
+
+    color: var(--error);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.35;
+}
+
+.login-field.has-error
+.login-input-wrap {
+    border-color: var(--error);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 119, 119, 0.11);
+
+    animation:
+        fieldShake
+        0.3s
+        ease;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-submit {
+    width: 100%;
+    min-height: 56px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin: 7px 0 0;
+    padding: 0 25px;
+
+    color: var(--cream);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9caf63 0%,
+            #839850 100%
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(49, 64, 29, 0.28),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.14);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.65px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.login-submit::before {
+    content: "";
+
+    width: 100px;
+    height: 170%;
+
+    position: absolute;
+
+    top: -35%;
+    left: -145px;
+
+    transform: rotate(17deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.18),
+            transparent
+        );
+
+    transition:
+        left 0.55s ease;
+}
+
+.login-submit:hover::before {
+    left:
+        calc(100% + 50px);
+}
+
+.login-submit:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #a9bb6d 0%,
+            #778c48 100%
+        );
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 24px
+        rgba(48, 63, 28, 0.34);
+}
+
+.login-submit:active {
+    transform:
+        translateY(0)
+        scale(0.995);
+}
+
+.login-submit:focus-visible {
+    outline:
+        3px solid
+        rgba(168, 189, 108, 0.23);
+
+    outline-offset: 3px;
+}
+
+.login-submit:disabled {
+    opacity: 0.88;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON LOADER
+========================================================= */
+
+.login-submit-loader {
+    width: 18px;
+    height: 18px;
+
+    display: none;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.30);
+
+    border-top-color:
+        var(--cream);
+
+    border-radius: 50%;
+
+    animation:
+        spinner
+        0.7s
+        linear
+        infinite;
+}
+
+body.is-logging-in
+.login-submit-text {
+    display: none;
+}
+
+body.is-logging-in
+.login-submit-loader {
+    display: block;
+}
+
+
+/* =========================================================
+   AUTHORIZED PERSONNEL NOTE
+========================================================= */
+
+.login-footer-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 19px;
+
+    color:
+        rgba(253, 251, 212, 0.46);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9.5px;
+    font-weight: 400;
+}
+
+.login-footer-lock {
+    color: var(--green-light);
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   RIGHT BRAND PANEL
+
+   Transparent because the parent already has the
+   smooth dark → olive gradient.
+========================================================= */
+
+.login-brand-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 45px 42px;
+
+    background:
+        radial-gradient(
+            circle at 54% 33%,
+            rgba(253, 251, 212, 0.12),
+            transparent 37%
+        );
+
+    border: 0;
+}
+
+
+/* =========================================================
+   BRAND GLOW
+========================================================= */
+
+.login-brand-glow {
+    width: 430px;
+    height: 430px;
+
+    position: absolute;
+
+    top: 44%;
+    left: 52%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(253, 251, 212, 0.10),
+            transparent 65%
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        brandGlow
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   BRAND CONTENT
+========================================================= */
+
+.login-brand-content {
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    animation:
+        brandEntrance
+        0.85s
+        0.18s
+        cubic-bezier(0.2, 0.85, 0.25, 1)
+        both;
+}
+
+
+/* =========================================================
+   LARGE FRAMELESS IMAGE
+========================================================= */
+
+.login-logo-wrap {
+    width: 345px;
+    height: 345px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 32px;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 30px;
+
+    box-shadow:
+        0 18px 38px
+        rgba(40, 51, 25, 0.23);
+
+    animation:
+        logoFloat
+        4.2s
+        ease-in-out
+        infinite;
+}
+
+
+/*
+ * Completely remove old cream/dashed frame.
+ */
+
+.login-logo-wrap::before,
+.login-logo-wrap::after {
+    display: none !important;
+}
+
+
+/* =========================================================
+   IMAGE FILLS THE WHOLE AREA
+========================================================= */
+
+.login-logo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border: 0;
+    border-radius: 30px;
+
+    box-shadow: none;
+
+    filter: none;
+}
+
+
+/* =========================================================
+   BRAND NAME
+========================================================= */
+
+.login-brand-copy {
+    width: 100%;
+    max-width: 400px;
+
+    text-align: center;
+}
+
+.login-brand-kicker {
+    display: block;
+
+    margin: 0 0 5px;
+
+    color: var(--cream);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   INTEGRATED SYSTEM
+========================================================= */
+
+.login-brand-copy h2 {
+    margin: 0;
+
+    color:
+        rgba(253, 251, 212, 0.90);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 19px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   LOCAL SYSTEM READY
+========================================================= */
+
+.login-brand-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+    padding: 8px 13px;
+
+    color:
+        rgba(253, 251, 212, 0.78);
+
+    background:
+        rgba(44, 57, 28, 0.22);
+
+    border:
+        1px solid
+        rgba(253, 251, 212, 0.11);
+
+    border-radius: 999px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8.5px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.login-brand-status span {
+    width: 7px;
+    height: 7px;
+
+    display: block;
+
+    background: #dff59f;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px
+        rgba(223, 245, 159, 0.72);
+
+    animation:
+        statusPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   LOGIN TRANSITION OVERLAY
+========================================================= */
+
+.login-transition {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background:
+        rgba(17, 24, 13, 0.82);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    transition:
+        opacity 0.28s ease,
+        visibility 0.28s ease;
+}
+
+.login-transition.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   TRANSITION CONTENT
+========================================================= */
+
+.login-transition-content {
+    width:
+        min(340px, 84vw);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(15px)
+        scale(0.94);
+
+    transition:
+        opacity 0.32s ease,
+        transform 0.38s
+        cubic-bezier(0.2, 0.85, 0.25, 1);
+}
+
+.login-transition.is-visible
+.login-transition-content {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   TRANSITION LOGO
+========================================================= */
+
+.login-transition-logo {
+    width: 112px;
+    height: 112px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+    padding: 12px;
+
+    overflow: hidden;
+
+    background: var(--cream);
+
+    border:
+        3px solid
+        var(--green);
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.30),
+        0 0 0 12px rgba(140, 161, 91, 0.07);
+
+    animation:
+        transitionLogo
+        1.35s
+        ease-in-out
+        infinite;
+}
+
+.login-transition-logo::before {
+    content: "";
+
+    position: absolute;
+    inset: -14px;
+
+    border:
+        2px solid
+        rgba(168, 189, 108, 0.24);
+
+    border-radius: 35px;
+
+    animation:
+        transitionRing
+        1.35s
+        ease-out
+        infinite;
+}
+
+.login-transition-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   TRANSITION TEXT
+========================================================= */
+
+.login-transition-title {
+    color: var(--cream);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
+}
+
+.login-transition-text {
+    margin-top: 7px;
+
+    color:
+        rgba(253, 251, 212, 0.58);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.login-transition-bar {
+    width: 195px;
+    height: 4px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 24px;
+
+    background:
+        rgba(253, 251, 212, 0.10);
+
+    border-radius: 999px;
+}
+
+.login-transition-bar span {
+    width: 48%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: -50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--green-light),
+            var(--cream),
+            var(--green-light),
+            transparent
+        );
+
+    border-radius: 999px;
+
+    animation:
+        loginProgress
+        0.9s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   LOGIN EXIT EFFECT
+========================================================= */
+
+body.is-logging-in
+.login-shell {
+    opacity: 0.18;
+
+    transform:
+        scale(0.97);
+
+    filter:
+        blur(4px);
+}
+
+
+/* =========================================================
+   SWEETALERT
+========================================================= */
+
+.swal2-popup {
+    border-radius: 22px !important;
+
+    font-family:
+        "Poppins",
+        sans-serif !important;
+}
+
+
+/* =========================================================
+   SHORT LAPTOP SCREEN
+========================================================= */
+
+@media
+(max-height: 760px)
+and
+(min-width: 981px) {
+
+    body.login-page {
+        padding: 18px;
+    }
+
+    .login-shell {
+        min-height: 555px;
+    }
+
+    .login-form-panel {
+        padding:
+            38px
+            55px;
+    }
+
+    .login-heading {
+        margin-bottom: 26px;
+    }
+
+    .login-heading h1 {
+        font-size: 41px;
+    }
+
+    .login-eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .login-field {
+        margin-bottom: 16px;
+    }
+
+    .login-logo-wrap {
+        width: 265px;
+        height: 265px;
+
+        margin-bottom: 20px;
+    }
+
+    .login-brand-kicker {
+        font-size: 20px;
+    }
+
+    .login-brand-copy h2 {
+        font-size: 17px;
+    }
+
+    .login-brand-status {
+        margin-top: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media
+(max-width: 980px) {
+
+    body.login-page {
+        padding: 25px;
+
+        overflow-y: auto;
+    }
+
+    .login-shell {
+        width:
+            min(720px, 95vw);
+
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        /*
+         * Vertical smooth transition for tablet.
+         */
+        background:
+            linear-gradient(
+                180deg,
+                #788e4b 0%,
+                #607342 34%,
+                #38452f 48%,
+                #30372d 62%,
+                #30372d 100%
+            );
+    }
+
+    .login-brand-panel {
+        order: -1;
+
+        min-height: 330px;
+
+        padding:
+            35px
+            28px;
+    }
+
+    .login-logo-wrap {
+        width: 180px;
+        height: 180px;
+
+        margin-bottom: 18px;
+
+        border-radius: 23px;
+    }
+
+    .login-logo {
+        border-radius: 23px;
+    }
+
+    .login-brand-kicker {
+        font-size: 18px;
+    }
+
+    .login-brand-copy h2 {
+        font-size: 16px;
+    }
+
+    .login-brand-status {
+        margin-top: 17px;
+    }
+
+    .login-form-panel {
+        padding:
+            42px
+            45px
+            48px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width: 600px) {
+
+    body.login-page {
+        display: block;
+
+        padding:
+            16px
+            12px;
+
+        overflow-y: auto;
+    }
+
+    .login-shell {
+        width: 100%;
+
+        border-width: 3px;
+        border-radius: 25px;
+    }
+
+    .login-brand-panel {
+        min-height: 280px;
+
+        padding:
+            28px
+            20px;
+    }
+
+    .login-logo-wrap {
+        width: 145px;
+        height: 145px;
+
+        border-radius: 20px;
+    }
+
+    .login-logo {
+        border-radius: 20px;
+    }
+
+    .login-brand-kicker {
+        font-size: 16px;
+    }
+
+    .login-brand-copy h2 {
+        font-size: 14px;
+    }
+
+    .login-form-panel {
+        padding:
+            35px
+            24px
+            40px;
+    }
+
+    .login-eyebrow {
+        font-size: 8px;
+        letter-spacing: 0.6px;
+    }
+
+    .login-heading h1 {
+        font-size: 34px;
+    }
+
+    .login-heading p {
+        font-size: 11.5px;
+    }
+
+    .login-input-wrap {
+        min-height: 53px;
+
+        border-radius: 14px;
+    }
+
+    .login-input-wrap input {
+        height: 51px;
+
+        font-size: 12.5px;
+    }
+
+    .login-submit {
+        min-height: 53px;
+
+        border-radius: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes shellEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(22px)
+            scale(0.975);
+
+        filter:
+            blur(7px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+@keyframes formEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes brandEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+}
+
+
+@keyframes brandGlow {
+
+    0%,
+    100% {
+        opacity: 0.48;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.95);
+    }
+
+    50% {
+        opacity: 0.82;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.07);
+    }
+
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+
+        transform:
+            scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.14);
+    }
+
+}
+
+
+@keyframes orbOne {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(55px, 42px)
+            scale(1.10);
+    }
+
+}
+
+
+@keyframes orbTwo {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(-45px, -30px)
+            scale(1.11);
+    }
+
+}
+
+
+@keyframes errorEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-7px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes fieldShake {
+
+    0%,
+    100% {
+        transform:
+            translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-3px);
+    }
+
+    50% {
+        transform:
+            translateX(3px);
+    }
+
+    75% {
+        transform:
+            translateX(-2px);
+    }
+
+}
+
+
+@keyframes spinner {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes transitionLogo {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.045);
+    }
+
+}
+
+
+@keyframes transitionRing {
+
+    from {
+        opacity: 0.8;
+
+        transform:
+            scale(0.88);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            scale(1.28);
+    }
+
+}
+
+
+@keyframes loginProgress {
+
+    from {
+        left: -55%;
+    }
+
+    to {
+        left: 108%;
+    }
+
+}
+
+/* =========================================================
+   PASSWORD EYE ACTIVE STATE
+========================================================= */
+
+.login-password-toggle {
+    position: absolute;
+}
+
+
+/* ACTIVE / PASSWORD IS VISIBLE */
+
+.login-password-toggle[aria-pressed="true"] {
+    color: #53693a;
+
+    background:
+        rgba(140, 161, 91, 0.14);
+}
+
+
+/* SLASH ACROSS THE EYE */
+
+.login-password-toggle[aria-pressed="true"]::after {
+    content: "";
+
+    width: 22px;
+    height: 2px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    background: currentColor;
+
+    border-radius: 999px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-45deg);
+
+    pointer-events: none;
+}
+
+
+/* NICE PRESS EFFECT */
+
+.login-password-toggle:active {
+    transform:
+        translateY(-50%)
+        scale(0.92);
+}

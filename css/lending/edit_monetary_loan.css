@@ -1,0 +1,1065 @@
+/* =========================================================
+   EDIT MONETARY LOAN MODAL
+========================================================= */
+
+#editMonetaryLoanModal {
+    padding: 18px !important;
+}
+
+#editMonetaryLoanModal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#editMonetaryLoanModal .modal-dialog {
+    width: min(1250px, calc(100vw - 36px));
+    max-width: 1250px;
+    margin: auto;
+}
+
+.monetary-loan-edit-window {
+    max-height: calc(100vh - 36px);
+}
+
+.monetary-loan-edit-window form {
+    min-height: 0;
+    max-height: calc(100vh - 46px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.monetary-loan-edit-status-badge {
+    width: auto;
+    min-width: 95px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.monetary-loan-edit-status-badge i {
+    font-size: 12px;
+}
+
+.monetary-loan-edit-status-badge.monetary-status-pending {
+    color: #906800;
+    background: #fff6db;
+    border: 1px solid #f0ae00;
+}
+
+.monetary-loan-edit-status-badge.monetary-status-accepted {
+    color: #147341;
+    background: #a8f2ce;
+    border: none;
+}
+
+.monetary-loan-edit-status-badge.monetary-status-rejected {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #ef5350;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.monetary-loan-edit-information-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+/* =========================================================
+   BORROWER AND DETAILS GRIDS
+========================================================= */
+
+.monetary-loan-edit-borrower-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(280px, 1.5fr)
+        minmax(190px, 0.8fr)
+        minmax(190px, 0.8fr);
+    gap: 14px;
+}
+
+.monetary-loan-edit-member-field {
+    position: relative;
+    z-index: 25;
+}
+
+.monetary-loan-edit-details-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 1.6fr)
+        minmax(220px, 0.7fr);
+    align-items: start;
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.monetary-loan-edit-details-grid:has(
+    #editMonetaryLoanYearsField:not([hidden])
+) {
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(0, 0.9fr)
+        minmax(0, 0.6fr);
+}
+
+
+/* =========================================================
+   FIELD NOTES
+========================================================= */
+
+.monetary-loan-field-note {
+    display: block;
+    margin-top: 6px;
+    color: rgba(255, 253, 212, 0.7);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   READ-ONLY FIELD WRAPPERS
+========================================================= */
+
+.monetary-loan-readonly-wrapper {
+    position: relative;
+}
+
+.monetary-loan-readonly-wrapper .monetary-loan-input {
+    padding-right: 44px;
+}
+
+.monetary-loan-readonly-wrapper > i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    color: rgba(255, 253, 212, 0.75);
+    font-size: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MONEY INPUT
+========================================================= */
+
+.monetary-loan-money-input {
+    position: relative;
+}
+
+.monetary-loan-money-input > span {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    z-index: 2;
+    color: #53613a;
+    font-size: 16px;
+    font-weight: 800;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.monetary-loan-money-input .monetary-loan-input {
+    padding-left: 42px;
+}
+
+
+/* =========================================================
+   PURPOSE AND REJECTION TEXTAREA
+========================================================= */
+
+textarea#editMonetaryLoanPurpose {
+    min-height: 105px;
+    height: 105px;
+}
+
+.monetary-loan-rejection-block {
+    margin-top: 15px;
+    padding: 14px;
+    background: rgba(255, 108, 108, 0.08);
+    border: 1px solid rgba(255, 135, 135, 0.25);
+    border-radius: 13px;
+}
+
+.monetary-loan-rejection-block[hidden] {
+    display: none !important;
+}
+
+#editMonetaryLoanRejectionReason {
+    min-height: 95px;
+    height: 95px;
+}
+
+
+/* =========================================================
+   LOCKED MODE
+========================================================= */
+
+.monetary-loan-input:disabled,
+.monetary-loan-select:disabled,
+.monetary-loan-textarea:disabled,
+.monetary-loan-locked-input {
+    color: #c4c3aa !important;
+    background: rgba(52, 54, 50, 0.76) !important;
+    border-color: transparent !important;
+    cursor: not-allowed !important;
+    opacity: 1 !important;
+}
+
+.monetary-loan-input:disabled::placeholder,
+.monetary-loan-textarea:disabled::placeholder {
+    color: #979681;
+}
+
+.monetary-loan-upload-box.monetary-loan-upload-locked {
+    color: #aaa991;
+    background: rgba(52, 54, 50, 0.7);
+    border-color: #777765;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.monetary-loan-read-only-message {
+    margin-bottom: 14px;
+    padding: 11px 13px;
+    color: #deddb9;
+    background: rgba(52, 54, 50, 0.65);
+    border-radius: 11px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.monetary-loan-read-only-message i {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   ATTACHMENTS AND SUMMARY ALIGNMENT
+========================================================= */
+
+.monetary-loan-edit-attachments-section,
+.monetary-loan-edit-summary-section {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.monetary-loan-edit-attachments-section {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.monetary-loan-edit-summary-section {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   ATTACHMENT LIST
+========================================================= */
+
+#editMonetaryLoanAttachmentList {
+    width: 100%;
+    max-height: 238px;
+    margin-top: 12px;
+    padding-right: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--monetary-green)
+        transparent;
+}
+
+#editMonetaryLoanAttachmentList::-webkit-scrollbar {
+    width: 7px;
+}
+
+#editMonetaryLoanAttachmentList::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#editMonetaryLoanAttachmentList::-webkit-scrollbar-thumb {
+    background: var(--monetary-green);
+    border-radius: 20px;
+}
+
+.monetary-loan-no-attachment {
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 253, 212, 0.65);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EXISTING ATTACHMENTS
+========================================================= */
+
+.monetary-loan-existing-attachment,
+.monetary-loan-new-attachment {
+    width: 100%;
+    min-height: 47px;
+    margin-bottom: 7px;
+    padding: 9px 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #282828;
+    background: #fdfbd4;
+    border-radius: 9px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.monetary-loan-existing-attachment:last-child,
+.monetary-loan-new-attachment:last-child {
+    margin-bottom: 0;
+}
+
+.monetary-loan-existing-attachment-info,
+.monetary-loan-new-attachment-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.monetary-loan-existing-attachment-info i,
+.monetary-loan-new-attachment-info i {
+    flex: 0 0 auto;
+}
+
+.monetary-loan-existing-attachment-info span,
+.monetary-loan-new-attachment-info span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.monetary-loan-existing-attachment-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.monetary-loan-view-attachment-btn,
+.monetary-loan-remove-existing-attachment-btn,
+.monetary-loan-remove-new-attachment-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.monetary-loan-view-attachment-btn {
+    color: #65783d;
+}
+
+.monetary-loan-remove-existing-attachment-btn,
+.monetary-loan-remove-new-attachment-btn {
+    color: #d84e4e;
+}
+
+.monetary-loan-view-attachment-btn:hover,
+.monetary-loan-remove-existing-attachment-btn:hover,
+.monetary-loan-remove-new-attachment-btn:hover {
+    background: rgba(140, 161, 91, 0.16);
+    transform: scale(1.08);
+}
+
+.monetary-loan-view-attachment-btn:disabled,
+.monetary-loan-remove-existing-attachment-btn:disabled,
+.monetary-loan-remove-new-attachment-btn:disabled {
+    color: #aaaaaa;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   PAYMENT SECTION
+========================================================= */
+
+.monetary-loan-payment-section {
+    margin-top: 20px;
+}
+
+.monetary-loan-payment-section[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   PAYMENT BREAKDOWN
+========================================================= */
+
+.monetary-loan-payment-breakdown {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 11px;
+    margin-bottom: 17px;
+}
+
+/* LONG-TERM PAYMENT BREAKDOWN */
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+) {
+    grid-template-columns:
+        minmax(140px, 0.8fr)
+        minmax(180px, 1fr)
+        minmax(180px, 1fr)
+        minmax(140px, 0.8fr);
+
+    grid-template-areas:
+        "term plan plan days"
+        "principal unpaid accrued payoff";
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+#editMonetaryPaymentLongTermYearsItem {
+    grid-area: term;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+#editMonetaryPaymentLongTermPlanItem {
+    grid-area: plan;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+> div:has(#editMonetaryPaymentPrincipal) {
+    grid-area: principal;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+> div:has(#editMonetaryPaymentUnpaidInterest) {
+    grid-area: unpaid;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+> div:has(#editMonetaryPaymentElapsedDays) {
+    grid-area: days;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+> div:has(#editMonetaryPaymentNewInterest) {
+    grid-area: accrued;
+}
+
+
+.monetary-loan-payment-breakdown:has(
+    #editMonetaryPaymentLongTermYearsItem:not([hidden])
+)
+.monetary-loan-payment-payoff {
+    grid-area: payoff;
+}
+
+
+#editMonetaryPaymentLongTermPlanItem strong {
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.monetary-loan-payment-breakdown > div {
+    min-width: 0;
+    min-height: 85px;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    color: #252525;
+    background: var(--monetary-cream);
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.monetary-loan-payment-breakdown span {
+    color: #686868;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.monetary-loan-payment-breakdown strong {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.monetary-loan-payment-breakdown
+.monetary-loan-payment-payoff {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+}
+
+.monetary-loan-payment-breakdown
+.monetary-loan-payment-payoff span {
+    color: rgba(255, 253, 212, 0.82);
+}
+
+
+/* =========================================================
+   PAYMENT ENTRY
+========================================================= */
+
+.monetary-loan-payment-entry {
+    display: grid;
+    grid-template-columns:
+        minmax(150px, 0.8fr)
+        minmax(170px, 0.9fr)
+        minmax(230px, 1.4fr)
+        190px;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 21px;
+}
+
+.monetary-loan-record-payment-btn {
+    height: 52px;
+    padding: 0 17px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.monetary-loan-record-payment-btn:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.17);
+}
+
+.monetary-loan-record-payment-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   PAYMENT HISTORY HEADING
+========================================================= */
+
+.monetary-loan-payment-history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin: 5px 0 10px;
+}
+
+.monetary-loan-payment-history-heading h3 {
+    margin: 0;
+    color: var(--monetary-cream);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.monetary-loan-payment-history-heading small {
+    color: rgba(255, 253, 212, 0.65);
+    font-size: 10px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   PAYMENT TABLE
+========================================================= */
+
+.monetary-loan-payment-table-wrapper {
+    width: 100%;
+    max-height: 245px;
+    overflow: auto;
+    background: var(--monetary-cream);
+    border-radius: 13px;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--monetary-green)
+        transparent;
+}
+
+.monetary-loan-payment-table-wrapper::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.monetary-loan-payment-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.monetary-loan-payment-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--monetary-green);
+    border-radius: 10px;
+}
+
+.monetary-loan-payment-table {
+    width: 100%;
+    min-width: 1020px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.monetary-loan-payment-table th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding: 12px 9px;
+    color: #222222;
+    background: #f7f6e4;
+    border-bottom: 1px solid #d8d8cc;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.monetary-loan-payment-table td {
+    padding: 11px 9px;
+    color: #252525;
+    background: var(--monetary-cream);
+    border-bottom: 1px solid #dfded0;
+    font-size: 11px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.monetary-loan-payment-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.monetary-loan-payment-empty td {
+    height: 90px;
+    color: #777777;
+}
+
+
+/* =========================================================
+   PAYMENT TYPE
+========================================================= */
+
+.monetary-loan-payment-type {
+    min-width: 72px;
+    padding: 5px 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.monetary-loan-payment-type.payment {
+    color: #1e7a44;
+    background: #b0fbd0;
+}
+
+.monetary-loan-payment-type.reversal {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+}
+
+
+/* =========================================================
+   REVERSE PAYMENT BUTTON
+========================================================= */
+
+.monetary-loan-reverse-payment-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+    border-radius: 7px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.monetary-loan-reverse-payment-btn:hover {
+    color: #c62828;
+    background: #ffdada;
+    transform: scale(1.08);
+}
+
+.monetary-loan-reverse-payment-btn:disabled {
+    color: #aaaaaa;
+    background: #eeeeee;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   SAVE BUTTON VISIBILITY
+========================================================= */
+
+#saveMonetaryLoanChangesBtn[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   SWEETALERT INPUT FIXES
+========================================================= */
+
+.swal2-popup {
+    border: none !important;
+    border-radius: 20px !important;
+}
+
+.swal2-textarea {
+    color: #444444 !important;
+    background: var(--monetary-cream) !important;
+    border: 1px solid #cfcfcf !important;
+}
+
+.swal2-textarea::placeholder {
+    color: #999999 !important;
+}
+
+.swal2-textarea:focus {
+    border-color: var(--monetary-green) !important;
+    box-shadow: 0 0 0 3px rgba(140, 161, 91, 0.2) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .monetary-loan-edit-information-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .monetary-loan-edit-borrower-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-payment-breakdown {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-payment-breakdown:has(
+        #editMonetaryPaymentLongTermYearsItem:not([hidden])
+    ) {
+        grid-template-areas: none;
+    }
+
+    .monetary-loan-payment-breakdown:has(
+        #editMonetaryPaymentLongTermYearsItem:not([hidden])
+    ) > div {
+        grid-area: auto;
+    }
+
+    .monetary-loan-payment-entry {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-record-payment-btn {
+        width: 190px;
+        justify-self: center;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    #editMonetaryLoanModal {
+        padding: 10px !important;
+    }
+
+    #editMonetaryLoanModal .modal-dialog {
+        width: calc(100vw - 20px);
+        max-width: none;
+    }
+
+    .monetary-loan-edit-window {
+        max-height: calc(100vh - 20px);
+    }
+
+    .monetary-loan-edit-information-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .monetary-loan-edit-information-grid,
+    .monetary-loan-edit-borrower-grid,
+    .monetary-loan-edit-details-grid,
+    .monetary-loan-payment-breakdown,
+    .monetary-loan-payment-entry {
+        grid-template-columns: 1fr;
+    }
+
+    .monetary-loan-edit-details-grid:has(
+        #editMonetaryLoanYearsField:not([hidden])
+    ) {
+        grid-template-columns: 1fr;
+    }
+
+    .monetary-loan-record-payment-btn {
+        width: 100%;
+    }
+
+    .monetary-loan-payment-history-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .monetary-loan-payment-history-heading small {
+        text-align: left;
+    }
+}
+
+
+/* =========================================================
+   REMOVE ATTACHMENT CONFIRMATION
+========================================================= */
+
+.swal2-popup.monetary-loan-remove-attachment-popup
+.monetary-loan-remove-confirm-btn {
+    color: #ffffff !important;
+    background: #e95454 !important;
+}
+
+.swal2-popup.monetary-loan-remove-attachment-popup
+.monetary-loan-remove-confirm-btn:hover {
+    background: #cf3f3f !important;
+}
+
+/* =========================================================
+   REVERSAL CONFIRMATION
+========================================================= */
+
+.swal2-popup .monetary-loan-swal-label {
+    display: block;
+    margin: 22px 0 8px;
+    color: #333333 !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.swal2-popup .monetary-loan-reversal-textarea {
+    width: 100% !important;
+    min-height: 130px;
+    margin: 0 !important;
+    padding: 15px 17px;
+    color: #333333 !important;
+    background: #fdfbd4 !important;
+    border: 1px solid #c9c9a5 !important;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.swal2-popup .monetary-loan-reversal-textarea::placeholder {
+    color: #929292 !important;
+    opacity: 1;
+}
+
+.swal2-popup .monetary-loan-reversal-textarea:focus {
+    border-color: #91aa5b !important;
+    box-shadow: 0 0 0 3px rgba(145, 170, 91, 0.2) !important;
+    outline: none !important;
+}
+
+/* =========================================================
+   REVERSAL CONFIRMATION
+========================================================= */
+
+.swal2-popup.monetary-loan-reversal-popup {
+    width: 520px !important;
+    max-width: calc(100vw - 30px) !important;
+    padding: 28px 34px 26px !important;
+    border-radius: 20px !important;
+}
+
+.monetary-loan-reversal-details {
+    width: 100%;
+    text-align: center;
+}
+
+.monetary-loan-reversal-details p {
+    margin: 10px 0;
+    color: #555555;
+    font-size: 18px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.monetary-loan-reversal-details strong {
+    color: #555555;
+    font-weight: 700;
+}
+
+.monetary-loan-reversal-message {
+    margin-top: 22px !important;
+}
+
+.swal2-popup.monetary-loan-reversal-popup
+.swal2-input-label {
+    display: block !important;
+    width: 100% !important;
+    margin: 20px auto 10px !important;
+    color: #4f5148 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    opacity: 1 !important;
+}
+
+.swal2-popup.monetary-loan-reversal-popup
+.monetary-loan-reversal-input {
+    display: block !important;
+    width: 100% !important;
+    height: 130px !important;
+    min-height: 130px !important;
+    margin: 0 auto 20px !important;
+    padding: 16px 18px !important;
+
+    color: #22251f !important;
+    background: #fffed6 !important;
+    border: 1px solid #c9c9b2 !important;
+    border-radius: 7px !important;
+
+    font-size: 17px !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+
+    pointer-events: auto !important;
+    user-select: text !important;
+    resize: vertical;
+}
+
+.swal2-popup.monetary-loan-reversal-popup
+.monetary-loan-reversal-input:focus {
+    border-color: #91aa5b !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(145, 170, 91, 0.24) !important;
+}
+
+.swal2-popup.monetary-loan-reversal-popup
+.swal2-actions {
+    margin-top: 8px !important;
+}
+
+.swal2-popup.monetary-loan-reversal-popup
+.monetary-loan-reversal-confirm,
+.swal2-popup.monetary-loan-reversal-popup
+.monetary-loan-reversal-cancel {
+    min-height: 50px;
+    padding: 12px 20px !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================================
+   PREVENT PAGE SCROLL DURING PAYMENT REVERSAL
+========================================================= */
+
+html:has(.monetary-loan-reversal-popup),
+body:has(.monetary-loan-reversal-popup) {
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+}
+
+#editMonetaryLoanModal:has(.monetary-loan-reversal-popup) {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow: hidden !important;
+}
+
+#editMonetaryLoanModal
+.swal2-container:has(.monetary-loan-reversal-popup) {
+    position: fixed !important;
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+
+    padding: 10px !important;
+    overflow: hidden !important;
+}

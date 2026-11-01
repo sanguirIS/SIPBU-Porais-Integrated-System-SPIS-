@@ -1,0 +1,2494 @@
+/* =========================================================
+   SPIS ACCOUNT MANAGEMENT
+   CLEAN FINAL UI
+========================================================= */
+
+:root {
+    --account-green: #8ca15b;
+    --account-green-dark: #6f8347;
+    --account-green-deep: #566938;
+
+    --account-cream: #fdfbd4;
+    --account-cream-soft: #fffde7;
+
+    --account-dark: rgba(75, 77, 70, 0.92);
+    --account-panel: rgba(255, 253, 212, 0.085);
+    --account-panel-hover: rgba(255, 253, 212, 0.12);
+    --account-line: rgba(255, 253, 212, 0.20);
+    --account-muted: rgba(255, 253, 212, 0.74);
+
+    --account-danger: #d35d5d;
+    --account-danger-soft: #ffaaaa;
+
+    --account-success: #b7db7f;
+    --account-success-text: #dff4bd;
+
+    --account-text: #252720;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body {
+    overflow: hidden;
+}
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    color: #000;
+}
+
+.account-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   ADD ACCOUNT BUTTON
+========================================================= */
+
+.btn-add-account {
+    min-width: 165px;
+    height: 50px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--account-green);
+    color: var(--account-cream);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px
+        rgba(75, 94, 40, 0.16);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-add-account:hover {
+    background: var(--account-green-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(75, 94, 40, 0.22);
+}
+
+
+/* =========================================================
+   ACCOUNT LEDGER
+   POLISHED FINAL UI
+========================================================= */
+
+.account-ledger {
+    --account-ledger-columns:
+        minmax(120px, 1.25fr)
+        minmax(155px, 1.55fr)
+        minmax(95px, .90fr)
+        minmax(220px, 2.35fr)
+        minmax(95px, .90fr)
+        minmax(105px, 1fr)
+        minmax(90px, .82fr)
+        minmax(54px, .52fr);
+
+    margin-top: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.account-header {
+    min-height: 72px;
+
+    display: grid;
+
+    grid-template-columns:
+        var(--account-ledger-columns);
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        0
+        14px;
+
+    margin-right: 12px;    
+
+    color:#ffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--account-green) 0%,
+            #839850 100%
+        );
+
+    border:
+        1px solid
+        rgba(86, 105, 56, 0.20);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(72, 87, 45, 0.13),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.10);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .35px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.account-header > div:nth-child(1) {
+    transform: translateX(47px);
+}
+
+.account-header > div:nth-child(2) {
+    transform: translateX(60px);
+}
+
+
+.account-header > div {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1.25;
+}
+
+
+/* NAME + EMAIL HEADER ALIGNMENT */
+
+.account-header > div:nth-child(1),
+.account-header > div:nth-child(2) {
+    justify-content: flex-start;
+
+    padding-left: 8px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.account-body {
+    min-width: 0;
+
+    max-height:
+        calc(100vh - 245px);
+
+    margin-top: 12px;
+
+    padding:
+        2px
+        5px
+        10px
+        1px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--account-green)
+        rgba(253, 251, 212, 0.55);
+
+    scrollbar-gutter: stable;
+}
+
+
+/* =========================================================
+   ACCOUNT ROW
+========================================================= */
+
+.account-row {
+    min-height: 82px;
+
+    display: grid;
+
+    grid-template-columns:
+        var(--account-ledger-columns);
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    padding:
+        10px
+        14px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color:
+        #2d3029;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.15);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.035);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transition:
+        transform .20s ease,
+        background .20s ease,
+        border-color .20s ease,
+        box-shadow .20s ease;
+}
+
+
+/* LEFT ACCENT */
+
+.account-row::before {
+    content: "";
+
+    width: 4px;
+
+    position: absolute;
+
+    top: 16px;
+    bottom: 16px;
+    left: 0;
+
+    background:
+        var(--account-green);
+
+    border-radius:
+        0
+        5px
+        5px
+        0;
+
+    opacity: .48;
+
+    transition:
+        opacity .20s ease,
+        top .20s ease,
+        bottom .20s ease;
+}
+
+
+/* =========================================================
+   ROW HOVER
+========================================================= */
+
+.account-row:hover {
+    background:
+        #f8faf4;
+
+    border-color:
+        rgba(140, 161, 91, 0.32);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(63, 77, 39, 0.09);
+}
+
+
+.account-row:hover::before {
+    top: 11px;
+    bottom: 11px;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   GENERAL CELL
+========================================================= */
+
+.account-row > div {
+    min-width: 0;
+
+    line-height: 1.4;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.account-row > div:nth-child(1) {
+    padding-left: 0;
+
+    color: #25291f;
+
+    font-size: 13.5px;
+    font-weight: 750;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.account-row > div:nth-child(2) {
+    padding-left: 0;
+
+    color: #5d6257;
+
+    font-size: 12.5px;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ROLE BADGE
+========================================================= */
+
+.account-row > div:nth-child(3) {
+    width: max-content;
+    max-width: 100%;
+
+    justify-self: center;
+
+    padding:
+        6px
+        11px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--account-green-deep);
+
+    background:
+        rgba(140, 161, 91, 0.13);
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.24);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   MODULE ACCESS
+========================================================= */
+
+.account-row .module-text {
+    min-height: 42px;
+
+    padding:
+        8px
+        11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        #4c5641;
+
+    background:
+        rgba(140, 161, 91, 0.075);
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.14);
+
+    border-radius: 12px;
+
+    font-size: 11.5px;
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LENDING ACCESS
+========================================================= */
+
+.account-row > div:nth-child(5) {
+    width: max-content;
+    max-width: 100%;
+
+    min-width: 68px;
+
+    justify-self: center;
+
+    padding:
+        6px
+        10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        #53623a;
+
+    background:
+        #edf2d9;
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.22);
+
+    border-radius: 20px;
+
+    font-size: 10.5px;
+    font-weight: 800;
+
+    letter-spacing: .25px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   DATE CREATED
+========================================================= */
+
+.account-row > div:nth-child(6) {
+    color:
+        #656a5e;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS CELL
+========================================================= */
+
+.account-row > div:nth-child(7) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.account-status {
+    min-width: 76px;
+
+    padding:
+        6px
+        11px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    letter-spacing: .45px;
+
+    line-height: 1.2;
+}
+
+
+.account-status::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    flex: 0 0 6px;
+
+    border-radius: 50%;
+}
+
+
+/* ACTIVE */
+
+.status-active {
+    color:
+        #267544;
+
+    background:
+        #daf0d3;
+
+    border:
+        1px solid
+        rgba(38, 117, 68, 0.10);
+}
+
+
+.status-active::before {
+    background:
+        #4c9967;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(76, 153, 103, 0.10);
+}
+
+
+/* INACTIVE */
+
+.status-inactive {
+    color:
+        #a84646;
+
+    background:
+        #f6d7d7;
+
+    border:
+        1px solid
+        rgba(168, 70, 70, 0.10);
+}
+
+
+.status-inactive::before {
+    background:
+        #c65d5d;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(198, 93, 93, 0.10);
+}
+
+
+/* =========================================================
+   EDIT CELL
+========================================================= */
+
+.account-row > div:nth-child(8) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.account-edit-btn {
+    width: 34px;
+    height: 34px;
+
+    margin: 0;
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        var(--account-cream);
+
+    background:
+        var(--account-green);
+
+    border:
+        1px solid
+        rgba(86, 105, 56, 0.18);
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px
+        rgba(86, 105, 56, 0.14);
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.account-edit-btn:hover {
+    color:
+        var(--account-cream);
+
+    background:
+        var(--account-green-dark);
+
+    transform:
+        scale(1.10);
+
+    box-shadow:
+        0 5px 12px
+        rgba(86, 105, 56, 0.24);
+}
+
+
+.account-edit-btn:active {
+    transform:
+        scale(.96);
+}
+
+
+.account-edit-btn:focus-visible {
+    outline:
+        3px solid
+        rgba(140, 161, 91, 0.25);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   LEDGER SCROLLBAR
+========================================================= */
+
+.account-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.account-body::-webkit-scrollbar-track {
+    background:
+        rgba(253, 251, 212, 0.58);
+
+    border-radius: 20px;
+}
+
+
+.account-body::-webkit-scrollbar-thumb {
+    background:
+        rgba(140, 161, 91, 0.82);
+
+    border-radius: 20px;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.58);
+}
+
+
+.account-body::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--account-green-dark);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.account-empty {
+    min-height: 120px;
+
+    padding: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color:
+        #68705d;
+
+    background:
+        rgba(255, 253, 231, 0.72);
+
+    border:
+        1px dashed
+        rgba(140, 161, 91, 0.38);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LEDGER RESPONSIVE TUNING
+========================================================= */
+
+@media (max-width: 1350px) {
+
+    .account-ledger {
+        --account-ledger-columns:
+            minmax(105px, 1.15fr)
+            minmax(135px, 1.40fr)
+            minmax(80px, .80fr)
+            minmax(190px, 2.15fr)
+            minmax(82px, .82fr)
+            minmax(92px, .90fr)
+            minmax(82px, .78fr)
+            minmax(48px, .48fr);
+    }
+
+
+    .account-header {
+        gap: 7px;
+
+        padding:
+            0
+            11px;
+
+        font-size: 10.5px;
+    }
+
+
+    .account-row {
+        gap: 7px;
+
+        padding:
+            10px
+            11px;
+    }
+
+
+    .account-row > div {
+        font-size: 11.5px;
+    }
+
+
+    .account-row > div:nth-child(1) {
+        font-size: 12.5px;
+    }
+
+
+    .account-row > div:nth-child(2),
+    .account-row > div:nth-child(6) {
+        font-size: 11px;
+    }
+
+
+    .account-row .module-text {
+        padding:
+            7px
+            8px;
+
+        font-size: 10.5px;
+    }
+
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+body:has(#addAccountModal.show)
+.modal-backdrop.show,
+body:has(#editAccountModal.show)
+.modal-backdrop.show {
+    opacity: 1;
+
+    background:
+        rgba(24, 32, 17, 0.64);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   MODAL POSITION
+========================================================= */
+
+#addAccountModal,
+#editAccountModal {
+    padding: 12px !important;
+}
+
+#addAccountModal.show,
+#editAccountModal.show {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#addAccountModal .modal-dialog,
+#editAccountModal .modal-dialog {
+    width:
+        min(
+            1000px,
+            calc(100vw - 24px)
+        );
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   MAIN MODAL WINDOW
+========================================================= */
+
+.account-modal {
+    width: 100%;
+
+    max-height:
+        calc(100vh - 24px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: var(--account-cream);
+
+    background: var(--account-dark);
+
+    border:
+        5px solid
+        var(--account-green);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 24px 70px
+        rgba(0, 0, 0, 0.38);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   MAIN EDIT / ADD FORM
+========================================================= */
+
+#accountForm,
+#editAccountForm {
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.account-modal-header {
+    min-height: 80px;
+
+    flex: 0 0 auto;
+
+    padding: 17px 25px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 253, 212, 0.20);
+}
+
+.account-modal-header h2 {
+    margin: 0;
+
+    color: var(--account-cream);
+
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 0.1px;
+}
+
+.account-header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+========================================================= */
+
+.account-close-btn {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #202020;
+    background: var(--account-cream);
+
+    border: none;
+    border-radius: 50%;
+
+    font-family: inherit;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.2s ease;
+}
+
+.account-close-btn:hover {
+    color: var(--account-cream);
+    background: var(--account-green);
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 6px 15px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   ARCHIVE BUTTON
+========================================================= */
+
+.btn-archive-account {
+    min-height: 42px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #ffd1d1;
+
+    background:
+        rgba(211, 93, 93, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 170, 170, 0.42);
+
+    border-radius: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.btn-archive-account:hover {
+    color: #fff;
+
+    background:
+        rgba(211, 93, 93, 0.72);
+
+    border-color:
+        rgba(255, 195, 195, 0.75);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.account-modal-body {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 16px;
+
+    padding: 16px 24px 15px;
+
+    align-items: stretch;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   INNER MODAL PANELS
+========================================================= */
+
+.account-info-section,
+.account-access-section {
+    min-width: 0;
+
+    padding: 19px 19px 18px;
+
+    background:
+        var(--account-panel);
+
+    border:
+        1px solid
+        var(--account-line);
+
+    border-radius: 20px;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.035);
+}
+
+.account-info-section h4,
+.account-access-section h4 {
+    margin: 0 0 15px;
+
+    color: var(--account-cream);
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.account-field {
+    position: relative;
+
+    margin-bottom: 11px;
+}
+
+.account-field:last-child {
+    margin-bottom: 0;
+}
+
+.account-field label,
+.lending-permission-wrapper > label,
+#lendingPermissionWrapper > label,
+#editLendingPermissionWrapper > label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--account-cream);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.account-input {
+    width: 100%;
+    height: 45px;
+
+    padding: 0 14px;
+
+    color: var(--account-text);
+    background: var(--account-cream);
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.account-input:focus {
+    border-color:
+        rgba(140, 161, 91, 0.95);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.16);
+}
+
+.account-input::placeholder {
+    color: #92958b;
+}
+
+
+/* =========================================================
+   TWO-COLUMN INPUT ROW
+========================================================= */
+
+.account-two-column {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+========================================================= */
+
+.email-wrapper {
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--account-cream);
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 12px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.email-wrapper:focus-within {
+    border-color:
+        rgba(140, 161, 91, 0.95);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.16);
+}
+
+.email-wrapper .account-input {
+    min-width: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+.email-wrapper .account-input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.email-domain {
+    flex: 0 0 auto;
+
+    padding: 0 14px 0 9px;
+
+    color: #595d53;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   READONLY EMAIL
+========================================================= */
+
+.account-readonly-wrapper,
+.email-wrapper:has(input[readonly]) {
+    background: #e8e7d2;
+}
+
+.email-wrapper input[readonly] {
+    color: #696c64;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FIELD HELPERS
+========================================================= */
+
+.account-field-helper {
+    display: block;
+
+    max-height: 35px;
+
+    margin-top: 6px;
+    padding-left: 2px;
+
+    overflow: hidden;
+
+    color: var(--account-muted);
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.2s ease,
+        max-height 0.25s ease,
+        margin-top 0.25s ease;
+}
+
+
+/* Used by live password rule */
+.account-field-helper.is-satisfied {
+    max-height: 0;
+
+    margin-top: 0;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   PASSWORD LIVE FEEDBACK
+========================================================= */
+
+.account-password-feedback {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    max-height: 32px;
+
+    margin-top: 6px;
+    padding-left: 2px;
+
+    overflow: hidden;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.2s ease,
+        max-height 0.25s ease,
+        margin-top 0.25s ease;
+}
+
+.account-password-feedback i {
+    font-size: 12px;
+}
+
+.account-password-feedback.is-match {
+    color: var(--account-success-text);
+}
+
+.account-password-feedback.is-mismatch {
+    color: var(--account-danger-soft);
+}
+
+.account-password-feedback.is-hidden {
+    max-height: 0;
+
+    margin-top: 0;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   OLD TOOLTIP CLEANUP
+
+   Old markup may still exist temporarily.
+========================================================= */
+
+.validation-tooltip {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ACTIVE BY DEFAULT NOTE
+========================================================= */
+
+.account-active-note {
+    width: 100%;
+
+    margin-top: 2px;
+    padding: 9px 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--account-cream);
+
+    background:
+        rgba(140, 161, 91, 0.12);
+
+    border:
+        1px solid
+        rgba(183, 219, 127, 0.25);
+
+    border-radius: 12px;
+}
+
+.account-active-note-icon {
+    width: 24px;
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #dce9b5;
+
+    background:
+        rgba(140, 161, 91, 0.22);
+
+    border-radius: 50%;
+
+    font-size: 11px;
+}
+
+.account-active-note-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.account-active-note-content strong {
+    color: var(--account-cream);
+
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.account-active-note-content span {
+    color: var(--account-muted);
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   MODULE GUIDE
+========================================================= */
+
+.module-guide {
+    margin: -7px 0 15px;
+
+    color: var(--account-muted);
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MODULE GRID
+========================================================= */
+
+.module-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-top: 0;
+
+    padding: 2px;
+
+    border-radius: 15px;
+
+    transition:
+        box-shadow 0.18s ease,
+        outline-color 0.18s ease;
+}
+
+
+/* =========================================================
+   MODULE OPTION
+========================================================= */
+
+.module-option {
+    min-height: 43px;
+
+    padding: 9px 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--account-cream);
+
+    background:
+        rgba(255, 253, 212, 0.045);
+
+    border:
+        1px solid
+        rgba(255, 253, 212, 0.13);
+
+    border-radius: 12px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.module-option:hover {
+    background:
+        rgba(255, 253, 212, 0.10);
+
+    border-color:
+        rgba(255, 253, 212, 0.25);
+
+    transform: translateY(-1px);
+}
+
+.module-option.active,
+.module-option:has(input:checked) {
+    color: #fff;
+
+    background:
+        rgba(140, 161, 91, 0.28);
+
+    border-color:
+        rgba(183, 219, 127, 0.55);
+}
+
+
+/* Hide native checkbox */
+.module-option input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* Custom radio/check dot */
+.module-option > span {
+    width: 17px;
+    height: 17px;
+
+    flex: 0 0 17px;
+
+    position: relative;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.78);
+
+    border-radius: 50%;
+
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease;
+}
+
+.module-option input:checked + span {
+    border-color:
+        var(--account-success);
+
+    background:
+        var(--account-success);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(183, 219, 127, 0.10);
+}
+
+.module-option input:checked + span::after {
+    content: none;
+}
+
+
+/* =========================================================
+   LENDING PERMISSION AREA
+========================================================= */
+
+#lendingPermissionWrapper,
+#editLendingPermissionWrapper,
+.lending-permission-wrapper {
+    margin-top: 14px;
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(255, 253, 212, 0.16);
+}
+
+#editLendingPermissionWrapper {
+    overflow: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        max-height 0.35s ease,
+        margin-top 0.35s ease,
+        padding-top 0.35s ease;
+
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+/* =========================================================
+   PERMISSION OPTIONS
+========================================================= */
+
+.permission-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    padding: 2px;
+
+    border-radius: 14px;
+
+    transition:
+        box-shadow 0.18s ease;
+}
+
+.permission-option {
+    min-height: 42px;
+
+    padding: 9px 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--account-cream);
+
+    background:
+        rgba(255, 253, 212, 0.045);
+
+    border:
+        1px solid
+        rgba(255, 253, 212, 0.13);
+
+    border-radius: 12px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.permission-option:hover {
+    background:
+        rgba(255, 253, 212, 0.10);
+
+    transform: translateY(-1px);
+}
+
+.permission-option.active,
+.permission-option:has(input:checked) {
+    background:
+        rgba(140, 161, 91, 0.28);
+
+    border-color:
+        rgba(183, 219, 127, 0.55);
+}
+
+.permission-option input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.permission-option > span {
+    width: 17px;
+    height: 17px;
+
+    flex: 0 0 17px;
+
+    position: relative;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.78);
+
+    border-radius: 50%;
+}
+
+.permission-option input:checked + span {
+    border-color:
+        var(--account-success);
+
+    background:
+        var(--account-success);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(183, 219, 127, 0.10);
+}
+
+.permission-option input:checked + span::after {
+    content: none;
+}
+
+
+/* =========================================================
+   STATUS DROPDOWN
+========================================================= */
+
+.account-status-dropdown {
+    position: relative;
+
+    width: 100%;
+}
+
+.account-status-btn {
+    width: 100%;
+    height: 45px;
+
+    padding: 0 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: var(--account-text);
+    background: var(--account-cream);
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.account-status-btn:hover,
+.account-status-btn:focus {
+    border-color:
+        rgba(140, 161, 91, 0.95);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.14);
+}
+
+.account-status-btn i {
+    color: var(--account-green-dark);
+
+    font-size: 12px;
+}
+
+.account-status-menu {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    z-index: 2500;
+
+    padding: 6px;
+
+    background: #fffde7;
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.20);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.18);
+}
+
+.account-status-menu.show {
+    display: block;
+}
+
+.account-status-item {
+    padding: 10px 11px;
+
+    color: #34372f;
+
+    border-radius: 9px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.account-status-item:hover,
+.account-status-item.selected {
+    color: #31401f;
+
+    background: #e3ecc2;
+}
+
+
+/* =========================================================
+   INLINE FIELD VALIDATION
+========================================================= */
+
+.account-input.is-invalid,
+.email-wrapper.is-invalid,
+.account-status-btn.is-invalid {
+    border-color:
+        #ff7979 !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255, 121, 121, 0.13)
+        !important;
+}
+
+.account-input.is-valid,
+.email-wrapper.is-valid,
+.account-status-btn.is-valid {
+    border-color:
+        rgba(183, 219, 127, 0.95)
+        !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(183, 219, 127, 0.10)
+        !important;
+}
+
+.account-field-error {
+    display: block;
+
+    margin-top: 5px;
+    padding-left: 2px;
+
+    color: var(--account-danger-soft);
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   GROUP VALIDATION
+========================================================= */
+
+.module-grid.account-group-invalid,
+.permission-options.account-group-invalid {
+    outline:
+        1px solid
+        #ff7979;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(255, 121, 121, 0.12);
+}
+
+.account-group-error {
+    margin-top: 7px;
+}
+
+
+/* =========================================================
+   MODAL FOOTERS
+========================================================= */
+
+.account-modal-footer,
+.edit-account-footer {
+    min-height: 78px;
+
+    flex: 0 0 auto;
+
+    padding: 14px 24px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top:
+        1px solid
+        rgba(255, 253, 212, 0.18);
+
+    background:
+        rgba(56, 58, 52, 0.18);
+}
+
+
+/* =========================================================
+   SAVE BUTTONS
+========================================================= */
+
+.btn-save-account,
+.btn-update-account {
+    min-width: 165px;
+    height: 48px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+
+    color: var(--account-cream);
+    background: var(--account-green);
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px
+        rgba(71, 89, 39, 0.20);
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.btn-save-account:hover,
+.btn-update-account:hover {
+    background:
+        var(--account-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(71, 89, 39, 0.25);
+}
+
+.btn-save-account:active,
+.btn-update-account:active {
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   UTILITY
+========================================================= */
+
+.d-none {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #addAccountModal .modal-dialog,
+    #editAccountModal .modal-dialog {
+        width:
+            min(
+                760px,
+                calc(100vw - 20px)
+            );
+    }
+
+    .account-modal-body {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    #addAccountModal,
+    #editAccountModal {
+        padding: 8px !important;
+    }
+
+    #addAccountModal .modal-dialog,
+    #editAccountModal .modal-dialog {
+        width:
+            calc(100vw - 16px);
+    }
+
+    .account-modal {
+        border-width: 4px;
+        border-radius: 22px;
+    }
+
+    .account-modal-header {
+        min-height: 72px;
+
+        padding:
+            14px
+            17px
+            12px;
+    }
+
+    .account-modal-header h2 {
+        font-size: 23px;
+    }
+
+    .account-close-btn {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+
+        font-size: 28px;
+    }
+
+    .account-header-actions {
+        gap: 7px;
+    }
+
+    .btn-archive-account {
+        min-height: 38px;
+
+        padding: 0 10px;
+
+        font-size: 10px;
+    }
+
+    .account-modal-body {
+        padding:
+            15px
+            14px
+            17px;
+
+        gap: 14px;
+    }
+
+    .account-info-section,
+    .account-access-section {
+        padding: 16px;
+    }
+
+    .account-two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .module-grid,
+    .permission-options {
+        grid-template-columns: 1fr;
+    }
+
+    .account-modal-footer,
+    .edit-account-footer {
+        min-height: 72px;
+
+        padding:
+            12px
+            16px
+            15px;
+    }
+
+    .btn-save-account,
+    .btn-update-account {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL HEIGHT SUPPORT
+========================================================= */
+
+@media (max-height: 700px) {
+
+    .account-modal-header {
+        min-height: 68px;
+
+        padding-top: 12px;
+        padding-bottom: 10px;
+    }
+
+    .account-modal-header h2 {
+        font-size: 25px;
+    }
+
+    .account-close-btn {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+
+        font-size: 28px;
+    }
+
+    .account-modal-body {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .account-info-section,
+    .account-access-section {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .account-field {
+        margin-bottom: 10px;
+    }
+
+    .account-input,
+    .email-wrapper,
+    .account-status-btn {
+        height: 42px;
+    }
+
+    .account-modal-footer,
+    .edit-account-footer {
+        min-height: 65px;
+
+        padding-top: 9px;
+        padding-bottom: 11px;
+    }
+
+    .btn-save-account,
+    .btn-update-account {
+        height: 44px;
+    }
+
+}
+
+/* =========================================================
+   LENDING PERMISSION SMOOTH REVEAL
+   ADD + EDIT ACCOUNT
+========================================================= */
+
+#lendingPermissionWrapper,
+#editLendingPermissionWrapper {
+    display: block !important;
+
+    max-height: 0;
+
+    margin-top: 0;
+    padding-top: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    border-top-color: transparent;
+
+    transform: translateY(-6px);
+
+    pointer-events: none;
+
+    transition:
+        max-height 0.35s ease,
+        margin-top 0.35s ease,
+        padding-top 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.35s ease,
+        border-color 0.25s ease;
+}
+
+
+#lendingPermissionWrapper.is-open,
+#editLendingPermissionWrapper.is-open {
+    max-height: 150px;
+
+    margin-top: 14px;
+    padding-top: 14px;
+
+    opacity: 1;
+
+    border-top-color:
+        rgba(255, 253, 212, 0.16);
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+/* =========================================================
+   FINAL ADD ACCOUNT LAYOUT
+   WIDE / COMPACT SALES-LENDING STYLE
+========================================================= */
+
+#addAccountModal .account-modal-body {
+    grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(0, .88fr);
+
+    gap: 16px;
+
+    padding: 16px 22px 15px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   USER INFORMATION GRID
+========================================================= */
+
+#addAccountModal .account-info-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    grid-template-rows:
+        auto
+        auto
+        auto
+        auto
+        auto;
+
+    column-gap: 12px;
+    row-gap: 0;
+
+    align-content: start;
+}
+
+
+/* TITLE */
+
+#addAccountModal
+.account-info-section > h4 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    margin-bottom: 14px;
+}
+
+
+/* NAME */
+
+#addAccountModal
+.account-info-section
+.account-field:has(input[name="name"]) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+/* ROLE */
+
+#addAccountModal
+.account-info-section
+.account-field:has(input[name="role"]) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+/* EMAIL */
+
+#addAccountModal
+.account-info-section
+.account-field:has(#accountEmail) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+
+/* PASSWORD */
+
+#addAccountModal
+.account-info-section
+.account-field:has(#password) {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+
+/* CONFIRM PASSWORD */
+
+#addAccountModal
+.account-info-section
+.account-field:has(#confirmPassword) {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+
+/* ACTIVE NOTE */
+
+#addAccountModal
+.account-active-note {
+    grid-column: 1 / -1;
+    grid-row: 5;
+
+    margin-top: 1px;
+}
+
+
+/* =========================================================
+   COMPACT FIELD SPACING
+========================================================= */
+
+#addAccountModal .account-field {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   ACCESS PANEL
+========================================================= */
+
+#addAccountModal .account-access-section {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+}
+
+
+/* Module cards stay clean 2 x 4 */
+
+#addAccountModal .module-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+
+#addAccountModal .module-option {
+    min-height: 42px;
+}
+
+
+/* =========================================================
+   COMPACT LENDING PERMISSION
+========================================================= */
+
+#addAccountModal
+#lendingPermissionWrapper.is-open {
+    max-height: 125px;
+
+    margin-top: 12px;
+    padding-top: 11px;
+}
+
+
+/* =========================================================
+   COMPACT FOOTER
+========================================================= */
+
+#addAccountModal .account-modal-footer {
+    min-height: 68px;
+
+    padding:
+        10px
+        22px
+        13px;
+}
+
+
+#addAccountModal .btn-save-account {
+    min-width: 175px;
+    height: 45px;
+}
+
+
+/* =========================================================
+   RESPONSIVE FALLBACK
+========================================================= */
+
+@media (max-width: 760px) {
+
+    #addAccountModal .account-modal-body {
+        grid-template-columns: 1fr;
+
+        overflow-y: auto;
+    }
+
+
+    #addAccountModal .account-info-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    #addAccountModal
+    .account-info-section
+    .account-field:has(input[name="name"]),
+
+    #addAccountModal
+    .account-info-section
+    .account-field:has(input[name="role"]),
+
+    #addAccountModal
+    .account-info-section
+    .account-field:has(#accountEmail),
+
+    #addAccountModal
+    .account-info-section
+    .account-field:has(#password),
+
+    #addAccountModal
+    .account-info-section
+    .account-field:has(#confirmPassword),
+
+    #addAccountModal
+    .account-active-note {
+
+        grid-column: 1;
+        grid-row: auto;
+
+    }
+
+}

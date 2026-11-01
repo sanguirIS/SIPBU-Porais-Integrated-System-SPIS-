@@ -1,0 +1,1690 @@
+/* =========================================================
+   SPIS - DRIVER REGISTRY
+========================================================= */
+
+:root {
+    --driver-green: #8ca15b;
+    --driver-green-dark: #6f8347;
+    --driver-cream: #fdfbd4;
+    --driver-white: #ffffff;
+
+    --driver-text: #202020;
+    --driver-muted: #747474;
+
+    --driver-red: #dc5151;
+    --driver-orange: #d9912b;
+    --driver-yellow: #e7ad00;
+
+    --driver-soft-green: #effde9;
+    --driver-soft-yellow: #fff5cc;
+    --driver-soft-orange: #fff0dd;
+    --driver-soft-gray: #ececec;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.driver-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+.driver-title-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.driver-title-area h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 32px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   ADD DRIVER BUTTON
+========================================================= */
+
+.btn-add-driver {
+    min-width: 175px;
+    height: 50px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: var(--driver-cream);
+    background: var(--driver-green);
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.btn-add-driver i {
+    font-size: 16px;
+}
+
+
+.btn-add-driver:hover {
+    color: var(--driver-cream);
+    background: var(--driver-green);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 6px 14px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.driver-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+
+.driver-toolbar-left,
+.driver-toolbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.driver-toolbar-right {
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.driver-back-btn {
+    flex: 0 0 auto;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--driver-cream);
+    background: var(--driver-green);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.driver-back-btn:hover {
+    color: var(--driver-cream);
+    background: var(--driver-green);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.driver-search-box {
+    width: 325px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--driver-white);
+
+    border: none;
+    border-radius: 30px;
+}
+
+
+.driver-search-box i {
+    flex: 0 0 auto;
+
+    width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 8px;
+
+    color: var(--driver-green);
+
+    font-size: 20px;
+}
+
+
+.driver-search-box input {
+    flex: 1;
+
+    min-width: 0;
+    height: 100%;
+
+    padding:
+        0
+        18px
+        0
+        3px;
+
+    color: var(--driver-text);
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+.driver-search-box input::placeholder {
+    color: #8b8b8b;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.driver-filter {
+    height: 52px;
+
+    padding: 0 16px;
+
+    color: var(--driver-text);
+    background: #fff;
+
+    border: none;
+    border-radius: 30px;
+    outline: none;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+
+/* Registry Status */
+
+#driverRegistryStatusFilter {
+    width: 180px;
+}
+
+
+/* Availability */
+
+#driverAvailabilityFilter {
+    width: 165px;
+}
+
+
+/* =========================================================
+   DRIVER LEDGER
+========================================================= */
+
+.driver-ledger {
+    height: calc(100vh - 260px);
+    min-height: 390px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 25px;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--driver-green)
+        var(--driver-cream);
+}
+
+
+.driver-ledger::-webkit-scrollbar {
+    height: 8px;
+}
+
+
+.driver-ledger::-webkit-scrollbar-track {
+    background: var(--driver-cream);
+    border-radius: 20px;
+}
+
+
+.driver-ledger::-webkit-scrollbar-thumb {
+    background: var(--driver-green);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   LEDGER GRID
+========================================================= */
+
+.driver-ledger-header,
+.driver-row {
+    min-width: 1000px;
+
+    display: grid;
+
+    grid-template-columns:
+        120px
+        1.5fr
+        1.1fr
+        1fr
+        1.15fr
+        110px;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.driver-ledger-header {
+    flex: 0 0 auto;
+
+    padding:
+        18px
+        16px;
+
+    color: var(--driver-white);
+    background: var(--driver-green);
+
+    border-radius: 18px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+.driver-ledger-header > div {
+    min-width: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.driver-ledger-body {
+    flex: 1;
+
+    min-height: 0;
+
+    margin-top: 15px;
+
+    padding-right: 4px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--driver-green)
+        transparent;
+}
+
+
+.driver-ledger-body::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.driver-ledger-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.driver-ledger-body::-webkit-scrollbar-thumb {
+    background: var(--driver-green);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   DRIVER ROW
+========================================================= */
+
+.driver-row {
+    position: relative;
+
+    min-height: 88px;
+
+    margin-bottom: 10px;
+
+    padding: 15px 16px;
+
+    align-items: center;
+
+    color: var(--driver-text);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+
+    border-radius: 18px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.driver-row:hover {
+    background: #edfbe3;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.08);
+
+    transform:
+        translateY(2px);
+}
+
+
+.driver-row > div {
+    min-width: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   ID / NAME
+========================================================= */
+
+.driver-id-cell,
+.driver-name-cell {
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.driver-id-cell strong,
+.driver-name-cell strong {
+    color: var(--driver-text);
+
+    font-weight: 700;
+}
+
+
+.driver-id-cell strong {
+    color: black;
+}
+
+
+.driver-muted {
+    color: #9a9a9a;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.driver-badge {
+    min-width: 95px;
+    min-height: 30px;
+
+    padding:
+        6px
+        12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   REGISTRY STATUS
+========================================================= */
+
+.driver-registry-active {
+    color: #44611d;
+
+    background: #e4f0c9;
+
+    border:
+        1px solid
+        #b7cf79;
+}
+
+
+.driver-registry-inactive {
+    color: #646464;
+
+    background: #ededed;
+
+    border:
+        1px solid
+        #cacaca;
+}
+
+
+/* =========================================================
+   AVAILABILITY
+========================================================= */
+
+.driver-availability-available {
+    color: #3f681c;
+
+    background: #e5f4d6;
+
+    border:
+        1px solid
+        #b8d994;
+}
+
+
+.driver-availability-reserved {
+    color: #8a6400;
+
+    background: #fff1bd;
+
+    border:
+        1px solid
+        #e7b527;
+}
+
+
+.driver-availability-assigned {
+    color: #995b18;
+
+    background: #ffe4c0;
+
+    border:
+        1px solid
+        #e6a25a;
+}
+
+
+.driver-availability-inactive {
+    color: #666666;
+
+    background: #ececec;
+
+    border:
+        1px solid
+        #cccccc;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.driver-actions {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.driver-action-btn {
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.driver-edit-btn {
+    color: #ffffff;
+    background: var(--driver-green);
+}
+
+
+.driver-edit-btn:hover {
+    color: #ffffff;
+
+    background:
+        var(--driver-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.13);
+}
+
+
+.driver-archive-btn {
+    color: #ffffff;
+    background: #b15b5b;
+}
+
+
+.driver-archive-btn:hover {
+    color: #ffffff;
+    background: #994949;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.driver-empty-state {
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 35px;
+
+    color: var(--driver-muted);
+
+    text-align: center;
+}
+
+
+.driver-empty-state i {
+    margin-bottom: 6px;
+
+    color: var(--driver-green);
+
+    font-size: 42px;
+}
+
+
+.driver-empty-state strong {
+    color: #404040;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.driver-empty-state span {
+    max-width: 370px;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+body:has(#addDriverModal.show)
+.modal-backdrop.show,
+
+body:has(#editDriverModal.show)
+.modal-backdrop.show {
+
+    background:
+        rgba(
+            23,
+            27,
+            19,
+            0.58
+        );
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL POSITION
+========================================================= */
+
+#addDriverModal,
+#editDriverModal {
+    padding: 18px !important;
+}
+
+
+#addDriverModal.show,
+#editDriverModal.show {
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+#addDriverModal .modal-dialog,
+#editDriverModal .modal-dialog {
+    width:
+        min(
+            850px,
+            calc(100vw - 36px)
+        );
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   MODAL WINDOW
+========================================================= */
+
+.driver-modal-window {
+    max-height:
+        calc(
+            100vh - 36px
+        );
+
+    overflow: hidden;
+
+    color: var(--driver-cream);
+
+    background:
+        rgba(
+            75,
+            77,
+            70,
+            0.90
+        );
+
+    border:
+        5px solid
+        var(--driver-green);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 24px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.38
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+.driver-modal-window form {
+    min-height: 0;
+
+    max-height:
+        calc(
+            100vh - 46px
+        );
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.driver-modal-header {
+    flex: 0 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding:
+        24px
+        28px
+        17px;
+}
+
+
+.driver-modal-title-group {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+
+.driver-modal-title-group h1 {
+    margin: 0;
+
+    color: var(--driver-cream);
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            32px
+        );
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   HEADER BADGE
+========================================================= */
+
+.driver-header-badge {
+    min-height: 31px;
+
+    padding:
+        6px
+        12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #46601f;
+
+    background: #e5f0c9;
+
+    border:
+        1px solid
+        #b7cf79;
+
+    border-radius: 18px;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 0.25px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.driver-close-btn {
+    flex: 0 0 auto;
+
+    width: 49px;
+    height: 49px;
+
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #1c1c1c;
+    background: var(--driver-cream);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 34px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.driver-close-btn:hover {
+    color: #1c1c1c;
+    background: var(--driver-cream);
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 6px 15px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.driver-modal-window
+> form
+> hr {
+
+    flex: 0 0 auto;
+
+    width: auto;
+    height: 1px;
+
+    margin:
+        0
+        28px;
+
+    color: transparent;
+
+    background:
+        rgba(
+            255,
+            253,
+            212,
+            0.25
+        );
+
+    border: none;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.driver-modal-body {
+    min-height: 0;
+
+    padding:
+        20px
+        28px
+        22px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--driver-green)
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+
+.driver-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.driver-modal-body::-webkit-scrollbar-track {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-radius: 10px;
+}
+
+
+.driver-modal-body::-webkit-scrollbar-thumb {
+    background: var(--driver-green);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MODAL SECTION
+========================================================= */
+
+.driver-section {
+    min-width: 0;
+
+    margin-bottom: 18px;
+
+    padding: 18px;
+
+    background:
+        rgba(
+            255,
+            253,
+            212,
+            0.09
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            253,
+            212,
+            0.22
+        );
+
+    border-radius: 17px;
+}
+
+
+.driver-section:last-child {
+    margin-bottom: 0;
+}
+
+
+.driver-section-soft {
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            0.11
+        );
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.driver-section-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-bottom: 16px;
+}
+
+
+.driver-section-heading > i {
+    flex: 0 0 auto;
+
+    width: 37px;
+    height: 37px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--driver-cream);
+    background: var(--driver-green);
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+
+.driver-section-heading h2 {
+    margin:
+        1px
+        0
+        3px;
+
+    color: var(--driver-cream);
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.driver-section-heading p {
+    margin: 0;
+
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            0.72
+        );
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.driver-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(
+            0,
+            1.3fr
+        )
+        minmax(
+            0,
+            1fr
+        );
+
+    gap: 14px;
+}
+
+
+.driver-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.driver-field-full {
+    grid-column:
+        1
+        /
+        -1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.driver-field label {
+    margin-bottom: 7px;
+
+    color: var(--driver-cream);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+.driver-field label span {
+    color: #ff7777;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.driver-input {
+    width: 100%;
+    height: 47px;
+
+    padding:
+        0
+        14px;
+
+    color: #26271f;
+
+    background:
+        var(--driver-cream);
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.driver-input::placeholder {
+    color: #969684;
+}
+
+
+.driver-input:focus {
+    background: #fffedc;
+
+    border-color:
+        var(--driver-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            140,
+            161,
+            91,
+            0.16
+        );
+}
+
+
+select.driver-input {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FIELD NOTE
+========================================================= */
+
+.driver-field-note {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            0.68
+        );
+
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.driver-modal-footer {
+    flex: 0 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        15px
+        28px
+        20px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            253,
+            212,
+            0.18
+        );
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.driver-cancel-btn {
+    min-width: 135px;
+    height: 45px;
+
+    padding:
+        0
+        19px;
+
+    color: var(--driver-cream);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            253,
+            212,
+            0.30
+        );
+
+    border-radius: 11px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.driver-cancel-btn:hover {
+    color: var(--driver-cream);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.driver-save-btn {
+    min-width: 155px;
+    height: 45px;
+
+    padding:
+        0
+        20px;
+
+    color: var(--driver-cream);
+
+    background: var(--driver-green);
+
+    border: none;
+
+    border-radius: 11px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.driver-save-btn:hover {
+    color: var(--driver-cream);
+
+    background: var(--driver-green);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 5px 13px
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (
+    max-width: 1000px
+) {
+
+    .driver-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .driver-toolbar-left,
+    .driver-toolbar-right {
+        width: 100%;
+    }
+
+
+    .driver-toolbar-right {
+        justify-content: flex-start;
+    }
+
+
+    .driver-search-box {
+        flex: 1;
+        width: auto;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL
+========================================================= */
+
+@media (
+    max-width: 700px
+) {
+
+    .driver-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .btn-add-driver {
+        width: 100%;
+    }
+
+
+    .driver-toolbar-left,
+    .driver-toolbar-right {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+
+    .driver-back-btn {
+        width: 52px;
+    }
+
+
+    .driver-search-box,
+    .driver-filter {
+        width: 100%;
+    }
+
+
+    #addDriverModal,
+    #editDriverModal {
+        padding:
+            10px
+            !important;
+    }
+
+
+    #addDriverModal .modal-dialog,
+    #editDriverModal .modal-dialog {
+        width:
+            calc(
+                100vw - 20px
+            );
+
+        max-width: none;
+    }
+
+
+    .driver-modal-window {
+        max-height:
+            calc(
+                100vh - 20px
+            );
+
+        border-width: 4px;
+
+        border-radius: 21px;
+    }
+
+
+    .driver-modal-window form {
+        max-height:
+            calc(
+                100vh - 28px
+            );
+    }
+
+
+    .driver-modal-header {
+        padding:
+            20px
+            20px
+            14px;
+    }
+
+
+    .driver-modal-window
+    > form
+    > hr {
+
+        margin:
+            0
+            20px;
+    }
+
+
+    .driver-modal-body {
+        padding:
+            17px
+            20px
+            20px;
+    }
+
+
+    .driver-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .driver-field-full {
+        grid-column: auto;
+    }
+
+
+    .driver-modal-footer {
+        padding:
+            14px
+            20px
+            17px;
+
+        flex-direction:
+            column-reverse;
+    }
+
+
+    .driver-cancel-btn,
+    .driver-save-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL
+========================================================= */
+
+@media (
+    max-width: 500px
+) {
+
+    .driver-title-area h2 {
+        font-size: 25px;
+    }
+
+
+    .driver-modal-header {
+        padding-top: 16px;
+        padding-bottom: 12px;
+    }
+
+
+    .driver-modal-title-group {
+        gap: 8px;
+    }
+
+
+    .driver-modal-title-group h1 {
+        font-size: 22px;
+    }
+
+
+    .driver-close-btn {
+        width: 43px;
+        height: 43px;
+
+        font-size: 30px;
+    }
+
+
+    .driver-section {
+        padding: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   SHORT SCREENS
+========================================================= */
+
+@media (
+    max-height: 720px
+) {
+
+    .driver-modal-header {
+        padding-top: 16px;
+        padding-bottom: 12px;
+    }
+
+
+    .driver-modal-body {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+
+    .driver-section {
+        padding: 14px;
+    }
+
+
+    .driver-modal-footer {
+        padding-top: 11px;
+        padding-bottom: 13px;
+    }
+
+}

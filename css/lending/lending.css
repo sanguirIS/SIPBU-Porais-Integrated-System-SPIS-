@@ -1,0 +1,536 @@
+/* =========================================================
+   LENDING PAGE
+========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.page-header h2 {
+    margin: 0;
+    color: #111111;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.page-header p {
+    margin: 7px 0 0;
+    color: #747474;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LENDING CARDS
+========================================================= */
+
+.lending-container {
+    width: 100%;
+    min-height: calc(100vh - 235px);
+    padding: 50px 30px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(290px, 360px));
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    box-sizing: border-box;
+}
+
+.lending-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 345px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #fffed6;
+    background:
+        linear-gradient(
+            145deg,
+            #96ad62 0%,
+            #80974d 100%
+        );
+
+    border: 2px solid rgba(255, 254, 214, 0.35);
+    border-radius: 28px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 24px rgba(53, 83, 10, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.lending-card::before {
+    content: "";
+
+    position: absolute;
+    top: -95px;
+    right: -75px;
+
+    width: 215px;
+    height: 215px;
+
+    background:
+        rgba(255, 254, 214, 0.09);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.lending-card::after {
+    content: "";
+
+    position: absolute;
+    bottom: -105px;
+    left: -80px;
+
+    width: 230px;
+    height: 230px;
+
+    background:
+        rgba(53, 83, 10, 0.1);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.lending-card:hover,
+.lending-card:focus-visible {
+    color: #fffed6;
+
+    border-color:
+        rgba(255, 254, 214, 0.72);
+
+    box-shadow:
+        0 20px 38px rgba(53, 83, 10, 0.24);
+
+    transform: translateY(-7px);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   YELLOW PENDING INDICATOR
+========================================================= */
+
+.lending-card-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.lending-pending-badge {
+    min-height: 31px;
+    padding: 6px 12px 6px 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: #8a6400;
+    background: #fff1bd;
+    border: 1px solid #e7b527;
+    border-radius: 18px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.25px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(231, 181, 39, 0.16);
+}
+
+.lending-pending-signal {
+    width: 11px;
+    height: 11px;
+    flex: 0 0 11px;
+
+    display: block;
+
+    background: #e7ad00;
+    border: 2px solid #fff7d7;
+    border-radius: 50%;
+
+    box-sizing: border-box;
+
+    animation:
+        lendingPendingPulse
+        1.45s
+        ease-out
+        infinite;
+}
+
+/* Patayin ang lumang pseudo pulse kung mayroon pa. */
+.lending-pending-signal::before,
+.lending-pending-signal::after {
+    content: none !important;
+    display: none !important;
+}
+
+@keyframes lendingPendingPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(231, 173, 0, 0.62);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 8px
+            rgba(231, 173, 0, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(231, 173, 0, 0);
+    }
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.lending-card-main {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.lending-card:hover .lending-card-main,
+.lending-card:focus-visible .lending-card-main {
+    transform: translateY(-25px);
+}
+
+.lending-icon-box {
+    width: 118px;
+    height: 118px;
+    margin-bottom: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fffed6;
+    background:
+        rgba(255, 254, 214, 0.12);
+
+    border: 1px solid
+        rgba(255, 254, 214, 0.27);
+
+    border-radius: 30px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.lending-card:hover .lending-icon-box,
+.lending-card:focus-visible .lending-icon-box {
+    background:
+        rgba(255, 254, 214, 0.2);
+
+    transform: scale(1.05);
+}
+
+.lending-icon {
+    color: #fffed6;
+    font-size: 62px;
+    line-height: 1;
+}
+
+.lending-card h3 {
+    margin: 0;
+
+    color: #fffed6;
+
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.lending-card-main p {
+    max-width: 245px;
+    margin: 10px 0 0;
+
+    color: rgba(255, 254, 214, 0.88);
+
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   HOVER HINT
+========================================================= */
+
+.lending-card-hint {
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    left: 20px;
+    z-index: 4;
+
+    min-height: 61px;
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #35530a;
+    background: rgba(255, 254, 214, 0.96);
+
+    border-radius: 16px;
+
+    opacity: 0;
+    transform: translateY(18px);
+
+    box-shadow:
+        0 8px 20px rgba(53, 83, 10, 0.18);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.lending-card:hover .lending-card-hint,
+.lending-card:focus-visible .lending-card-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lending-hint-icon {
+    flex: 0 0 auto;
+
+    width: 37px;
+    height: 37px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background: #8ca15b;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+}
+
+.lending-hint-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.lending-hint-text strong {
+    color: #35530a;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.lending-hint-text small {
+    margin-top: 3px;
+
+    color: #6e765f;
+
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .lending-container {
+        gap: 35px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    .lending-container {
+        grid-template-columns:
+            minmax(280px, 380px);
+
+        align-items: start;
+
+        gap: 28px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .lending-card {
+        min-height: 320px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lending-card,
+    .lending-card-main,
+    .lending-icon-box,
+    .lending-card-hint,
+    .lending-pending-signal::before {
+        animation: none;
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   LENDING OVERDUE INDICATOR
+========================================================= */
+
+.lending-card-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.lending-overdue-badge {
+    min-height: 31px;
+    padding: 6px 12px 6px 7px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: #b42323;
+    background: #ffe1e1;
+    border: 1px solid rgba(224, 74, 74, 0.32);
+    border-radius: 18px;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.25px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(224, 74, 74, 0.16);
+}
+
+.lending-overdue-signal {
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background: #e94f4f;
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+
+    animation:
+        lendingOverdueBeat
+        1.25s
+        ease-in-out
+        infinite;
+}
+
+.lending-overdue-signal::before {
+    content: "";
+
+    position: absolute;
+    inset: -4px;
+
+    border: 2px solid
+        rgba(233, 79, 79, 0.48);
+    border-radius: 50%;
+
+    animation:
+        lendingOverdueRipple
+        1.25s
+        ease-out
+        infinite;
+}
+
+@keyframes lendingOverdueBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.13);
+    }
+
+}
+
+@keyframes lendingOverdueRipple {
+
+    0% {
+        opacity: 0.85;
+        transform: scale(0.78);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+
+}

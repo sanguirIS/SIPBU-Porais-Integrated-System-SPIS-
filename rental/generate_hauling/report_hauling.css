@@ -1,0 +1,1856 @@
+/* =========================================================
+   GENERATE REPORT BUTTON
+========================================================= */
+
+.btn-generate-hauling-report{
+
+    background:#8CA15B;
+    color:#FDFBD4;
+
+    border:none;
+    border-radius:8px;
+
+    padding:10px 18px;
+
+    font-weight:600;
+
+    transition:.3s;
+    
+    min-height:50px;
+}
+
+
+.btn-generate-hauling-report:hover{
+
+    background:#75864C;
+
+    transform:scale(1.05);
+}
+
+
+.btn-generate-hauling-report i{
+
+    margin-right:6px;
+}
+
+
+/* =========================================================
+   BLURRED BACKGROUND BEHIND REPORT MODAL
+========================================================= */
+
+body:has(#generateHaulingReportModal.show)
+.modal-backdrop.show{
+
+    background:
+        rgba(
+            23,
+            27,
+            19,
+            0.58
+        );
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    backdrop-filter:
+        blur(8px);
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   GENERATE REPORT MODAL
+========================================================= */
+
+.report-hauling-window{
+
+    background:
+        rgba(
+            82,
+            81,
+            77,
+            0.88
+        );
+
+    border:
+        5px solid
+        #8CA15B;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(
+            0,
+            0,
+            0,
+            0.38
+        );
+
+    overflow:visible;
+}
+
+
+.report-hauling-header{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+
+.report-hauling-header h1{
+
+    color:#FDFBD4;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin:0;
+}
+
+
+.report-hauling-close-btn{
+
+    width:60px;
+    height:60px;
+
+    padding:0;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FDFBD4;
+
+    color:#222;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:38px;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        background .25s,
+        color .25s,
+        transform .25s,
+        box-shadow .25s;
+}
+
+
+.report-hauling-close-btn:hover{
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.report-hauling-body{
+
+    background:transparent;
+
+    padding:0;
+
+    overflow:visible;
+}
+
+
+.report-hauling-body label{
+
+    display:block;
+
+    font-size:16px;
+
+    color:#FDFBD4;
+
+    margin-bottom:10px;
+}
+
+
+.report-hauling-body > hr{
+
+    height:1px;
+
+    margin:
+        0 0 20px;
+
+    border:0;
+
+    background:
+        rgba(
+            255,
+            253,
+            212,
+            0.25
+        );
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.report-hauling-input{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:#FDFBD4;
+
+    color:#222;
+
+    padding:
+        0 18px;
+
+    font-size:18px;
+
+    box-shadow:none;
+}
+
+
+.report-hauling-input:focus{
+
+    background:#FDFBD4;
+
+    outline:
+        2px solid
+        rgba(
+            140,
+            161,
+            91,
+            0.65
+        );
+
+    box-shadow:none;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.generate-hauling-dropdown{
+
+    position:relative;
+}
+
+
+.generate-hauling-dropdown-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:#FDFBD4;
+
+    color:#222;
+
+    padding:
+        0 20px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s,
+        box-shadow .2s;
+}
+
+
+.generate-hauling-dropdown-btn:hover{
+
+    background:#F8F4C5;
+}
+
+
+.generate-hauling-dropdown-btn:focus{
+
+    background:#FDFBD4;
+
+    outline:
+        2px solid
+        rgba(
+            140,
+            161,
+            91,
+            0.65
+        );
+
+    box-shadow:none;
+}
+
+
+.generate-hauling-dropdown-btn i{
+
+    flex:
+        0 0 auto;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.generate-hauling-dropdown-btn[aria-expanded="true"] i{
+
+    transform:
+        rotate(180deg);
+}
+
+
+.generate-hauling-dropdown-menu{
+
+    position:absolute;
+
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    margin-top:8px;
+
+    display:none;
+
+    z-index:99999;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 12px 24px
+        rgba(
+            0,
+            0,
+            0,
+            .15
+        );
+}
+
+
+.generate-hauling-dropdown-menu.show{
+
+    display:block;
+}
+
+
+.generate-hauling-dropdown-item{
+
+    padding:
+        15px 20px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s;
+}
+
+
+.generate-hauling-dropdown-item:hover{
+
+    background:#ECE6C7;
+}
+
+
+/* =========================================================
+   PREVIEW BUTTON
+========================================================= */
+
+.report-hauling-preview-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:30px;
+}
+
+
+.report-hauling-preview-btn{
+
+    width:210px;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        background .25s,
+        transform .25s,
+        box-shadow .25s;
+}
+
+
+.report-hauling-preview-btn:hover{
+
+    background:#6E8342;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+}
+
+
+#generateHaulingCustomDateFields{
+
+    font-size:18px;
+}
+
+
+/* =========================================================
+   ACTUAL HAULING REPORT
+
+   Simple SPIS report style.
+========================================================= */
+
+.hauling-report-document{
+
+    margin:0;
+
+    padding:
+        38px 46px;
+
+    background:#FFFFFF;
+
+    color:#111;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:14px;
+
+    -webkit-print-color-adjust:
+        exact;
+
+    print-color-adjust:
+        exact;
+}
+
+
+.hauling-report-document *{
+
+    box-sizing:border-box;
+}
+
+
+.hauling-report-content{
+
+    width:100%;
+
+    margin:
+        0 auto;
+}
+
+
+/* =========================================================
+   REPORT HEADER
+========================================================= */
+
+.hauling-report-document-header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+}
+
+
+.hauling-report-document-logo{
+
+    display:block;
+
+    width:80px;
+
+    height:auto;
+
+    margin:
+        0 auto 8px;
+}
+
+
+.hauling-report-document-header h1{
+
+    margin:
+        0 0 5px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#000;
+}
+
+
+.hauling-report-document-header h2{
+
+    margin:
+        0 0 8px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#555;
+}
+
+
+.hauling-report-document-header p{
+
+    margin:0;
+
+    color:#666;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   REPORT BUTTONS
+========================================================= */
+
+.hauling-report-document-actions{
+
+    display:flex;
+
+    gap:7px;
+
+    margin:
+        18px 0;
+}
+
+
+.hauling-report-print-button,
+.hauling-report-close-button{
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:
+        10px 16px;
+
+    color:#FFFFFF;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+.hauling-report-print-button{
+
+    background:#8CA15B;
+}
+
+
+.hauling-report-print-button:hover{
+
+    background:#75864C;
+}
+
+
+.hauling-report-close-button{
+
+    background:#D9534F;
+}
+
+
+.hauling-report-close-button:hover{
+
+    background:#C74440;
+}
+
+
+/* =========================================================
+   REPORT INFORMATION
+========================================================= */
+
+.hauling-report-document-info{
+
+    margin:
+        0 0 18px;
+}
+
+
+.hauling-report-document-info p{
+
+    margin:
+        0 0 10px;
+
+    line-height:1.3;
+}
+
+
+.hauling-report-document-info hr{
+
+    margin:
+        14px 0;
+
+    border:0;
+
+    border-top:
+        1px solid
+        #B8B8B8;
+}
+
+
+.hauling-report-divider{
+
+    margin:
+        12px 0 18px;
+
+    border:0;
+
+    border-top:
+        1px solid
+        #B8B8B8;
+}
+
+
+/* =========================================================
+   REPORT TABLE
+========================================================= */
+
+.hauling-report-table-container{
+
+    width:100%;
+
+    overflow-x:auto;
+}
+
+
+.hauling-report-document-table{
+
+    width:100%;
+
+    border-collapse:
+        collapse;
+
+    table-layout:
+        fixed;
+
+    font-size:11px;
+}
+
+
+.hauling-report-document-table thead{
+
+    display:
+        table-header-group;
+}
+
+
+.hauling-report-document-table th{
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    border:
+        1px solid
+        #222;
+
+    padding:
+        9px 5px;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    line-height:1.15;
+
+    font-weight:700;
+}
+
+
+.hauling-report-document-table td{
+
+    border:
+        1px solid
+        #444;
+
+    padding:
+        8px 6px;
+
+    vertical-align:middle;
+
+    line-height:1.2;
+
+    overflow-wrap:anywhere;
+
+    word-break:normal;
+}
+
+
+.hauling-report-document-table tbody tr{
+
+    break-inside:
+        avoid;
+
+    page-break-inside:
+        avoid;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+========================================================= */
+
+.hauling-report-document-table th:nth-child(1),
+.hauling-report-document-table td:nth-child(1){
+
+    width:11%;
+}
+
+
+.hauling-report-document-table th:nth-child(2),
+.hauling-report-document-table td:nth-child(2){
+
+    width:12%;
+}
+
+
+.hauling-report-document-table th:nth-child(3),
+.hauling-report-document-table td:nth-child(3){
+
+    width:7%;
+}
+
+
+.hauling-report-document-table th:nth-child(4),
+.hauling-report-document-table td:nth-child(4){
+
+    width:10%;
+}
+
+
+.hauling-report-document-table th:nth-child(5),
+.hauling-report-document-table td:nth-child(5){
+
+    width:6%;
+}
+
+
+.hauling-report-document-table th:nth-child(6),
+.hauling-report-document-table td:nth-child(6){
+
+    width:7%;
+}
+
+
+.hauling-report-document-table th:nth-child(7),
+.hauling-report-document-table td:nth-child(7){
+
+    width:6%;
+}
+
+
+.hauling-report-document-table th:nth-child(8),
+.hauling-report-document-table td:nth-child(8){
+
+    width:7%;
+}
+
+
+.hauling-report-document-table th:nth-child(9),
+.hauling-report-document-table td:nth-child(9){
+
+    width:7%;
+}
+
+
+.hauling-report-document-table th:nth-child(10),
+.hauling-report-document-table td:nth-child(10){
+
+    width:8%;
+}
+
+
+.hauling-report-document-table th:nth-child(11),
+.hauling-report-document-table td:nth-child(11){
+
+    width:6%;
+}
+
+
+.hauling-report-document-table th:nth-child(12),
+.hauling-report-document-table td:nth-child(12){
+
+    width:6%;
+}
+
+
+.hauling-report-document-table th:nth-child(13),
+.hauling-report-document-table td:nth-child(13){
+
+    width:7%;
+}
+
+
+/* =========================================================
+   TABLE ALIGNMENT
+========================================================= */
+
+.hauling-report-document-table td:nth-child(1),
+.hauling-report-document-table td:nth-child(2),
+.hauling-report-document-table td:nth-child(3),
+.hauling-report-document-table td:nth-child(5),
+.hauling-report-document-table td:nth-child(7),
+.hauling-report-document-table td:nth-child(8),
+.hauling-report-document-table td:nth-child(9),
+.hauling-report-document-table td:nth-child(10),
+.hauling-report-document-table td:nth-child(11),
+.hauling-report-document-table td:nth-child(12),
+.hauling-report-document-table td:nth-child(13){
+
+    text-align:center;
+}
+
+
+.hauling-report-money{
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   MAINTENANCE LABEL
+========================================================= */
+
+.hauling-report-maintenance-label{
+
+    width:fit-content;
+
+    margin:
+        4px auto 0;
+
+    padding:
+        3px 6px;
+
+    border:
+        1px solid
+        #E59D9D;
+
+    border-radius:10px;
+
+    background:#FFE8E8;
+
+    color:#C62828;
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   EMPTY RESULT
+========================================================= */
+
+.hauling-report-no-records{
+
+    padding:
+        24px !important;
+
+    text-align:
+        center !important;
+
+    color:#666;
+}
+
+
+/* =========================================================
+   SUMMARY REPORT
+========================================================= */
+
+.hauling-report-document-summary{
+
+    margin:
+        0 0 18px;
+}
+
+
+.hauling-report-document-summary h3{
+
+    margin:
+        0 0 14px;
+
+    font-size:21px;
+
+    font-weight:700;
+}
+
+
+.hauling-report-document-summary p{
+
+    margin:
+        0 0 9px;
+}
+
+
+/* =========================================================
+   PREPARED BY
+========================================================= */
+
+.hauling-report-document-prepared{
+
+    width:280px;
+
+    margin:
+        55px 0 0 auto;
+
+    text-align:center;
+}
+
+
+.hauling-report-document-prepared p{
+
+    margin:
+        0 0 5px;
+}
+
+
+.hauling-report-signature-space{
+
+    height:35px;
+}
+
+
+.hauling-report-document-prepared > strong{
+
+    display:block;
+
+    padding-top:6px;
+}
+
+
+.hauling-report-document-prepared span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#555;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   PRINT
+
+   NO ORIENTATION IS FORCED.
+   User may select Portrait or Landscape.
+========================================================= */
+
+@page{
+
+    margin:7mm;
+}
+
+
+@media print{
+
+    .hauling-report-document{
+
+        margin:0;
+
+        padding:0;
+
+        background:#FFFFFF;
+
+        font-size:10pt;
+    }
+
+
+    .hauling-report-content{
+
+        width:100%;
+
+        max-width:none;
+    }
+
+
+    /* =============================================
+       HIDE SCREEN BUTTONS
+    ============================================= */
+
+    .hauling-report-document-actions{
+
+        display:none !important;
+    }
+
+
+    /* =============================================
+       HEADER
+    ============================================= */
+
+    .hauling-report-document-header{
+
+        margin-bottom:12px;
+    }
+
+
+    .hauling-report-document-logo{
+
+        width:60px;
+
+        margin:
+            0 auto 5px;
+    }
+
+
+    .hauling-report-document-header h1{
+
+        margin:
+            0 0 3px;
+
+        font-size:17pt;
+
+        line-height:1.1;
+    }
+
+
+    .hauling-report-document-header h2{
+
+        margin:
+            0 0 4px;
+
+        font-size:13pt;
+
+        line-height:1.1;
+    }
+
+
+    .hauling-report-document-header p{
+
+        margin:0;
+
+        font-size:8.5pt;
+    }
+
+
+    /* =============================================
+       REPORT INFORMATION
+    ============================================= */
+
+    .hauling-report-document-info{
+
+        margin-bottom:10px;
+
+        font-size:8.5pt;
+    }
+
+
+    .hauling-report-document-info p{
+
+        margin:
+            0 0 4px;
+
+        line-height:1.25;
+    }
+
+
+    .hauling-report-document-info hr{
+
+        margin:
+            7px 0;
+
+        border-top:
+            1px solid
+            #999;
+    }
+
+
+    .hauling-report-divider{
+
+        margin:
+            8px 0 10px;
+    }
+
+
+    /* =============================================
+       TABLE
+    ============================================= */
+
+    .hauling-report-table-container{
+
+        width:100%;
+
+        overflow:visible;
+    }
+
+
+    .hauling-report-document-table{
+
+        width:100%;
+
+        table-layout:fixed;
+
+        border-collapse:collapse;
+    }
+
+
+    .hauling-report-document-table th{
+
+        padding:
+            5px 3px;
+
+        font-weight:700;
+
+        line-height:1.15;
+
+        vertical-align:middle;
+    }
+
+
+    .hauling-report-document-table td{
+
+        padding:
+            5px 3px;
+
+        line-height:1.2;
+
+        vertical-align:middle;
+
+        overflow-wrap:anywhere;
+
+        word-break:normal;
+    }
+
+
+    .hauling-report-document-table tbody tr{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+
+    .hauling-report-money{
+
+        white-space:normal;
+    }
+
+
+    /* =============================================
+       SUMMARY
+    ============================================= */
+
+    .hauling-report-document-summary{
+
+        margin:
+            0 0 10px;
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+
+    .hauling-report-document-summary h3{
+
+        margin:
+            0 0 8px;
+
+        font-size:13pt;
+    }
+
+
+    .hauling-report-document-summary p{
+
+        margin:
+            0 0 4px;
+
+        font-size:9pt;
+    }
+
+
+    /* =============================================
+       PREPARED BY
+    ============================================= */
+
+    .hauling-report-document-prepared{
+
+        width:230px;
+
+        margin:
+            18px 0 0 auto;
+
+        font-size:9pt;
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+
+    .hauling-report-signature-space{
+
+        height:18px;
+    }
+
+
+    .hauling-report-document-prepared span{
+
+        font-size:8pt;
+    }
+
+}
+
+
+/* =========================================================
+   PORTRAIT PRINT
+
+   Does NOT force Portrait.
+   Only changes sizing when Portrait is selected.
+========================================================= */
+
+@media print and (orientation:portrait){
+
+    .hauling-report-document-table{
+
+        font-size:7.2pt;
+    }
+
+
+    .hauling-report-document-table th{
+
+        padding:
+            4px 2px;
+
+        font-size:6.8pt;
+    }
+
+
+    .hauling-report-document-table td{
+
+        padding:
+            4px 2px;
+
+        font-size:7.2pt;
+    }
+
+
+    .hauling-report-maintenance-label{
+
+        padding:
+            2px 3px;
+
+        font-size:6pt;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PRINT
+
+   Does NOT force Landscape.
+   Only changes sizing when Landscape is selected.
+========================================================= */
+
+@media print and (orientation:landscape){
+
+    .hauling-report-document-table{
+
+        font-size:8.5pt;
+    }
+
+
+    .hauling-report-document-table th{
+
+        padding:
+            6px 4px;
+
+        font-size:8pt;
+    }
+
+
+    .hauling-report-document-table td{
+
+        padding:
+            6px 4px;
+
+        font-size:8.5pt;
+    }
+
+
+    .hauling-report-maintenance-label{
+
+        padding:
+            2px 4px;
+
+        font-size:7pt;
+    }
+
+}
+
+
+/* =========================================================
+   MODAL RESPONSIVE
+========================================================= */
+
+@media(
+    max-width:767px
+){
+
+    .report-hauling-window{
+
+        padding:20px;
+    }
+
+
+    .report-hauling-header h1{
+
+        font-size:28px;
+    }
+
+
+    .report-hauling-close-btn{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:32px;
+    }
+
+
+    .report-hauling-input,
+    .generate-hauling-dropdown-btn{
+
+        height:54px;
+
+        font-size:16px;
+    }
+
+
+    .generate-hauling-dropdown-item{
+
+        font-size:16px;
+    }
+
+
+    .report-hauling-preview-btn{
+
+        width:100%;
+
+        max-width:210px;
+
+        height:58px;
+
+        font-size:21px;
+    }
+
+}
+
+/* =========================================================
+   FINAL HAULING REPORT TABLE
+   13 COLUMNS
+========================================================= */
+
+.hauling-report-document-table{
+    width:100%;
+    table-layout:fixed;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+========================================================= */
+
+.hauling-report-document-table th:nth-child(1),
+.hauling-report-document-table td:nth-child(1){
+    width:10%;
+}
+
+.hauling-report-document-table th:nth-child(2),
+.hauling-report-document-table td:nth-child(2){
+    width:10%;
+}
+
+.hauling-report-document-table th:nth-child(3),
+.hauling-report-document-table td:nth-child(3){
+    width:6%;
+}
+
+.hauling-report-document-table th:nth-child(4),
+.hauling-report-document-table td:nth-child(4){
+    width:10%;
+}
+
+.hauling-report-document-table th:nth-child(5),
+.hauling-report-document-table td:nth-child(5){
+    width:7%;
+}
+
+.hauling-report-document-table th:nth-child(6),
+.hauling-report-document-table td:nth-child(6){
+    width:6%;
+}
+
+.hauling-report-document-table th:nth-child(7),
+.hauling-report-document-table td:nth-child(7){
+    width:6%;
+}
+
+.hauling-report-document-table th:nth-child(8),
+.hauling-report-document-table td:nth-child(8){
+    width:7%;
+}
+
+.hauling-report-document-table th:nth-child(9),
+.hauling-report-document-table td:nth-child(9){
+    width:8%;
+}
+
+.hauling-report-document-table th:nth-child(10),
+.hauling-report-document-table td:nth-child(10){
+    width:8%;
+}
+
+.hauling-report-document-table th:nth-child(11),
+.hauling-report-document-table td:nth-child(11){
+    width:6%;
+}
+
+.hauling-report-document-table th:nth-child(12),
+.hauling-report-document-table td:nth-child(12){
+    width:6%;
+}
+
+.hauling-report-document-table th:nth-child(13),
+.hauling-report-document-table td:nth-child(13){
+    width:10%;
+}
+
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.hauling-report-document-table td:nth-child(1),
+.hauling-report-document-table td:nth-child(2),
+.hauling-report-document-table td:nth-child(3),
+.hauling-report-document-table td:nth-child(4),
+.hauling-report-document-table td:nth-child(5),
+.hauling-report-document-table td:nth-child(6),
+.hauling-report-document-table td:nth-child(7),
+.hauling-report-document-table td:nth-child(8),
+.hauling-report-document-table td:nth-child(9),
+.hauling-report-document-table td:nth-child(10),
+.hauling-report-document-table td:nth-child(11),
+.hauling-report-document-table td:nth-child(12),
+.hauling-report-document-table td:nth-child(13){
+    text-align:center;
+}
+
+.hauling-report-document-table td:nth-child(11),
+.hauling-report-document-table td:nth-child(12),
+.hauling-report-document-table td:nth-child(13){
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   ASSIGNMENT
+========================================================= */
+
+.hauling-report-assignment{
+    text-align:center;
+}
+
+.hauling-report-assignment strong{
+    display:block;
+
+    margin:0;
+
+    font-weight:700;
+    line-height:1.15;
+
+    white-space:nowrap;
+}
+
+.hauling-report-assignment span{
+    display:block;
+
+    margin-top:3px;
+
+    line-height:1.2;
+
+    overflow-wrap:anywhere;
+    word-break:normal;
+}
+
+
+/* =========================================================
+   MONEY
+========================================================= */
+
+.hauling-report-money{
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    .hauling-report-document-table th{
+        padding:
+            5px 2px;
+    }
+
+    .hauling-report-document-table td{
+        padding:
+            5px 3px;
+
+        overflow-wrap:anywhere;
+        word-break:normal;
+    }
+
+    .hauling-report-money{
+        white-space:nowrap !important;
+    }
+
+    .hauling-report-assignment strong{
+        white-space:nowrap;
+    }
+
+}
+
+
+/* =========================================================
+   PORTRAIT
+========================================================= */
+
+@media print and (orientation:portrait){
+
+    .hauling-report-document-table{
+        width:100%;
+        table-layout:fixed;
+        font-size:7.6pt;
+    }
+
+
+    .hauling-report-document-table th{
+        padding:
+            4px 2px;
+
+        font-size:7pt;
+        line-height:1.12;
+
+        white-space:normal;
+        word-break:normal;
+        overflow-wrap:normal;
+    }
+
+
+    .hauling-report-document-table td{
+        padding:
+            5px 2px;
+
+        font-size:7.6pt;
+        line-height:1.18;
+    }
+
+
+    /* =============================================
+       TRANSACTION ID
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(1),
+    .hauling-report-document-table td:nth-child(1){
+        width:10%;
+    }
+
+
+    /* =============================================
+       CUSTOMER
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(2),
+    .hauling-report-document-table td:nth-child(2){
+        width:8%;
+    }
+
+
+    /* =============================================
+       AFFILIATE
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(3),
+    .hauling-report-document-table td:nth-child(3){
+        width:6%;
+    }
+
+
+    /* =============================================
+       PRIMARY ASSIGNMENT
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(4),
+    .hauling-report-document-table td:nth-child(4){
+        width:10%;
+    }
+
+
+    /* =============================================
+       SECONDARY ASSIGNMENT
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(5),
+    .hauling-report-document-table td:nth-child(5){
+        width:8%;
+    }
+
+
+    /* =============================================
+       LOCATION
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(6),
+    .hauling-report-document-table td:nth-child(6){
+        width:9%;
+    }
+
+
+    .hauling-report-document-table td:nth-child(6){
+        white-space:normal;
+        word-break:normal;
+        overflow-wrap:normal;
+        hyphens:none;
+    }
+
+
+    /* =============================================
+       NO. OF HAULING
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(7),
+    .hauling-report-document-table td:nth-child(7){
+        width:5%;
+    }
+
+
+    /* =============================================
+    SUBTOTAL
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(8),
+    .hauling-report-document-table td:nth-child(8){
+        width:8%;
+    }
+
+
+    /* =============================================
+       DISCOUNT
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(9),
+    .hauling-report-document-table td:nth-child(9){
+        width:7%;
+    }
+
+
+    /* =============================================
+       TOTAL PRICE
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(10),
+    .hauling-report-document-table td:nth-child(10){
+        width:8%;
+    }
+
+
+    /* =============================================
+       STATUS
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(11),
+    .hauling-report-document-table td:nth-child(11){
+        width:6%;
+    }
+
+
+    /* =============================================
+       REMARKS
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(12),
+    .hauling-report-document-table td:nth-child(12){
+        width:6%;
+    }
+
+
+    /* =============================================
+       RENTAL DATE
+    ============================================= */
+
+    .hauling-report-document-table th:nth-child(13),
+    .hauling-report-document-table td:nth-child(13){
+        width:9%;
+    }
+
+
+    /* =============================================
+       STATUS + REMARKS
+
+       Prevent OngoingUnpaid / PendingUnpaid
+    ============================================= */
+
+    .hauling-report-document-table td:nth-child(11),
+    .hauling-report-document-table td:nth-child(12){
+        white-space:normal;
+        word-break:normal;
+        overflow-wrap:normal;
+    }
+
+
+    /* =============================================
+       RENTAL DATE
+
+       Keep date in one line
+    ============================================= */
+
+    .hauling-report-document-table td:nth-child(13){
+        white-space:nowrap;
+    }
+
+
+    .hauling-report-assignment span{
+        margin-top:2px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE
+========================================================= */
+
+@media print and (orientation:landscape){
+
+    .hauling-report-document-table{
+        font-size:8.8pt;
+    }
+
+    .hauling-report-document-table th{
+        padding:
+            6px 3px;
+
+        font-size:8.2pt;
+    }
+
+    .hauling-report-document-table td{
+        padding:
+            6px 4px;
+
+        font-size:8.8pt;
+    }
+
+    .hauling-report-document-prepared{
+        margin-top:10px;
+    }
+
+    .hauling-report-signature-space{
+        height:18px;
+    }
+
+    .hauling-report-document-summary{
+        margin-bottom:5px;
+    }
+
+}

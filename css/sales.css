@@ -1,0 +1,1562 @@
+/* =========================================================
+   SALES PAGE
+========================================================= */
+
+.page-header {
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+    color: #000000;
+}
+
+
+/* =========================================================
+   SALES TOOLBAR
+========================================================= */
+
+.sales-toolbar {
+    margin: 18px 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+.toolbar-left,
+.sales-toolbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.sales-toolbar-actions {
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    width: 275px;
+    height: 50px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.05);
+
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.search-box:focus-within {
+    border-color:
+        rgba(140, 161, 91, 0.65);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.11);
+}
+
+.search-box i {
+    width: 52px;
+    height: 100%;
+
+    flex: 0 0 52px;
+
+    color: #8ca15b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.search-box input {
+    min-width: 0;
+    height: 100%;
+
+    padding: 0 16px 0 0;
+
+    color: #292929;
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    flex: 1;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.search-box input::placeholder {
+    color: #8b8b83;
+}
+
+
+/* =========================================================
+   CUSTOMER TYPE FILTER
+========================================================= */
+
+.affiliate-filter {
+    width: 155px;
+    height: 50px;
+
+    padding: 0 38px 0 18px;
+
+    color: #3c3c38;
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.05);
+
+    border-radius: 28px;
+    outline: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.affiliate-filter:focus {
+    border-color:
+        rgba(140, 161, 91, 0.65);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.11);
+}
+
+
+/* =========================================================
+   CALENDAR BUTTON
+========================================================= */
+
+.btn-calendar {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+
+    color: #73894a;
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.05);
+
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 2px 7px
+        rgba(0, 0, 0, 0.04);
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.btn-calendar:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   EXPORT + ADD SALES
+========================================================= */
+
+.btn-add-sales {
+    min-width: 150px;
+    height: 50px;
+
+    padding: 0 20px;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    border: none;
+    border-radius: 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.btn-add-sales:hover {
+    color: #fdfbd4;
+    background: #7d934f;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.10);
+}
+
+.btn-add-sales i {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LEDGER CONTAINER
+========================================================= */
+
+.ledger {
+    min-height: 0;
+
+    height:
+        calc(100vh - 218px);
+
+    margin-top: 4px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+
+/* =========================================================
+   COMMON SALES LEDGER GRID
+
+   TRANSACTION
+   BUYER
+   PRODUCTS
+   QTY
+   TOTAL
+   CASH RECEIVED
+   CHANGE
+   TYPE
+========================================================= */
+
+.sales-ledger-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(115px, 1.05fr)
+        minmax(120px, 1.20fr)
+        minmax(160px, 1.50fr)
+        minmax(55px, 0.40fr)
+        minmax(95px, 0.80fr)
+        minmax(110px, 0.90fr)
+        minmax(95px, 0.80fr)
+        minmax(96px, 0.80fr);
+
+    column-gap: 12px;
+
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.ledger-header {
+    min-height: 68px;
+
+    margin-right: 15px;
+
+    padding:
+        0
+        22px;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    border-radius: 16px;
+
+    flex: 0 0 auto;
+
+    box-shadow:
+        0 3px 9px
+        rgba(0, 0, 0, 0.08);
+}
+
+.ledger-header > div {
+    min-width: 0;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.30px;
+
+    text-align: center;
+    color: white;
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.ledger-body {
+    min-height: 0;
+
+    margin-top: 12px;
+
+    padding-right: 7px;
+    padding-bottom: 5px;
+
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #8ca15b
+        rgba(253, 251, 212, 0.70);
+}
+
+.ledger-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ledger-body::-webkit-scrollbar-track {
+    background:
+        rgba(253, 251, 212, 0.70);
+
+    border-radius: 20px;
+}
+
+.ledger-body::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+
+    border-radius: 20px;
+}
+
+.ledger-body::-webkit-scrollbar-thumb:hover {
+    background: #6f8347;
+}
+
+
+/* =========================================================
+   LEDGER ROW
+========================================================= */
+
+.ledger-row {
+    min-height: 96px;
+
+    margin-bottom: 11px;
+
+    padding:
+        18px
+        22px;
+
+    color: #2d2d2a;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    border:
+        1px solid
+        rgba(0, 0, 0, 0.035);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.035);
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease;
+}
+
+.ledger-row:hover {
+    background: #f0f6e6;
+
+    border-color:
+        rgba(140, 161, 91, 0.25);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.07);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   HISTORICAL / AUDIT LEDGER
+========================================================= */
+
+.ledger-row.sales-ledger-historical {
+    background:
+        rgba(232, 242, 255, 0.94);
+
+    border-color:
+        rgba(55, 124, 194, 0.28);
+
+    box-shadow:
+        0 2px 6px
+        rgba(48, 105, 164, 0.07);
+}
+
+
+.ledger-row.sales-ledger-historical:hover {
+    background: #e4f1ff;
+
+    border-color:
+        rgba(55, 124, 194, 0.42);
+
+    box-shadow:
+        0 5px 13px
+        rgba(48, 105, 164, 0.11);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* TRANSACTION ID */
+
+.sales-ledger-historical
+.sales-ledger-transaction
+.transaction-id {
+    color: #356fa8;
+}
+
+
+/* HISTORICAL BADGE */
+
+.sales-historical-badge {
+    width: max-content;
+    max-width: 100%;
+
+    margin:
+        7px
+        auto
+        0;
+
+    padding:
+        4px
+        8px;
+
+    color: #2f6fa9;
+
+    background:
+        rgba(66, 139, 202, 0.12);
+
+    border:
+        1px solid
+        rgba(66, 139, 202, 0.30);
+
+    border-radius: 8px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 0.15px;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+.sales-historical-badge i {
+    font-size: 10px;
+}
+
+
+.ledger-row > div {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   GENERAL LEDGER TEXT
+========================================================= */
+
+.sales-ledger-primary {
+    display: block;
+
+    min-width: 0;
+
+    color: #282825;
+
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.sales-ledger-secondary {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #77796f;
+
+    font-size: 10px;
+    font-weight: 550;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   TRANSACTION
+========================================================= */
+
+.sales-ledger-transaction {
+    text-align: center;
+}
+
+.sales-ledger-transaction
+.transaction-id {
+    color: #536736;
+
+    font-size: 13px;
+    font-weight: 850;
+    letter-spacing: 0.15px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BUYER
+========================================================= */
+
+.sales-ledger-buyer {
+    text-align: center;
+}
+
+.sales-ledger-buyer
+.sales-ledger-primary {
+    font-size: 13px;
+}
+
+.sales-ledger-buyer
+.sales-ledger-secondary {
+    color: #697052;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   PRODUCTS + QTY
+========================================================= */
+
+.sales-ledger-products,
+.sales-ledger-quantities {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    gap: 5px;
+
+    text-align: center;
+}
+
+.sales-ledger-item-line {
+    width: 100%;
+
+    height: 22px;
+    min-height: 22px;
+    max-height: 22px;
+
+    line-height: 22px;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.sales-ledger-products {
+    justify-self: stretch;
+
+    text-align: center;
+}
+
+.sales-ledger-product-line {
+    display: block;
+
+    width: 100%;
+
+    color: #33332f;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   QUANTITIES
+========================================================= */
+
+.sales-ledger-quantities {
+    justify-self: stretch;
+
+    text-align: center;
+}
+
+.sales-ledger-qty-line {
+    display: block;
+
+    width: 100%;
+
+    color: #33332f;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.sales-ledger-total {
+    text-align: center;
+}
+
+.sales-ledger-total > strong {
+    display: block;
+
+    color: #536936;
+
+    font-size: 14px;
+    font-weight: 850;
+
+    white-space: nowrap;
+}
+
+.sales-ledger-total
+.sales-ledger-secondary {
+    margin-top: 5px;
+}
+
+
+
+/* =========================================================
+   CASH RECEIVED AND CHANGE
+========================================================= */
+
+.sales-ledger-cash,
+.sales-ledger-change {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.sales-ledger-cash .sales-ledger-primary,
+.sales-ledger-change .sales-ledger-primary {
+    color: #536936;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+.sales-ledger-change .sales-ledger-primary {
+    color: #4c702c;
+}
+
+
+/* =========================================================
+   CUSTOMER TYPE
+========================================================= */
+
+.sales-ledger-type {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sales-type-badge {
+    min-width: 88px;
+
+    padding:
+        7px
+        11px;
+
+    border-radius: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* MEMBER */
+
+.sales-type-badge.member {
+    color: #4e6734;
+    background: #e1ebce;
+
+    border:
+        1px solid
+        #c6d7a6;
+}
+
+
+/* NOT MEMBER */
+
+.sales-type-badge.not-member {
+    color: #68685f;
+    background: #ecece4;
+
+    border:
+        1px solid
+        #d8d8ce;
+}
+
+
+/* UNKNOWN */
+
+.sales-type-badge.other {
+    color: #7b681f;
+    background: #f5eccb;
+
+    border:
+        1px solid
+        #e6d89d;
+}
+
+
+/* =========================================================
+   EMPTY LEDGER
+========================================================= */
+
+.sales-ledger-empty {
+    min-height: 280px;
+
+    padding: 40px 20px;
+
+    color: #667052;
+
+    background:
+        rgba(255, 255, 255, 0.73);
+
+    border:
+        1px solid
+        rgba(140, 161, 91, 0.13);
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.sales-ledger-empty-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 11px;
+
+    color: #71874a;
+
+    background:
+        rgba(140, 161, 91, 0.15);
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.sales-ledger-empty strong {
+    color: #46532f;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.sales-ledger-empty span {
+    margin-top: 4px;
+
+    color: #777d6d;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DATE FILTER MODAL
+========================================================= */
+
+#dateFilterModal .modal-dialog {
+    width:
+        min(
+            510px,
+            calc(100vw - 28px)
+        );
+
+    max-width: 510px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   DATE FILTER WINDOW
+========================================================= */
+
+#dateFilterModal
+.add-product-window {
+    padding: 0;
+
+    color: #fdfbd4;
+
+    background:
+        rgba(75, 77, 70, 0.94);
+
+    border:
+        4px solid
+        #8ca15b;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.38);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   DATE FILTER HEADER
+========================================================= */
+
+#dateFilterModal
+.window-header {
+    min-height: 84px;
+
+    padding:
+        19px
+        23px
+        16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+#dateFilterModal
+.window-header h1 {
+    margin: 0;
+
+    color: #fdfbd4;
+
+    font-size: 23px;
+    font-weight: 800;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   DATE FILTER CLOSE BUTTON
+========================================================= */
+
+#dateFilterModal
+.close-btn {
+    width: 44px;
+    height: 44px;
+
+    flex:
+        0
+        0
+        44px;
+
+    padding: 0;
+
+    color: #202020;
+    background: #fdfbd4;
+
+    border: none;
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+#dateFilterModal
+.close-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 5px 13px
+        rgba(0, 0, 0, 0.18);
+}
+
+#dateFilterModal
+.close-btn:active {
+    transform:
+        scale(0.96);
+}
+
+#dateFilterModal
+.close-btn:focus-visible {
+    outline:
+        3px solid
+        rgba(253, 251, 212, 0.26);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   DATE FILTER DIVIDER
+========================================================= */
+
+#dateFilterModal
+.add-product-window > hr {
+    height: 1px;
+
+    margin:
+        0
+        23px
+        22px;
+
+    color: transparent;
+
+    background:
+        rgba(253, 251, 212, 0.25);
+
+    border: none;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   DATE FILTER FIELDS
+========================================================= */
+
+#dateFilterModal
+.mb-3,
+#dateFilterModal
+.mb-4 {
+    margin:
+        0
+        23px
+        17px
+        !important;
+}
+
+
+/* Last date field gets slightly more space */
+
+#dateFilterModal
+.mb-4 {
+    margin-bottom:
+        23px
+        !important;
+}
+
+
+/* =========================================================
+   DATE FILTER LABELS
+========================================================= */
+
+#dateFilterModal label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #fdfbd4;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.35px;
+}
+
+
+/* =========================================================
+   DATE INPUTS
+========================================================= */
+
+#dateFilterModal
+.custom-input {
+    width: 100%;
+    height: 56px;
+
+    padding:
+        0
+        16px;
+
+    color: #272824;
+
+    background:
+        #fdfbd4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+#dateFilterModal
+.custom-input:hover {
+    border-color:
+        rgba(140, 161, 91, 0.48);
+}
+
+#dateFilterModal
+.custom-input:focus {
+    color: #272824;
+
+    background:
+        #fffedc;
+
+    border-color:
+        #afc178;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(175, 193, 120, 0.17);
+}
+
+
+/* =========================================================
+   NATIVE CALENDAR ICON
+========================================================= */
+
+#dateFilterModal
+.custom-input::-webkit-calendar-picker-indicator {
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+
+    opacity: 0.72;
+
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+#dateFilterModal
+.custom-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================================================
+   DATE FILTER ACTION FOOTER
+========================================================= */
+
+#dateFilterModal
+.d-flex.justify-content-center.gap-3 {
+    min-height: 78px;
+
+    margin-top: 3px;
+
+    padding:
+        14px
+        23px
+        17px;
+
+    background:
+        rgba(42, 44, 40, 0.48);
+
+    border-top:
+        1px solid
+        rgba(253, 251, 212, 0.15);
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content:
+        flex-end
+        !important;
+
+    gap:
+        11px
+        !important;
+}
+
+
+/* =========================================================
+   DATE FILTER BUTTONS
+========================================================= */
+
+#dateFilterModal
+#clearDateFilter,
+#dateFilterModal
+#applyDateFilter {
+    height: 49px;
+
+    padding:
+        0
+        20px;
+
+    border-radius: 11px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.15px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+/* CLEAR FILTER */
+
+#dateFilterModal
+#clearDateFilter {
+    min-width: 150px;
+
+    color: #fdfbd4;
+
+    background:
+        transparent;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.62);
+}
+
+#dateFilterModal
+#clearDateFilter:hover {
+    color: #fdfbd4;
+
+    background:
+        rgba(253, 251, 212, 0.08);
+
+    border-color:
+        rgba(253, 251, 212, 0.85);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* APPLY */
+
+#dateFilterModal
+#applyDateFilter {
+    min-width: 135px;
+
+    color: #fdfbd4;
+
+    background:
+        #8ca15b;
+
+    border:
+        2px solid
+        #8ca15b;
+}
+
+#dateFilterModal
+#applyDateFilter:hover {
+    color: #fdfbd4;
+
+    background:
+        #7d934f;
+
+    border-color:
+        #7d934f;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 13px
+        rgba(0, 0, 0, 0.16);
+}
+
+#dateFilterModal
+#clearDateFilter:active,
+#dateFilterModal
+#applyDateFilter:active {
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* =========================================================
+   DATE FILTER BACKDROP
+========================================================= */
+
+body:has(#dateFilterModal.show)
+.modal-backdrop.show {
+    opacity: 1;
+
+    background:
+        rgba(24, 32, 17, 0.65);
+
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
+}
+
+
+/* =========================================================
+   REPORT / PRINT SUPPORT
+========================================================= */
+
+.report-summary {
+    width: 320px;
+
+    margin-top: 25px;
+    margin-left: auto;
+
+    page-break-inside: avoid;
+}
+
+.report-summary table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.report-summary td {
+    padding: 10px;
+
+    border:
+        1px solid
+        #000000;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PAGE SCROLL
+========================================================= */
+
+body {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .sales-ledger-grid {
+        grid-template-columns:
+            minmax(105px, 1fr)
+            minmax(115px, 1.2fr)
+            minmax(140px, 1.5fr)
+            minmax(50px, 0.4fr)
+            minmax(90px, 0.8fr)
+            minmax(100px, 0.9fr)
+            minmax(90px, 0.8fr)
+            minmax(90px, 0.8fr);
+
+        column-gap: 9px;
+    }
+
+    .ledger-header {
+        padding:
+            0
+            16px;
+    }
+
+    .ledger-row {
+        padding:
+            17px
+            16px;
+    }
+
+}
+
+
+@media (max-width: 1050px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .sales-toolbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .toolbar-left {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+    .sales-toolbar-actions {
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+    .ledger {
+        height: auto;
+        min-height: 500px;
+
+        overflow-x: auto;
+    }
+
+    .ledger-header,
+    .ledger-body {
+        min-width: 1040px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .search-box {
+        width: 100%;
+    }
+
+    .affiliate-filter {
+        flex: 1;
+
+        min-width: 150px;
+    }
+
+    .sales-toolbar-actions {
+        flex-wrap: wrap;
+    }
+
+    .sales-toolbar-actions
+    .btn-add-sales {
+        flex: 1;
+
+        min-width: 140px;
+    }
+
+
+    /* DATE MODAL MOBILE */
+
+    #dateFilterModal
+    .window-header {
+        min-height: 76px;
+
+        padding:
+            16px
+            18px
+            14px;
+    }
+
+    #dateFilterModal
+    .window-header h1 {
+        font-size: 20px;
+    }
+
+    #dateFilterModal
+    .add-product-window > hr {
+        margin:
+            0
+            18px
+            19px;
+    }
+
+    #dateFilterModal
+    .mb-3,
+    #dateFilterModal
+    .mb-4 {
+        margin-left:
+            18px
+            !important;
+
+        margin-right:
+            18px
+            !important;
+    }
+
+    #dateFilterModal
+    .d-flex.justify-content-center.gap-3 {
+        padding:
+            13px
+            18px
+            16px;
+    }
+
+    #dateFilterModal
+    #clearDateFilter,
+    #dateFilterModal
+    #applyDateFilter {
+        min-width: 0;
+
+        flex: 1;
+    }
+
+}

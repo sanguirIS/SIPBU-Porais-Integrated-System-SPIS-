@@ -1,0 +1,329 @@
+/* =========================================================
+   MONETARY LOAN REPORT MODAL
+========================================================= */
+
+#generateMonetaryLoanReportModal {
+    padding: 16px !important;
+}
+
+#generateMonetaryLoanReportModal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#generateMonetaryLoanReportModal .modal-dialog {
+    width: min(840px, calc(100vw - 32px));
+    max-width: 840px;
+    margin: auto;
+}
+
+.report-monetary-loan-window {
+    max-height: calc(100vh - 32px);
+    padding: 25px;
+    overflow: visible;
+    background: rgba(78, 79, 74, 0.94);
+    border: 5px solid #8ca15b;
+    border-radius: 22px;
+    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.34);
+}
+
+.report-monetary-loan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.report-monetary-loan-header h1 {
+    margin: 0;
+    color: #fdfbd4;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.report-monetary-loan-close-btn {
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #222222;
+    background: #fdfbd4;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.report-monetary-loan-close-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+}
+
+.report-monetary-loan-body {
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+}
+
+.report-monetary-loan-body hr {
+    margin: 0 0 20px;
+    border-color: rgba(255, 253, 212, 0.24);
+    opacity: 1;
+}
+
+.report-monetary-loan-body > hr:last-of-type {
+    margin: 4px 0 0;
+}
+
+.report-monetary-loan-body label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #fdfbd4;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.report-monetary-loan-input {
+    width: 100%;
+    height: 58px;
+
+    padding: 0 18px;
+
+    color: #242424;
+    background: #fdfbd4;
+    border: none;
+    border-radius: 18px;
+    outline: none;
+
+    font-size: 17px;
+}
+
+.report-monetary-loan-input:focus {
+    box-shadow: 0 0 0 3px rgba(140, 161, 91, 0.45);
+}
+
+
+/* =========================================================
+   DROPDOWNS
+========================================================= */
+
+.generate-monetary-loan-dropdown {
+    position: relative;
+}
+
+.generate-monetary-loan-dropdown-btn {
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 20px;
+
+    color: #242424;
+    background: #fdfbd4;
+    border: none;
+    border-radius: 18px;
+    outline: none;
+
+    font-size: 17px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.generate-monetary-loan-dropdown-btn:hover,
+.generate-monetary-loan-dropdown-btn[aria-expanded="true"] {
+    background: #f8f4c5;
+    box-shadow: 0 0 0 3px rgba(140, 161, 91, 0.35);
+}
+
+.generate-monetary-loan-dropdown-btn i {
+    flex: 0 0 auto;
+    color: #6f8347;
+    transition: transform 0.2s ease;
+}
+
+.generate-monetary-loan-dropdown-btn[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.generate-monetary-loan-dropdown-btn:disabled {
+    color: #77776d;
+    background: #dedbc8;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    opacity: 0.72;
+}
+
+.generate-monetary-loan-dropdown-btn:disabled:hover {
+    color: #77776d;
+    background: #dedbc8;
+    box-shadow: none !important;
+}
+
+.generate-monetary-loan-dropdown-btn:disabled i {
+    color: #92927f;
+}
+
+.generate-monetary-loan-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 1090;
+
+    width: 100%;
+
+    display: none;
+    overflow: hidden;
+
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.generate-monetary-loan-dropdown-menu.show {
+    display: block;
+}
+
+.generate-monetary-loan-dropdown-item {
+    width: 100%;
+
+    display: block;
+
+    padding: 13px 18px;
+
+    color: #252525;
+    background: #ffffff;
+    border: none;
+
+    font-size: 16px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.generate-monetary-loan-dropdown-item:hover {
+    background: #ece6c7;
+}
+
+
+/* =========================================================
+   PREVIEW BUTTON
+========================================================= */
+
+.report-monetary-loan-preview-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.report-monetary-loan-preview-btn {
+    width: 210px;
+    height: 62px;
+
+    color: #ffffff;
+    background: #8ca15b;
+    border: none;
+    border-radius: 18px;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.report-monetary-loan-preview-btn:hover {
+    color: #ffffff;
+    background: #8ca15b;
+
+    transform: scale(1.04);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+}
+
+#generateMonetaryLoanCustomDateFields[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    #generateMonetaryLoanReportModal {
+        padding: 10px !important;
+    }
+
+    #generateMonetaryLoanReportModal .modal-dialog {
+        width: calc(100vw - 20px);
+        max-width: none;
+    }
+
+    .report-monetary-loan-window {
+        max-height: calc(100vh - 20px);
+        padding: 20px;
+
+        overflow-y: auto;
+
+        border-width: 4px;
+    }
+
+    .report-monetary-loan-header h1 {
+        font-size: 29px;
+    }
+
+    .report-monetary-loan-close-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 32px;
+    }
+
+    .report-monetary-loan-preview-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SWEETALERT
+========================================================= */
+
+.swal2-popup {
+    border: none !important;
+}

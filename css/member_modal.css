@@ -1,0 +1,3189 @@
+/* =========================================================
+   SPIS MEMBER MODAL
+========================================================= */
+
+:root{
+    --member-green:#8CA15B;
+    --member-green-dark:#58732F;
+
+    --member-cream:#FDFBD4;
+    --member-cream-hover:#FFFEE2;
+
+    --member-dark:#44483E;
+    --member-darker:#31342E;
+
+    --member-text:#272A23;
+    --member-muted:#74786E;
+
+    --member-danger:#E56E68;
+}
+
+
+/* =========================================================
+   MODAL DIALOG
+========================================================= */
+
+#addMemberModal .modal-dialog{
+    width:calc(100% - 36px);
+    max-width:1180px;
+}
+
+
+/* =========================================================
+   STANDARD SPIS BACKDROP
+========================================================= */
+
+body:has(
+    .modal.show
+    .add-member-window
+)
+.modal-backdrop.show,
+
+body:has(
+    .modal.show
+    .attachment-window
+)
+.modal-backdrop.show{
+
+    background:
+        rgba(
+            22,
+            25,
+            18,
+            .62
+        );
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    backdrop-filter:
+        blur(8px);
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   MAIN MEMBER WINDOW
+========================================================= */
+
+.add-member-window{
+
+    position:relative;
+
+    padding:
+        22px
+        24px
+        24px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(68,72,62,.96),
+            rgba(49,52,46,.94)
+        );
+
+    border:
+        4px solid
+        var(--member-green);
+
+    border-radius:24px;
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0,0,0,.42),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.07);
+
+    overflow:hidden;
+}
+
+
+/* SUBTLE TOP LIGHT */
+
+.add-member-window::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:28px;
+    right:28px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(253,251,212,.28),
+            transparent
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.member-window-header{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:
+        2px
+        2px
+        17px;
+
+    border-bottom:
+        1px solid
+        rgba(253,251,212,.14);
+}
+
+
+.member-window-heading{
+
+    min-width:0;
+}
+
+
+.member-window-heading h1{
+
+    margin:0;
+
+    padding-bottom:4px;
+
+    color:
+        var(--member-cream);
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:.35px;
+}
+
+
+.member-window-heading p{
+
+    margin:0;
+
+    color:
+        rgba(253,251,212,.62);
+
+    font-size:11px;
+
+    font-weight:500;
+
+    letter-spacing:.2px;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.member-window-header-actions{
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+/* ARCHIVE */
+
+.member-archive-btn{
+
+    min-height:42px;
+
+    padding:
+        0
+        14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        rgba(253,251,212,.90);
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(253,251,212,.15);
+
+    border-radius:12px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.35px;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.member-archive-btn:hover{
+
+    color:#FFE0DD;
+
+    background:
+        rgba(216,92,84,.13);
+
+    border-color:
+        rgba(230,110,104,.34);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* CLOSE */
+
+.member-close-btn{
+
+    flex:0 0 auto;
+
+    width:50px;
+
+    height:50px;
+
+    padding:
+        0
+        0
+        4px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#252720;
+
+    background:
+        var(--member-cream);
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    border-radius:50%;
+
+    font-size:34px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 14px
+        rgba(0,0,0,.16);
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.member-close-btn:hover{
+
+    color:
+        var(--member-cream);
+
+    background:
+        var(--member-green);
+
+    transform:
+        rotate(4deg)
+        scale(1.05);
+
+    box-shadow:
+        0 7px 17px
+        rgba(0,0,0,.22);
+}
+
+
+/* =========================================================
+   FORM / SCROLLABLE BODY
+========================================================= */
+
+.add-member-window form{
+
+    margin:0;
+}
+
+
+.member-modal-body{
+
+    max-height:
+        calc(
+            100vh - 195px
+        );
+
+    padding:
+        20px
+        5px
+        8px;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        var(--member-green)
+        rgba(255,255,255,.07);
+}
+
+
+.member-modal-body::-webkit-scrollbar{
+
+    width:7px;
+}
+
+
+.member-modal-body::-webkit-scrollbar-track{
+
+    background:
+        rgba(255,255,255,.06);
+
+    border-radius:20px;
+}
+
+
+.member-modal-body::-webkit-scrollbar-thumb{
+
+    background:
+        var(--member-green);
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   LEFT / RIGHT PANELS
+========================================================= */
+
+.member-side-panel,
+.member-form-panel{
+
+    height:100%;
+
+    padding:20px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(253,251,212,.10);
+
+    border-radius:18px;
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,.035);
+}
+
+
+.member-side-panel{
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+/* =========================================================
+   PANEL / SECTION HEADINGS
+========================================================= */
+
+.member-panel-heading,
+.member-section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+
+.member-panel-heading{
+
+    margin-bottom:14px;
+}
+
+
+.member-section-heading{
+
+    margin-bottom:15px;
+}
+
+
+.member-panel-icon,
+.member-section-icon{
+
+    flex:0 0 auto;
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:
+        var(--member-cream);
+
+    background:
+        rgba(140,161,91,.18);
+
+    border:
+        1px solid
+        rgba(140,161,91,.25);
+
+    border-radius:10px;
+
+    font-size:15px;
+}
+
+
+.member-panel-heading h3,
+.member-section-heading h3{
+
+    margin:0;
+
+    color:
+        rgba(253,251,212,.96);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.55px;
+}
+
+
+.member-panel-heading p,
+.member-section-heading p{
+
+    margin:
+        2px
+        0
+        0;
+
+    color:
+        rgba(253,251,212,.49);
+
+    font-size:9px;
+
+    font-weight:500;
+}
+
+
+/* =========================================================
+   PROFILE UPLOAD
+========================================================= */
+
+.member-profile-label{
+
+    display:block;
+
+    width:100%;
+
+    margin:0;
+}
+
+
+.member-profile-upload{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:330px;
+
+    height:235px;
+
+    margin:
+        0
+        auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFEE5,
+            #F7F3C7
+        );
+
+    border:
+        2px dashed
+        rgba(86,116,42,.48);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255,255,255,.60);
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    isolation:isolate;
+}
+
+
+.member-profile-upload:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--member-green);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.14);
+}
+
+
+/* PROFILE IMAGE */
+
+.member-profile-upload img,
+#previewImage{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:2;
+}
+
+
+/* PLACEHOLDER */
+
+.upload-placeholder{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:4px;
+
+    color:#45631C;
+
+    text-align:center;
+}
+
+
+.upload-placeholder > i{
+
+    width:58px;
+
+    height:58px;
+
+    margin-bottom:8px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:
+        var(--member-green-dark);
+
+    background:
+        rgba(140,161,91,.13);
+
+    border-radius:50%;
+
+    font-size:27px;
+}
+
+
+.upload-placeholder span{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+}
+
+
+.upload-placeholder small{
+
+    margin-top:3px;
+
+    color:#73796A;
+
+    font-size:10px;
+
+    font-weight:500;
+}
+
+
+/* CAMERA OVERLAY */
+
+.upload-overlay{
+
+    position:absolute;
+
+    right:12px;
+
+    bottom:12px;
+
+    z-index:4;
+
+    width:39px;
+
+    height:39px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:
+        var(--member-cream);
+
+    background:
+        rgba(73,93,41,.92);
+
+    border:
+        3px solid
+        rgba(253,251,212,.90);
+
+    border-radius:50%;
+
+    opacity:.94;
+
+    pointer-events:none;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.member-profile-upload:hover
+.upload-overlay{
+
+    transform:
+        scale(1.06);
+}
+
+
+.upload-overlay i{
+
+    color:
+        var(--member-cream);
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   MEMBERSHIP SUMMARY
+========================================================= */
+
+.member-summary-box{
+
+    margin-top:17px;
+
+    padding:15px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(140,161,91,.13),
+            rgba(140,161,91,.07)
+        );
+
+    border:
+        1px solid
+        rgba(140,161,91,.22);
+
+    border-radius:15px;
+}
+
+
+.member-summary-heading{
+
+    margin-bottom:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:
+        rgba(253,251,212,.90);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
+
+.member-summary-heading i{
+
+    color:
+        #BDD18A;
+
+    font-size:13px;
+}
+
+
+.member-summary-row{
+
+    min-height:36px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:12px;
+
+    border-bottom:
+        1px solid
+        rgba(253,251,212,.08);
+}
+
+
+.member-summary-row span{
+
+    color:
+        rgba(253,251,212,.60);
+
+    font-size:10px;
+
+    font-weight:500;
+}
+
+
+.member-summary-row strong{
+
+    color:
+        var(--member-cream);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    text-align:right;
+}
+
+
+.member-classification-value{
+
+    color:
+        #D9E8AC
+        !important;
+}
+
+
+.member-summary-note{
+
+    margin:
+        11px
+        0
+        0;
+
+    padding:
+        10px
+        11px;
+
+    color:
+        rgba(253,251,212,.58);
+
+    background:
+        rgba(0,0,0,.10);
+
+    border-radius:10px;
+
+    font-size:9px;
+
+    font-weight:500;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   MEMBER RECORD ACTIONS
+========================================================= */
+
+.member-record-actions{
+
+    width:100%;
+
+    margin-top:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   VIEW ATTACHMENTS / CBU HISTORY
+========================================================= */
+
+.member-view-attachment-btn,
+.member-view-cbu-btn{
+
+    width:100%;
+
+    min-height:44px;
+
+    margin:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        rgba(140,161,91,.18);
+
+    border:
+        1px solid
+        rgba(140,161,91,.34);
+
+    border-radius:12px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.35px;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+.member-view-attachment-btn:hover,
+.member-view-cbu-btn:hover{
+
+    color:#30332C;
+
+    background:
+        var(--member-cream);
+
+    border-color:
+        var(--member-cream);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.add-member-window
+.member-field-label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:
+        rgba(253,251,212,.92);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.42px;
+}
+
+
+.member-optional,
+.member-field-unit{
+
+    margin-left:4px;
+
+    color:
+        rgba(253,251,212,.43);
+
+    font-size:8px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.add-member-window
+.member-input,
+
+.add-member-window
+.form-select.member-input{
+
+    width:100%;
+
+    min-height:50px;
+
+    padding:
+        0
+        15px;
+
+    color:
+        var(--member-text);
+
+    background:
+        var(--member-cream);
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:13px;
+
+    outline:none;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.04);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.add-member-window
+.member-input:hover,
+
+.add-member-window
+.form-select.member-input:hover{
+
+    background:#FFFDDD;
+}
+
+
+.add-member-window
+.member-input:focus,
+
+.add-member-window
+.form-select.member-input:focus{
+
+    color:
+        var(--member-text);
+
+    background:
+        var(--member-cream-hover);
+
+    border-color:
+        var(--member-green);
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.16);
+}
+
+
+.add-member-window
+.member-input::placeholder{
+
+    color:#7F8378;
+
+    opacity:.78;
+
+    font-size:12px;
+
+    font-weight:500;
+}
+
+
+/* SELECT */
+
+.add-member-window
+.form-select.member-input{
+
+    cursor:pointer;
+}
+
+
+/* DATE */
+
+.add-member-window
+input[type="date"]{
+
+    cursor:pointer;
+}
+
+
+/* REMOVE NUMBER SPINNER WHERE APPROPRIATE */
+
+#initialCbu::-webkit-inner-spin-button,
+#initialCbu::-webkit-outer-spin-button,
+#memberFarmField::-webkit-inner-spin-button,
+#memberFarmField::-webkit-outer-spin-button{
+
+    margin:0;
+}
+
+
+/* =========================================================
+   FORM DIVIDER
+========================================================= */
+
+.member-form-divider{
+
+    height:1px;
+
+    margin:
+        20px
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(253,251,212,.15),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   STATUS DROPDOWN
+========================================================= */
+
+.member-status-dropdown,
+.member-gender-dropdown,
+.member-cbu-action-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+.member-status-btn{
+
+    width:100%;
+
+    min-height:50px;
+
+    padding:
+        0
+        15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:10px;
+
+    color:
+        var(--member-text);
+
+    background:
+        var(--member-cream);
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:13px;
+
+    outline:none;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.04);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.member-status-btn:hover{
+
+    background:#FFFDDD;
+}
+
+
+.member-status-btn:focus{
+
+    background:
+        var(--member-cream-hover);
+
+    border-color:
+        var(--member-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.16);
+}
+
+
+.member-status-btn i{
+
+    color:
+        var(--member-green-dark);
+
+    font-size:11px;
+}
+
+
+.member-status-menu{
+
+    position:absolute;
+
+    top:
+        calc(
+            100% + 6px
+        );
+
+    left:0;
+
+    right:0;
+
+    z-index:1100;
+
+    display:none;
+
+    padding:6px;
+
+    background:#FFFDE8;
+
+    border:
+        1px solid
+        rgba(86,116,42,.20);
+
+    border-radius:12px;
+
+    box-shadow:
+        0 13px 30px
+        rgba(0,0,0,.24);
+
+    overflow:hidden;
+}
+
+
+.member-status-menu.show{
+
+    display:block;
+}
+
+
+.member-status-item{
+
+    width:100%;
+
+    min-height:39px;
+
+    padding:
+        0
+        11px;
+
+    display:flex;
+
+    align-items:center;
+
+    color:#34382E;
+
+    background:transparent;
+
+    border:0;
+
+    border-radius:8px;
+
+    font-size:11px;
+
+    font-weight:650;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:
+        background .16s ease,
+        color .16s ease;
+}
+
+
+.member-status-item:hover{
+
+    color:#405B1E;
+
+    background:
+        rgba(140,161,91,.16);
+}
+
+
+/* =========================================================
+   AUTOMATIC CLASSIFICATION
+========================================================= */
+
+.member-classification-display{
+
+    width:100%;
+
+    min-height:50px;
+
+    padding:
+        0
+        15px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:10px;
+
+    color:#595D53;
+
+    background:
+        rgba(
+            235,
+            234,
+            213,
+            .90
+        );
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:13px;
+
+    font-size:12px;
+
+    font-weight:650;
+
+    cursor:not-allowed;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.04);
+}
+
+
+.member-classification-display i{
+
+    color:
+        rgba(68,82,46,.58);
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   MONEY INPUT
+========================================================= */
+
+.member-money-input{
+
+    position:relative;
+}
+
+
+.member-money-input > span{
+
+    position:absolute;
+
+    top:50%;
+
+    left:15px;
+
+    z-index:2;
+
+    transform:
+        translateY(-50%);
+
+    color:#526B2D;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    pointer-events:none;
+}
+
+
+.member-money-input
+.member-input{
+
+    padding-left:31px;
+}
+
+/* =========================================================
+   READ-ONLY CBU VALUES
+========================================================= */
+
+.member-readonly-money{
+
+    cursor:not-allowed;
+
+}
+
+
+.add-member-window
+.member-readonly-money
+.member-readonly-input{
+
+    padding-right:43px;
+
+    color:#5A5E54;
+
+    background:
+        rgba(
+            235,
+            234,
+            213,
+            .92
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .18
+        );
+
+    font-weight:650;
+
+    cursor:not-allowed;
+
+    caret-color:transparent;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.045);
+
+}
+
+
+.add-member-window
+.member-readonly-money
+.member-readonly-input:hover,
+
+.add-member-window
+.member-readonly-money
+.member-readonly-input:focus{
+
+    color:#5A5E54;
+
+    background:
+        rgba(
+            235,
+            234,
+            213,
+            .92
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .18
+        );
+
+    outline:none;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.045);
+
+    cursor:not-allowed;
+
+}
+
+
+/* PESO SYMBOL */
+
+.member-readonly-money > span{
+
+    color:
+        rgba(
+            68,
+            82,
+            46,
+            .62
+        );
+
+}
+
+
+/* LOCK INDICATOR */
+
+.member-readonly-lock{
+
+    position:absolute;
+
+    top:50%;
+    right:15px;
+
+    z-index:2;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        rgba(
+            68,
+            82,
+            46,
+            .58
+        );
+
+    font-size:12px;
+
+    pointer-events:none;
+
+}
+
+/* =========================================================
+   DOCUMENT UPLOAD
+========================================================= */
+
+.member-document-heading{
+
+    margin-bottom:12px;
+}
+
+
+.member-document-upload{
+
+    padding:14px;
+
+    background:
+        rgba(255,255,255,.028);
+
+    border:
+        1px dashed
+        rgba(253,251,212,.14);
+
+    border-radius:14px;
+}
+
+
+.member-file-input{
+
+    padding:
+        7px
+        8px
+        !important;
+
+    min-height:50px;
+}
+
+
+.member-file-input::file-selector-button{
+
+    height:32px;
+
+    margin-right:10px;
+
+    padding:
+        0
+        13px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        var(--member-green-dark);
+
+    border:0;
+
+    border-radius:8px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+.member-selected-files{
+
+    margin-top:9px;
+
+    padding:
+        9px
+        11px;
+
+    color:
+        rgba(253,251,212,.58);
+
+    background:
+        rgba(0,0,0,.09);
+
+    border-radius:9px;
+
+    font-size:9px;
+
+    font-weight:500;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.member-save-container{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding-top:18px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    border-top:
+        1px solid
+        rgba(253,251,212,.10);
+}
+
+
+.member-save-btn{
+
+    min-width:155px;
+
+    height:49px;
+
+    padding:
+        0
+        21px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7F9652,
+            #627D39
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:13px;
+
+    font-size:12px;
+
+    font-weight:750;
+
+    letter-spacing:.4px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 18px
+        rgba(0,0,0,.17);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.member-save-btn:hover{
+
+    color:
+        var(--member-cream);
+
+    background:
+        linear-gradient(
+            135deg,
+            #8EA55F,
+            #718B45
+        );
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 9px 22px
+        rgba(0,0,0,.22);
+}
+
+
+.member-save-btn i{
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   INLINE VALIDATION READY
+========================================================= */
+
+.add-member-window
+.member-input.is-invalid,
+
+.add-member-window
+.member-status-btn.is-invalid{
+
+    border-color:
+        #D96661
+        !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217,102,97,.14)
+        !important;
+}
+
+
+.member-field-error{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#FFB3AE;
+
+    font-size:9px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   ATTACHMENT VIEWER
+========================================================= */
+
+#attachmentModal
+.modal-dialog{
+
+    width:
+        calc(
+            100% - 40px
+        );
+
+    max-width:1000px;
+}
+
+
+.attachment-window{
+
+    position:relative;
+
+    padding:
+        22px
+        24px
+        24px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(68,72,62,.97),
+            rgba(49,52,46,.96)
+        );
+
+    border:
+        4px solid
+        var(--member-green);
+
+    border-radius:24px;
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0,0,0,.42);
+
+    overflow:hidden;
+}
+
+
+.member-attachment-header{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding-bottom:16px;
+
+    border-bottom:
+        1px solid
+        rgba(253,251,212,.14);
+}
+
+
+.member-attachment-header h2{
+
+    margin:0;
+
+    color:
+        var(--member-cream);
+
+    font-size:25px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+}
+
+
+.member-attachment-header p{
+
+    margin:
+        4px
+        0
+        0;
+
+    color:
+        rgba(253,251,212,.52);
+
+    font-size:10px;
+}
+
+
+.member-attachment-body{
+
+    max-height:
+        min(
+            560px,
+            calc(
+                100vh - 210px
+            )
+        );
+
+    padding-top:18px;
+
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        var(--member-green)
+        rgba(255,255,255,.06);
+}
+
+
+.member-attachment-body::-webkit-scrollbar{
+
+    width:7px;
+}
+
+
+.member-attachment-body::-webkit-scrollbar-thumb{
+
+    background:
+        var(--member-green);
+
+    border-radius:20px;
+}
+
+
+/* JS CURRENTLY CREATES .attachment-item */
+
+.attachment-item{
+
+    min-height:62px;
+
+    margin-bottom:10px;
+
+    padding:
+        12px
+        14px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:16px;
+
+    color:
+        var(--member-cream);
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(253,251,212,.10);
+
+    border-radius:13px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+.attachment-item:hover{
+
+    background:
+        rgba(255,255,255,.065);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.attachment-left{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+}
+
+
+.attachment-left > i{
+
+    flex:0 0 auto;
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:
+        #D7E5AE;
+
+    background:
+        rgba(140,161,91,.15);
+
+    border-radius:9px;
+
+    font-size:16px;
+}
+
+
+.attachment-left span{
+
+    min-width:0;
+
+    overflow:hidden;
+
+    color:
+        rgba(253,251,212,.88);
+
+    font-size:11px;
+
+    font-weight:600;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+
+.attachment-actions{
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+
+.preview-file-btn,
+.remove-file-btn{
+
+    min-height:36px;
+
+    padding:
+        0
+        11px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    border-radius:9px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.25px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.preview-file-btn{
+
+    color:
+        var(--member-cream);
+
+    background:
+        rgba(140,161,91,.18);
+
+    border:
+        1px solid
+        rgba(140,161,91,.30);
+}
+
+
+.preview-file-btn:hover{
+
+    color:#30332C;
+
+    background:
+        var(--member-cream);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.remove-file-btn{
+
+    color:#FFD5D1;
+
+    background:
+        rgba(213,91,84,.11);
+
+    border:
+        1px solid
+        rgba(230,110,104,.23);
+}
+
+
+.remove-file-btn:hover{
+
+    color:#FFFFFF;
+
+    background:
+        rgba(196,72,65,.65);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.member-empty-attachment,
+.member-attachment-body > p{
+
+    margin:0;
+
+    padding:
+        24px;
+
+    color:
+        rgba(253,251,212,.55);
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px dashed
+        rgba(253,251,212,.14);
+
+    border-radius:13px;
+
+    font-size:11px;
+
+    text-align:center;
+}
+
+/* =========================================================
+   CBU HISTORY VIEWER
+========================================================= */
+
+#cbuHistoryModal
+.modal-dialog{
+
+    width:
+        calc(
+            100% - 40px
+        );
+
+    max-width:1100px;
+}
+
+
+/* =========================================================
+   CBU HISTORY SUMMARY
+========================================================= */
+
+.member-cbu-history-summary{
+
+    margin-bottom:16px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.5fr)
+        minmax(180px,.75fr);
+
+    gap:12px;
+}
+
+
+.member-cbu-history-summary > div{
+
+    min-height:70px;
+
+    padding:
+        13px
+        15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:5px;
+
+    background:
+        rgba(140,161,91,.11);
+
+    border:
+        1px solid
+        rgba(140,161,91,.22);
+
+    border-radius:13px;
+}
+
+
+.member-cbu-history-summary span{
+
+    color:
+        rgba(253,251,212,.52);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.45px;
+}
+
+
+.member-cbu-history-summary strong{
+
+    min-width:0;
+
+    color:
+        var(--member-cream);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    overflow-wrap:anywhere;
+}
+
+
+#cbuHistoryCurrentBalance{
+
+    color:#D9E8AC;
+
+    font-size:17px;
+}
+
+
+/* =========================================================
+   CBU HISTORY GRID
+========================================================= */
+
+.member-cbu-history-header,
+.member-cbu-history-row{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(90px,.9fr)
+        minmax(70px,.7fr)
+        minmax(90px,.9fr)
+        minmax(95px,1fr)
+        minmax(105px,1.1fr)
+        minmax(140px,1.5fr)
+        minmax(100px,1fr);
+
+    align-items:center;
+
+    gap:10px;
+}
+
+
+/* =========================================================
+   CBU HISTORY HEADER
+========================================================= */
+
+.member-cbu-history-header{
+
+    min-height:43px;
+
+    padding:
+        0
+        13px;
+
+    color:
+        rgba(253,251,212,.60);
+
+    background:
+        rgba(0,0,0,.13);
+
+    border:
+        1px solid
+        rgba(253,251,212,.09);
+
+    border-radius:
+        11px
+        11px
+        8px
+        8px;
+
+    font-size:8px;
+
+    font-weight:750;
+
+    letter-spacing:.35px;
+}
+
+
+/* =========================================================
+   CBU HISTORY LIST
+========================================================= */
+
+.member-cbu-history-list{
+
+    max-height:350px;
+
+    margin-top:8px;
+
+    padding-right:3px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        var(--member-green)
+        rgba(255,255,255,.06);
+}
+
+
+.member-cbu-history-list::-webkit-scrollbar{
+
+    width:7px;
+}
+
+
+.member-cbu-history-list::-webkit-scrollbar-track{
+
+    background:
+        rgba(255,255,255,.045);
+
+    border-radius:20px;
+}
+
+
+.member-cbu-history-list::-webkit-scrollbar-thumb{
+
+    background:
+        var(--member-green);
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   CBU HISTORY ROW
+========================================================= */
+
+.member-cbu-history-row{
+
+    min-height:61px;
+
+    margin-bottom:7px;
+
+    padding:
+        10px
+        13px;
+
+    color:
+        rgba(253,251,212,.86);
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(253,251,212,.09);
+
+    border-radius:11px;
+
+    font-size:10px;
+
+    transition:
+        background .18s ease,
+        transform .18s ease;
+}
+
+
+.member-cbu-history-row:hover{
+
+    background:
+        rgba(255,255,255,.06);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.member-cbu-history-row > div{
+
+    min-width:0;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* MONEY COLUMNS */
+
+.member-cbu-history-amount,
+.member-cbu-history-previous,
+.member-cbu-history-balance{
+
+    font-weight:700;
+
+    font-variant-numeric:
+        tabular-nums;
+}
+
+
+.member-cbu-history-balance{
+
+    color:#D9E8AC;
+}
+
+
+/* REMARKS */
+
+.member-cbu-history-remarks{
+
+    color:
+        rgba(253,251,212,.68);
+
+    line-height:1.4;
+}
+
+
+/* RECORDED BY */
+
+.member-cbu-history-user{
+
+    color:
+        rgba(253,251,212,.68);
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   TRANSACTION TYPE
+========================================================= */
+
+.member-cbu-history-type{
+
+    justify-self:start;
+
+    min-width:55px;
+
+    padding:
+        5px
+        8px;
+
+    border-radius:20px;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.3px;
+
+    text-align:center;
+}
+
+
+.member-cbu-history-type.initial{
+
+    color:#E7EBCF;
+
+    background:
+        rgba(253,251,212,.10);
+
+    border:
+        1px solid
+        rgba(253,251,212,.14);
+}
+
+
+.member-cbu-history-type.add{
+
+    color:#D9E8AC;
+
+    background:
+        rgba(140,161,91,.14);
+
+    border:
+        1px solid
+        rgba(140,161,91,.25);
+}
+
+
+.member-cbu-history-type.deduct{
+
+    color:#FFD0CC;
+
+    background:
+        rgba(213,91,84,.10);
+
+    border:
+        1px solid
+        rgba(230,110,104,.20);
+}
+
+
+/* =========================================================
+   EMPTY CBU HISTORY
+========================================================= */
+
+.member-cbu-history-empty{
+
+    min-height:170px;
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        rgba(253,251,212,.50);
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px dashed
+        rgba(253,251,212,.13);
+
+    border-radius:12px;
+
+    text-align:center;
+}
+
+
+.member-cbu-history-empty i{
+
+    font-size:27px;
+
+    color:
+        rgba(189,209,138,.72);
+}
+
+
+.member-cbu-history-empty p{
+
+    margin:0;
+
+    font-size:10px;
+
+    font-weight:600;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(
+    max-width:991px
+){
+
+    #addMemberModal
+    .modal-dialog{
+
+        max-width:
+            calc(
+                100% - 24px
+            );
+    }
+
+
+    .member-side-panel{
+
+        height:auto;
+    }
+
+
+    .member-profile-upload{
+
+        max-width:300px;
+
+        height:220px;
+    }
+
+
+    .member-window-heading h1{
+
+        font-size:25px;
+    }
+
+}
+
+
+@media(
+    max-width:767px
+){
+
+    #addMemberModal
+    .modal-dialog,
+
+    #attachmentModal
+    .modal-dialog,
+
+    #cbuHistoryModal
+    .modal-dialog{
+
+        width:
+            calc(
+                100% - 18px
+            );
+
+        margin:
+            9px
+            auto;
+    }
+
+
+    .add-member-window,
+    .attachment-window{
+
+        padding:
+            18px
+            17px;
+
+        border-width:3px;
+
+        border-radius:20px;
+    }
+
+
+    .member-window-header{
+
+        gap:10px;
+    }
+
+
+    .member-window-heading h1{
+
+        font-size:22px;
+    }
+
+
+    .member-window-heading p{
+
+        display:none;
+    }
+
+
+    .member-close-btn{
+
+        width:44px;
+
+        height:44px;
+
+        font-size:30px;
+    }
+
+
+    .member-archive-btn{
+
+        width:42px;
+
+        min-width:42px;
+
+        padding:0;
+
+        font-size:0;
+    }
+
+
+    .member-archive-btn i{
+
+        font-size:15px;
+    }
+
+
+    .member-side-panel,
+    .member-form-panel{
+
+        padding:15px;
+    }
+
+
+    .member-modal-body{
+
+        max-height:
+            calc(
+                100vh - 155px
+            );
+
+        padding-top:15px;
+    }
+
+
+    .member-save-container{
+
+        justify-content:stretch;
+    }
+
+
+    .member-save-btn{
+
+        width:100%;
+    }
+
+
+    .attachment-item{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    .attachment-actions{
+
+        width:100%;
+    }
+
+
+    .preview-file-btn,
+    .remove-file-btn{
+
+        flex:1;
+
+        justify-content:center;
+    }
+
+
+    /* =====================================================
+       CBU HISTORY - MOBILE
+    ===================================================== */
+
+    .member-cbu-history-summary{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .member-cbu-history-header{
+
+        display:none;
+    }
+
+
+    .member-cbu-history-row{
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap:
+            10px
+            16px;
+
+        padding:14px;
+    }
+
+
+    .member-cbu-history-row > div{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:3px;
+    }
+
+
+    .member-cbu-history-row > div::before{
+
+        content:
+            attr(data-label);
+
+        color:
+            rgba(253,251,212,.42);
+
+        font-size:7px;
+
+        font-weight:750;
+
+        letter-spacing:.35px;
+    }
+
+
+    .member-cbu-history-type{
+
+        justify-self:stretch;
+
+        width:max-content;
+    }
+
+}
+
+/* =========================================================
+   MEMBERSHIP DATE
+========================================================= */
+
+.member-date-wrapper{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+.member-date-wrapper
+.member-input{
+
+    padding-right:45px;
+
+    cursor:text;
+}
+
+
+.member-native-date{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+.member-date-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    right:7px;
+
+    width:36px;
+
+    height:36px;
+
+    transform:translateY(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:
+        var(--member-green-dark);
+
+    background:transparent;
+
+    border:0;
+
+    border-radius:9px;
+
+    cursor:pointer;
+}
+
+
+.member-date-btn:hover{
+
+    background:
+        rgba(140,161,91,.13);
+
+}
+
+/* =========================================================
+   GENDER SELECT ARROW
+========================================================= */
+
+.member-select-wrapper{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+.member-gender-select{
+
+    padding-right:42px
+    !important;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    background-image:none
+    !important;
+
+    cursor:pointer;
+}
+
+
+.member-select-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    right:16px;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--member-green-dark);
+
+    font-size:12px;
+
+    pointer-events:none;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.member-select-wrapper:focus-within
+.member-select-arrow{
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+/* =========================================================
+   FIX: KEEP MEMBER INPUTS CREAM ON HOVER
+========================================================= */
+
+#addMemberModal
+input.member-input:hover,
+
+#addMemberModal
+select.member-input:hover,
+
+#addMemberModal
+.form-control.member-input:hover,
+
+#addMemberModal
+.form-select.member-input:hover,
+
+#addMemberModal
+.member-status-btn:hover,
+
+#addMemberModal
+.member-date-wrapper
+.member-input:hover{
+
+    color:
+        var(--member-text)
+        !important;
+
+    background:
+        #FFFDDD
+        !important;
+
+}
+
+
+/* FOCUS */
+
+#addMemberModal
+input.member-input:focus,
+
+#addMemberModal
+select.member-input:focus,
+
+#addMemberModal
+.form-control.member-input:focus,
+
+#addMemberModal
+.form-select.member-input:focus{
+
+    color:
+        var(--member-text)
+        !important;
+
+    background:
+        var(--member-cream-hover)
+        !important;
+
+}
+
+
+/* =========================================================
+   FILE INPUT BUTTON
+========================================================= */
+
+#attachment{
+
+    color:
+        var(--member-text)
+        !important;
+
+    background:
+        var(--member-cream)
+        !important;
+
+}
+
+
+#attachment:hover{
+
+    color:
+        var(--member-text)
+        !important;
+
+    background:
+        #FFFDDD
+        !important;
+
+}
+
+
+#attachment::file-selector-button{
+
+    color:
+        var(--member-cream)
+        !important;
+
+    background:
+        var(--member-green-dark)
+        !important;
+
+    border:
+        0
+        !important;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+
+}
+
+
+#attachment::file-selector-button:hover{
+
+    color:
+        var(--member-cream)
+        !important;
+
+    background:
+        var(--member-green)
+        !important;
+
+}
+
+
+/* CHROME / EDGE FALLBACK */
+
+#attachment::-webkit-file-upload-button{
+
+    color:
+        var(--member-cream)
+        !important;
+
+    background:
+        var(--member-green-dark)
+        !important;
+
+    border:
+        0
+        !important;
+
+}
+
+
+#attachment::-webkit-file-upload-button:hover{
+
+    background:
+        var(--member-green)
+        !important;
+
+}
+
+/* =========================================================
+   GENDER DROPDOWN
+   Uses the same visual style as Status
+========================================================= */
+
+.member-gender-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+.member-gender-dropdown
+.member-status-btn > i{
+
+    transition:
+        transform .2s ease;
+}
+
+
+.member-gender-dropdown.open
+.member-status-btn > i{
+
+    transform:
+        rotate(180deg);
+}
+
+/* =========================================================
+   FINAL READ-ONLY CBU OVERRIDE
+   Keep computed CBU fields visibly locked
+========================================================= */
+
+#addMemberModal
+.member-readonly-money
+.member-readonly-input,
+
+#addMemberModal
+.member-readonly-money
+.member-readonly-input:hover,
+
+#addMemberModal
+.member-readonly-money
+.member-readonly-input:focus{
+
+    color:#5A5E54 !important;
+
+    background:
+        rgba(
+            235,
+            234,
+            213,
+            .92
+        )
+        !important;
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .18
+        )
+        !important;
+
+    outline:none !important;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0,0,0,.045)
+        !important;
+
+    cursor:not-allowed !important;
+
+    caret-color:transparent;
+
+}

@@ -1,0 +1,2947 @@
+/* =========================================================
+   PRODUCT LOAN COLORS
+========================================================= */
+
+:root {
+    --loan-green: #8ca15b;
+    --loan-green-dark: #6f8347;
+    --loan-cream: #fdfbd4;
+    --loan-white: #ffffff;
+    --loan-text: #202020;
+    --loan-muted: #747474;
+    --loan-red: #dc5151;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.btn-generate-product-loan-report {
+    min-width: 170px;
+    height: 50px;
+    padding: 0 24px;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-generate-product-loan-report i {
+    margin-right: 9px;
+}
+
+.btn-generate-product-loan-report:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   PRODUCT LOAN HEADER ACTIONS
+========================================================= */
+
+.product-loan-header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+
+/* =========================================================
+   PRODUCT LIST BUTTON
+========================================================= */
+
+.btn-product-loan-list {
+    min-width: 160px;
+    height: 50px;
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: var(--loan-cream);
+    background: var(--loan-green);
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.btn-product-loan-list i {
+    font-size: 16px;
+}
+
+.btn-product-loan-list:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 6px 14px
+        rgba(0, 0, 0, .12);
+
+    text-decoration: none;
+}
+
+.btn-product-loan-list:focus {
+    color: var(--loan-cream);
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.product-loan-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.product-loan-toolbar-left,
+.product-loan-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-loan-toolbar-right {
+    justify-content: flex-end;
+}
+
+.product-loan-back-btn {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-loan-back-btn:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: scale(1.08);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.product-loan-search-box {
+    width: 325px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--loan-white);
+    border: none;
+    border-radius: 30px;
+}
+
+.product-loan-search-box i {
+    flex: 0 0 auto;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    color: var(--loan-green);
+    font-size: 20px;
+}
+
+.product-loan-search-box input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 18px 0 3px;
+    color: var(--loan-text);
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.product-loan-search-box input::placeholder {
+    color: #747474;
+}
+
+
+/* =========================================================
+   TOOLBAR FILTERS
+========================================================= */
+
+.product-loan-filter {
+    width: 190px;
+    height: 52px;
+    padding: 0 18px;
+    color: var(--loan-text);
+    background: var(--loan-white);
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.product-loan-date-filter-btn {
+    flex: 0 0 auto;
+    padding: 0;
+    margin: 0;
+    color: var(--loan-green);
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.product-loan-date-filter-btn i {
+    font-size: 36px;
+}
+
+.product-loan-date-filter-btn:hover,
+.product-loan-date-filter-btn:focus {
+    color: var(--loan-green);
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    transform: scale(1.08);
+}
+
+.product-loan-date-filter-btn.active {
+    color: var(--loan-green-dark);
+}
+
+.btn-add-product-loan {
+    flex: 0 0 auto;
+    width: 205px;
+    height: 55px;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-add-product-loan:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: scale(1.04);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   LEDGER
+========================================================= */
+
+.product-loan-ledger {
+    height: calc(100vh - 260px);
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--loan-green) var(--loan-cream);
+}
+
+.product-loan-ledger::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-loan-ledger::-webkit-scrollbar-track {
+    background: var(--loan-cream);
+    border-radius: 20px;
+}
+
+.product-loan-ledger::-webkit-scrollbar-thumb {
+    background: var(--loan-green);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   LEDGER GRID
+========================================================= */
+
+.product-loan-ledger-header,
+.product-loan-row {
+    min-width: 1120px;
+    display: grid;
+    grid-template-columns:
+        105px
+        1.15fr
+        1.25fr
+        0.9fr
+        0.8fr
+        1fr
+        1fr
+        0.95fr
+        0.8fr
+        0.85fr
+        82px;
+    gap: 10px;
+}
+
+.product-loan-ledger-header {
+    flex: 0 0 auto;
+    padding: 18px 15px;
+    color: var(--loan-white);
+    background: var(--loan-green);
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.product-loan-ledger-header > div {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.product-loan-ledger-body {
+    flex: 1;
+    min-height: 0;
+    margin-top: 15px;
+    padding-right: 6px;
+    overflow-y: auto;
+    overflow-x: visible;
+    scrollbar-width: thin;
+    scrollbar-color: var(--loan-green) var(--loan-cream);
+}
+
+.product-loan-ledger-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.product-loan-ledger-body::-webkit-scrollbar-track {
+    background: var(--loan-cream);
+    border-radius: 20px;
+}
+
+.product-loan-ledger-body::-webkit-scrollbar-thumb {
+    background: var(--loan-green);
+    border-radius: 20px;
+}
+
+.product-loan-ledger-body::-webkit-scrollbar-thumb:hover {
+    background: var(--loan-green-dark);
+}
+
+
+/* =========================================================
+   LEDGER ROW
+========================================================= */
+
+.product-loan-row {
+    position: relative;
+    min-height: 90px;
+    margin-bottom: 10px;
+    padding: 15px;
+    align-items: center;
+    color: var(--loan-text);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-loan-row:hover {
+    background: #edfbe3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(2px);
+}
+
+.product-loan-row > div {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.product-loan-row-paid {
+    background: #effde9;
+}
+
+.product-loan-row-overdue {
+    background: #fff3f3;
+}
+
+
+/* =========================================================
+   LEDGER SPECIAL CELLS
+========================================================= */
+
+.product-loan-id-cell,
+.product-loan-member-cell,
+.product-loan-interest-cell {
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-loan-id-cell strong,
+.product-loan-member-cell strong,
+.product-loan-interest-cell strong {
+    font-weight: 700;
+}
+
+.product-loan-id-cell small,
+.product-loan-member-cell small,
+.product-loan-interest-cell small {
+    color: #777777;
+    font-size: 10px;
+}
+
+.product-loan-id-overdue-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    margin-top: 2px;
+    padding: 3px 7px;
+
+    color: #c62828;
+    background: #ffebee;
+
+    border: 1px solid #efb2b2;
+    border-radius: 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.product-loan-id-overdue-badge i {
+    font-size: 9px;
+}
+
+.product-loan-products-cell {
+    flex-direction: column;
+    gap: 3px;
+}
+
+.product-loan-products-cell span {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   STATUS AND REMARKS
+========================================================= */
+
+.product-loan-status,
+.product-loan-remarks {
+    width: 100%;
+    max-width: 104px;
+    padding: 7px 8px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product-loan-status-pending {
+    color: #b57f00;
+    background: #fff8e1;
+    border: 1px solid #f4b400;
+}
+
+.product-loan-status-delivered {
+    color: #1e7a44;
+    background: #b0fbd0;
+    border: none;
+}
+
+.product-loan-status-rejected {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+}
+
+.product-loan-remarks-paid {
+    color: #1e7a44;
+    background: #b0fbd0;
+    border: none;
+}
+
+.product-loan-remarks-ongoing {
+    color: #b57f00;
+    background: #fff8e1;
+    border: 1px solid #f4b400;
+}
+
+.product-loan-remarks-overdue {
+    color: #c62828;
+    background: #ffacb9;
+    border: 1px solid #e53935;
+}
+
+.product-loan-remarks-none {
+    color: #777777;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+}
+
+
+/* =========================================================
+   ROW ACTIONS
+========================================================= */
+
+.product-loan-actions-cell {
+    gap: 7px;
+}
+
+.product-loan-row-action {
+    flex: 0 0 auto;
+    width: 29px;
+    height: 29px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-row-action:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: scale(1.12);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+.product-loan-archive-btn:not(:disabled) {
+    color: var(--loan-cream);
+    background: var(--loan-red);
+    border: 1px solid var(--loan-red);
+}
+
+.product-loan-archive-btn:not(:disabled):hover {
+    color: var(--loan-cream);
+    background: var(--loan-red);
+    border-color: var(--loan-red);
+}
+
+.product-loan-row-action:disabled {
+    color: #aaaaaa;
+    background: #dddddd;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.65;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   EMPTY LEDGER
+========================================================= */
+
+.product-loan-empty {
+    min-width: 1120px;
+    padding: 38px;
+    color: #666666;
+    background: #d9d9d9;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* =========================================================
+   MODAL BACKDROP STANDARD
+========================================================= */
+
+.modal-backdrop.show {
+    opacity: 1;
+    background: rgba(24, 32, 17, 0.64);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DATE FILTER MODAL
+========================================================= */
+
+.product-loan-date-window {
+    padding: 23px;
+    color: var(--loan-cream);
+    background: rgba(75, 77, 70, 0.9);
+    border: 4px solid var(--loan-green);
+    border-radius: 23px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.product-loan-date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-loan-date-header h1 {
+    margin: 0;
+    color: var(--loan-cream);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.product-loan-date-close-btn {
+    width: 44px;
+    height: 44px;
+
+    color: #222222;
+    background: var(--loan-cream);
+    border: none;
+    border-radius: 50%;
+    font-size: 31px;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-loan-date-close-btn:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: scale(1.05);
+}
+
+.product-loan-date-window > hr {
+    height: 1px;
+    margin: 15px 0 20px;
+    background: rgba(255, 253, 212, 0.28);
+    border: 0;
+    opacity: 1;
+}
+
+.product-loan-date-field {
+    margin-bottom: 17px;
+}
+
+.product-loan-date-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--loan-cream);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.product-loan-date-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    color: var(--loan-text);
+    background: var(--loan-cream);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+}
+
+.product-loan-date-input:focus {
+    border-color: var(--loan-green);
+    box-shadow: 0 0 0 4px rgba(140, 161, 91, 0.2);
+}
+
+.product-loan-date-actions {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 23px;
+}
+
+.product-loan-clear-date-btn,
+.product-loan-apply-date-btn {
+    width: 170px;
+    height: 52px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-clear-date-btn {
+    color: #24324b;
+    background: #ececec;
+}
+
+.product-loan-apply-date-btn {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+}
+
+.product-loan-clear-date-btn:hover,
+.product-loan-apply-date-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   ADD PRODUCT LOAN MODAL
+========================================================= */
+
+#addProductLoanModal {
+    padding: 18px !important;
+}
+
+#addProductLoanModal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#addProductLoanModal .modal-dialog {
+    width: min(1180px, calc(100vw - 36px));
+    max-width: 1180px;
+    margin: auto;
+}
+
+.product-loan-modal-window {
+    max-height: calc(100vh - 36px);
+    color: var(--loan-cream);
+    background: rgba(75, 77, 70, 0.88);
+    border: 5px solid var(--loan-green);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.product-loan-modal-window form {
+    min-height: 0;
+    max-height: calc(100vh - 46px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   ADD MODAL HEADER
+========================================================= */
+
+.product-loan-modal-header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px 17px;
+}
+
+.product-loan-modal-title-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.product-loan-modal-title-group h1 {
+    margin: 0;
+    color: var(--loan-cream);
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 800;
+}
+
+.product-loan-pending-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    color: #6f5700;
+    background: #f9dfa0;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.product-loan-close-btn {
+    flex: 0 0 auto;
+    width: 51px;
+    height: 51px;
+    padding: 0 0 4px;
+    color: #1c1c1c;
+    background: var(--loan-cream);
+    border: none;
+    border-radius: 50%;
+    font-size: 35px;
+    font-weight: 300;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-close-btn:hover {
+    color: #1c1c1c;
+    background: var(--loan-cream);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+.product-loan-modal-window > form > hr {
+    flex: 0 0 auto;
+    width: auto;
+    height: 1px;
+    margin: 0 28px;
+    color: transparent;
+    background: rgba(255, 253, 212, 0.25);
+    border: 0;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ADD MODAL BODY
+========================================================= */
+
+.product-loan-modal-body {
+    min-height: 0;
+    padding: 20px 28px 22px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--loan-green) rgba(255, 255, 255, 0.08);
+}
+
+.product-loan-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.product-loan-modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.product-loan-modal-body::-webkit-scrollbar-thumb {
+    background: var(--loan-green);
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   ADD MODAL SECTIONS
+========================================================= */
+
+.product-loan-section {
+    min-width: 0;
+    margin-bottom: 18px;
+    padding: 18px;
+    background: rgba(255, 253, 212, 0.09);
+    border: 1px solid rgba(255, 253, 212, 0.22);
+    border-radius: 17px;
+}
+
+.product-loan-section:last-child {
+    margin-bottom: 0;
+}
+
+.product-loan-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 16px;
+}
+
+.product-loan-section-heading > i {
+    flex: 0 0 auto;
+    width: 37px;
+    height: 37px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.product-loan-section-heading h2 {
+    margin: 1px 0 3px;
+    color: var(--loan-cream);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.product-loan-required-mark {
+    color: #ff7777;
+}
+
+.product-loan-section-heading p {
+    margin: 0;
+    color: rgba(255, 253, 212, 0.72);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ADD MODAL FIELDS
+========================================================= */
+
+.product-loan-details-grid {
+    display: grid;
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr
+        1.2fr;
+    gap: 14px;
+}
+
+.product-loan-field {
+    min-width: 0;
+}
+
+.product-loan-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--loan-cream);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.product-loan-field label span {
+    color: #ff7777;
+}
+
+.product-loan-input {
+    width: 100%;
+    height: 46px;
+    padding: 0 15px;
+    color: var(--loan-text);
+    background: var(--loan-cream);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    font-size: 14px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-input::placeholder {
+    color: #858585;
+}
+
+.product-loan-input:focus {
+    border-color: #b7c789;
+    box-shadow: 0 0 0 4px rgba(183, 199, 137, 0.2);
+}
+
+input.product-loan-input[readonly] {
+    color: #deddb9;
+    background: rgba(52, 54, 50, 0.74);
+    cursor: default;
+}
+
+select.product-loan-input {
+    padding-right: 35px;
+
+    color: var(--loan-text);
+    background: var(--loan-cream);
+
+    cursor: pointer;
+}
+
+.product-loan-readonly-wrapper {
+    position: relative;
+}
+
+.product-loan-readonly-wrapper .product-loan-input {
+    padding-right: 42px;
+}
+
+.product-loan-readonly-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    color: #d8d7b5;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MEMBER SEARCH
+========================================================= */
+
+.product-loan-member-field {
+    position: relative;
+    z-index: 20;
+}
+
+.product-loan-member-wrapper {
+    position: relative;
+}
+
+.product-loan-member-wrapper > i {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 15px;
+    color: #697648;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.product-loan-member-input {
+    padding-left: 42px;
+}
+
+.product-loan-member-suggestions {
+    position: absolute;
+    z-index: 100;
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+    display: none;
+    max-height: 210px;
+    padding: 6px;
+    overflow-y: auto;
+    color: var(--loan-text);
+    background: #fffef0;
+    border: 2px solid var(--loan-green);
+    border-radius: 12px;
+    box-shadow: 0 13px 28px rgba(0, 0, 0, 0.25);
+}
+
+.product-loan-member-suggestions.show,
+.product-loan-member-suggestions:not(:empty) {
+    display: block;
+}
+
+.product-loan-member-suggestion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #282828;
+    background: transparent;
+    border: none;
+    border-radius: 9px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.product-loan-member-suggestion:hover,
+.product-loan-member-suggestion.active {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+}
+
+.product-loan-member-suggestion strong,
+.product-loan-member-suggestion span {
+    display: block;
+}
+
+.product-loan-member-suggestion span {
+    margin-top: 2px;
+    color: #727272;
+    font-size: 11px;
+}
+
+.product-loan-member-suggestion:hover span,
+.product-loan-member-suggestion.active span {
+    color: rgba(255, 253, 212, 0.82);
+}
+
+
+/* =========================================================
+   PRODUCT BUILDER
+========================================================= */
+
+.product-loan-product-builder {
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 2fr)
+        minmax(110px, 0.65fr)
+        minmax(150px, 1fr)
+        110px;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.product-loan-money-input {
+    position: relative;
+}
+
+.product-loan-money-input > span {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 15px;
+    color: #59643d;
+    font-weight: 700;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.product-loan-money-input .product-loan-input {
+    padding-left: 34px;
+}
+
+.product-loan-add-item-btn {
+    height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 0 18px;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: none;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-add-item-btn:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================================================
+   REQUESTED PRODUCT TABLE
+========================================================= */
+
+.product-loan-items-table-wrapper {
+    width: 100%;
+    max-height: 230px;
+    overflow: auto;
+    background: var(--loan-cream);
+    border-radius: 13px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--loan-green) transparent;
+}
+
+.product-loan-items-table-wrapper::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.product-loan-items-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--loan-green);
+    border-radius: 10px;
+}
+
+.product-loan-items-table {
+    width: 100%;
+    min-width: 690px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.product-loan-items-table th {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    padding: 12px 10px;
+    color: #222222;
+    background: #f7f6e4;
+    border-bottom: 1px solid #d8d8cc;
+    font-size: 11px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.product-loan-items-table th:nth-child(1) {
+    width: 35%;
+    text-align: left;
+}
+
+.product-loan-items-table th:nth-child(2) {
+    width: 15%;
+}
+
+.product-loan-items-table th:nth-child(3) {
+    width: 20%;
+}
+
+.product-loan-items-table th:nth-child(4) {
+    width: 21%;
+}
+
+.product-loan-items-table th:nth-child(5) {
+    width: 9%;
+}
+
+.product-loan-items-table td {
+    max-width: 0;
+    padding: 11px 10px;
+    color: #202020;
+    background: var(--loan-cream);
+    border-bottom: 1px solid #dfded0;
+    font-size: 13px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.product-loan-items-table td:first-child {
+    text-align: left;
+}
+
+.product-loan-items-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.product-loan-items-empty td {
+    height: 105px;
+    max-width: none;
+    color: #777777;
+    text-align: center !important;
+}
+
+.product-loan-items-empty i {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--loan-green);
+    font-size: 27px;
+}
+
+.product-loan-remove-item-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: var(--loan-red);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-remove-item-btn:hover {
+    color: #ffffff;
+    background: var(--loan-red);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(220, 81, 81, 0.25);
+}
+
+
+/* =========================================================
+   ATTACHMENTS AND SUMMARY
+========================================================= */
+
+.product-loan-bottom-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(310px, 0.85fr);
+    gap: 18px;
+}
+
+.product-loan-attachments-section,
+.product-loan-summary-section {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.product-loan-upload-box {
+    min-height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    color: #3f482b;
+    background: var(--loan-cream);
+    border: 2px dashed var(--loan-green);
+    border-radius: 13px;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-upload-box:hover {
+    color: #3f482b;
+    background: var(--loan-cream);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.13);
+}
+
+.product-loan-upload-box i {
+    margin-bottom: 5px;
+    color: var(--loan-green-dark);
+    font-size: 28px;
+}
+
+.product-loan-upload-box strong {
+    font-size: 12px;
+}
+
+.product-loan-upload-box span {
+    margin-top: 3px;
+    color: #747474;
+    font-size: 11px;
+}
+
+.product-loan-attachment-list {
+    max-height: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+.product-loan-no-attachment {
+    padding: 8px 5px;
+    color: rgba(255, 253, 212, 0.66);
+    font-size: 12px;
+    text-align: center;
+}
+
+.product-loan-attachment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    color: #282828;
+    background: var(--loan-cream);
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.product-loan-attachment-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-loan-attachment-info span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-loan-remove-attachment {
+    flex: 0 0 auto;
+    padding: 0;
+    color: var(--loan-red);
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.product-loan-summary-list {
+    overflow: hidden;
+    color: #252525;
+    background: var(--loan-cream);
+    border-radius: 13px;
+}
+
+.product-loan-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.product-loan-summary-row span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.product-loan-summary-row strong {
+    font-size: 13px;
+    text-align: right;
+}
+
+.product-loan-summary-total {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border-bottom: none;
+}
+
+.product-loan-summary-total span,
+.product-loan-summary-total strong {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ADD MODAL FOOTER
+========================================================= */
+
+.product-loan-modal-footer {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 11px;
+    padding: 15px 28px 19px;
+    background: rgba(59, 61, 56, 0.48);
+    border-top: 1px solid rgba(255, 253, 212, 0.16);
+}
+
+.product-loan-cancel-btn,
+.product-loan-save-btn {
+    min-width: 135px;
+    height: 47px;
+    padding: 0 21px;
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-cancel-btn {
+    color: var(--loan-cream);
+    background: transparent;
+    border: 2px solid rgba(255, 253, 212, 0.7);
+}
+
+.product-loan-cancel-btn:hover {
+    color: var(--loan-cream);
+    background: rgba(255, 253, 212, 0.08);
+    transform: translateY(-2px);
+}
+
+.product-loan-save-btn {
+    min-width: 185px;
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border: 2px solid var(--loan-green);
+}
+
+.product-loan-save-btn:hover {
+    color: var(--loan-cream);
+    background: var(--loan-green);
+    border-color: var(--loan-green);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+}
+
+.product-loan-save-btn:disabled,
+.product-loan-add-item-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.product-loan-input.is-invalid,
+.product-loan-upload-box.is-invalid {
+    border-color: #ff7979;
+    box-shadow: 0 0 0 4px rgba(255, 121, 121, 0.14);
+}
+
+.product-loan-input.is-valid {
+    border-color: #aeca71;
+}
+
+.product-loan-field-error {
+    display: block;
+    margin-top: 5px;
+    color: #ffaaaa;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SWEETALERT
+========================================================= */
+
+.swal2-container {
+    z-index: 20000 !important;
+}
+
+.swal2-popup:not(.system-logout-popup) {
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25) !important;
+}
+
+.swal2-popup:not(.system-logout-popup):not(.product-loan-archive-popup) .swal2-confirm {
+    color: var(--loan-cream) !important;
+    background: var(--loan-green) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.swal2-popup:not(.system-logout-popup):not(.product-loan-archive-popup) .swal2-confirm:hover {
+    background: var(--loan-green) !important;
+}
+
+.product-loan-archive-popup .swal2-confirm {
+    color: #fff !important;
+    background: #D85C5C !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.product-loan-archive-popup .swal2-confirm:hover {
+    background: #C94B4B !important;
+}
+
+.swal2-popup:not(.system-logout-popup) .swal2-cancel {
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE TOOLBAR
+========================================================= */
+
+@media (max-width: 1550px) {
+
+    .product-loan-toolbar {
+        align-items: flex-start;
+    }
+
+    .product-loan-toolbar-right {
+        flex-wrap: wrap;
+    }
+
+    .product-loan-search-box {
+        width: 270px;
+    }
+
+    .product-loan-filter {
+        width: 155px;
+    }
+
+    .btn-add-product-loan {
+        width: 180px;
+    }
+
+}
+
+
+@media (max-width: 1200px) {
+
+    .product-loan-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-loan-toolbar-left,
+    .product-loan-toolbar-right {
+        width: 100%;
+    }
+
+    .product-loan-toolbar-right {
+        justify-content: flex-start;
+    }
+
+    .product-loan-details-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .product-loan-product-builder {
+        grid-template-columns:
+            minmax(0, 1.7fr)
+            minmax(100px, 0.7fr)
+            minmax(145px, 1fr);
+    }
+
+    .product-loan-add-item-btn {
+        grid-column: 1 / -1;
+        width: 160px;
+        justify-self: center;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MODALS
+========================================================= */
+
+@media (max-width: 850px) {
+
+    #addProductLoanModal {
+        padding: 10px !important;
+    }
+
+    #addProductLoanModal .modal-dialog {
+        width: calc(100vw - 20px);
+        max-width: none;
+    }
+
+    .product-loan-modal-window {
+        max-height: calc(100vh - 20px);
+        border-width: 4px;
+        border-radius: 21px;
+    }
+
+    .product-loan-modal-window form {
+        max-height: calc(100vh - 28px);
+    }
+
+    .product-loan-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-loan-modal-header {
+        padding: 20px 20px 14px;
+    }
+
+    .product-loan-modal-window > form > hr {
+        margin: 0 20px;
+    }
+
+    .product-loan-modal-body {
+        padding: 17px 20px 20px;
+    }
+
+    .product-loan-modal-footer {
+        padding: 14px 20px 17px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .btn-generate-product-loan-report {
+        width: 100%;
+    }
+
+    .product-loan-toolbar-left,
+    .product-loan-toolbar-right {
+        flex-wrap: wrap;
+    }
+
+    .product-loan-search-box {
+        flex: 1;
+        width: auto;
+    }
+
+    .product-loan-filter,
+    .btn-add-product-loan {
+        width: 100%;
+    }
+
+    .product-loan-details-grid,
+    .product-loan-product-builder {
+        grid-template-columns: 1fr;
+    }
+
+    .product-loan-add-item-btn {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .product-loan-modal-title-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+    }
+
+    .product-loan-modal-title-group h1 {
+        font-size: 21px;
+    }
+
+    .product-loan-close-btn {
+        width: 43px;
+        height: 43px;
+        font-size: 31px;
+    }
+
+    .product-loan-section {
+        padding: 14px;
+    }
+
+    .product-loan-modal-footer,
+    .product-loan-date-actions {
+        flex-direction: column-reverse;
+    }
+
+    .product-loan-cancel-btn,
+    .product-loan-save-btn,
+    .product-loan-clear-date-btn,
+    .product-loan-apply-date-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-height: 720px) {
+
+    .product-loan-ledger {
+        min-height: 330px;
+    }
+
+    .product-loan-modal-header {
+        padding-top: 16px;
+        padding-bottom: 12px;
+    }
+
+    .product-loan-close-btn {
+        width: 43px;
+        height: 43px;
+    }
+
+    .product-loan-modal-body {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .product-loan-modal-footer {
+        padding-top: 11px;
+        padding-bottom: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER AND CLOSE BUTTON CORRECTIONS
+========================================================= */
+
+.page-header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.btn-generate-product-loan-report {
+    margin-left: auto;
+}
+
+
+/* CLOSE BUTTON COLOR ANIMATION */
+
+.product-loan-close-btn,
+.product-loan-date-close-btn {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-loan-close-btn:hover,
+.product-loan-date-close-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+    transform: scale(1.06);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+
+@media (max-width: 650px) {
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-generate-product-loan-report {
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
+
+
+/* =========================================================
+   EXPANDED PRODUCT LOAN LEDGER HEIGHT
+========================================================= */
+
+html,
+body,
+.wrapper {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    height: 100vh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.main-content > .page-header,
+.main-content > hr,
+.product-loan-toolbar {
+    flex: 0 0 auto;
+}
+
+.product-loan-ledger {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    margin-top: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.product-loan-ledger-header {
+    flex: 0 0 auto;
+}
+
+.product-loan-ledger-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   RESTORED PRODUCT LOAN ROW
+========================================================= */
+
+.product-loan-row.product-loan-row-focused {
+    animation: product-loan-row-focus 2.2s ease;
+}
+
+@keyframes product-loan-row-focus {
+
+    0%,
+    35% {
+        box-shadow:
+            0 0 0 4px rgba(140, 161, 91, 0.55),
+            0 8px 20px rgba(53, 83, 10, 0.18);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   KEEP OVERDUE ROW RED ON HOVER
+========================================================= */
+
+.product-loan-row-overdue,
+.product-loan-row-overdue:hover {
+    background: #fff3f3;
+}
+
+.product-loan-row-overdue:hover {
+    box-shadow:
+        0 5px 15px
+        rgba(224, 74, 74, 0.12);
+
+    transform: translateY(2px);
+}
+
+
+/* =========================================================
+   PRODUCT CATALOG + PENDING RESERVATION UI
+   Clean consolidated version
+========================================================= */
+
+#addProductLoanModal
+.product-loan-request-workspace {
+    height: min(600px, calc(100vh - 230px));
+    min-height: 500px;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+    gap: 14px;
+    align-items: stretch;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-panel,
+#addProductLoanModal
+.product-loan-request-panel {
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    overflow: hidden;
+    background: rgba(255, 253, 212, 0.09);
+    border: 1px solid rgba(255, 253, 212, 0.22);
+    border-radius: 14px;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-panel {
+    justify-content: flex-start;
+}
+
+
+/* =========================================================
+   PRODUCT SEARCH + META
+========================================================= */
+
+#addProductLoanModal
+.product-loan-product-search {
+    flex: 0 0 auto;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 13px;
+    margin-bottom: 11px;
+    color: #6d7e47;
+    background: #fdfbd4;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-search:focus-within {
+    border-color: #8ca15b;
+    box-shadow: 0 0 0 3px rgba(140, 161, 91, 0.12);
+}
+
+
+#addProductLoanModal
+.product-loan-product-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    color: #2b2c24;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 12px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-meta {
+    flex: 0 0 auto;
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 9px;
+    color: rgba(255, 253, 212, 0.76);
+    font-size: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-meta > strong {
+    color: #fdfbd4;
+    font-weight: 800;
+    letter-spacing: 0.35px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-meta > span strong {
+    color: #d9e9a5;
+}
+
+
+/* =========================================================
+   PRODUCT CATALOG
+========================================================= */
+
+#addProductLoanModal
+.product-loan-product-catalog {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    max-height: none;
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 9px;
+    padding: 2px 4px 2px 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+
+#addProductLoanModal
+.product-loan-product-catalog::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-catalog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+#addProductLoanModal
+.product-loan-product-catalog::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-product-catalog::-webkit-scrollbar-thumb:hover {
+    background: #6f8347;
+}
+
+
+/* =========================================================
+   PRODUCT TILES
+========================================================= */
+
+#addProductLoanModal
+.product-loan-catalog-tile {
+    position: relative;
+    min-width: 0;
+    min-height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 11px;
+    color: #292a22;
+    background: #fdfbd4;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease,
+        opacity 0.18s ease;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-tile:hover {
+    background: #fffedc;
+    border-color: rgba(140, 161, 91, 0.55);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.11);
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-tile.is-selected {
+    background: #e7edc8;
+    border-color: #8ca15b;
+    box-shadow: 0 0 0 2px rgba(140, 161, 91, 0.14);
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-tile.is-added {
+    opacity: 0.58;
+}
+
+#addProductLoanModal
+.product-loan-tile-top {
+    min-width: 0;
+    display: grid;
+    grid-template-columns:
+        34px
+        minmax(0, 1fr)
+        20px;
+    align-items: center;
+    gap: 9px;
+}
+
+
+#addProductLoanModal
+.product-loan-tile-icon {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #72844a;
+    background: #ececcf;
+    border-radius: 9px;
+    font-size: 16px;
+}
+
+
+#addProductLoanModal
+.product-loan-tile-top > strong {
+    min-width: 0;
+    overflow: hidden;
+    color: #2b2c24;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-check {
+    width: 19px;
+    height: 19px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-tile.is-selected
+.product-loan-selected-check {
+    color: #ffffff;
+    background: #8ca15b;
+}
+
+
+#addProductLoanModal
+.product-loan-tile-bottom {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+#addProductLoanModal
+.product-loan-reserved-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    color: #8a5b1d;
+    background: #f8e8c7;
+    border-radius: 7px;
+    font-size: 8px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+#addProductLoanModal
+.product-loan-reserved-pill[hidden] {
+    display: none !important;
+}
+
+
+#addProductLoanModal
+.product-loan-tile-price {
+    margin-left: auto;
+    color: #65763f;
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   CATALOG EMPTY STATE
+========================================================= */
+
+#addProductLoanModal
+.product-loan-catalog-empty {
+    grid-column: 1 / -1;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 18px;
+    color: rgba(255, 253, 212, 0.68);
+    border: 1px dashed rgba(255, 253, 212, 0.22);
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-empty[hidden] {
+    display: none !important;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-empty i {
+    margin-bottom: 3px;
+    font-size: 21px;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-empty strong {
+    color: #fdfbd4;
+    font-size: 11px;
+}
+
+
+#addProductLoanModal
+.product-loan-catalog-empty span {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SELECTED PRODUCT
+========================================================= */
+
+#addProductLoanModal
+.product-loan-selected-product-panel {
+    flex: 0 0 auto;
+    min-height: 82px;
+    margin-top: 11px;
+    padding: 11px 12px;
+    color: #2b2c24;
+    background: #f3f2d9;
+    border: 1px solid rgba(140, 161, 91, 0.45);
+    border-radius: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-panel[hidden] {
+    display: block !important;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-name {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-name span {
+    color: #777765;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-name strong {
+    min-width: 0;
+    overflow: hidden;
+    color: #4d5f31;
+    font-size: 10px;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-stats {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 7px;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-stats > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px;
+    color: #777765;
+    background: #fffedc;
+    border: 1px solid rgba(140, 161, 91, 0.16);
+    border-radius: 7px;
+    font-size: 8px;
+}
+
+
+#addProductLoanModal
+.product-loan-selected-product-stats strong {
+    color: #4c5e30;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   QUANTITY + ADD TO REQUEST
+========================================================= */
+
+#addProductLoanModal
+.product-loan-add-row {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns:
+        minmax(130px, 0.42fr)
+        minmax(180px, 0.58fr);
+    align-items: end;
+    gap: 10px;
+    margin-top: 11px;
+    padding-bottom: 0;
+    overflow: visible;
+    transition:
+        padding-bottom 0.18s ease;
+}
+
+
+/* Give the inline error breathing room only when needed */
+
+#addProductLoanModal
+.product-loan-add-row:has(
+    .product-loan-quantity-message:not(:empty)
+) {
+    padding-bottom: 22px;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-block {
+    position: relative;
+    overflow: visible;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-block > label {
+    display: block;
+    margin-bottom: 6px;
+    color: #fdfbd4;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-stepper {
+    width: 100%;
+    height: 41px;
+    display: grid;
+    grid-template-columns:
+        38px
+        minmax(45px, 1fr)
+        38px;
+    overflow: hidden;
+    background: #fdfbd4;
+    border-radius: 10px;
+    transition:
+        box-shadow 0.18s ease;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-stepper.has-error {
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 77, 79, 0.70);
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-stepper button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f7040;
+    background: #eeeece;
+    border: none;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-stepper button:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-stepper input {
+    width: 100%;
+    min-width: 0;
+    padding: 0 5px;
+    color: #292a23;
+    background: #fdfbd4;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    -moz-appearance: textfield;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-message {
+    position: absolute;
+    z-index: 3;
+    top: calc(100% + 7px);
+    left: 2px;
+
+    display: none;
+
+    max-width: calc(100% - 4px);
+    margin: 0;
+
+    color: #ff6669;
+
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.25;
+
+    white-space: normal;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-message:not(:empty) {
+    display: block;
+}
+
+
+#addProductLoanModal
+.product-loan-quantity-message:not(:empty) {
+    display: block;
+}
+
+
+#addProductLoanModal
+.product-loan-add-item-btn {
+    min-height: 41px;
+}
+
+
+#addProductLoanModal
+.product-loan-add-item-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   REQUEST CART
+========================================================= */
+
+#addProductLoanModal
+.product-loan-request-title {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-request-title h3 {
+    margin: 0;
+    color: #fdfbd4;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+#addProductLoanModal
+.product-loan-request-title p {
+    margin: 4px 0 0;
+    color: rgba(255, 253, 212, 0.72);
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+
+#addProductLoanModal
+#productLoanRequestCount {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    color: #dceaa9;
+    background: rgba(140, 161, 91, 0.15);
+    border-radius: 8px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+#addProductLoanModal
+.product-loan-request-box {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fdfbd4;
+    border-radius: 12px;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table-wrapper {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fdfbd4;
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table-wrapper::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table-wrapper::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #6f8347;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table th:nth-child(1),
+#addProductLoanModal
+.product-loan-items-table td:nth-child(1) {
+    width: 42%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table th:nth-child(2),
+#addProductLoanModal
+.product-loan-items-table td:nth-child(2) {
+    width: 23%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table th:nth-child(3),
+#addProductLoanModal
+.product-loan-items-table td:nth-child(3) {
+    width: 25%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table th:nth-child(4),
+#addProductLoanModal
+.product-loan-items-table td:nth-child(4) {
+    width: 10%;
+}
+
+
+/* =========================================================
+   CART CELLS
+========================================================= */
+
+#addProductLoanModal
+.product-loan-cart-product-cell {
+    text-align: left !important;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-product-cell strong {
+    display: block;
+    color: #2a2b24;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-product-cell small {
+    display: block;
+    margin-top: 3px;
+    color: #777765;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-cell {
+    text-align: center !important;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-control {
+    display: inline-grid;
+    grid-template-columns:
+        27px
+        31px
+        27px;
+    align-items: center;
+    overflow: hidden;
+    background: #ecebd5;
+    border-radius: 8px;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-control button {
+    width: 27px;
+    height: 29px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f7040;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-control button:hover:not(:disabled) {
+    background: #dcdfbd;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-control button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-qty-control span {
+    color: #292a23;
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+#addProductLoanModal
+.product-loan-cart-amount {
+    color: #65763f !important;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+#addProductLoanModal
+.product-loan-items-table:has(
+    .product-loan-items-empty
+) {
+    height: 100%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-table:has(
+    .product-loan-items-empty
+)
+tbody {
+    height: 100%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty {
+    height: 100%;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty td {
+    height: 100%;
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+    background: #fdfbd4;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty i,
+#addProductLoanModal
+.product-loan-items-empty strong,
+#addProductLoanModal
+.product-loan-items-empty span {
+    display: block;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty i {
+    margin-bottom: 8px;
+    color: #8ca15b;
+    font-size: 22px;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty strong {
+    margin-bottom: 5px;
+    color: #4d4f43;
+    font-size: 11px;
+}
+
+
+#addProductLoanModal
+.product-loan-items-empty span {
+    color: #858677;
+    font-size: 9px;
+}
+
+
+#addProductLoanModal
+.product-loan-request-total-quantity {
+    flex: 0 0 auto;
+    min-height: 46px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #fdfbd4;
+    background: #8ca15b;
+}
+
+
+#addProductLoanModal
+.product-loan-request-total-quantity span {
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+#addProductLoanModal
+.product-loan-request-total-quantity strong {
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #addProductLoanModal
+    .product-loan-request-workspace {
+        height: auto;
+        min-height: 0;
+        grid-template-columns: 1fr;
+    }
+
+    #addProductLoanModal
+    .product-loan-catalog-panel,
+    #addProductLoanModal
+    .product-loan-request-panel {
+        height: auto;
+        overflow: visible;
+    }
+
+    #addProductLoanModal
+    .product-loan-product-catalog {
+        max-height: 280px;
+    }
+
+    #addProductLoanModal
+    .product-loan-items-table-wrapper {
+        max-height: 280px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    #addProductLoanModal
+    .product-loan-product-catalog {
+        grid-template-columns: 1fr;
+    }
+
+    #addProductLoanModal
+    .product-loan-selected-product-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    #addProductLoanModal
+    .product-loan-add-row {
+        grid-template-columns: 1fr;
+    }
+
+    #addProductLoanModal
+    .product-loan-quantity-message {
+        white-space: normal;
+    }
+
+}

@@ -1,0 +1,2910 @@
+/* =========================================================
+   SALES MODAL
+   CLEAN FINAL SPIS / LENDING STYLE
+========================================================= */
+
+#addSalesModal {
+    --sales-green: #8ca15b;
+    --sales-green-dark: #6f8347;
+    --sales-green-deep: #566938;
+
+    --sales-cream: #fdfbd4;
+
+    --sales-dark: rgba(75, 77, 70, 0.92);
+    --sales-panel: rgba(255, 253, 212, 0.09);
+    --sales-line: rgba(255, 253, 212, 0.22);
+    --sales-muted: rgba(255, 253, 212, 0.76);
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+body:has(#addSalesModal.show)
+.modal-backdrop.show {
+    opacity: 1;
+
+    background: rgba(24, 32, 17, 0.64);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+
+/* =========================================================
+   MODAL POSITION
+========================================================= */
+
+#addSalesModal {
+    padding: 12px !important;
+}
+
+#addSalesModal.show {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#addSalesModal .sales-modal-dialog {
+    width: min(1180px, calc(100vw - 24px));
+    max-width: 1180px;
+    margin: auto;
+}
+
+
+/* =========================================================
+   MAIN WINDOW
+========================================================= */
+
+#addSalesModal .sales-modal-window {
+    width: 100%;
+
+    height: min(780px, calc(100vh - 24px));
+    max-height: calc(100vh - 24px);
+
+    color: var(--sales-cream);
+    background: var(--sales-dark);
+
+    border: 5px solid var(--sales-green);
+    border-radius: 26px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 24px 70px
+        rgba(0, 0, 0, 0.38);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#addSalesModal .sales-modal-header {
+    min-height: 82px;
+    flex: 0 0 82px;
+
+    padding: 17px 26px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+#addSalesModal .sales-modal-header h1 {
+    margin: 0;
+
+    color: var(--sales-cream);
+
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   MODAL DISMISS BUTTON
+========================================================= */
+
+#addSalesModal .sales-modal-close {
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    padding: 0;
+
+    color: #202020;
+
+    background:
+        var(--sales-cream);
+
+    border: none;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: inherit;
+
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        color 0.20s ease,
+        background 0.20s ease,
+        transform 0.20s ease,
+        box-shadow 0.20s ease;
+}
+
+#addSalesModal .sales-modal-close:hover {
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 5px 13px
+        rgba(0, 0, 0, 0.18);
+}
+
+#addSalesModal .sales-modal-close:active {
+    transform:
+        scale(0.96);
+}
+
+#addSalesModal .sales-modal-close:focus-visible {
+    outline:
+        3px solid
+        rgba(253, 251, 212, 0.30);
+
+    outline-offset:
+        3px;
+}
+
+
+/* HEADER LINE */
+
+#addSalesModal .sales-modal-window > hr {
+    width: auto;
+    height: 1px;
+
+    flex: 0 0 1px;
+
+    margin: 0 26px;
+
+    background:
+        rgba(255, 253, 212, 0.27);
+
+    border: none;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#addSalesModal #salesForm {
+    min-height: 0;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN SCROLLABLE BODY
+========================================================= */
+
+#addSalesModal .sales-modal-body {
+    min-height: 0;
+    flex: 1;
+
+    padding: 20px 24px 26px;
+
+    display: block;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--sales-green)
+        rgba(255, 255, 255, 0.08);
+}
+
+#addSalesModal .sales-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+#addSalesModal .sales-modal-body::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+}
+
+#addSalesModal .sales-modal-body::-webkit-scrollbar-thumb {
+    background: var(--sales-green);
+    border-radius: 10px;
+}
+
+#addSalesModal .sales-modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--sales-green-dark);
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+#addSalesModal .sales-modal-section {
+    min-width: 0;
+
+    padding: 18px 20px;
+
+    color: var(--sales-cream);
+
+    background: var(--sales-panel);
+
+    border:
+        1px solid
+        var(--sales-line);
+
+    border-radius: 18px;
+}
+
+#addSalesModal
+.sales-modal-body
+> .sales-modal-section {
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+#addSalesModal .sales-section-title {
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+#addSalesModal .sales-section-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    color: var(--sales-cream);
+    background: var(--sales-green);
+
+    border-radius: 11px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+#addSalesModal .sales-section-title h2,
+#addSalesModal .sales-cart-title h2 {
+    margin: 0 0 3px;
+
+    color: var(--sales-cream);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+#addSalesModal .sales-section-title p,
+#addSalesModal .sales-cart-title p {
+    margin: 0;
+
+    color: var(--sales-muted);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   CUSTOMER INFORMATION
+========================================================= */
+
+#addSalesModal .sales-customer-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.25fr
+        0.85fr;
+
+    gap: 15px;
+}
+
+#addSalesModal .sales-field {
+    min-width: 0;
+}
+
+#addSalesModal .sales-field label,
+#addSalesModal .sales-quantity-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--sales-cream);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+#addSalesModal .sales-control {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 15px;
+
+    color: #202020;
+    background: var(--sales-cream);
+
+    border: 2px solid transparent;
+    border-radius: 11px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 550;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#addSalesModal .sales-control:focus {
+    border-color: #b7c789;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(183, 199, 137, 0.18);
+}
+
+#addSalesModal .sales-control::placeholder {
+    color: #7d7d73;
+    opacity: 1;
+}
+
+#addSalesModal .sales-control:disabled {
+    color: #deddb9;
+
+    background:
+        rgba(52, 54, 50, 0.74);
+
+    cursor: not-allowed;
+}
+
+#addSalesModal
+.sales-control:disabled::placeholder {
+    color: #deddb9;
+}
+
+#addSalesModal .sales-field-hint {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--sales-muted);
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TRANSACTION DATE
+========================================================= */
+
+#addSalesModal
+.sales-transaction-date-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   DATE BUTTON
+========================================================= */
+
+#addSalesModal
+.sales-transaction-date-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+#addSalesModal
+.sales-transaction-date-btn > span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #34372f;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#addSalesModal
+.sales-transaction-date-btn > i {
+    flex: 0 0 auto;
+
+    color: var(--sales-green-dark);
+
+    font-size: 16px;
+}
+
+
+#addSalesModal
+.sales-transaction-date-btn:hover,
+#addSalesModal
+.sales-transaction-date-btn:focus {
+    background:
+        var(--sales-cream);
+
+    border-color:
+        var(--sales-green);
+
+    box-shadow:
+        0
+        0
+        0
+        4px
+        rgba(
+            140,
+            161,
+            91,
+            0.16
+        );
+}
+
+
+/* =========================================================
+   CALENDAR WINDOW
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar {
+    position: absolute;
+
+    top:
+        calc(
+            100% + 7px
+        );
+
+    right: 0;
+
+    z-index: 9500;
+
+    width: 330px;
+    max-width:
+        calc(
+            100vw - 48px
+        );
+
+    padding: 15px;
+
+    display: none;
+
+    color: #333333;
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(
+            0,
+            0,
+            0,
+            0.07
+        );
+
+    border-radius: 16px;
+
+    box-shadow:
+        0
+        16px
+        36px
+        rgba(
+            0,
+            0,
+            0,
+            0.23
+        );
+}
+
+
+#addSalesModal
+.sales-transaction-calendar.show {
+    display: block;
+}
+
+
+/* =========================================================
+   CALENDAR HEADER
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-header {
+    margin-bottom: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-month {
+    color: #333333;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-nav {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    padding: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #59634c;
+    background: #f3f3f3;
+
+    border: none;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-nav:hover:not(:disabled) {
+    color: #ffffff;
+    background: var(--sales-green);
+
+    transform:
+        scale(1.05);
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-nav:disabled {
+    color: #b5b5b5;
+    background: #f4f4f4;
+
+    cursor: not-allowed;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   WEEKDAYS
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-weekdays {
+    margin-bottom: 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-weekdays span {
+    color: #8a8a8a;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CALENDAR DAYS
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    gap: 5px;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-empty {
+    height: 36px;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-day {
+    width: 100%;
+    height: 36px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #363636;
+    background: #f7f7f7;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-day:hover:not(:disabled) {
+    background: #ece6c7;
+
+    transform:
+        scale(1.06);
+}
+
+
+/* =========================================================
+   HISTORICAL DATE
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-history {
+    color: #356fa8;
+
+    background: #e8f2ff;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-history:hover:not(:disabled) {
+    color: #285f94;
+
+    background: #d8eaff;
+}
+
+
+/* HISTORICAL DATE CURRENTLY SELECTED */
+
+#addSalesModal
+.sales-transaction-calendar-history.sales-transaction-calendar-selected {
+    color: #ffffff !important;
+
+    background: #428bca !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-today {
+    color: var(--sales-green-deep);
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        2px
+        var(--sales-green);
+}
+
+
+/* =========================================================
+   SELECTED DATE
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-selected {
+    color: #ffffff !important;
+
+    background:
+        var(--sales-green)
+        !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* =========================================================
+   FUTURE DATE
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-future {
+    color: #b9b9b9 !important;
+
+    background: #f2f2f2 !important;
+
+    cursor: not-allowed;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   CALENDAR LEGEND
+========================================================= */
+
+#addSalesModal
+.sales-transaction-calendar-legend {
+    margin-top: 12px;
+    padding-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    border-top:
+        1px solid
+        #eeeeee;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-legend span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #777777;
+
+    font-size: 9px;
+    font-weight: 650;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-dot {
+    width: 8px;
+    height: 8px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-dot-today {
+    background:
+        var(--sales-green);
+}
+
+
+#addSalesModal
+.sales-transaction-calendar-dot-history {
+    background: #428bca;
+}
+
+
+/* =========================================================
+   HISTORICAL / AUDIT MESSAGE
+========================================================= */
+
+#addSalesModal
+.sales-transaction-historical-note {
+    width: fit-content;
+    max-width: 100%;
+
+    margin-top: 7px;
+
+    padding:
+        5px
+        9px;
+
+    color: #dceeff;
+
+    background:
+        rgba(
+            66,
+            139,
+            202,
+            0.18
+        );
+
+    border:
+        1px solid
+        rgba(
+            102,
+            175,
+            235,
+            0.38
+        );
+
+    border-radius: 20px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 9px;
+    font-weight: 750;
+    line-height: 1.35;
+}
+
+
+#addSalesModal
+.sales-transaction-historical-note::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 7px;
+
+    background: #62a9e8;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   CUSTOMER TYPE
+========================================================= */
+
+#addSalesModal .sales-affiliate-wrapper {
+    position: relative;
+}
+
+#addSalesModal .sales-select-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+#addSalesModal
+.sales-select-control > i {
+    color: #687649;
+}
+
+
+/* CUSTOMER TYPE POPUP */
+
+#addSalesModal .sales-affiliate-popup {
+    position: absolute;
+    z-index: 1500;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    padding: 6px;
+
+    color: #242424;
+    background: #fffef0;
+
+    border:
+        2px solid
+        var(--sales-green);
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.25);
+
+    display: none;
+}
+
+#addSalesModal
+.sales-affiliate-popup.show {
+    display: block;
+}
+
+#addSalesModal .affiliate-item {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 8px 11px;
+
+    color: #282828;
+    background: transparent;
+
+    border: none;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+#addSalesModal .affiliate-item:hover {
+    color: var(--sales-cream);
+    background: var(--sales-green);
+}
+
+#addSalesModal .affiliate-item > i {
+    width: 28px;
+    flex: 0 0 28px;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+#addSalesModal .affiliate-item strong {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#addSalesModal .affiliate-item small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #707067;
+
+    font-size: 10px;
+}
+
+#addSalesModal
+.affiliate-item:hover small {
+    color:
+        rgba(255, 253, 212, 0.84);
+}
+
+
+/* =========================================================
+   BUYER / MEMBER SEARCH
+========================================================= */
+
+#addSalesModal .sales-buyer-wrapper {
+    position: relative;
+}
+
+
+/* SEARCH ICON */
+
+#addSalesModal
+.sales-buyer-wrapper > i {
+    position: absolute;
+
+    z-index: 4;
+
+    top: 25px;
+    left: 15px;
+
+    color: #6b774d;
+
+    font-size: 15px;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+
+/* BUYER INPUT */
+
+#addSalesModal .sales-buyer-input {
+    padding-left: 42px;
+
+    transition:
+        padding-right 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+/* =========================================================
+   BUYER INLINE ERROR
+========================================================= */
+
+#addSalesModal
+.sales-buyer-input.sales-input-error {
+    border-color:
+        #d65a5a !important;
+
+    background:
+        #fff4f4;
+
+    box-shadow:
+        0
+        0
+        0
+        4px
+        rgba(
+            214,
+            90,
+            90,
+            0.14
+        ) !important;
+}
+
+
+#addSalesModal
+.sales-buyer-input.sales-input-error:focus {
+    border-color:
+        #d65a5a !important;
+
+    box-shadow:
+        0
+        0
+        0
+        4px
+        rgba(
+            214,
+            90,
+            90,
+            0.18
+        ) !important;
+}
+
+
+#addSalesModal
+.sales-field-hint.sales-inline-error {
+    color:
+        #ffb4b4;
+
+    font-weight:
+        750;
+}
+
+
+/* =========================================================
+   VERIFIED MEMBER
+
+   Floating inside Buyer input.
+   Does NOT occupy layout space.
+========================================================= */
+
+#addSalesModal
+.sales-buyer-wrapper.has-verified-member
+.sales-buyer-input {
+    padding-right: 50px;
+
+    border-color:
+        rgba(111, 131, 71, 0.72);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(140, 161, 91, 0.14);
+}
+
+
+/* VERIFIED CIRCLE */
+
+#addSalesModal
+.sales-buyer-wrapper.has-verified-member::after {
+    content: "✓";
+
+    position: absolute;
+
+    z-index: 6;
+
+    top: 25px;
+    right: 13px;
+
+    width: 26px;
+    height: 26px;
+
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+
+    border:
+        2px solid
+        #f6f5dc;
+
+    border-radius:
+        50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+
+    box-shadow:
+        0 3px 7px
+        rgba(0, 0, 0, 0.18);
+
+    animation:
+        salesVerifiedMemberPop
+        0.18s ease;
+}
+
+
+/* SMALL VERIFIED POP */
+
+@keyframes salesVerifiedMemberPop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            scale(0.72);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   OLD MEMBER FOUND ELEMENT
+
+   Kept in HTML for compatibility,
+   but permanently removed from layout.
+========================================================= */
+
+#addSalesModal .sales-member-found {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MEMBER SEARCH RESULTS
+========================================================= */
+
+#addSalesModal
+.sales-member-suggestions {
+    position: absolute;
+    z-index: 1600;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    max-height: 210px;
+
+    padding: 5px;
+
+    color: #222222;
+    background: #fffef0;
+
+    border:
+        2px solid
+        var(--sales-green);
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.25);
+
+    display: none;
+
+    overflow-y: auto;
+}
+
+#addSalesModal
+.sales-member-suggestions.show {
+    display: block;
+}
+
+#addSalesModal .sales-member-item {
+    padding: 10px 11px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease;
+}
+
+#addSalesModal .sales-member-item:hover {
+    background:
+        var(--sales-green);
+}
+
+#addSalesModal .sales-member-name {
+    display: block;
+
+    color: #202020;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#addSalesModal .sales-member-code {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #717167;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+#addSalesModal
+.sales-member-item:hover
+.sales-member-name,
+#addSalesModal
+.sales-member-item:hover
+.sales-member-code {
+    color:
+        var(--sales-cream);
+}
+
+#addSalesModal
+.sales-member-search-message,
+#addSalesModal
+.sales-member-message {
+    padding: 11px;
+
+    color: #555555;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PRODUCT + CART AREA
+========================================================= */
+
+#addSalesModal .sales-main-grid {
+    min-height: auto;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(390px, 0.85fr);
+
+    gap: 16px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PRODUCT SECTION
+========================================================= */
+
+#addSalesModal .sales-product-section {
+    min-width: 0;
+}
+
+
+/* PRODUCT SEARCH */
+
+#addSalesModal .sales-product-search {
+    position: relative;
+}
+
+#addSalesModal
+.sales-product-search > i {
+    position: absolute;
+    z-index: 2;
+
+    top: 50%;
+    left: 15px;
+
+    color: #6b774d;
+
+    font-size: 15px;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+#addSalesModal
+.sales-product-search input {
+    height: 50px;
+
+    padding-left: 42px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   AVAILABLE PRODUCTS HEADER
+========================================================= */
+
+#addSalesModal .sales-product-meta {
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+#addSalesModal
+.sales-product-meta > strong {
+    color: var(--sales-cream);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#addSalesModal
+#salesProductResultCount {
+    padding: 5px 9px;
+
+    color: var(--sales-cream);
+
+    background:
+        rgba(140, 161, 91, 0.34);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PRODUCT TILE AREA
+========================================================= */
+
+#addSalesModal .sales-product-grid {
+    width: 100%;
+
+    height: 310px;
+    min-height: 310px;
+    max-height: 310px;
+
+    padding: 3px 7px 3px 3px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    align-content: start;
+
+    gap: 10px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--sales-green)
+        rgba(255, 255, 255, 0.06);
+}
+
+#addSalesModal
+.sales-product-grid::-webkit-scrollbar {
+    width: 7px;
+}
+
+#addSalesModal
+.sales-product-grid::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border-radius: 10px;
+}
+
+#addSalesModal
+.sales-product-grid::-webkit-scrollbar-thumb {
+    background:
+        var(--sales-green);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   PRODUCT TILE
+========================================================= */
+
+#addSalesModal .sales-product-tile {
+    min-width: 0;
+    min-height: 96px;
+
+    padding: 13px;
+
+    color: #222222;
+    background: var(--sales-cream);
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+#addSalesModal
+.sales-product-tile:hover {
+    border-color:
+        var(--sales-green);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 5px 11px
+        rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================================================
+   SELECTED PRODUCT TILE
+========================================================= */
+
+#addSalesModal
+.sales-product-tile.is-selected {
+    position: relative;
+
+    color: #202020;
+
+    background: #e7edc8;
+
+    border:
+        3px solid
+        var(--sales-green);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140, 161, 91, 0.24),
+        0 7px 14px
+        rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   PRODUCT ALREADY IN CART
+========================================================= */
+
+#addSalesModal
+.sales-product-tile.is-added {
+    opacity: 0.62;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#addSalesModal
+.sales-product-tile.is-added:hover {
+    opacity: 0.72;
+}
+
+
+/* CHECK INDICATOR */
+
+#addSalesModal
+.sales-product-tile.is-selected::after {
+    content: "✓";
+
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 25px;
+    height: 25px;
+
+    color: var(--sales-cream);
+    background: var(--sales-green);
+
+    border:
+        2px solid
+        #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    box-shadow:
+        0 3px 7px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* SELECTED PRODUCT ICON */
+
+#addSalesModal
+.sales-product-tile.is-selected
+.sales-product-tile-icon {
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+}
+
+
+/* SELECTED PRODUCT NAME */
+
+#addSalesModal
+.sales-product-tile.is-selected
+.sales-product-tile-name strong {
+    color:
+        var(--sales-green-deep);
+}
+
+
+/* HIDDEN FROM SEARCH */
+
+#addSalesModal
+.sales-product-tile[hidden] {
+    display: none !important;
+}
+
+
+/* PRODUCT TILE NAME */
+
+#addSalesModal
+.sales-product-tile-name {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+#addSalesModal
+.sales-product-tile-icon {
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 36px;
+
+    color:
+        var(--sales-green-dark);
+
+    background:
+        rgba(140, 161, 91, 0.18);
+
+    border-radius: 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+}
+
+#addSalesModal
+.sales-product-tile-name strong {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #242424;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* PRODUCT TILE INFO */
+
+#addSalesModal
+.sales-product-tile-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+#addSalesModal
+.sales-product-tile-info > strong {
+    color:
+        var(--sales-green-deep);
+
+    font-size: 13px;
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   STOCK INDICATOR
+========================================================= */
+
+#addSalesModal
+.sales-stock-indicator {
+    padding: 5px 7px;
+
+    border-radius: 7px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 4px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+#addSalesModal
+.sales-stock-indicator i {
+    font-size: 5px;
+}
+
+
+/* GOOD STOCK */
+
+#addSalesModal
+.sales-stock-good {
+    color: #4d783a;
+    background: #e5f1d8;
+}
+
+
+/* MEDIUM STOCK */
+
+#addSalesModal
+.sales-stock-medium {
+    color: #99691e;
+    background: #ffefcc;
+}
+
+
+/* LOW STOCK */
+
+#addSalesModal
+.sales-stock-low {
+    color: #af4646;
+    background: #f8dddd;
+}
+
+
+/* =========================================================
+   EMPTY PRODUCT SEARCH
+========================================================= */
+
+#addSalesModal
+.sales-product-empty {
+    grid-column: 1 / -1;
+
+    min-height: 180px;
+
+    color: var(--sales-muted);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#addSalesModal
+.sales-product-empty[hidden] {
+    display: none !important;
+}
+
+#addSalesModal
+.sales-product-empty i {
+    margin-bottom: 6px;
+
+    color: #c2cf95;
+
+    font-size: 26px;
+}
+
+#addSalesModal
+.sales-product-empty strong {
+    color: var(--sales-cream);
+
+    font-size: 13px;
+}
+
+#addSalesModal
+.sales-product-empty span {
+    margin-top: 3px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SELECTED PRODUCT SUMMARY
+
+   Removed from visual UI.
+========================================================= */
+
+#addSalesModal .sales-selected-product {
+    display: none !important;
+}
+
+
+/* =========================================================
+   QUANTITY + ADD TO CART
+========================================================= */
+
+#addSalesModal
+.sales-add-product-row {
+    margin-top: 12px;
+
+    display: grid;
+
+    grid-template-columns:
+        180px
+        minmax(0, 1fr);
+
+    align-items: end;
+
+    gap: 12px;
+}
+
+#addSalesModal
+.sales-quantity-stepper {
+    height: 52px;
+
+    padding: 4px;
+
+    background:
+        var(--sales-cream);
+
+    border-radius: 11px;
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        1fr
+        40px;
+
+    align-items: center;
+}
+
+#addSalesModal
+.sales-quantity-stepper button {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    color:
+        var(--sales-green-dark);
+
+    background:
+        rgba(140, 161, 91, 0.17);
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease;
+}
+
+#addSalesModal
+.sales-quantity-stepper button:hover {
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+}
+
+#addSalesModal
+.sales-quantity-stepper input {
+    width: 100%;
+    height: 38px;
+
+    padding: 0;
+
+    color: #202020;
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    text-align: center;
+
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+#addSalesModal
+.sales-quantity-stepper
+input::-webkit-inner-spin-button,
+#addSalesModal
+.sales-quantity-stepper
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+
+/* ADD TO CART */
+
+#addSalesModal
+.sales-add-cart-btn {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+
+    border: none;
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#addSalesModal
+.sales-add-cart-btn:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 15px
+        rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================================================
+   PRODUCT CART SECTION
+========================================================= */
+
+#addSalesModal
+.sales-cart-section {
+    min-width: 0;
+}
+
+#addSalesModal
+.sales-cart-title {
+    min-height: 48px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+#addSalesModal
+#salesCartCount {
+    flex: 0 0 auto;
+
+    padding: 6px 10px;
+
+    color:
+        var(--sales-cream);
+
+    background:
+        rgba(140, 161, 91, 0.35);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CART BOX
+========================================================= */
+
+#addSalesModal
+.sales-cart-box {
+    height: 490px;
+    min-height: 490px;
+
+    background:
+        var(--sales-cream);
+
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CART SCROLL AREA
+========================================================= */
+
+#addSalesModal
+.sales-cart-scroll {
+    min-height: 0;
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--sales-green)
+        transparent;
+}
+
+#addSalesModal
+.sales-cart-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+#addSalesModal
+.sales-cart-scroll::-webkit-scrollbar-thumb {
+    background:
+        var(--sales-green);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   CART TABLE
+========================================================= */
+
+#addSalesModal
+.sales-cart-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+#addSalesModal
+.sales-cart-table thead {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+}
+
+#addSalesModal
+.sales-cart-table th {
+    padding: 12px 7px;
+
+    color: #252525;
+    background: #efeed8;
+
+    border-bottom:
+        1px solid
+        #d7d6c2;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-align: center;
+}
+
+#addSalesModal
+.sales-cart-table td {
+    padding: 12px 7px;
+
+    color: #202020;
+
+    background:
+        var(--sales-cream);
+
+    border-bottom:
+        1px solid
+        #dedcc7;
+
+    font-size: 12px;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   CART PRODUCT
+========================================================= */
+
+#addSalesModal
+.sales-cart-product-cell {
+    text-align: left !important;
+}
+
+#addSalesModal
+.sales-cart-product-cell strong {
+    display: block;
+
+    overflow: hidden;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#addSalesModal
+.sales-cart-product-cell small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #737363;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CART QUANTITY CONTROL
+========================================================= */
+
+#addSalesModal
+.sales-cart-qty-control {
+    width: fit-content;
+
+    margin: auto;
+    padding: 2px;
+
+    background: #ededda;
+
+    border:
+        1px solid
+        #d3d2be;
+
+    border-radius: 8px;
+
+    display: grid;
+
+    grid-template-columns:
+        27px
+        30px
+        27px;
+
+    align-items: center;
+}
+
+#addSalesModal
+.sales-cart-qty-control button {
+    width: 26px;
+    height: 26px;
+
+    padding: 0;
+
+    color:
+        var(--sales-green-dark);
+
+    background: transparent;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+#addSalesModal
+.sales-cart-qty-control
+button:hover:not(:disabled) {
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+}
+
+#addSalesModal
+.sales-cart-qty-control
+button:disabled {
+    color: #b6b6a7;
+
+    cursor: not-allowed;
+}
+
+#addSalesModal
+.sales-cart-qty-control span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CART AMOUNT
+========================================================= */
+
+#addSalesModal
+.sales-cart-amount {
+    color:
+        var(--sales-green-deep)
+        !important;
+
+    font-size: 12px !important;
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   REMOVE CART ITEM
+========================================================= */
+
+#addSalesModal
+.sales-cart-remove {
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    color: #c44f4f;
+    background: #f7dddd;
+
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.18s ease,
+        background 0.18s ease;
+}
+
+#addSalesModal
+.sales-cart-remove:hover {
+    color: #ffffff;
+    background: #cf5555;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+#addSalesModal
+.sales-cart-empty-row td {
+    height: 305px;
+
+    border: none;
+}
+
+#addSalesModal
+.sales-cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #737363;
+}
+
+#addSalesModal
+.sales-cart-empty i {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--sales-green);
+
+    background:
+        rgba(140, 161, 91, 0.16);
+
+    border-radius: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+#addSalesModal
+.sales-cart-empty strong {
+    color: #262626;
+
+    font-size: 13px;
+}
+
+#addSalesModal
+.sales-cart-empty span {
+    margin-top: 3px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+========================================================= */
+
+#addSalesModal
+.sales-cart-summary {
+    flex: 0 0 auto;
+
+    background: #efeed8;
+
+    border-top:
+        1px solid
+        #d5d4bf;
+}
+
+#addSalesModal
+.sales-cart-summary > div {
+    min-height: 45px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+#addSalesModal
+.sales-cart-summary span {
+    color: #5d6548;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+#addSalesModal
+.sales-cart-summary strong {
+    color: #202020;
+
+    font-size: 13px;
+}
+
+
+/* GRAND TOTAL */
+
+#addSalesModal
+.sales-grand-total {
+    background:
+        var(--sales-green);
+}
+
+#addSalesModal
+.sales-grand-total span,
+#addSalesModal
+.sales-grand-total strong {
+    color:
+        var(--sales-cream);
+}
+
+#addSalesModal
+.sales-grand-total strong {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+
+/* =========================================================
+   PAYMENT SUMMARY - POS STYLE
+========================================================= */
+
+#addSalesModal .sales-payment-section {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 8px;
+    padding-top: 20px;
+}
+
+#addSalesModal .sales-payment-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    margin-top: 8px;
+}
+
+#addSalesModal .sales-payment-row {
+    min-width: 0;
+    min-height: 120px;
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    background: var(--sales-cream);
+    border: 1px solid rgba(140, 161, 91, 0.25);
+    border-radius: 14px;
+}
+
+#addSalesModal .sales-payment-row span,
+#addSalesModal .sales-payment-row label {
+    margin: 0;
+
+    color: #566938;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+#addSalesModal .sales-payment-row strong {
+    color: #293421;
+
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* GRAND TOTAL */
+
+#addSalesModal .sales-payment-total {
+    background: var(--sales-green);
+    border-color: var(--sales-green);
+}
+
+#addSalesModal .sales-payment-total span,
+#addSalesModal .sales-payment-total strong {
+    color: var(--sales-cream);
+}
+
+
+/* CASH RECEIVED */
+
+#addSalesModal .sales-payment-cash .sales-control {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+
+    padding: 0 14px;
+
+    color: #293421;
+    background: #fffef0;
+
+    border: 2px solid #c8d3a3;
+    border-radius: 10px;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#addSalesModal .sales-payment-cash .sales-control:focus {
+    border-color: var(--sales-green);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(140, 161, 91, 0.18);
+}
+
+#addSalesModal .sales-payment-cash input::-webkit-inner-spin-button,
+#addSalesModal .sales-payment-cash input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#addSalesModal .sales-payment-cash input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+
+/* CHANGE */
+
+#addSalesModal .sales-payment-change {
+    background: #ecf4dc;
+}
+
+#addSalesModal .sales-payment-change strong {
+    color: #4c702c;
+}
+
+
+/* PAYMENT SUMMARY RESPONSIVE */
+
+@media (max-width: 760px) {
+
+    #addSalesModal .sales-payment-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #addSalesModal .sales-payment-row {
+        min-height: 100px;
+        padding: 15px;
+    }
+
+    #addSalesModal .sales-payment-row strong {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   FIXED FOOTER
+========================================================= */
+
+
+#addSalesModal
+.sales-modal-footer {
+    min-height: 70px;
+    flex: 0 0 70px;
+
+    padding: 10px 24px;
+
+    background:
+        rgba(42, 44, 40, 0.55);
+
+    border-top:
+        1px solid
+        rgba(255, 253, 212, 0.18);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#addSalesModal
+.sales-footer-close {
+    width: 150px;
+    height: 48px;
+
+    color:
+        var(--sales-cream);
+
+    background:
+        transparent;
+
+    border:
+        2px solid
+        rgba(253, 251, 212, 0.70);
+
+    border-radius: 10px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+#addSalesModal
+.sales-footer-close:hover {
+    background:
+        rgba(255, 253, 212, 0.08);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   SAVE SALE
+========================================================= */
+
+#addSalesModal
+.sales-footer-save {
+    min-width: 175px;
+    height: 48px;
+
+    padding: 0 18px;
+
+    color:
+        var(--sales-cream);
+
+    background:
+        var(--sales-green);
+
+    border: none;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+#addSalesModal
+.sales-footer-save:hover:not(:disabled) {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 13px
+        rgba(0, 0, 0, 0.16);
+}
+
+#addSalesModal
+.sales-footer-save:disabled {
+    opacity: 0.62;
+
+    cursor: not-allowed;
+}
+
+#addSalesModal
+.sales-footer-save > i {
+    font-size: 16px;
+}
+
+#addSalesModal
+.sales-footer-save strong {
+    color:
+        var(--sales-cream);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RESPONSIVE - MEDIUM
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    #addSalesModal
+    .sales-main-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            350px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #addSalesModal
+    .sales-customer-grid {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    #addSalesModal
+    .sales-customer-grid
+    .sales-field:last-child {
+        grid-column:
+            1 / -1;
+    }
+
+    #addSalesModal
+    .sales-main-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    #addSalesModal
+    .sales-product-grid {
+        height: 320px;
+        min-height: 320px;
+        max-height: 320px;
+    }
+
+    #addSalesModal
+    .sales-cart-box {
+        height: 420px;
+        min-height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    #addSalesModal {
+        padding: 7px !important;
+    }
+
+    #addSalesModal
+    .sales-modal-dialog {
+        width:
+            calc(100vw - 14px);
+    }
+
+    #addSalesModal
+    .sales-modal-window {
+        height:
+            calc(100vh - 14px);
+
+        max-height:
+            calc(100vh - 14px);
+
+        border-radius: 20px;
+    }
+
+    #addSalesModal
+    .sales-modal-header {
+        padding:
+            14px
+            17px;
+    }
+
+    #addSalesModal
+    .sales-modal-header h1 {
+        font-size: 22px;
+    }
+
+    #addSalesModal
+    .sales-modal-body {
+        padding:
+            15px
+            14px
+            20px;
+    }
+
+    #addSalesModal
+    .sales-customer-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    #addSalesModal
+    .sales-customer-grid
+    .sales-field:last-child {
+        grid-column:
+            auto;
+    }
+
+    #addSalesModal
+    .sales-product-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    #addSalesModal
+    .sales-add-product-row {
+        grid-template-columns:
+            1fr;
+    }
+
+    #addSalesModal
+    .sales-modal-footer {
+        padding:
+            10px
+            14px;
+
+        justify-content:
+            stretch;
+    }
+
+    #addSalesModal
+    .sales-footer-close,
+    #addSalesModal
+    .sales-footer-save {
+        width: auto;
+        min-width: 0;
+
+        flex: 1;
+    }
+
+}

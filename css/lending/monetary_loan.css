@@ -1,0 +1,1849 @@
+/* =========================================================
+   MONETARY LOAN COLORS
+========================================================= */
+
+:root {
+    --monetary-green: #8ca15b;
+    --monetary-green-dark: #6f8347;
+    --monetary-cream: #fdfbd4;
+    --monetary-white: #ffffff;
+    --monetary-text: #202020;
+    --monetary-muted: #747474;
+    --monetary-red: #dc5151;
+    --monetary-dark-modal: rgba(75, 77, 70, 0.9);
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   REPORT BUTTON
+========================================================= */
+
+.btn-generate-monetary-report {
+    min-width: 190px;
+    height: 50px;
+    padding: 0 24px;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-generate-monetary-report i {
+    margin-right: 9px;
+}
+
+.btn-generate-monetary-report:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.monetary-loan-toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+.monetary-loan-toolbar-left,
+.monetary-loan-toolbar-right {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.monetary-loan-toolbar-left {
+    flex: 1;
+}
+
+.monetary-loan-toolbar-right {
+    flex: 0 1 auto;
+    justify-content: flex-end;
+}
+
+.monetary-loan-back-btn {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.monetary-loan-back-btn:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: scale(1.08);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.monetary-loan-search-box {
+    flex: 1;
+    width: 325px;
+    max-width: 400px;
+    min-width: 190px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--monetary-white);
+    border: none;
+    border-radius: 30px;
+}
+
+.monetary-loan-search-box i {
+    flex: 0 0 auto;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    color: var(--monetary-green);
+    font-size: 20px;
+}
+
+.monetary-loan-search-box input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 18px 0 3px;
+    color: var(--monetary-text);
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.monetary-loan-search-box input::placeholder {
+    color: var(--monetary-muted);
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.monetary-loan-filter {
+    flex: 0 1 180px;
+    width: 180px;
+    min-width: 125px;
+    height: 52px;
+    padding: 0 16px;
+    color: var(--monetary-text);
+    background: var(--monetary-white);
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.monetary-loan-date-filter-btn {
+    flex: 0 0 auto;
+    padding: 0;
+    margin: 0;
+    color: var(--monetary-green);
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.monetary-loan-date-filter-btn i {
+    font-size: 36px;
+}
+
+.monetary-loan-date-filter-btn:hover,
+.monetary-loan-date-filter-btn:focus {
+    color: var(--monetary-green);
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    transform: scale(1.08);
+}
+
+.monetary-loan-date-filter-btn.active {
+    color: var(--monetary-green-dark);
+}
+
+.btn-add-monetary-loan {
+    flex: 0 0 215px;
+    width: 215px;
+    height: 55px;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.btn-add-monetary-loan:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: scale(1.04);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   LEDGER
+========================================================= */
+
+.monetary-loan-ledger {
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - 260px);
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEDGER GRID
+========================================================= */
+
+.monetary-loan-ledger-header,
+.monetary-loan-row {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.82fr)
+        minmax(0, 1fr)
+        minmax(0, 1.12fr)
+        minmax(0, 0.88fr)
+        minmax(0, 0.72fr)
+        minmax(0, 0.94fr)
+        minmax(0, 0.9fr)
+        minmax(0, 0.9fr)
+        minmax(0, 0.96fr)
+        minmax(0, 0.76fr)
+        minmax(0, 0.8fr)
+        minmax(0, 0.72fr);
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+.monetary-loan-ledger-header {
+    flex: 0 0 auto;
+    padding: 18px 12px;
+    color: var(--monetary-white);
+    background: var(--monetary-green);
+    border-radius: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.monetary-loan-ledger-header > div {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.monetary-loan-ledger-body {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    min-height: 0;
+    margin-top: 15px;
+    padding-right: 6px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--monetary-green)
+        var(--monetary-cream);
+}
+
+.monetary-loan-ledger-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.monetary-loan-ledger-body::-webkit-scrollbar-track {
+    background: var(--monetary-cream);
+    border-radius: 20px;
+}
+
+.monetary-loan-ledger-body::-webkit-scrollbar-thumb {
+    background: var(--monetary-green);
+    border-radius: 20px;
+}
+
+.monetary-loan-ledger-body::-webkit-scrollbar-thumb:hover {
+    background: var(--monetary-green-dark);
+}
+
+
+/* =========================================================
+   LEDGER ROW
+========================================================= */
+
+.monetary-loan-row {
+    position: relative;
+    min-height: 95px;
+    margin-bottom: 10px;
+    padding: 15px 12px;
+    align-items: center;
+    color: var(--monetary-text);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.monetary-loan-row:hover {
+    background: #edfbe3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(2px);
+}
+
+.monetary-loan-row > div {
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   SPECIAL CELLS
+========================================================= */
+
+.monetary-loan-id-cell,
+.monetary-loan-member-cell,
+.monetary-loan-interest-cell,
+.monetary-loan-approved-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.monetary-loan-id-cell strong,
+.monetary-loan-member-cell strong,
+.monetary-loan-interest-cell strong,
+.monetary-loan-approved-cell strong {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+}
+
+.monetary-loan-id-cell small,
+.monetary-loan-member-cell small,
+.monetary-loan-interest-cell small,
+.monetary-loan-approved-cell small {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    color: #777777;
+    font-size: 9px;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+}
+
+.monetary-loan-id-overdue-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    margin-top: 2px;
+    padding: 3px 6px;
+
+    color: #c62828;
+    background: #ffebee;
+
+    border: 1px solid #efb2b2;
+    border-radius: 10px;
+
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.monetary-loan-id-overdue-badge i {
+    font-size: 8px;
+}
+
+.monetary-loan-purpose-cell {
+    display: block !important;
+    max-height: 58px;
+    overflow: hidden;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+    text-align: center;
+    word-break: break-word;
+}
+
+.monetary-loan-money-cell {
+    overflow: hidden;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.monetary-loan-date-cell {
+    overflow: hidden;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+
+/* =========================================================
+   STATUS AND REMARKS
+========================================================= */
+
+[class^="monetary-status-"],
+[class^="monetary-remarks-"] {
+    width: 100%;
+    max-width: 96px;
+    padding: 7px 5px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.monetary-status-pending {
+    color: #b57f00;
+    background: #fff8e1;
+    border: 1px solid #f4b400;
+}
+
+.monetary-status-accepted {
+    color: #1e7a44;
+    background: #b0fbd0;
+    border: none;
+}
+
+.monetary-status-rejected {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+}
+
+.monetary-remarks-paid {
+    color: #1e7a44;
+    background: #b0fbd0;
+    border: none;
+}
+
+.monetary-remarks-ongoing {
+    color: #b57f00;
+    background: #fff8e1;
+    border: 1px solid #f4b400;
+}
+
+.monetary-remarks-overdue {
+    color: #c62828;
+    background: #ffacb9;
+    border: 1px solid #e53935;
+}
+
+.monetary-remarks-none {
+    color: #777777;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+}
+
+
+/* =========================================================
+   ROW ACTIONS
+========================================================= */
+
+.monetary-loan-actions-cell {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.monetary-loan-row-action {
+    flex: 0 0 auto;
+    width: 27px;
+    height: 27px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: none;
+    border-radius: 50%;
+    font-size: 11px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.monetary-loan-row-action:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: scale(1.12);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+.monetary-loan-archive-btn:not(:disabled) {
+    color: var(--monetary-cream);
+    background: var(--monetary-red);
+    border: 1px solid var(--monetary-red);
+}
+
+.monetary-loan-archive-btn:not(:disabled):hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-red);
+    border-color: var(--monetary-red);
+}
+
+.monetary-loan-row-action:disabled {
+    color: #aaaaaa;
+    background: #dddddd;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.65;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   EMPTY LEDGER
+========================================================= */
+
+.monetary-loan-empty {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 38px;
+    color: #666666;
+    background: #d9d9d9;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+.modal-backdrop.show {
+    opacity: 1;
+    background: rgba(24, 32, 17, 0.64);
+    backdrop-filter: blur(7px);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DATE FILTER MODAL
+========================================================= */
+
+.monetary-loan-date-window {
+    padding: 23px;
+    color: var(--monetary-cream);
+    background: var(--monetary-dark-modal);
+    border: 4px solid var(--monetary-green);
+    border-radius: 23px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(18px);
+}
+
+.monetary-loan-date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.monetary-loan-date-header h1 {
+    margin: 0;
+    color: var(--monetary-cream);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.monetary-loan-date-close-btn {
+    width: 44px;
+    height: 44px;
+    color: #222222;
+    background: var(--monetary-cream);
+    border: none;
+    border-radius: 50%;
+    font-size: 31px;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.monetary-loan-date-close-btn:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    transform: scale(1.05);
+}
+
+.monetary-loan-date-window > hr {
+    height: 1px;
+    margin: 15px 0 20px;
+    background: rgba(255, 253, 212, 0.28);
+    border: 0;
+    opacity: 1;
+}
+
+.monetary-loan-date-field {
+    margin-bottom: 17px;
+}
+
+.monetary-loan-date-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--monetary-cream);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.monetary-loan-date-input {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    color: var(--monetary-text);
+    background: var(--monetary-cream);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.monetary-loan-date-input:focus {
+    border-color: var(--monetary-green);
+    box-shadow: 0 0 0 4px rgba(140, 161, 91, 0.2);
+}
+
+.monetary-loan-date-actions {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 23px;
+}
+
+.monetary-loan-clear-date-btn,
+.monetary-loan-apply-date-btn {
+    width: 170px;
+    height: 52px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.monetary-loan-clear-date-btn {
+    color: #24324b;
+    background: #ececec;
+}
+
+.monetary-loan-apply-date-btn {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+}
+
+.monetary-loan-clear-date-btn:hover,
+.monetary-loan-apply-date-btn:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   ADD MONETARY LOAN MODAL
+========================================================= */
+
+#addMonetaryLoanModal {
+    padding: 18px !important;
+}
+
+#addMonetaryLoanModal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#addMonetaryLoanModal .modal-dialog {
+    width: min(1220px, calc(100vw - 36px));
+    max-width: 1220px;
+    margin: auto;
+}
+
+.monetary-loan-modal-window {
+    max-height: calc(100vh - 36px);
+    color: var(--monetary-cream);
+    background: rgba(75, 77, 70, 0.88);
+    border: 5px solid var(--monetary-green);
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(18px);
+}
+
+.monetary-loan-modal-window form {
+    min-height: 0;
+    max-height: calc(100vh - 46px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.monetary-loan-modal-header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px 17px;
+}
+
+.monetary-loan-modal-title-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.monetary-loan-modal-title-group h1 {
+    margin: 0;
+    color: var(--monetary-cream);
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 800;
+}
+
+.monetary-loan-pending-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    color: #6f5700;
+    background: #f9dfa0;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.monetary-loan-close-btn {
+    flex: 0 0 auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 51px;
+    height: 51px;
+    padding: 0;
+
+    color: #1c1c1c;
+    background: var(--monetary-cream);
+    border: none;
+    border-radius: 50%;
+
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.monetary-loan-close-btn:hover {
+    color: var(--monetary-cream);
+    background: var(--monetary-red);
+    transform: scale(1.05);
+}
+
+.monetary-loan-modal-divider {
+    flex: 0 0 auto;
+    height: 1px;
+    margin: 0 28px;
+    background: rgba(255, 253, 212, 0.28);
+    border: 0;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.monetary-loan-modal-body {
+    flex: 1;
+    min-height: 0;
+    padding: 22px 28px 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--monetary-green)
+        transparent;
+}
+
+.monetary-loan-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.monetary-loan-modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.monetary-loan-modal-body::-webkit-scrollbar-thumb {
+    background: var(--monetary-green);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.monetary-loan-form-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 253, 212, 0.2);
+    border-radius: 19px;
+    box-sizing: border-box;
+}
+
+.monetary-loan-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.monetary-loan-section-icon {
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border-radius: 11px;
+    font-size: 18px;
+}
+
+.monetary-loan-section-title h3 {
+    margin: 0;
+    color: var(--monetary-cream);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.monetary-loan-section-title p {
+    margin: 3px 0 0;
+    color: rgba(255, 253, 212, 0.72);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM GRIDS
+========================================================= */
+
+.monetary-loan-borrower-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(280px, 1.6fr)
+        minmax(170px, 0.8fr)
+        minmax(170px, 0.8fr);
+    gap: 15px;
+}
+
+.monetary-loan-add-details-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 1.6fr)
+        minmax(220px, 0.7fr);
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.monetary-loan-add-details-grid:has(
+    #monetaryLoanYearsField:not([hidden])
+) {
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(0, 0.9fr)
+        minmax(0, 0.6fr);
+}
+
+.monetary-loan-terms-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.monetary-loan-bottom-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(320px, 0.85fr);
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.monetary-loan-field {
+    position: relative;
+    min-width: 0;
+}
+
+.monetary-loan-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--monetary-cream);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.monetary-loan-required {
+    color: #ff8585;
+}
+
+.monetary-loan-input,
+.monetary-loan-select,
+.monetary-loan-textarea {
+    width: 100%;
+    color: var(--monetary-text);
+    background: var(--monetary-cream);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.monetary-loan-input,
+.monetary-loan-select {
+    height: 52px;
+    padding: 0 15px;
+}
+
+.monetary-loan-textarea {
+    min-height: 105px;
+    padding: 14px 15px;
+    resize: vertical;
+}
+
+.monetary-loan-input:focus,
+.monetary-loan-select:focus,
+.monetary-loan-textarea:focus {
+    border-color: var(--monetary-green);
+    box-shadow: 0 0 0 4px rgba(140, 161, 91, 0.2);
+}
+
+.monetary-loan-input:disabled,
+.monetary-loan-input[readonly],
+.monetary-loan-select:disabled {
+    color: rgba(255, 253, 212, 0.78);
+    background: rgba(34, 34, 34, 0.44);
+    cursor: not-allowed;
+}
+
+.monetary-loan-input::placeholder,
+.monetary-loan-textarea::placeholder {
+    color: #888888;
+}
+
+
+/* =========================================================
+   MEMBER SEARCH
+========================================================= */
+
+.monetary-loan-member-wrapper {
+    position: relative;
+}
+
+.monetary-loan-member-input-wrap {
+    position: relative;
+}
+
+.monetary-loan-member-input-wrap i {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    color: var(--monetary-green-dark);
+    font-size: 18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.monetary-loan-member-input-wrap input {
+    padding-left: 47px;
+}
+
+.monetary-loan-member-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 40;
+    width: 100%;
+    max-height: 190px;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--monetary-white);
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.23);
+}
+
+.monetary-loan-member-results.show {
+    display: block;
+}
+
+.monetary-loan-member-result {
+    width: 100%;
+    padding: 11px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--monetary-text);
+    background: var(--monetary-white);
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.monetary-loan-member-result:last-child {
+    border-bottom: none;
+}
+
+.monetary-loan-member-result:hover {
+    background: #edf5dc;
+}
+
+.monetary-loan-member-result strong {
+    font-size: 13px;
+}
+
+.monetary-loan-member-result small {
+    margin-top: 2px;
+    color: var(--monetary-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ATTACHMENTS
+========================================================= */
+
+.monetary-loan-upload-box {
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--monetary-green-dark);
+    background: var(--monetary-cream);
+    border: 2px dashed var(--monetary-green);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.monetary-loan-upload-box:hover {
+    background: #fffedc;
+    transform: translateY(-2px);
+}
+
+.monetary-loan-upload-box i {
+    margin-bottom: 7px;
+    font-size: 30px;
+}
+
+.monetary-loan-upload-box strong {
+    font-size: 12px;
+}
+
+.monetary-loan-upload-box small {
+    margin-top: 6px;
+    color: #747474;
+    font-size: 10px;
+}
+
+.monetary-loan-file-input {
+    display: none;
+}
+
+.monetary-loan-attachment-list {
+    max-height: 175px;
+    margin-top: 12px;
+    padding-right: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color:
+        var(--monetary-green)
+        transparent;
+}
+
+.monetary-loan-attachment-item {
+    width: 100%;
+    min-height: 47px;
+    margin-bottom: 7px;
+    padding: 9px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--monetary-text);
+    background: var(--monetary-cream);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.monetary-loan-attachment-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.monetary-loan-remove-attachment {
+    flex: 0 0 auto;
+    width: 27px;
+    height: 27px;
+    padding: 0;
+    color: var(--monetary-white);
+    background: var(--monetary-red);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FINANCIAL SUMMARY
+========================================================= */
+
+.monetary-loan-summary {
+    overflow: hidden;
+    color: var(--monetary-text);
+    background: var(--monetary-cream);
+    border-radius: 15px;
+}
+
+.monetary-loan-summary-row {
+    min-height: 49px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.monetary-loan-summary-row span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.monetary-loan-summary-row strong {
+    font-size: 13px;
+    text-align: right;
+}
+
+.monetary-loan-summary-total {
+    min-height: 62px;
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border-bottom: none;
+}
+
+.monetary-loan-summary-total span,
+.monetary-loan-summary-total strong {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.monetary-loan-modal-footer {
+    flex: 0 0 auto;
+    padding: 17px 28px 22px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 13px;
+    background: rgba(48, 49, 45, 0.68);
+}
+
+.monetary-loan-cancel-btn,
+.monetary-loan-save-btn {
+    min-width: 180px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.monetary-loan-cancel-btn {
+    color: var(--monetary-cream);
+    background: transparent;
+    border: 2px solid rgba(255, 253, 212, 0.65);
+}
+
+.monetary-loan-save-btn {
+    color: var(--monetary-cream);
+    background: var(--monetary-green);
+    border: 2px solid var(--monetary-green);
+}
+
+.monetary-loan-cancel-btn:hover,
+.monetary-loan-save-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.14);
+}
+
+.monetary-loan-save-btn:disabled {
+    color: #bdbdbd;
+    background: #6f755f;
+    border-color: #6f755f;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   VALIDATION
+========================================================= */
+
+.monetary-loan-input.is-invalid,
+.monetary-loan-select.is-invalid,
+.monetary-loan-textarea.is-invalid,
+.monetary-loan-upload-box.is-invalid {
+    border-color: #ff7979;
+    box-shadow: 0 0 0 4px rgba(255, 121, 121, 0.14);
+}
+
+.monetary-loan-field-error,
+.monetary-loan-attachment-error {
+    display: block;
+    margin-top: 5px;
+    color: #ffaaaa;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SWEETALERT
+========================================================= */
+
+.swal2-container {
+    z-index: 20000 !important;
+}
+
+.swal2-popup:not(.system-logout-popup) {
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25) !important;
+}
+
+.swal2-popup:not(.system-logout-popup):not(.monetary-loan-archive-popup) .swal2-confirm {
+    color: var(--monetary-cream) !important;
+    background: var(--monetary-green) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.swal2-popup:not(.system-logout-popup):not(.monetary-loan-archive-popup) .swal2-confirm:hover {
+    background: var(--monetary-green) !important;
+}
+
+.swal2-popup.monetary-loan-archive-popup .swal2-confirm {
+    background: var(--monetary-red) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.swal2-popup.monetary-loan-archive-popup .swal2-confirm:hover {
+    background: #c74343 !important;
+}
+
+.swal2-popup:not(.system-logout-popup) .swal2-cancel {
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1650px) {
+    .monetary-loan-toolbar {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .monetary-loan-toolbar-left,
+    .monetary-loan-toolbar-right {
+        gap: 10px;
+    }
+
+    .monetary-loan-filter {
+        flex-basis: 145px;
+        width: 145px;
+        padding: 0 13px;
+        font-size: 13px;
+    }
+
+    .btn-add-monetary-loan {
+        flex-basis: 190px;
+        width: 190px;
+        font-size: 13px;
+    }
+
+    .monetary-loan-search-box {
+        width: auto;
+    }
+
+    .monetary-loan-ledger-header {
+        font-size: 9px;
+    }
+
+    .monetary-loan-row {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .monetary-loan-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .monetary-loan-toolbar-left,
+    .monetary-loan-toolbar-right {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .monetary-loan-search-box {
+        flex: 1;
+        min-width: 260px;
+        max-width: none;
+    }
+
+    .monetary-loan-filter {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .btn-add-monetary-loan {
+        flex: 1;
+        min-width: 190px;
+    }
+
+    .monetary-loan-borrower-grid,
+    .monetary-loan-add-details-grid,
+    .monetary-loan-terms-grid,
+    .monetary-loan-bottom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-add-details-grid:has(
+        #monetaryLoanYearsField:not([hidden])
+    ) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .monetary-loan-ledger-header,
+    .monetary-loan-row {
+        gap: 2px;
+    }
+
+    .monetary-loan-ledger-header {
+        padding-right: 7px;
+        padding-left: 7px;
+        font-size: 8px;
+    }
+
+    .monetary-loan-row {
+        padding-right: 7px;
+        padding-left: 7px;
+        font-size: 10px;
+    }
+
+    .monetary-loan-row-action {
+        width: 24px;
+        height: 24px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 760px) {
+    #addMonetaryLoanModal {
+        padding: 8px !important;
+    }
+
+    #addMonetaryLoanModal .modal-dialog {
+        width: calc(100vw - 16px);
+    }
+
+    .monetary-loan-modal-header {
+        padding: 18px 17px 13px;
+    }
+
+    .monetary-loan-modal-divider {
+        margin: 0 17px;
+    }
+
+    .monetary-loan-modal-body {
+        padding: 17px;
+    }
+
+    .monetary-loan-borrower-grid,
+    .monetary-loan-add-details-grid,
+    .monetary-loan-terms-grid,
+    .monetary-loan-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .monetary-loan-add-details-grid:has(
+        #monetaryLoanYearsField:not([hidden])
+    ) {
+        grid-template-columns: 1fr;
+    }
+
+    .monetary-loan-modal-footer {
+        padding: 14px 17px 18px;
+        flex-direction: column;
+    }
+
+    .monetary-loan-cancel-btn,
+    .monetary-loan-save-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FIXED MONETARY PAGE LAYOUT
+
+   Same behavior and spacing as Product Loan.
+========================================================= */
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.main-content {
+    height: 100vh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.main-content > .page-header {
+    width: 100%;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.main-content > .page-header h2 {
+    margin: 0;
+}
+
+.main-content > .page-header .btn-generate-monetary-report {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.main-content > hr {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+
+/* =========================================================
+   TOOLBAR ALIGNMENT
+========================================================= */
+
+.monetary-loan-toolbar {
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.monetary-loan-toolbar-left {
+    flex: 0 0 auto;
+}
+
+.monetary-loan-toolbar-right {
+    flex: 0 1 auto;
+    margin-left: auto;
+}
+
+.monetary-loan-search-box {
+    flex: 0 0 325px;
+    width: 325px;
+    min-width: 325px;
+    max-width: 325px;
+}
+
+
+/* =========================================================
+   LEDGER AREA
+========================================================= */
+
+.monetary-loan-ledger {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+.monetary-loan-ledger-header {
+    flex: 0 0 auto;
+}
+
+.monetary-loan-ledger-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   SMALLER SCREENS
+========================================================= */
+
+@media (max-width: 1250px) {
+    .monetary-loan-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .monetary-loan-toolbar-left,
+    .monetary-loan-toolbar-right {
+        width: 100%;
+        flex: 0 0 auto;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .monetary-loan-toolbar-right {
+        margin-left: 0;
+    }
+
+    .monetary-loan-search-box {
+        flex: 1 1 260px;
+        width: auto;
+        min-width: 260px;
+        max-width: none;
+    }
+}
+
+/* =========================================================
+   EXACT PRODUCT LOAN TOOLBAR ALIGNMENT
+========================================================= */
+
+.monetary-loan-toolbar {
+    flex: 0 0 auto;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    margin: 0 !important;
+}
+
+.monetary-loan-toolbar-left,
+.monetary-loan-toolbar-right {
+    gap: 15px !important;
+}
+
+.monetary-loan-toolbar-left {
+    flex: 0 0 auto !important;
+}
+
+.monetary-loan-toolbar-right {
+    flex: 0 0 auto !important;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.monetary-loan-search-box {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    min-width: 270px !important;
+    max-width: 270px !important;
+}
+
+.monetary-loan-filter {
+    flex: 0 0 155px !important;
+    width: 155px !important;
+    min-width: 155px !important;
+}
+
+.btn-add-monetary-loan {
+    flex: 0 0 180px !important;
+    width: 180px !important;
+    min-width: 180px !important;
+}
+
+.monetary-loan-ledger {
+    margin-top: 25px !important;
+}
+
+
+/* Smaller screens only */
+
+@media (max-width: 1200px) {
+    .monetary-loan-toolbar {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .monetary-loan-toolbar-left,
+    .monetary-loan-toolbar-right {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .monetary-loan-toolbar-right {
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+
+    .monetary-loan-search-box {
+        flex: 1 1 270px !important;
+        width: auto !important;
+        min-width: 270px !important;
+        max-width: none !important;
+    }
+
+    .monetary-loan-filter,
+    .btn-add-monetary-loan {
+        flex: 1 1 180px !important;
+        width: auto !important;
+    }
+}
+
+/* =========================================================
+   LEDGER HEADER SIZE CORRECTION
+========================================================= */
+
+.monetary-loan-ledger-header {
+    min-height: 65px !important;
+    padding: 18px 12px !important;
+    gap: 4px;
+    font-size: 14px !important;
+    line-height: 1.25;
+}
+
+.monetary-loan-ledger-header > div {
+    font-size: 14px !important;
+    font-weight: 700;
+}
+
+/* Monetary Loan modal X button */
+.monetary-loan-close-btn:hover,
+.monetary-loan-close-btn:focus-visible {
+    color: #fffed6 !important;
+    background-color: #91aa5b !important;
+    border-color: #91aa5b !important;
+}
+
+/* =========================================================
+   EXPANDED MONETARY LOAN LEDGER HEIGHT
+========================================================= */
+
+.monetary-loan-ledger {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    margin-top: 15px !important;
+    overflow: hidden;
+}
+
+.monetary-loan-ledger-header {
+    flex: 0 0 auto;
+}
+
+.monetary-loan-ledger-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* =========================================================
+   RESTORED MONETARY LOAN ROW
+========================================================= */
+
+.monetary-loan-row.monetary-loan-row-focused {
+    animation: monetary-loan-row-focus 2.2s ease;
+}
+
+@keyframes monetary-loan-row-focus {
+    0%,
+    35% {
+        box-shadow:
+            0 0 0 4px rgba(140, 161, 91, 0.55),
+            0 8px 20px rgba(53, 83, 10, 0.18);
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+/* =========================================================
+   OVERDUE MONETARY LOAN ROW
+========================================================= */
+
+.monetary-loan-row-overdue,
+.monetary-loan-row-overdue:hover {
+    background: #fff3f3;
+}

@@ -1,0 +1,1526 @@
+/* =========================================================
+   SPIS - TRACTOR REGISTRY
+   CLEAN / POLISHED FINAL CSS
+========================================================= */
+
+:root{
+    --tractor-olive:#8CA15B;
+    --tractor-olive-dark:#738A49;
+    --tractor-olive-soft:#EEF3E5;
+
+    --tractor-cream:#FDFBD4;
+    --tractor-ink:#252525;
+    --tractor-muted:#777777;
+
+    --tractor-white:#FFFFFF;
+    --tractor-line:rgba(140,161,91,.18);
+
+    --tractor-danger:#B71C1C;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.tractor-page-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:18px;
+
+    margin-bottom:18px;
+}
+
+
+.tractor-title-area{
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+}
+
+
+.tractor-title-area h2{
+    margin:0;
+
+    color:#111111;
+
+    font-size:32px;
+    font-weight:500;
+}
+
+
+/* =========================================================
+   ADD TRACTOR BUTTON
+========================================================= */
+
+.btn-add-tractor{
+    min-width:175px;
+    height:50px;
+
+    padding:0 22px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    border:none;
+    border-radius:12px;
+
+    background:var(--tractor-olive);
+    color:var(--tractor-cream);
+
+    font-size:14px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+}
+
+
+.btn-add-tractor i{
+    font-size:16px;
+}
+
+
+.btn-add-tractor:hover{
+    background:var(--tractor-olive);
+    color:var(--tractor-cream);
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 7px 16px
+        rgba(0,0,0,.12);
+}
+
+
+.btn-add-tractor:active{
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.tractor-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:18px;
+
+    margin:20px 0 0;
+}
+
+
+.tractor-toolbar-left,
+.tractor-filter-area{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+}
+
+
+.tractor-filter-area{
+    justify-content:flex-end;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.tractor-back-btn{
+    flex:0 0 52px;
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--tractor-olive);
+    color:var(--tractor-cream);
+
+    font-size:21px;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+}
+
+
+.tractor-back-btn:hover{
+    background:var(--tractor-olive);
+    color:var(--tractor-cream);
+
+    transform:translateX(-2px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.tractor-search-box{
+    width:325px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:var(--tractor-white);
+
+    border:1px solid transparent;
+    border-radius:28px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.04);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.tractor-search-box:focus-within{
+    border-color:rgba(140,161,91,.48);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.10);
+}
+
+
+.tractor-search-box i{
+    flex:0 0 52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--tractor-olive);
+
+    font-size:18px;
+}
+
+
+.tractor-search-box input{
+    flex:1;
+
+    min-width:0;
+    height:100%;
+
+    padding:
+        0
+        18px
+        0
+        0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+    color:var(--tractor-ink);
+
+    font-size:14px;
+}
+
+
+.tractor-search-box input::placeholder{
+    color:#919191;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.tractor-filter{
+    width:190px;
+    min-width:190px;
+    height:52px;
+
+    padding:0 18px;
+
+    border:1px solid transparent;
+    border-radius:28px;
+
+    outline:none;
+
+    background:var(--tractor-white);
+    color:var(--tractor-ink);
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.04);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.tractor-filter:hover,
+.tractor-filter:focus{
+    border-color:rgba(140,161,91,.42);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.08);
+}
+
+
+/* =========================================================
+   LEDGER
+   ROTOR-STYLE TRACTOR REGISTRY
+========================================================= */
+
+.tractor-ledger{
+
+    width:100%;
+
+    margin-top:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    /*
+     * Huwag piliting punuin ang buong screen
+     * kapag konti lang ang tractor records.
+     */
+    height:auto;
+    min-height:0;
+
+    overflow:visible;
+
+}
+
+
+/* =========================================================
+   SHARED GRID
+
+   TRACTOR NO.
+   TRACTOR NAME
+   TYPE
+   STATUS
+   ACTION
+========================================================= */
+
+.tractor-ledger-header,
+.tractor-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        1.70fr
+        1fr
+        1.15fr
+        .70fr;
+
+    column-gap:12px;
+
+    align-items:center;
+
+}
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.tractor-ledger-header{
+
+    width:
+        calc(
+            100% - 16px
+        );
+
+    min-height:66px;
+
+    margin-right:16px;
+
+    padding:
+        12px
+        20px;
+
+    flex:0 0 auto;
+
+    background:#8CA15B;
+
+    color:#FFFFFF !important;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    letter-spacing:.25px;
+
+    box-shadow:
+        0
+        3px
+        10px
+        rgba(
+            0,
+            0,
+            0,
+            .055
+        );
+
+}
+
+
+/*
+ * Make sure ALL column labels are pure white.
+ */
+
+.tractor-ledger-header > div,
+.tractor-ledger-header .tractor-status-header,
+.tractor-ledger-header .tractor-info-icon{
+
+    color:#FFFFFF !important;
+
+}
+
+
+.tractor-ledger-header > div{
+
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+
+/* =========================================================
+   LEDGER BODY
+========================================================= */
+
+.tractor-ledger-body{
+
+    width:100%;
+
+    /*
+     * Short list = short ledger.
+     * Long list  = scroll automatically.
+     */
+    max-height:
+        calc(
+            100vh - 320px
+        );
+
+    min-height:0;
+
+    margin-top:12px;
+
+    padding-right:8px;
+    padding-bottom:6px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   TRACTOR ROW
+========================================================= */
+
+.tractor-row{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:84px;
+
+    margin-bottom:10px;
+
+    padding:
+        13px
+        20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .12
+        );
+
+    border-radius:17px;
+
+    color:#34372F;
+
+    text-align:center;
+
+    font-size:13px;
+    font-weight:500;
+
+    box-shadow:
+        0
+        3px
+        10px
+        rgba(
+            0,
+            0,
+            0,
+            .035
+        );
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   ROW HOVER
+========================================================= */
+
+.tractor-row:hover{
+
+    background:
+        rgba(
+            248,
+            251,
+            243,
+            .98
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .28
+        );
+
+    /*
+     * Rotor-style:
+     * no exaggerated movement.
+     */
+    transform:none;
+
+    box-shadow:
+        0
+        5px
+        14px
+        rgba(
+            0,
+            0,
+            0,
+            .055
+        );
+
+}
+
+
+/* =========================================================
+   ROW CELLS
+========================================================= */
+
+.tractor-row > div{
+
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        2px
+        5px;
+
+    word-break:break-word;
+
+}
+
+
+/* =========================================================
+   STATUS DROPDOWN Z-INDEX
+========================================================= */
+
+.tractor-row.status-menu-open{
+
+    z-index:1000;
+
+}
+
+
+/* =========================================================
+   TRACTOR NUMBER / NAME
+========================================================= */
+
+.tractor-number{
+    color:#232323;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+.tractor-name{
+    color:#333333;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   TRACTOR TYPE BADGE
+========================================================= */
+
+.tractor-type{
+    min-width:88px;
+
+    padding:7px 12px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:700;
+
+    line-height:1;
+}
+
+
+/* Optional classes if inline type colors are removed later */
+
+.tractor-type-hauling{
+    background:#DDE8C5 !important;
+    color:#536B2F !important;
+}
+
+
+.tractor-type-rotor{
+    background:#DCEAF5 !important;
+    color:#3F6F91 !important;
+}
+
+
+.tractor-type-reaper{
+    background:#F4DEC8 !important;
+    color:#9A5C28 !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.tractor-status{
+    min-width:108px;
+    min-height:34px;
+
+    padding:7px 12px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    border-radius:999px;
+
+    text-align:center;
+
+    font-size:11px;
+    font-weight:700;
+
+    line-height:1;
+}
+
+
+/* AVAILABLE */
+
+.tractor-status-available{
+    border:1px solid #82D8A7;
+
+    background:#E5F9ED;
+    color:#237A47;
+}
+
+
+/* RESERVED */
+
+.tractor-status-reserved{
+    border:1px solid #E1BF53;
+
+    background:#FFF6D5;
+    color:#9C7500;
+}
+
+
+/* IN USE */
+
+.tractor-status-in-use{
+    border:1px solid #F0A35A;
+
+    background:#FFF0E2;
+    color:#C76513;
+}
+
+
+/* MAINTENANCE */
+
+.tractor-status-maintenance{
+    border:1px solid #E48A8A;
+
+    background:#FDEAEA;
+    color:#B92E2E;
+}
+
+
+/* =========================================================
+   STATUS DROPDOWN
+========================================================= */
+
+.tractor-status-dropdown{
+    position:relative;
+    z-index:2;
+
+    display:inline-flex;
+}
+
+
+.tractor-status-btn{
+    border-width:1px;
+    border-style:solid;
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.tractor-status-btn:hover{
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 3px 8px
+        rgba(0,0,0,.08);
+}
+
+
+.tractor-status-btn i{
+    font-size:10px;
+
+    transition:transform .18s ease;
+}
+
+
+.tractor-status-dropdown:has(.tractor-status-menu.show)
+.tractor-status-btn i{
+    transform:rotate(180deg);
+}
+
+
+.tractor-status-menu{
+    position:absolute;
+
+    top:100%;
+    left:50%;
+
+    width:155px;
+
+    margin-top:7px;
+    padding:6px;
+
+    display:none;
+
+    overflow:hidden;
+
+    transform:translateX(-50%);
+
+    border:1px solid #ECECEC;
+    border-radius:13px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.13);
+
+    z-index:2000;
+}
+
+
+.tractor-status-menu.show{
+    display:block;
+}
+
+
+.tractor-status-menu.open-up{
+    top:auto;
+    bottom:100%;
+
+    margin-top:0;
+    margin-bottom:7px;
+}
+
+
+.tractor-status-item{
+    padding:11px 13px;
+
+    border-radius:9px;
+
+    background:#FFFFFF;
+    color:#333333;
+
+    text-align:left;
+
+    font-size:12px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.tractor-status-item:hover{
+    background:#EFF5E7;
+    color:#536B2F;
+}
+
+
+/* =========================================================
+   STATUS HEADER / INFO TOOLTIP
+========================================================= */
+
+.tractor-status-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:6px;
+}
+
+
+.tractor-info-wrap{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+}
+
+
+.tractor-info-icon{
+    color:var(--tractor-cream);
+
+    font-size:12px;
+
+    opacity:.92;
+
+    cursor:help;
+}
+
+
+.tractor-info-tooltip{
+    position:absolute;
+
+    top:27px;
+    left:50%;
+
+    width:285px;
+
+    padding:13px 15px;
+
+    transform:translateX(-50%);
+
+    border:1px solid rgba(140,161,91,.22);
+    border-radius:11px;
+
+    background:#FFFEEA;
+    color:#333333;
+
+    text-align:left;
+
+    font-size:12px;
+    font-weight:500;
+
+    line-height:1.5;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.16);
+
+    opacity:0;
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .18s ease,
+        visibility .18s ease;
+
+    z-index:5000;
+}
+
+
+.tractor-info-tooltip::before{
+    content:"";
+
+    position:absolute;
+
+    top:-6px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-bottom:6px solid #FFFEEA;
+}
+
+
+.tractor-info-wrap:hover
+.tractor-info-tooltip{
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* =========================================================
+   ARCHIVE BUTTON
+========================================================= */
+
+.tractor-archive-btn{
+    width:38px;
+    height:38px;
+
+    padding:0;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:11px;
+
+    background:#FCEAEA;
+    color:var(--tractor-danger);
+
+    cursor:pointer;
+
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.tractor-archive-btn i{
+    font-size:17px;
+}
+
+
+.tractor-archive-btn:hover{
+    background:#F7D5D5;
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 4px 9px
+        rgba(183,28,28,.12);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.tractor-empty-state{
+    min-height:130px;
+
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    border:
+        1px dashed
+        rgba(140,161,91,.45);
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.72);
+    color:var(--tractor-muted);
+
+    text-align:center;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+
+.tractor-empty-state i{
+    color:var(--tractor-olive);
+
+    font-size:28px;
+}
+
+
+/* =========================================================
+   ADD TRACTOR MODAL
+========================================================= */
+
+#addTractorModal .modal-dialog{
+    max-width:820px;
+}
+
+
+#addTractorModal .tractor-window{
+    padding:28px 30px 30px;
+
+    overflow:visible;
+
+    border:5px solid var(--tractor-olive);
+    border-radius:26px;
+
+    background:rgba(75,77,70,.88) !important;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 24px 70px
+        rgba(0,0,0,.38);
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+body:has(#addTractorModal.show)
+.modal-backdrop.show{
+    background:rgba(20,22,18,.48);
+
+    opacity:1;
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.tractor-modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:18px;
+}
+
+
+.tractor-modal-header h1{
+    margin:0;
+
+    color:var(--tractor-cream);
+
+    font-size:29px;
+    font-weight:700;
+
+    letter-spacing:.3px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.tractor-close-btn{
+    flex:0 0 46px;
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--tractor-cream);
+    color:#252525;
+
+    font-size:29px;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.tractor-close-btn:hover{
+    background:var(--tractor-olive);
+    color:var(--tractor-cream);
+
+    transform:rotate(5deg);
+}
+
+
+/* =========================================================
+   MODAL DIVIDER
+========================================================= */
+
+.tractor-window > hr{
+    margin:18px 0 24px;
+
+    border:0;
+    border-top:1px solid rgba(253,251,212,.30);
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.tractor-window label{
+    margin-bottom:8px;
+
+    color:var(--tractor-cream);
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:.15px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.tractor-input{
+    width:100%;
+    height:54px;
+
+    padding:0 17px;
+
+    border:
+        1px solid
+        rgba(253,251,212,.20);
+
+    border-radius:14px;
+
+    outline:none;
+
+    background:var(--tractor-cream);
+    color:#292929;
+
+    font-size:14px;
+
+    box-shadow:none;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+}
+
+
+.tractor-input:focus{
+    border-color:#B7C893;
+
+    background:#FFFEE8;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.20);
+}
+
+
+.tractor-input::placeholder{
+    color:#8A897E;
+}
+
+
+/* =========================================================
+   TRACTOR TYPE CUSTOM DROPDOWN
+========================================================= */
+
+.tractor-type-dropdown{
+    position:relative;
+
+    width:100%;
+}
+
+
+.tractor-dropdown-btn{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+.tractor-dropdown-btn i{
+    font-size:13px;
+
+    transition:transform .2s ease;
+}
+
+
+.tractor-dropdown-btn.open i{
+    transform:rotate(180deg);
+}
+
+
+.tractor-dropdown-menu{
+    position:absolute;
+
+    top:100%;
+    left:0;
+
+    width:100%;
+
+    margin-top:7px;
+    padding:6px;
+
+    display:none;
+
+    overflow:hidden;
+
+    border:1px solid #E8E8E8;
+    border-radius:14px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.16);
+
+    z-index:3000;
+}
+
+
+.tractor-dropdown-menu.show{
+    display:block;
+}
+
+
+.tractor-dropdown-option{
+    width:100%;
+
+    padding:12px 14px;
+
+    border:none;
+    border-radius:9px;
+
+    background:#FFFFFF;
+    color:#333333;
+
+    text-align:left;
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.tractor-dropdown-option:hover{
+    background:#EFF5E7;
+    color:#536B2F;
+}
+
+
+/* =========================================================
+   DEFAULT STATUS INFO
+========================================================= */
+
+.tractor-default-status{
+    width:100%;
+
+    padding:13px 15px;
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:9px;
+
+    border:
+        1px solid
+        rgba(253,251,212,.18);
+
+    border-radius:13px;
+
+    background:rgba(253,251,212,.10);
+    color:var(--tractor-cream);
+
+    font-size:13px;
+
+    line-height:1.45;
+}
+
+
+.tractor-default-status i{
+    margin-top:1px;
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.tractor-save-container{
+    margin-top:26px;
+
+    display:flex;
+    justify-content:center;
+}
+
+
+.tractor-save-btn{
+    min-width:180px;
+    height:56px;
+
+    padding:0 26px;
+
+    border:none;
+    border-radius:14px;
+
+    background:var(--tractor-olive);
+    color:#FFFFFF;
+
+    font-size:17px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.tractor-save-btn:hover{
+    background:var(--tractor-olive);
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 7px 15px
+        rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.tractor-ledger-body::-webkit-scrollbar{
+    width:7px;
+}
+
+
+.tractor-ledger-body::-webkit-scrollbar-track{
+    background:rgba(253,251,212,.65);
+
+    border-radius:20px;
+}
+
+
+.tractor-ledger-body::-webkit-scrollbar-thumb{
+    background:#A4B47D;
+
+    border-radius:20px;
+}
+
+
+.tractor-ledger-body::-webkit-scrollbar-thumb:hover{
+    background:var(--tractor-olive);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .tractor-toolbar{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+
+    .tractor-toolbar-left,
+    .tractor-filter-area{
+        width:100%;
+    }
+
+
+    .tractor-filter-area{
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+    }
+
+
+    .tractor-search-box{
+        flex:1;
+
+        width:auto;
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .tractor-ledger{
+        overflow-x:auto;
+    }
+
+
+    .tractor-ledger-header,
+    .tractor-row{
+        min-width:760px;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .tractor-page-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+
+    .tractor-title-area h2{
+        font-size:25px;
+    }
+
+
+    .btn-add-tractor{
+        width:100%;
+    }
+
+
+    .tractor-toolbar-left,
+    .tractor-filter-area{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+
+    .tractor-back-btn{
+        width:52px;
+    }
+
+
+    .tractor-search-box,
+    .tractor-filter{
+        width:100%;
+        min-width:0;
+    }
+
+
+    #addTractorModal .tractor-window{
+        padding:22px 20px 24px;
+
+        border-width:4px;
+        border-radius:22px;
+    }
+
+
+    .tractor-modal-header h1{
+        font-size:24px;
+    }
+
+
+    .tractor-save-btn{
+        width:100%;
+    }
+
+}

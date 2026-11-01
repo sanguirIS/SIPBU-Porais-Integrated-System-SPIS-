@@ -1,0 +1,7285 @@
+/*------------------------------------------------------------------------------------------------------*/
+/* =======================================================
+   HAULING TOOLBAR
+======================================================= */
+
+.hauling-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:20px 0;
+
+}
+
+.hauling-toolbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.hauling-toolbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.hauling-back-btn{
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8CA15B;
+
+    color:#FDFBD4;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.hauling-back-btn:hover{
+
+    color:#FDFBD4;
+
+    transform:scale(1.08);
+
+}
+
+.hauling-search-box{
+
+    width:260px;
+
+    height:55px;
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+.hauling-search-box i{
+
+    width:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#8CA15B;
+
+    margin-left: 20px;
+
+}
+
+.hauling-search-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    padding:0 15px;
+
+}
+
+/* ======================================================
+   DATE FILTER MODAL
+====================================================== */
+
+.btn-calendar{
+
+    border:none;
+    background:none;
+    color:#8CA15B;
+    font-size:36px;
+    cursor:pointer;
+    transition:.3s;
+    outline:none;
+    box-shadow:none;
+
+}
+
+.btn-calendar:hover{
+
+    transform:scale(1.08);
+
+}
+
+.btn-calendar:focus,
+.btn-calendar:active{
+
+    outline:none;
+    box-shadow:none;
+
+}
+
+#dateFilterModal .modal-content{
+
+    width:620px;
+    margin:auto;
+
+}
+
+#dateFilterModal .window-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+#dateFilterModal .window-header h1{
+
+    margin:0;
+
+}
+
+#dateFilterModal .custom-input{
+
+    height:68px;
+    border-radius:22px;
+
+}
+
+#dateFilterModal label{
+
+    font-size:18px;
+    font-weight:700;
+    color:#FDFBD4;
+    margin-bottom:8px;
+
+}
+
+#dateFilterModal .modal-body{
+
+    padding-top:10px;
+
+}
+
+#clearDateFilter{
+
+    width:170px;
+    height:56px;
+    border:none;
+    border-radius:30px;
+    background:#ECECEC;
+    color:#333;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+#clearDateFilter:hover{
+
+    background:#D6D6D6;
+    transform:scale(1.05);
+
+}
+
+#applyDateFilter{
+
+    width:170px;
+    height:56px;
+    border:none;
+    border-radius:30px;
+    background:#8CA15B;
+    color:#FDFBD4;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+#applyDateFilter:hover{
+
+    background:#73884A;
+    transform:scale(1.05);
+
+}
+
+.hauling-filter{
+
+    width:170px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#fff;
+
+    padding:0 18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    outline: none;
+
+}
+
+.btn-add-hauling{
+
+    width:170px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#8CA15B;
+
+    color:#FDFBD4;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-add-hauling:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* =======================================================
+   HAULING LEDGER
+======================================================= */
+
+.hauling-ledger{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:calc(100vh - 210px);
+
+    width:100%;
+    
+    overflow:hidden;
+
+}
+
+.hauling-ledger-header{
+
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1.2fr
+    0.9fr
+    0.9fr
+    1fr
+    1fr
+    1fr
+    1fr
+    0.9fr
+    0.9fr
+    90px;
+
+    gap:15px;
+
+    background:#8CA15B;
+
+    color:#fff;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    font-weight:700;
+
+}
+
+.hauling-ledger-body{
+
+    margin-top:15px;
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:6px;
+
+}
+
+.hauling-row{
+
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1.2fr
+    0.9fr
+    0.9fr
+    1fr
+    1fr
+    1fr
+    1fr
+    0.9fr
+    0.9fr
+    70px;
+
+    gap:15px;
+
+    align-items:center;
+
+    background:#ffffffe2;
+
+    margin-bottom:12px;
+
+    padding:16px 18px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    min-height: 90px;
+
+    color:#2E2E2E;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+
+    transition: all .35s ease;
+
+    height: auto;
+
+    align-items: center;
+
+}
+
+.hauling-row:hover{
+
+    transform: translateY(2px);
+
+    background: #edfbe3;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+}
+
+.hauling-ledger-body::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.hauling-ledger-body::-webkit-scrollbar-track{
+
+    background:#FDFBD4;
+
+    border-radius:20px;
+
+}
+
+.hauling-ledger-body::-webkit-scrollbar-thumb{
+
+    background:#8CA15B;
+
+    border-radius:20px;
+
+}
+
+.hauling-ledger-body::-webkit-scrollbar-thumb:hover{
+
+    background:#6F8347;
+
+}
+
+.hauling-empty{
+
+    background:#D9D9D9;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.remarks{
+
+    display:inline-block;
+
+    min-width:90px;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.pending{
+
+    background:#D4A017;
+
+}
+
+.ongoing{
+
+    background:#2E86DE;
+
+}
+
+.completed{
+
+    background:#2E8B57;
+
+}
+
+.btn-action{
+
+    border:none;
+
+    background:none;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    color:#555;
+
+    transition:.25s;
+
+}
+
+.btn-action:hover{
+
+    color:#8CA15B;
+
+}
+
+/* ===============================
+   STATUS BADGES
+=============================== */
+
+.badge-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:4px 10px;
+
+    min-width:65px;
+
+    height:28px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+/* GREEN */
+
+.status-done,
+.status-paid{
+
+    background:#b0fbd0;
+
+    color:#1E7A44;
+
+}
+
+/* YELLOW */
+
+.status-pending{
+
+    background:#f2dea1;
+
+    color:#B57F00;
+
+}
+
+/* ORANGE */
+
+.status-ongoing{
+
+    background:#eec08c;
+
+    color:#D86A00;
+
+}
+
+/* RED */
+
+.status-unpaid{
+
+    background:#fb9090;
+
+    color:#C62828;
+
+}
+
+.status-dropdown,
+.remarks-dropdown{
+
+    width:100%;
+
+    height:30px;
+
+    padding:0;
+
+    border:1px solid #CFCFCF;
+
+    border-radius:8px;
+
+    font-size:12px;
+
+    background:#fff;
+
+    cursor:pointer;
+
+}
+
+/* =====================================
+   EDITABLE STATUS / REMARKS DROPDOWN
+===================================== */
+
+.status-dropdown,
+.remarks-dropdown{
+
+    width:100%;
+    height:30px;
+
+    border-radius:8px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    outline:none;
+
+    transition:.2s;
+
+    cursor:pointer;
+
+}
+
+/* STATUS */
+
+.status-pending-select{
+
+    border:1px solid #F4B400;
+    color:#B57F00;
+    background:#FFF8E1;
+
+}
+
+.status-ongoing-select{
+
+    border:1px solid #FB8C00;
+    color:#D86A00;
+    background:#FFF3E0;
+
+}
+
+/* REMARKS */
+
+.remarks-unpaid-select{
+
+    border:1px solid #E53935;
+    color:#C62828;
+    background:#FFEBEE;
+
+}
+
+/* =========================================================
+   ADD HAULING RENTAL MODAL
+   CLEAN SPIS LAYOUT
+========================================================= */
+
+
+/* =========================================================
+   MODAL CONTAINER
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal){
+    padding:18px !important;
+    overflow:hidden !important;
+
+    background:rgba(20,24,15,.28);
+
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+}
+
+#addhaulingModal{
+    background:rgba(20,24,15,.28);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal).show{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .modal-dialog{
+    width:min(
+        1180px,
+        calc(100vw - 36px)
+    );
+
+    max-width:1180px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   MODAL WINDOW
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-window{
+
+    max-height:calc(100vh - 36px);
+
+    padding:0;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            75,
+            77,
+            70,
+            .88
+        );
+
+    border:
+        5px solid
+        #8CA15B;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 24px 70px
+        rgba(0,0,0,.38);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   FORM STRUCTURE
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) :is(#haulingForm, #editHaulingForm){
+
+    min-height:0;
+
+    max-height:
+        calc(100vh - 46px);
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-header{
+
+    flex:0 0 auto;
+
+    min-height:90px;
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:
+        22px
+        28px
+        17px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-heading{
+
+    min-width:0;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-heading h1{
+
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            32px
+        );
+
+    font-weight:800;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-close-btn{
+
+    flex:0 0 auto;
+
+    width:51px;
+    height:51px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#1C1C1C;
+
+    background:#FDFBD4;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:35px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-close-btn:hover{
+
+    color:#FDFBD4;
+
+    background:#DC5151;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   HEADER DIVIDER
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-header + hr{
+
+    flex:0 0 auto;
+
+    height:1px;
+
+    margin:
+        0
+        28px;
+
+    background:
+        rgba(
+            255,
+            253,
+            212,
+            .28
+        );
+
+    border:0;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   SCROLLABLE BODY
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-body{
+
+    flex:1;
+
+    min-height:0;
+
+    padding:
+        22px
+        28px
+        24px;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    box-sizing:border-box;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        #8CA15B
+        transparent;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-body::-webkit-scrollbar{
+
+    width:8px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-body::-webkit-scrollbar-track{
+
+    background:
+        transparent;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-body::-webkit-scrollbar-thumb{
+
+    background:#8CA15B;
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   BOOTSTRAP ROW FIX
+   Prevent left-right scrollbar
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row{
+
+    width:100%;
+
+    margin-left:0;
+
+    margin-right:0;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row
+> [class*="col-"]{
+
+    min-width:0;
+
+    padding-left:7px;
+
+    padding-right:7px;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+    padding:20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            253,
+            212,
+            .20
+        );
+
+    border-radius:19px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section:last-child{
+
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-section-icon{
+
+    flex:0 0 42px;
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border-radius:11px;
+
+    font-size:18px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-section-heading h3{
+
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:16px;
+
+    font-weight:800;
+}
+
+
+/* No subtitles/messages */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-section-heading p,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-field-hint,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-footer-note{
+
+    display:none !important;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#FDFBD4;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   STANDARD INPUTS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input,
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-btn,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn{
+
+    width:100%;
+
+    height:52px;
+
+    padding:
+        0
+        15px;
+
+    color:#202020;
+
+    background:#FDFBD4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:12px;
+
+    outline:none;
+
+    box-shadow:none;
+
+    font-size:13px;
+
+    box-sizing:border-box;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input:focus,
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-btn:focus,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn:focus{
+
+    border-color:#8CA15B;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            140,
+            161,
+            91,
+            .20
+        );
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input::placeholder{
+
+    color:#888;
+}
+
+
+/* =========================================================
+   DISABLED INPUTS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input:disabled,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input[readonly],
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn:disabled{
+
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            .78
+        ) !important;
+
+    background:
+        rgba(
+            34,
+            34,
+            34,
+            .44
+        ) !important;
+
+    cursor:not-allowed;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   CUSTOMER NAME
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.name-field-wrapper{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingCustomerName, #editHaulingCustomerName){
+
+    width:100%;
+
+    height:52px;
+
+    padding:
+        0
+        15px;
+
+    font-size:13px;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:12px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingCustomerName, #editHaulingCustomerName):not(:disabled){
+
+    color:#202020;
+
+    background:#FDFBD4;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingCustomerName, #editHaulingCustomerName):disabled{
+
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            .78
+        );
+
+    background:
+        rgba(
+            34,
+            34,
+            34,
+            .44
+        );
+
+    cursor:not-allowed;
+}
+
+
+/* =========================================================
+   MEMBER SEARCH RESULTS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-suggestion{
+
+    position:absolute;
+
+    top:
+        calc(100% + 6px);
+
+    left:0;
+
+    z-index:9000;
+
+    width:100%;
+
+    max-height:190px;
+
+    display:none;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.23);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-item{
+
+    width:100%;
+
+    padding:
+        11px
+        14px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    border-bottom:
+        1px solid
+        #EEEEEE;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-item:last-child{
+
+    border-bottom:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-item:hover{
+
+    background:#EDF5DC;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-empty,
+
+:is(#addhaulingModal, #editHaulingModal)
+.member-search-error{
+
+    padding:
+        12px
+        14px;
+
+    color:#747474;
+
+    background:#FFFFFF;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   AFFILIATE DROPDOWN
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-btn{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-btn i{
+
+    color:#6F8347;
+
+    font-size:13px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-menu{
+
+    position:absolute;
+
+    top:
+        calc(100% + 6px);
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.23);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-menu.show{
+
+    display:block;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-item{
+
+    padding:
+        12px
+        15px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-item:hover{
+
+    background:#EDF5DC;
+}
+
+
+/* =========================================================
+   TRACTOR DROPDOWN
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-btn i{
+
+    color:#6F8347;
+
+    font-size:13px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-menu{
+
+    position:absolute;
+
+    top:
+        calc(100% + 6px);
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    max-height:260px;
+
+    display:none;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.23);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-menu.show{
+
+    display:block;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-item{
+
+    min-height:60px;
+
+    padding:
+        10px
+        14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:12px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    border-bottom:
+        1px solid
+        #EEEEEE;
+
+    transition:
+        background .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-item:last-child{
+
+    border-bottom:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-item:hover{
+
+    background:#EDF5DC;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-details{
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:2px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-number{
+
+    color:#222;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-name{
+
+    max-width:180px;
+
+    overflow:hidden;
+
+    color:#747474;
+
+    font-size:10px;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-state{
+
+    flex:0 0 auto;
+
+    min-width:88px;
+
+    padding:
+        6px
+        9px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+
+/* AVAILABLE */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-available{
+
+    color:#1E7A44;
+
+    background:#B0FBD0;
+}
+
+
+/* RESERVED */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-reserved{
+
+    color:#59634C;
+
+    background:#E6E8DD;
+}
+
+
+/* IN USE */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-in-use{
+
+    color:#D86A00;
+
+    background:#FFF3E0;
+}
+
+
+/* MAINTENANCE */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-maintenance{
+
+    color:#C62828;
+
+    background:#FFEBEE;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-disabled{
+
+    background:#F3F3F3;
+
+    cursor:not-allowed;
+
+    opacity:.72;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-disabled:hover{
+
+    background:#F3F3F3;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-empty{
+
+    padding:18px;
+
+    color:#777;
+
+    background:#FFFFFF;
+
+    font-size:12px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SERVICE DATE
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-date-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-date-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-date-btn i{
+
+    color:#6F8347;
+
+    font-size:17px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-date-btn:disabled i{
+
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            .65
+        );
+}
+
+/* =========================================================
+   EDIT HAULING - RESCHEDULE DATE GLOW
+========================================================= */
+
+#editHaulingModal
+.hauling-date-btn.hauling-reschedule-needed{
+
+    border-color:#D9A928 !important;
+
+    box-shadow:
+        0 0 0 4px rgba(217,169,40,.18),
+        0 0 18px rgba(217,169,40,.34);
+
+    animation:
+        haulingRescheduleGlow
+        1.6s
+        ease-in-out
+        infinite;
+}
+
+
+#editHaulingModal
+.hauling-date-btn.hauling-reschedule-needed i{
+
+    color:#D9A928;
+}
+
+
+@keyframes haulingRescheduleGlow{
+
+    0%,
+    100%{
+
+        box-shadow:
+            0 0 0 4px rgba(217,169,40,.14),
+            0 0 12px rgba(217,169,40,.24);
+    }
+
+    50%{
+
+        box-shadow:
+            0 0 0 5px rgba(217,169,40,.22),
+            0 0 24px rgba(217,169,40,.48);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce){
+
+    #editHaulingModal
+    .hauling-date-btn.hauling-reschedule-needed{
+
+        animation:none;
+    }
+}
+
+/* =========================================================
+   CUSTOM CALENDAR
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:99999;
+
+    width:350px;
+
+    max-width:
+        calc(100vw - 24px);
+
+    margin:0;
+
+    padding:16px;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.20);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar.show{
+
+    display:block;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:15px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-month{
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-nav{
+
+    width:34px;
+
+    height:34px;
+
+    padding:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#555;
+
+    background:#F3F3F3;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-nav:hover{
+
+    color:#5F713C;
+
+    background:#ECE6C7;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-weekdays{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    margin-bottom:6px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-weekdays span{
+
+    color:#888;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-align:center;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-days{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    gap:5px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-empty{
+
+    height:38px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-day{
+
+    width:100%;
+
+    height:38px;
+
+    color:#333;
+
+    background:#F7F7F7;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-day:hover:not(:disabled){
+
+    background:#ECE6C7;
+
+    transform:scale(1.05);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-today{
+
+    box-shadow:
+        inset 0 0 0 1px
+        #8CA15B;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-selected{
+
+    color:#FFFFFF !important;
+
+    background:#8CA15B !important;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-booked{
+
+    color:#B42318 !important;
+
+    background:#FDECEC !important;
+
+    cursor:not-allowed;
+
+    opacity:.78;
+
+    text-decoration:none;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(180,35,24,.12);
+}
+
+/* =========================================================
+   ADD CALENDAR - HISTORICAL / AUDIT DATE
+========================================================= */
+
+#addhaulingModal
+.hauling-calendar-past{
+
+    color:#3F6F91 !important;
+
+    background:#EAF4FA !important;
+
+    cursor:pointer;
+
+    opacity:1;
+
+    text-decoration:none;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(63,111,145,.12);
+}
+
+
+#addhaulingModal
+.hauling-calendar-past:hover:not(:disabled){
+
+    color:#315B78 !important;
+
+    background:#DCEEF7 !important;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   EDIT CALENDAR - PAST DATE
+========================================================= */
+
+#editHaulingModal
+.hauling-calendar-past{
+
+    color:#A0A0A0 !important;
+
+    background:#F1F1F1 !important;
+
+    cursor:not-allowed;
+
+    opacity:.65;
+
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   HAULING CALENDAR - LIMITED AVAILABILITY
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-limited{
+
+    color:#9A6700 !important;
+
+    background:#FFF4CE !important;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(154,103,0,.13);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-limited:hover:not(:disabled){
+
+    color:#7A5200 !important;
+
+    background:#FFE7A3 !important;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   HAULING CALENDAR - FULLY BOOKED
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-booked:hover{
+
+    color:#B42318 !important;
+
+    background:#FDECEC !important;
+
+    transform:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-legend{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:14px;
+
+    padding-top:12px;
+
+    border-top:
+        1px solid
+        #EEEEEE;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-calendar-legend span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#777;
+
+    font-size:10px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-legend-dot{
+
+    width:9px;
+
+    height:9px;
+
+    display:inline-block;
+
+    border-radius:50%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-legend-booked{
+
+    background:#E57373;
+}
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-legend-limited{
+
+    background:#D9A928;
+}
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-legend-historical{
+
+    background:#6FA6C4;
+}
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-legend-available{
+
+    background:#8CA15B;
+}
+
+
+/* =========================================================
+   EDIT / RESCHEDULE CALENDAR - AVAILABLE
+========================================================= */
+
+#editHaulingModal
+.hauling-calendar-available{
+
+    color:#53672D !important;
+
+    background:#EEF5DF !important;
+}
+
+
+/* =========================================================
+   EDIT / RESCHEDULE CALENDAR - SELECTED DATE
+
+   Keep the selected date visually dominant even if
+   that date is also Available or Limited.
+========================================================= */
+
+#editHaulingModal
+.hauling-calendar-selected{
+
+    color:#FFFFFF !important;
+
+    background:#8CA15B !important;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        2px
+        #6F8347 !important;
+
+    opacity:1;
+}
+
+/* =========================================================
+   EDIT HAULING
+   MISSED / DELAYED SELECTED DATE
+========================================================= */
+
+#editHaulingModal
+.hauling-date-dropdown:has(
+    .hauling-date-btn.hauling-reschedule-needed
+)
+.hauling-calendar-selected{
+
+    color:#7A5200 !important;
+
+    background:#FFE7A3 !important;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        2px
+        #D9A928 !important;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   SERVICE TIME
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-time-field{
+
+    position:relative;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-time-input{
+
+    padding-right:45px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-time-icon{
+
+    position:absolute;
+
+    top:50%;
+
+    right:16px;
+
+    color:#6F8347;
+
+    font-size:16px;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-time-input
+::-webkit-calendar-picker-indicator{
+
+    position:absolute;
+
+    right:0;
+
+    width:48px;
+
+    height:100%;
+
+    opacity:0;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   STATUS DROPDOWN
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-dropdown{
+
+    position:relative;
+
+    width:100%;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    cursor:pointer;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn i{
+
+    color:#6F8347;
+
+    font-size:13px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-menu{
+
+    position:absolute;
+
+    top:
+        calc(100% + 6px);
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.23);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-menu.show{
+
+    display:block;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-item{
+
+    padding:
+        12px
+        15px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-item:hover{
+
+    background:#EDF5DC;
+}
+
+
+/* =========================================================
+   MONEY FIELDS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-money-field{
+
+    position:relative;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-money-prefix{
+
+    position:absolute;
+
+    top:50%;
+
+    left:15px;
+
+    z-index:2;
+
+    color:#6F8347;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-money-input{
+
+    padding-left:34px;
+}
+
+
+/* =========================================================
+   TOTAL RENTAL
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-total-card{
+
+    min-height:74px;
+
+    padding:
+        9px
+        15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    color:#202020;
+
+    background:#FDFBD4;
+
+    border-radius:15px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-total-card > span{
+
+    margin-bottom:3px;
+
+    color:#6F8347;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-total-value{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-total-value > span{
+
+    color:#53662E;
+
+    font-size:19px;
+
+    font-weight:800;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingTotal, #editHaulingTotal){
+
+    width:100%;
+
+    min-width:0;
+
+    padding:0;
+
+    color:#35451F;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    font-size:20px;
+
+    font-weight:800;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingTotal, #editHaulingTotal)::-webkit-inner-spin-button,
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingTotal, #editHaulingTotal)::-webkit-outer-spin-button{
+
+    margin:0;
+
+    -webkit-appearance:none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-footer{
+
+    flex:0 0 auto;
+
+    padding:
+        17px
+        28px
+        22px;
+
+    display:flex;
+
+    justify-content:
+        flex-end;
+
+    background:
+        rgba(
+            48,
+            49,
+            45,
+            .68
+        );
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-save-container{
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:
+        flex-end;
+
+    align-items:center;
+
+    gap:13px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-cancel-btn,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-save-btn{
+
+    min-width:180px;
+
+    height:52px;
+
+    padding:
+        0
+        20px;
+
+    border-radius:14px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-cancel-btn{
+
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            253,
+            212,
+            .65
+        );
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-save-btn{
+
+    width:auto;
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border:
+        2px solid
+        #8CA15B;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-cancel-btn:hover,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-save-btn:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.14);
+}
+
+
+/* =========================================================
+   INLINE VALIDATION FOUNDATION
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-input.is-invalid,
+
+:is(#addhaulingModal, #editHaulingModal)
+.affiliate-btn.is-invalid,
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-status-btn.is-invalid{
+
+    border-color:
+        #FF7979 !important;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            255,
+            121,
+            121,
+            .14
+        ) !important;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-field-error{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#FFAAAA;
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-form-section
+    .col-md-3{
+
+        width:50%;
+    }
+
+}
+
+
+@media(max-width:767px){
+
+    :is(#addhaulingModal, #editHaulingModal){
+
+        padding:8px !important;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .modal-dialog{
+
+        width:
+            calc(
+                100vw - 16px
+            );
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-header{
+
+        padding:
+            18px
+            17px
+            13px;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-header + hr{
+
+        margin:
+            0
+            17px;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-body{
+
+        padding:17px;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-form-section{
+
+        padding:16px;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-form-section
+    .col-md-3{
+
+        width:100%;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-footer{
+
+        padding:
+            14px
+            17px
+            18px;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-save-container{
+
+        width:100%;
+
+        flex-direction:column;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-cancel-btn,
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-save-btn{
+
+        width:100%;
+    }
+
+}
+
+/* =======================================================
+   TRACTOR MAINTENANCE LEDGER INDICATOR
+======================================================= */
+
+.hauling-row.hauling-maintenance-alert-row{
+    border-left:5px solid #C62828;
+    background:#FFF5F5;
+    box-sizing:border-box;
+
+    box-shadow:
+    0 2px 6px
+    rgba(198,40,40,.12);
+}
+
+
+.hauling-row.hauling-maintenance-alert-row:hover{
+    background:#FFEEEE;
+
+    box-shadow:
+    0 4px 10px
+    rgba(198,40,40,.15);
+}
+
+
+/* =======================================================
+   TRACTOR COLUMN
+======================================================= */
+
+.hauling-tractor-ledger-cell{
+    position:relative;
+
+    min-width:0;
+    width:100%;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.hauling-ledger-tractor-number{
+    font-weight:600;
+
+    position:relative;
+    z-index:1;
+}
+
+
+/* =======================================================
+   MAINTENANCE BADGE
+======================================================= */
+
+.hauling-maintenance-ledger-badge{
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    max-width:100%;
+
+    padding:3px 6px;
+
+    border:1px solid #EF9A9A;
+    border-radius:7px;
+
+    background:#FFEBEE;
+    color:#C62828;
+
+    font-size:8px;
+    font-weight:700;
+
+    line-height:1;
+
+    white-space:nowrap;
+}
+
+.hauling-maintenance-ledger-badge i{
+    font-size:9px;
+}
+
+
+/* =======================================================
+   MAINTENANCE - DISABLED STATUS OPTIONS
+======================================================= */
+
+.hauling-maintenance-alert-row
+.status-dropdown
+option[value="Ongoing"]:disabled,
+
+.hauling-maintenance-alert-row
+.status-dropdown
+option[value="Done"]:disabled{
+
+    color:#C62828;
+
+    background:#FFEBEE;
+
+    font-weight:700;
+}
+
+/* =======================================================
+   STATUS COLUMN
+======================================================= */
+
+.hauling-status-ledger-cell{
+    position:relative;
+
+    width:100%;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =======================================================
+   MAINTENANCE STATUS HINT
+======================================================= */
+
+.hauling-maintenance-status-hint{
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:100%;
+    max-width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:3px;
+
+    color:#C62828;
+
+    font-size:8px;
+    font-weight:700;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+}
+
+
+.hauling-maintenance-status-hint i{
+    font-size:8px;
+}
+
+/* =====================================================
+   ADD HAULING RENTAL
+   NEW LAYOUT ONLY
+   Keeps existing Hauling modal colors/styles
+===================================================== */
+
+
+/* =====================================================
+   WINDOW SIZE / SCROLL
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-window{
+    max-height:calc(100vh - 50px);
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) :is(#haulingForm, #editHaulingForm){
+    min-height:0;
+
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body{
+    min-height:0;
+
+    flex:1;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    padding-right:8px;
+    padding-left:2px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body::-webkit-scrollbar{
+    width:7px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body::-webkit-scrollbar-thumb{
+    background:#8CA15B;
+    border-radius:20px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+
+/* =====================================================
+   SIMPLE HEADER
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-header{
+    flex-shrink:0;
+
+    margin-bottom:18px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-heading h1{
+    margin:0;
+}
+
+
+/* =====================================================
+   FORM SECTIONS
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-form-section{
+    margin-bottom:18px;
+
+    padding:0 2px 17px;
+
+    border-bottom:
+        1px solid
+        rgba(253,251,212,.18);
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-form-section:last-child{
+    margin-bottom:0;
+
+    padding-bottom:15px;
+
+    border-bottom:none;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading{
+    margin-bottom:15px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-icon{
+    width:34px;
+    height:34px;
+
+    flex:0 0 34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:#8CA15B;
+    color:#FDFBD4;
+
+    font-size:15px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading h3{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:15px;
+    font-weight:700;
+}
+
+
+/*
+   No small subtitle under section heading.
+   We hide the <p> already present in the fresh PHP.
+*/
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading p{
+    display:none;
+}
+
+
+/* =====================================================
+   SERVICE TIME
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-time-field{
+    position:relative;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-time-input{
+    padding-right:45px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-time-icon{
+    position:absolute;
+
+    top:50%;
+    right:17px;
+
+    transform:translateY(-50%);
+
+    color:#8CA15B;
+
+    font-size:16px;
+
+    pointer-events:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-time-input::-webkit-calendar-picker-indicator{
+    position:absolute;
+
+    right:0;
+
+    width:48px;
+    height:100%;
+
+    opacity:0;
+
+    cursor:pointer;
+}
+
+
+/*
+   We don't need a tiny helper message here either.
+*/
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-field-hint{
+    display:none;
+}
+
+
+/* =====================================================
+   MONEY INPUTS
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-money-field{
+    position:relative;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-money-prefix{
+    position:absolute;
+
+    top:50%;
+    left:17px;
+
+    transform:translateY(-50%);
+
+    color:#6D7F46;
+
+    font-size:14px;
+    font-weight:700;
+
+    z-index:2;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-money-input{
+    padding-left:35px;
+}
+
+
+/* =====================================================
+   TOTAL RENTAL
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-total-card{
+    min-height:74px;
+
+    padding:10px 15px;
+
+    background:#FDFBD4;
+
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-total-card > span{
+    margin-bottom:2px;
+
+    color:#69784A;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-total-value{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-total-value > span{
+    color:#53662E;
+
+    font-size:20px;
+    font-weight:700;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) :is(#haulingTotal, #editHaulingTotal){
+    width:100%;
+    min-width:0;
+
+    padding:0;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#35451F;
+
+    font-size:21px;
+    font-weight:700;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingTotal, #editHaulingTotal)::-webkit-inner-spin-button,
+
+:is(#addhaulingModal, #editHaulingModal)
+:is(#haulingTotal, #editHaulingTotal)::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+
+    margin:0;
+}
+
+
+/* =====================================================
+   RESERVED TRACTOR
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-tractor-reserved{
+    background:#E6E8DD;
+    color:#59634C;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-footer{
+    flex-shrink:0;
+
+    padding-top:16px;
+
+    border-top:
+        1px solid
+        rgba(253,251,212,.18);
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+
+/*
+   No little footer message.
+*/
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-footer-note{
+    display:none;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-footer
+.hauling-save-container{
+    margin:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:10px;
+}
+
+
+/* CANCEL */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-cancel-btn{
+    min-width:120px;
+    height:50px;
+
+    padding:0 20px;
+
+    border:
+        1px solid
+        #FDFBD4;
+
+    border-radius:15px;
+
+    background:transparent;
+
+    color:#FDFBD4;
+
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-cancel-btn:hover{
+    background:#FDFBD4;
+
+    color:#333;
+}
+
+
+/* ADD RENTAL */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-add-footer
+.hauling-save-btn{
+    width:auto;
+    min-width:145px;
+    height:50px;
+
+    padding:0 22px;
+
+    border-radius:15px;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   SMALL SCREEN
+===================================================== */
+
+@media(max-width:767px){
+
+    :is(#addhaulingModal, #editHaulingModal) .hauling-add-footer{
+        justify-content:stretch;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-footer
+    .hauling-save-container{
+        width:100%;
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal) .hauling-cancel-btn,
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-footer
+    .hauling-save-btn{
+        flex:1;
+    }
+
+}
+
+/* =====================================================
+   ADD HAULING MODAL - SIDE SPACING FIX
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body{
+    padding-left:28px;
+    padding-right:28px;
+
+    overflow-x:hidden;
+    box-sizing:border-box;
+}
+
+
+/* Keep Bootstrap rows inside the body width */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section > .row{
+    margin-left:0;
+    margin-right:0;
+}
+
+
+/* Slightly cleaner space between columns */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section > .row > [class*="col-"]{
+    padding-left:7px;
+    padding-right:7px;
+}
+
+/* =====================================================
+   ADD HAULING - SECTION HEADER ALIGNMENT
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading{
+    padding-left:10px;
+    padding-right:10px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-icon{
+    width:40px;
+    height:40px;
+
+    flex:0 0 40px;
+
+    margin:0;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading h3{
+    margin:0;
+
+    display:flex;
+    align-items:center;
+
+    min-height:40px;
+}
+
+/* =====================================================
+   ADD HAULING - SECTION HEADER ALIGNMENT
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading{
+    padding-left:10px;
+    padding-right:10px;
+
+    margin-top:10px;
+    margin-bottom:20px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    box-sizing:border-box;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-icon{
+    width:40px;
+    height:40px;
+
+    flex:0 0 40px;
+
+    margin:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-section-heading h3{
+    min-height:40px;
+
+    margin:0;
+
+    display:flex;
+    align-items:center;
+}
+
+/* =====================================================
+   ADD HAULING - STATUS DROPDOWN OPEN UPWARD
+===================================================== */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-status-menu{
+    top:auto;
+    bottom:calc(100% + 6px);
+}
+
+/* =========================================================
+   ADD HAULING RENTAL
+   CLEAN COMPACT LAYOUT - FINAL OVERRIDES
+========================================================= */
+
+
+/* =========================================================
+   MODAL WIDTH
+
+   Slightly narrower than the old 1180px layout.
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .modal-dialog{
+
+    width:min(
+        1080px,
+        calc(100vw - 36px)
+    );
+
+    max-width:1080px;
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   MODAL BODY SPACING
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-add-body{
+
+    padding-left:26px;
+    padding-right:26px;
+
+}
+
+
+/* =========================================================
+   FORM COLUMN SPACING
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row{
+
+    margin-left:-6px;
+    margin-right:-6px;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row
+> [class*="col-"]{
+
+    padding-left:6px;
+    padding-right:6px;
+
+}
+
+
+/* =========================================================
+   STANDARD FIELD HEIGHT
+
+   Keeps Customer / Assignment fields visually consistent.
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-input,
+:is(#addhaulingModal, #editHaulingModal) .affiliate-btn,
+:is(#addhaulingModal, #editHaulingModal) .hauling-status-btn{
+
+    min-height:54px;
+
+}
+
+
+/* =========================================================
+   CUSTOMER DETAILS
+
+   Layout is controlled by Bootstrap:
+   Affiliate        = 4
+   Customer Name    = 8
+   Service Location = 8
+   No. of Hauling   = 4
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.name-field-wrapper{
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   ASSIGNMENT DROPDOWNS
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-assignment-dropdown{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-assignment-btn{
+
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    text-align:left;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-assignment-btn > span{
+
+    min-width:0;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-assignment-btn > i{
+
+    flex:0 0 auto;
+
+}
+
+
+/* =========================================================
+   SECONDARY ASSIGNMENT TOGGLE
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-toggle{
+
+    width:auto;
+
+    min-height:44px;
+
+    margin:
+        2px
+        0
+        4px;
+
+    padding:
+        0
+        15px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .35
+        );
+
+    border-radius:12px;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .08
+        );
+
+    color:#FDFBD4;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.25px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-toggle:hover{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .22
+        );
+
+    border-color:#8CA15B;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   PLUS / MINUS ICON
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-toggle-icon{
+
+    width:25px;
+    height:25px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    flex:0 0 25px;
+
+    border-radius:7px;
+
+    background:#8CA15B;
+
+    color:#FDFBD4;
+
+    font-size:13px;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-toggle-icon i{
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+/* Open state - JS will add this class */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-toggle.is-open
+.hauling-secondary-toggle-icon i{
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* =========================================================
+   SECONDARY ASSIGNMENT ANIMATION
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-secondary-wrapper{
+
+    display:block;
+
+    max-height:0;
+    opacity:0;
+    visibility:hidden;
+
+    overflow:hidden;
+
+    margin-top:0;
+    padding-top:0;
+
+    border-top:1px dashed transparent;
+
+    transform:translateY(-10px);
+
+    pointer-events:none;
+
+    transition:
+        max-height .32s ease,
+        opacity .22s ease,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear .32s;
+}
+
+
+:is(#addhaulingModal, #editHaulingModal) .hauling-secondary-wrapper.is-open{
+
+    max-height:500px;
+    opacity:1;
+    visibility:visible;
+
+    margin-top:14px;
+    padding-top:15px;
+
+    border-top-color:rgba(253,251,212,.20);
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+    transition:
+        max-height .32s ease,
+        opacity .26s ease .04s,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* =========================================================
+   SECONDARY INNER ROW
+
+   Prevent nested Bootstrap row from adding ugly overflow.
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-wrapper
+> .row{
+
+    margin-left:-6px;
+    margin-right:-6px;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-wrapper
+> .row
+> [class*="col-"]{
+
+    padding-left:6px;
+    padding-right:6px;
+
+}
+
+
+/* =========================================================
+   OPTIONAL LABEL
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-optional-label{
+
+    margin-left:3px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .60
+        );
+
+    font-size:10px;
+
+    font-weight:500;
+
+}
+
+
+/* =========================================================
+   SECONDARY NOTE
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-assignment-note{
+
+    min-height:40px;
+
+    padding:
+        9px
+        12px;
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+
+    border-radius:11px;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .10
+        );
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .84
+        );
+
+    font-size:11px;
+
+    line-height:1.4;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-assignment-note i{
+
+    flex:0 0 auto;
+
+    color:#AFC477;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   RENTAL SCHEDULE SECTION
+
+   Keeps the three primary fields balanced.
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-date-dropdown,
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-tractor-dropdown{
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   RENTAL AMOUNT SECTION
+
+   Keep smaller money/status fields from feeling oversized.
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-money-field{
+
+    width:100%;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-total-card{
+
+    min-height:54px;
+
+    border-radius:13px;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    :is(#addhaulingModal, #editHaulingModal) .modal-dialog{
+
+        width:
+            calc(
+                100vw - 28px
+            );
+
+        max-width:
+            none;
+
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-body{
+
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:767px){
+
+    :is(#addhaulingModal, #editHaulingModal){
+
+        padding:8px !important;
+
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal) .modal-dialog{
+
+        width:
+            calc(
+                100vw - 16px
+            );
+
+        max-width:
+            none;
+
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-add-body{
+
+        padding-left:14px;
+        padding-right:14px;
+
+    }
+
+
+    /* Bootstrap columns stack naturally */
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-secondary-toggle{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+
+    :is(#addhaulingModal, #editHaulingModal)
+    .hauling-secondary-wrapper{
+
+        margin-top:12px;
+
+    }
+
+}
+
+/* =========================================================
+   ADD HAULING - INNER FIELD SPACING FIX
+========================================================= */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row{
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-form-section
+> .row
+> [class*="col-"]{
+
+    padding-left:6px;
+    padding-right:6px;
+
+}
+
+
+/* Secondary nested row */
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-wrapper
+> .row{
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+}
+
+
+:is(#addhaulingModal, #editHaulingModal)
+.hauling-secondary-wrapper
+> .row
+> [class*="col-"]{
+
+    padding-left:6px;
+    padding-right:6px;
+
+}
+
+/* =========================================================
+   HAULING LEDGER - CLEAN REDESIGN
+   SEPTEMBER 2026
+========================================================= */
+
+
+/* =========================================================
+   LEDGER CONTAINER
+========================================================= */
+
+.hauling-ledger{
+
+    margin-top:22px;
+
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    height:calc(100vh - 210px);
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   SHARED GRID
+   Same grid for HEADER + ROW = aligned columns
+========================================================= */
+
+.hauling-ledger-header,
+.hauling-row{
+
+    display:grid;
+
+    width:100%;
+    box-sizing:border-box;
+
+    grid-template-columns:
+        1.05fr
+        1.20fr
+        .50fr
+        1.95fr
+        1.05fr
+        .90fr
+        .88fr
+        .88fr
+        .42fr;
+
+    column-gap:7px;
+
+    align-items:center;
+}
+
+
+/* =========================================================
+   LEDGER HEADER
+========================================================= */
+
+.hauling-ledger-header{
+
+    min-height:68px;
+
+    width:calc(100% - 16px);
+    margin-right:16px;
+
+    padding:12px 14px;
+
+    background:#8CA15B;
+
+    color:#FFFFFF !important;
+
+    border-radius:18px;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    text-align:center;
+
+    letter-spacing:.1px;
+
+    flex-shrink:0;
+}
+
+
+.hauling-ledger-header > div{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#FFFFFF !important;
+
+    text-align:center;
+
+    white-space:normal;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.hauling-ledger-body{
+
+    margin-top:14px;
+
+    flex:1;
+
+    min-height:0;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    box-sizing:border-box;
+
+    padding:
+        1px
+        8px
+        12px
+        1px;
+
+    scrollbar-gutter:stable;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.hauling-row{
+
+    position:relative;
+
+    min-height:82px;
+
+    margin-bottom:11px;
+
+    padding:12px 14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .12
+        );
+
+    border-radius:18px;
+
+    color:#252820;
+
+    font-size:12.5px;
+    font-weight:600;
+
+    text-align:center;
+
+    box-shadow:
+        0 3px 10px
+        rgba(
+            45,
+            55,
+            30,
+            .07
+        );
+
+    transition:
+        transform .20s ease,
+        box-shadow .20s ease,
+        border-color .20s ease,
+        background .20s ease;
+}
+
+
+.hauling-row:hover{
+
+    transform:translateY(-1px);
+
+    background:
+        rgba(
+            250,
+            255,
+            243,
+            .98
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+
+    box-shadow:
+        0 6px 16px
+        rgba(
+            45,
+            55,
+            30,
+            .10
+        );
+}
+
+
+/* Remove alternating old colors */
+
+.hauling-row:nth-child(even){
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+}
+
+
+.hauling-row:nth-child(even):hover{
+
+    background:
+        rgba(
+            250,
+            255,
+            243,
+            .98
+        );
+}
+
+
+/* =========================================================
+   GENERAL CELL SAFETY
+========================================================= */
+
+.hauling-row > div{
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   TRANSACTION
+========================================================= */
+
+.hauling-transaction-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-align:center;
+}
+
+
+.hauling-transaction-id{
+
+    display:block;
+
+    color:#34451E;
+
+    font-size:11.5px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.hauling-transaction-date{
+
+    display:block;
+
+    color:#7A806F;
+
+    font-size:9.5px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    white-space:nowrap;
+}
+
+/* =========================================================
+   SCHEDULE FLAGS
+
+   Missed
+   - past rental still Pending
+
+   Delayed
+   - past rental still Ongoing
+========================================================= */
+
+.hauling-schedule-flag{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    min-height:18px;
+
+    padding:
+        3px
+        7px;
+
+    border-radius:999px;
+
+    font-size:8.5px;
+    font-weight:800;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    box-sizing:border-box;
+}
+
+
+.hauling-schedule-flag i{
+
+    font-size:9px;
+
+    line-height:1;
+}
+
+
+/* =========================================================
+   MISSED
+========================================================= */
+
+.hauling-schedule-flag.is-missed{
+
+    color:#B42318;
+
+    background:#FDECEC;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            180,
+            35,
+            24,
+            .13
+        );
+}
+
+
+/* =========================================================
+   DELAYED
+========================================================= */
+
+.hauling-schedule-flag.is-delayed{
+
+    color:#9A6700;
+
+    background:#FFF4CE;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            154,
+            103,
+            0,
+            .15
+        );
+}
+
+/* =========================================================
+   RESCHEDULED
+========================================================= */
+
+.hauling-schedule-flag.is-rescheduled{
+
+    color:#3F6F91;
+
+    background:#EAF4FA;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            63,
+            111,
+            145,
+            .14
+        );
+}
+
+/* =========================================================
+   HISTORICAL / AUDIT ENTRY
+========================================================= */
+
+.hauling-audit-flag{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    max-width:100%;
+
+    min-height:18px;
+
+    padding:
+        3px
+        7px;
+
+    color:#315B78;
+
+    background:#DCEEF7;
+
+    border-radius:999px;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            63,
+            111,
+            145,
+            .18
+        );
+
+    font-size:8px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    text-align:center;
+
+    white-space:normal;
+
+    box-sizing:border-box;
+
+}
+
+
+.hauling-audit-flag i{
+
+    flex:0 0 auto;
+
+    color:#3F6F91;
+
+    font-size:9px;
+
+    line-height:1;
+
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.hauling-customer-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    text-align:center;
+}
+
+
+.hauling-customer-name{
+
+    width:100%;
+
+    color:#242820;
+
+    font-size:13px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    text-align:center;
+
+    white-space:normal;
+
+    overflow-wrap:anywhere;
+    word-break:break-word;
+
+    hyphens:auto;
+}
+
+
+.hauling-affiliate-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:21px;
+
+    padding:3px 8px;
+
+    border-radius:999px;
+
+    font-size:9.5px;
+
+    font-weight:800;
+
+    line-height:1;
+}
+
+
+.hauling-affiliate-chip.is-member{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .17
+        );
+
+    color:#53672D;
+}
+
+
+.hauling-affiliate-chip.is-non-member{
+
+    background:
+        rgba(
+            80,
+            80,
+            80,
+            .08
+        );
+
+    color:#666A62;
+}
+
+
+/* =========================================================
+   COUNT
+========================================================= */
+
+.hauling-count-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#354224;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ASSIGNMENT
+========================================================= */
+
+.hauling-assignment-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-align:left;
+}
+
+
+.hauling-assignment-primary,
+.hauling-assignment-secondary{
+
+    position:relative;
+
+    min-width:0;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(75px,.8fr)
+        minmax(115px,1.2fr);
+
+    gap:
+        4px
+        8px;
+
+    padding-left:8px;
+
+    border-left:
+        3px solid
+        rgba(
+            140,
+            161,
+            91,
+            .70
+        );
+}
+
+
+.hauling-assignment-secondary{
+
+    padding-top:6px;
+
+    border-top:
+        1px dashed
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+
+    border-left-color:
+        rgba(
+            90,
+            110,
+            60,
+            .40
+        );
+}
+
+
+.hauling-assignment-label{
+
+    grid-column:
+        1 / -1;
+
+    margin-bottom:1px;
+
+    color:#7A895D;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:.7px;
+}
+
+
+.hauling-assignment-item{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:5px;
+
+    color:#343930;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    line-height:1.25;
+}
+
+
+.hauling-assignment-item i{
+
+    flex-shrink:0;
+
+    margin-top:1px;
+
+    color:#8CA15B;
+
+    font-size:12px;
+}
+
+
+/* FULL TRACTOR + DRIVER NAME */
+
+.hauling-assignment-item span{
+
+    min-width:0;
+
+    overflow:visible;
+
+    text-overflow:clip;
+
+    white-space:normal;
+
+    overflow-wrap:anywhere;
+
+    line-height:1.25;
+}
+
+
+.hauling-assignment-maintenance{
+
+    grid-column:
+        1 / -1;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    width:max-content;
+
+    margin-top:2px;
+
+    padding:3px 7px;
+
+    border-radius:7px;
+
+    background:
+        rgba(
+            183,
+            28,
+            28,
+            .08
+        );
+
+    color:#B71C1C;
+
+    font-size:9px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.hauling-location-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    line-height:1.35;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.hauling-date-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#4D5346;
+
+    font-size:11.5px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.hauling-price-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    white-space:nowrap;
+}
+
+
+.hauling-price-value{
+
+    color:#293719;
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   STATUS + REMARKS
+========================================================= */
+
+.hauling-status-ledger-cell,
+.hauling-remarks-ledger-cell{
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+}
+
+
+/* =========================================================
+   STATUS / REMARKS DROPDOWN
+========================================================= */
+
+.hauling-row .status-dropdown,
+.hauling-row .remarks-dropdown{
+
+    width:100%;
+
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    border-radius:11px;
+
+    background:#FFFFFF;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease;
+}
+
+
+/* PENDING */
+
+.hauling-row
+.status-dropdown.status-pending-select{
+
+    border:
+        1px solid
+        #E8A600;
+
+    background:#FFF9E9;
+
+    color:#B67C00;
+}
+
+/* =========================================================
+   FUTURE RENTAL - LOCKED PENDING STATUS
+========================================================= */
+
+.hauling-row
+.hauling-future-status-lock{
+
+    width:100%;
+
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    color:#B67C00;
+
+    background:#FFF9E9;
+
+    border:
+        1px solid
+        #E8A600;
+
+    border-radius:11px;
+
+    outline:none;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    box-sizing:border-box;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+
+}
+
+
+.hauling-row
+.hauling-future-status-lock i{
+
+    font-size:9px;
+
+    line-height:1;
+
+}
+
+
+.hauling-row
+.hauling-future-status-lock:hover{
+
+    background:#FFF3CF;
+
+    border-color:#D99C00;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.hauling-row
+.hauling-future-status-lock:focus{
+
+    box-shadow:
+        0
+        0
+        0
+        3px
+        rgba(
+            232,
+            166,
+            0,
+            .14
+        );
+
+}
+
+/* ONGOING */
+
+.hauling-row
+.status-dropdown.status-ongoing-select{
+
+    border:
+        1px solid
+        #E58A00;
+
+    background:#FFF5E9;
+
+    color:#C56B00;
+}
+
+
+/* UNPAID */
+
+.hauling-row
+.remarks-dropdown.remarks-unpaid-select{
+
+    border:
+        1px solid
+        #F04E58;
+
+    background:#FFF3F4;
+
+    color:#D62F3A;
+}
+
+
+/* =========================================================
+   FINAL BADGES
+========================================================= */
+
+.hauling-ledger-badge{
+
+    width:100%;
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    border-radius:11px;
+
+    font-size:10.5px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    box-sizing:border-box;
+}
+
+
+/* DONE */
+
+.hauling-ledger-badge-done{
+
+    background:#A9F2CB;
+
+    color:#11733E;
+}
+
+
+/* PAID */
+
+.hauling-ledger-badge-paid{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .17
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .38
+        );
+
+    color:#496223;
+}
+
+
+/* =========================================================
+   MAINTENANCE STATUS NOTE
+========================================================= */
+
+.hauling-status-lock-note{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:3px;
+
+    color:#B71C1C;
+
+    font-size:8px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.hauling-action-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+
+.hauling-edit-btn{
+
+    width:36px;
+    height:36px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    outline:none;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.hauling-edit-btn:hover{
+
+    background:#748A49;
+
+    color:#FFFFFF;
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 4px 9px
+        rgba(
+            45,
+            55,
+            30,
+            .15
+        );
+}
+
+
+/* =========================================================
+   MAINTENANCE ROW
+========================================================= */
+
+.hauling-row.hauling-maintenance-alert-row{
+
+    border-color:
+        rgba(
+            183,
+            28,
+            28,
+            .20
+        );
+
+    background:
+        rgba(
+            255,
+            249,
+            246,
+            .96
+        );
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.hauling-empty{
+
+    min-height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    border:
+        1px dashed
+        rgba(
+            140,
+            161,
+            91,
+            .38
+        );
+
+    border-radius:18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .60
+        );
+
+    color:#6D7462;
+}
+
+
+.hauling-empty i{
+
+    margin-bottom:4px;
+
+    font-size:25px;
+
+    color:#8CA15B;
+}
+
+
+.hauling-empty strong{
+
+    font-size:14px;
+}
+
+
+.hauling-empty span{
+
+    font-size:12px;
+
+    font-weight:500;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.hauling-ledger-body::-webkit-scrollbar{
+
+    width:8px;
+}
+
+
+.hauling-ledger-body::-webkit-scrollbar-track{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .08
+        );
+
+    border-radius:20px;
+}
+
+
+.hauling-ledger-body::-webkit-scrollbar-thumb{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .78
+        );
+
+    border-radius:20px;
+}
+
+
+.hauling-ledger-body::-webkit-scrollbar-thumb:hover{
+
+    background:#748A49;
+}
+
+
+/* =========================================================
+   SMALLER LAPTOP
+========================================================= */
+
+@media(
+    max-width:1450px
+){
+
+    .hauling-ledger-header,
+    .hauling-row{
+
+        grid-template-columns:
+            1fr
+            1.15fr
+            .48fr
+            2fr
+            1fr
+            .88fr
+            .85fr
+            .85fr
+            .40fr;
+
+        column-gap:5px;
+    }
+
+
+    .hauling-ledger-header{
+
+        margin-right:16px;
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:10.5px;
+    }
+
+
+    .hauling-row{
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:11.5px;
+    }
+
+
+    .hauling-transaction-id{
+
+        font-size:10.5px;
+    }
+
+
+    .hauling-assignment-item{
+
+        font-size:10px;
+    }
+
+
+    .hauling-row .status-dropdown,
+    .hauling-row .remarks-dropdown{
+
+        font-size:10px;
+
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+
+    .hauling-edit-btn{
+
+        width:33px;
+        height:33px;
+
+        font-size:14px;
+    }
+
+}
+
+/* =========================================================
+   HAULING EDIT MODAL
+   COMPACT RECORD EDITOR
+========================================================= */
+
+
+/* =========================================================
+   MODAL SIZE
+========================================================= */
+
+#editHaulingModal .modal-dialog{
+
+    width:min(
+        1100px,
+        calc(100vw - 40px)
+    );
+
+    max-width:1100px;
+
+}
+
+
+#editHaulingModal .hauling-edit-window{
+
+    max-height:
+        calc(100vh - 46px);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#editHaulingModal .hauling-edit-header{
+
+    min-height:auto;
+
+    padding:
+        20px
+        26px
+        16px;
+
+}
+
+
+#editHaulingModal .hauling-edit-title-row{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+#editHaulingModal .hauling-edit-title-row > div{
+
+    min-width:0;
+
+}
+
+
+#editHaulingModal .hauling-edit-title-row h1{
+
+    margin:0;
+
+    font-size:27px;
+
+    line-height:1.08;
+
+}
+
+
+#editHaulingModal .hauling-edit-header-sub{
+
+    margin-top:5px;
+
+    max-width:500px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .60
+        );
+
+    font-size:10.5px;
+
+    font-weight:500;
+
+    line-height:1.35;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-transaction-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:30px;
+
+    padding:
+        6px
+        11px;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .09
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .25
+        );
+
+    border-radius:10px;
+
+    font-size:10.5px;
+
+    font-weight:800;
+
+    letter-spacing:.35px;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   EDIT BODY
+========================================================= */
+
+#editHaulingModal .hauling-edit-body{
+
+    padding:
+        17px
+        24px
+        20px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section{
+
+    width:100%;
+
+    margin-bottom:14px;
+
+    padding:
+        16px
+        18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .055
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .17
+        );
+
+    border-radius:17px;
+
+    box-sizing:border-box;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section:last-of-type{
+
+    margin-bottom:12px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section
+.hauling-section-heading{
+
+    margin-bottom:13px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section
+.hauling-section-icon{
+
+    width:32px;
+
+    height:32px;
+
+    flex:
+        0
+        0
+        32px;
+
+    border-radius:9px;
+
+    font-size:14px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section
+.hauling-section-heading h3{
+
+    font-size:13px;
+
+    letter-spacing:.15px;
+
+}
+
+
+/* =========================================================
+   CUSTOMER SUMMARY
+   READ ONLY
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-summary-section{
+
+    padding-bottom:16px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        .8fr
+        1.35fr
+        .65fr;
+
+    gap:10px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-item{
+
+    min-width:0;
+
+    min-height:64px;
+
+    padding:
+        10px
+        12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:
+        rgba(
+            25,
+            26,
+            23,
+            .24
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:12px;
+
+    box-sizing:border-box;
+
+}
+
+
+/*
+   Keep all four fields in one clean row.
+*/
+
+#editHaulingModal
+.hauling-edit-summary-item-wide{
+
+    grid-column:auto;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-bottom:5px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .56
+        );
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-label i{
+
+    color:#9CB866;
+
+    font-size:11px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-value,
+
+#editHaulingModal
+.hauling-edit-summary-input{
+
+    width:100%;
+
+    min-width:0;
+
+    margin:0;
+
+    padding:0;
+
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    box-shadow:none;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:650;
+
+    line-height:1.3;
+
+    text-overflow:ellipsis;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-input{
+
+    cursor:default;
+
+    pointer-events:none;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-summary-input::-webkit-inner-spin-button,
+
+#editHaulingModal
+.hauling-edit-summary-input::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+/* =========================================================
+   WORKING SECTION
+   SCHEDULE + ASSIGNMENT
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-working-section{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .075
+        );
+
+    border:
+        1px solid
+        rgba(
+            156,
+            184,
+            102,
+            .28
+        );
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:14px;
+
+    margin-bottom:13px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-section-top
+.hauling-section-heading{
+
+    margin-bottom:0;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-lifecycle-hint{
+
+    flex:
+        0
+        1
+        auto;
+
+    max-width:340px;
+
+    min-height:30px;
+
+    padding:
+        6px
+        10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        );
+
+    background:
+        rgba(
+            20,
+            21,
+            18,
+            .17
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:9px;
+
+    font-size:9.5px;
+
+    font-weight:600;
+
+    line-height:1.25;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-lifecycle-hint i{
+
+    flex:
+        0
+        0
+        auto;
+
+    color:#A9C66E;
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   ACTUAL EDITABLE CONTROLS
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-control{
+
+    min-height:50px;
+
+    height:50px;
+
+    background:#FDFBD4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:12px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-control:not(:disabled):hover{
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .65
+        );
+
+}
+
+
+#editHaulingModal
+.hauling-edit-control:not(:disabled):focus{
+
+    border-color:#8CA15B;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            140,
+            161,
+            91,
+            .16
+        );
+
+}
+
+
+/* =========================================================
+   LOCKED EDIT CONTROL
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-control:disabled{
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        ) !important;
+
+    background:
+        rgba(
+            26,
+            27,
+            24,
+            .34
+        ) !important;
+
+    border-color:
+        rgba(
+            253,
+            251,
+            212,
+            .08
+        ) !important;
+
+    cursor:not-allowed !important;
+
+    box-shadow:none !important;
+
+    opacity:1 !important;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-control:disabled i{
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .45
+        ) !important;
+
+}
+
+
+/* =========================================================
+   SECONDARY ASSIGNMENT
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-secondary-toggle{
+
+    min-height:40px;
+
+    margin-top:0;
+
+    padding:
+        7px
+        11px;
+
+    border-radius:11px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-secondary-toggle
+.hauling-secondary-toggle-icon{
+
+    width:28px;
+
+    height:28px;
+
+    flex:
+        0
+        0
+        28px;
+
+    border-radius:8px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-secondary-wrapper{
+
+    margin-top:10px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-secondary-note{
+
+    margin-top:0;
+
+    padding:
+        8px
+        10px;
+
+    border-radius:9px;
+
+    font-size:9.5px;
+
+}
+
+
+/* =========================================================
+   RENTAL SUMMARY
+   READ ONLY
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-financial-section{
+
+    padding-bottom:16px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-rental-summary{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:10px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-summary{
+
+    min-width:0;
+
+    min-height:70px;
+
+    padding:
+        11px
+        13px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:
+        rgba(
+            26,
+            27,
+            24,
+            .28
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:12px;
+
+    box-sizing:border-box;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-label{
+
+    margin-bottom:5px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .55
+        );
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-value{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-currency{
+
+    color:#A5BD70;
+
+    font-size:14px;
+
+    font-weight:800;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-value input{
+
+    width:100%;
+
+    min-width:0;
+
+    margin:0;
+
+    padding:0;
+
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    font-weight:750;
+
+    pointer-events:none;
+
+}
+
+
+/* hide number arrows */
+
+#editHaulingModal
+.hauling-edit-money-value
+input::-webkit-inner-spin-button,
+
+#editHaulingModal
+.hauling-edit-money-value
+input::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+/* =========================================================
+   RENTAL STATUS DISPLAY
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-status-display{
+
+    min-height:26px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+#editHaulingModal
+#editHaulingStatusText{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:78px;
+
+    min-height:27px;
+
+    padding:
+        5px
+        10px;
+
+    color:#53662E;
+
+    background:#EDF5DC;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-money-total{
+
+    background:#FDFBD4;
+
+    border-color:#FDFBD4;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-total
+.hauling-edit-money-label{
+
+    color:#6F8347;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-total
+.hauling-edit-currency{
+
+    color:#53662E;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-money-total
+input{
+
+    color:#35451F;
+
+    font-size:19px;
+
+    font-weight:850;
+
+}
+
+
+/* =========================================================
+   PAYMENT NOTE
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-payment-note-compact{
+
+    width:100%;
+
+    margin:
+        0
+        1px
+        2px;
+
+    padding:
+        8px
+        11px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .64
+        );
+
+    background:transparent;
+
+    border:none;
+
+    border-radius:0;
+
+    font-size:9.5px;
+
+    font-weight:500;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-payment-note-compact > i{
+
+    color:#A4BD6F;
+
+    font-size:12px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-payment-note-compact strong{
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .88
+        );
+
+    font-weight:750;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+#editHaulingModal
+.hauling-edit-footer{
+
+    padding:
+        14px
+        24px
+        17px;
+
+}
+
+
+#editHaulingModal
+.hauling-edit-footer
+.hauling-cancel-btn,
+
+#editHaulingModal
+.hauling-edit-footer
+.hauling-save-btn{
+
+    min-width:145px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    font-size:10.5px;
+
+}
+
+
+/* =========================================================
+   COMPLETED BUTTON
+========================================================= */
+
+#editHaulingModal
+#updateHaulingBtn:disabled{
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .58
+        );
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .25
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .20
+        );
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    #editHaulingModal
+    .hauling-edit-summary-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-rental-summary{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-section-top{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-lifecycle-hint{
+
+        max-width:100%;
+
+    }
+
+}
+
+
+@media(max-width:767px){
+
+    #editHaulingModal .modal-dialog{
+
+        width:
+            calc(
+                100vw - 16px
+            );
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-header{
+
+        padding:
+            17px
+            17px
+            13px;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-body{
+
+        padding:
+            14px
+            15px
+            17px;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-summary-grid,
+
+    #editHaulingModal
+    .hauling-edit-rental-summary{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-section{
+
+        padding:
+            14px;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-title-row{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+
+    #editHaulingModal
+    .hauling-edit-footer{
+
+        padding:
+            12px
+            15px
+            15px;
+
+    }
+
+}
+
+/* =========================================
+   EDIT MODAL SCROLL + DROPDOWN FIX
+========================================= */
+
+/* keep modal itself contained */
+#editHaulingModal .hauling-edit-window{
+    overflow:hidden !important;
+}
+
+
+/* form must stay inside modal */
+#editHaulingModal #editHaulingForm{
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    overflow:hidden;
+}
+
+
+/* THIS is the scrollable area */
+#editHaulingModal .hauling-edit-body{
+    min-height:0;
+    flex:1;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+}
+
+
+/* allow dropdown to escape its section only */
+#editHaulingModal .hauling-edit-working-section,
+#editHaulingModal .hauling-edit-secondary-wrapper,
+#editHaulingModal .hauling-tractor-dropdown,
+#editHaulingModal .hauling-assignment-dropdown{
+    overflow:visible !important;
+}
+
+
+/* dropdown menu */
+#editHaulingSecondaryTractorMenu,
+#editHaulingSecondaryDriverMenu,
+#editHaulingTractorMenu,
+#editHaulingPrimaryDriverMenu{
+    z-index:9999 !important;
+    max-height:230px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   ADD HAULING
+   SECONDARY DROPDOWN CLIPPING FIX
+========================================================= */
+
+#addhaulingModal
+.hauling-secondary-wrapper.is-open{
+    position:relative;
+
+    z-index:2;
+
+    overflow:visible !important;
+
+    transform:none;
+}
+
+
+#addhaulingModal
+.hauling-form-section{
+    overflow:visible;
+}
+
+
+#addhaulingModal
+.hauling-secondary-wrapper
+.hauling-assignment-dropdown{
+    overflow:visible;
+}
+
+
+#addhaulingModal
+.hauling-secondary-wrapper
+.hauling-tractor-menu{
+    z-index:10001 !important;
+
+    max-height:230px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   ADD HAULING
+   ACTIVE ASSIGNMENT DROPDOWN STACKING
+========================================================= */
+
+#addhaulingModal
+.hauling-form-section
+> .row
+> [class*="col-"]:has(.hauling-assignment-menu.show){
+    position:relative;
+    z-index:20000;
+}
+
+/* =========================================================
+   HAULING LEDGER
+   CLEAN PRIMARY / SECONDARY ASSIGNMENT
+========================================================= */
+
+.hauling-assignment-cell{
+    min-width:0;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    gap:6px;
+}
+
+
+/* =========================================================
+   ASSIGNMENT STRIP
+========================================================= */
+
+.hauling-assignment-primary,
+.hauling-assignment-secondary{
+
+    min-width:0;
+
+    display:grid;
+
+    grid-template-columns:
+        62px
+        minmax(0, .9fr)
+        minmax(0, 1.1fr);
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:7px 8px;
+
+    border:none;
+    border-radius:10px;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .07
+        );
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.hauling-assignment-secondary{
+
+    padding-top:7px;
+
+    border-top:none;
+
+    background:
+        rgba(
+            90,
+            110,
+            60,
+            .055
+        );
+}
+
+
+/* =========================================================
+   PRIMARY / SECONDARY LABEL
+========================================================= */
+
+.hauling-assignment-primary
+.hauling-assignment-label,
+.hauling-assignment-secondary
+.hauling-assignment-label{
+
+    grid-column:auto;
+
+    margin:0;
+
+    color:#718052;
+
+    font-size:8.5px;
+    font-weight:900;
+
+    letter-spacing:.55px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   TRACTOR / DRIVER
+========================================================= */
+
+.hauling-assignment-item{
+
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+
+    gap:5px;
+
+    color:#343930;
+
+    font-size:10.5px;
+    font-weight:700;
+
+    line-height:1.2;
+}
+
+
+.hauling-assignment-item i{
+
+    flex:0 0 auto;
+
+    margin:0;
+
+    color:#8CA15B;
+
+    font-size:11px;
+}
+
+
+.hauling-assignment-item span{
+
+    min-width:0;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    line-height:1.2;
+}
+
+
+/* =========================================================
+   ROW WITH SECONDARY ASSIGNMENT
+========================================================= */
+
+.hauling-row:has(
+    .hauling-assignment-secondary
+){
+
+    min-height:104px;
+}
+
+
+/* =========================================================
+   MAINTENANCE BADGE
+========================================================= */
+
+.hauling-assignment-maintenance{
+
+    grid-column:2 / -1;
+
+    margin-top:1px;
+}
+
+/* =========================================================
+   DRIVER READ-ONLY FIELDS
+========================================================= */
+
+.driver-input[readonly]{
+    cursor:not-allowed;
+    user-select:none;
+
+    opacity:.82;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        );
+}
+
+.driver-input[readonly]:focus{
+    border-color:transparent;
+
+    box-shadow:none;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        );
+}
+
+/* =========================================================
+   ADD HAULING - HISTORICAL / AUDIT ENTRY
+========================================================= */
+
+#addhaulingModal
+.hauling-historical-status-note{
+
+    margin-top:14px;
+
+    padding:
+        11px
+        14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#315B78;
+
+    background:#DCEEF7;
+
+    border:
+        1px solid
+        rgba(
+            63,
+            111,
+            145,
+            .22
+        );
+
+    border-radius:12px;
+
+    font-size:12px;
+
+    line-height:1.45;
+
+}
+
+
+#addhaulingModal
+.hauling-historical-status-note[hidden]{
+
+    display:none !important;
+
+}
+
+
+#addhaulingModal
+.hauling-historical-status-note i{
+
+    flex:0 0 auto;
+
+    color:#3F6F91;
+
+    font-size:16px;
+
+}
+
+
+#addhaulingModal
+.hauling-historical-status-note strong{
+
+    margin-right:4px;
+
+    color:#315B78;
+
+}
+
+
+/* Historical Status is system-controlled */
+
+#addhaulingModal
+#statusBtn.is-historical-locked:disabled{
+
+    color:#315B78 !important;
+
+    background:#DCEEF7 !important;
+
+    border-color:
+        rgba(
+            63,
+            111,
+            145,
+            .28
+        ) !important;
+
+    cursor:not-allowed;
+
+}
+
+
+#addhaulingModal
+#statusBtn.is-historical-locked:disabled i{
+
+    color:#3F6F91 !important;
+
+}

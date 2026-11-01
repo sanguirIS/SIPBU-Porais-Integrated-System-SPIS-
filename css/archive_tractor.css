@@ -1,0 +1,573 @@
+/* =========================================================
+   SPIS - TRACTOR ARCHIVE
+   ACCOUNT ARCHIVE STYLE REFERENCE
+========================================================= */
+
+:root{
+    --tractor-archive-green:#8CA15B;
+    --tractor-archive-green-dark:#6F8347;
+    --tractor-archive-green-deep:#566938;
+
+    --tractor-archive-cream:#FDFBD4;
+    --tractor-archive-soft:#F8FAF4;
+
+    --tractor-archive-text:#2D3029;
+    --tractor-archive-muted:#666C60;
+
+    --tractor-archive-line:
+        rgba(140,161,91,.16);
+}
+
+
+/* =========================================================
+   TABLE GRID
+========================================================= */
+
+.archive-table{
+    --tractor-archive-columns:
+        minmax(80px,.72fr)
+        minmax(120px,1fr)
+        minmax(165px,1.45fr)
+        minmax(105px,.95fr)
+        minmax(110px,1fr)
+        minmax(145px,1.20fr)
+        minmax(110px,.90fr);
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.tractor-archive-header{
+    min-height:72px;
+
+    display:grid;
+
+    grid-template-columns:
+        var(--tractor-archive-columns);
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+    padding:
+        0
+        16px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--tractor-archive-green) 0%,
+            #839850 100%
+        );
+
+    border:
+        1px solid
+        rgba(86,105,56,.20);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(72,87,45,.13),
+        inset 0 1px 0
+        rgba(255,255,255,.10);
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:.35px;
+
+    text-align:center;
+}
+
+
+.tractor-archive-header > div{
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#FFFFFF;
+
+    line-height:1.25;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.tractor-archive-row{
+    min-height:82px;
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        var(--tractor-archive-columns);
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:0;
+    margin-bottom:10px;
+
+    padding:
+        10px
+        16px;
+
+    overflow:hidden;
+
+    color:
+        var(--tractor-archive-text);
+
+    background:#FFFFFF;
+
+    border:
+        1px solid
+        var(--tractor-archive-line);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(0,0,0,.035);
+
+    font-size:13px;
+    font-weight:500;
+
+    text-align:center;
+
+    transition:
+        transform .20s ease,
+        background .20s ease,
+        border-color .20s ease,
+        box-shadow .20s ease;
+}
+
+
+/* =========================================================
+   LEFT ARCHIVE ACCENT
+========================================================= */
+
+.tractor-archive-row::before{
+    content:"";
+
+    width:4px;
+
+    position:absolute;
+
+    top:16px;
+    bottom:16px;
+    left:0;
+
+    background:
+        var(--tractor-archive-green);
+
+    border-radius:
+        0
+        5px
+        5px
+        0;
+
+    opacity:.50;
+
+    transition:
+        opacity .20s ease,
+        top .20s ease,
+        bottom .20s ease;
+}
+
+
+/* =========================================================
+   ROW HOVER
+========================================================= */
+
+.tractor-archive-row:hover{
+    background:
+        var(--tractor-archive-soft);
+
+    border-color:
+        rgba(140,161,91,.32);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(63,77,39,.09);
+}
+
+
+.tractor-archive-row:hover::before{
+    top:11px;
+    bottom:11px;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   GENERAL CELLS
+========================================================= */
+
+.tractor-archive-row > div{
+    min-width:0;
+
+    overflow-wrap:anywhere;
+
+    line-height:1.4;
+}
+
+
+/* =========================================================
+   RECORD ID
+========================================================= */
+
+.tractor-archive-row > div:nth-child(1){
+    width:max-content;
+
+    min-width:54px;
+
+    justify-self:center;
+
+    padding:
+        6px
+        11px;
+
+    color:
+        var(--tractor-archive-green-deep);
+
+    background:
+        rgba(140,161,91,.11);
+
+    border:
+        1px solid
+        rgba(140,161,91,.22);
+
+    border-radius:18px;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:.45px;
+}
+
+
+/* =========================================================
+   TRACTOR NUMBER
+========================================================= */
+
+.tractor-archive-number{
+    color:#25291F;
+
+    font-size:13.5px;
+    font-weight:750;
+}
+
+
+/* =========================================================
+   TRACTOR NAME
+========================================================= */
+
+.tractor-archive-name{
+    color:#33382D;
+
+    font-size:13px;
+    font-weight:650;
+}
+
+
+/* =========================================================
+   TRACTOR TYPE
+========================================================= */
+
+.tractor-archive-type{
+    min-width:82px;
+
+    padding:
+        7px
+        12px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:999px;
+
+    font-size:10.5px;
+    font-weight:800;
+
+    line-height:1;
+
+    letter-spacing:.20px;
+}
+
+
+.tractor-archive-type-hauling{
+    background:#DDE8C5;
+    color:#536B2F;
+}
+
+
+.tractor-archive-type-rotor{
+    background:#DCEAF5;
+    color:#3F6F91;
+}
+
+
+.tractor-archive-type-reaper{
+    background:#F4DEC8;
+    color:#9A5C28;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.tractor-archive-row > div:nth-child(5){
+    width:max-content;
+    max-width:100%;
+
+    justify-self:center;
+
+    padding:
+        6px
+        12px;
+
+    color:
+        var(--tractor-archive-green-deep);
+
+    background:
+        rgba(140,161,91,.13);
+
+    border:
+        1px solid
+        rgba(140,161,91,.24);
+
+    border-radius:20px;
+
+    font-size:10.5px;
+    font-weight:800;
+
+    letter-spacing:.20px;
+}
+
+
+/* =========================================================
+   ACTION BY
+========================================================= */
+
+.tractor-archive-row > div:nth-child(6){
+    color:#596151;
+
+    font-size:12px;
+    font-weight:650;
+}
+
+
+/* =========================================================
+   ACTION CELL
+========================================================= */
+
+.tractor-archive-row > div:nth-child(7){
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================================================
+   RETRIEVE BUTTON
+========================================================= */
+
+.tractor-retrieve-btn{
+    min-width:94px;
+    height:38px;
+
+    padding:
+        0
+        16px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    color:
+        var(--tractor-archive-cream);
+
+    background:
+        var(--tractor-archive-green);
+
+    border:
+        1px solid
+        rgba(86,105,56,.18);
+
+    border-radius:12px;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:.30px;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 10px
+        rgba(86,105,56,.15);
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.tractor-retrieve-btn:hover{
+    color:
+        var(--tractor-archive-cream);
+
+    background:
+        var(--tractor-archive-green-dark);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(86,105,56,.24);
+
+    text-decoration:none;
+}
+
+
+.tractor-retrieve-btn:active{
+    transform:
+        translateY(0)
+        scale(.97);
+}
+
+
+.tractor-retrieve-btn:focus-visible{
+    outline:
+        3px solid
+        rgba(140,161,91,.25);
+
+    outline-offset:3px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.archive-empty{
+    min-height:120px;
+
+    padding:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#68705D;
+
+    background:
+        rgba(255,255,255,.76);
+
+    border:
+        1px dashed
+        rgba(140,161,91,.38);
+
+    border-radius:20px;
+
+    font-size:13px;
+    font-weight:650;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1250px){
+
+    .archive-table{
+        --tractor-archive-columns:
+            minmax(70px,.65fr)
+            minmax(105px,.95fr)
+            minmax(135px,1.30fr)
+            minmax(90px,.85fr)
+            minmax(90px,.88fr)
+            minmax(115px,1fr)
+            minmax(92px,.82fr);
+    }
+
+
+    .tractor-archive-header{
+        gap:7px;
+
+        padding:
+            0
+            12px;
+
+        font-size:10.5px;
+    }
+
+
+    .tractor-archive-row{
+        gap:7px;
+
+        padding:
+            10px
+            12px;
+    }
+
+
+    .tractor-archive-number{
+        font-size:12.5px;
+    }
+
+
+    .tractor-archive-name,
+    .tractor-archive-row > div:nth-child(6){
+        font-size:11px;
+    }
+
+
+    .tractor-retrieve-btn{
+        min-width:82px;
+
+        padding:
+            0
+            11px;
+
+        font-size:10px;
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .archive-table{
+        min-width:930px;
+    }
+
+}

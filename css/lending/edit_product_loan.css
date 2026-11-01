@@ -1,0 +1,2456 @@
+/* =========================================================
+   EDIT PRODUCT LOAN MODAL
+========================================================= */
+
+#editProductLoanModal {
+    padding: 18px !important;
+}
+
+#editProductLoanModal.show {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#editProductLoanModal .modal-dialog {
+    width: min(1250px, calc(100vw - 36px));
+    max-width: 1250px;
+    margin: auto;
+}
+
+.product-loan-edit-window {
+    max-height: calc(100vh - 36px);
+}
+
+.product-loan-edit-window form {
+    min-height: 0;
+    max-height: calc(100vh - 46px);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   EDIT STATUS BADGE
+========================================================= */
+
+.product-loan-edit-status-badge {
+    width: auto;
+    max-width: none;
+    min-width: 95px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.product-loan-edit-status-badge i {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BORROWER GRID
+========================================================= */
+
+.product-loan-edit-borrower-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(260px, 1.5fr)
+        minmax(190px, 0.8fr)
+        minmax(190px, 0.8fr);
+    gap: 14px;
+}
+
+.product-loan-field-note {
+    display: block;
+    margin-top: 6px;
+    color: rgba(255, 253, 212, 0.68);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   REJECTION REASON
+========================================================= */
+
+.product-loan-rejection-block {
+    margin-top: 15px;
+    padding: 14px;
+    background: rgba(255, 108, 108, 0.08);
+    border: 1px solid rgba(255, 135, 135, 0.25);
+    border-radius: 13px;
+}
+
+.product-loan-textarea {
+    min-height: 95px;
+    height: 95px;
+    padding: 13px 15px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   PRODUCT SELECTION + REQUESTED PRODUCTS
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-main-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(380px, 0.92fr);
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 18px;
+}
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only {
+    grid-template-columns: 1fr;
+}
+
+
+/* =========================================================
+   PRODUCT SELECTION SECTION
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-selection-section {
+    min-width: 0;
+    margin: 0;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-builder {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* =========================================================
+   PRODUCT SEARCH
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-product-search {
+    position: relative;
+    width: 100%;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-search i {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    z-index: 2;
+    color: #777864;
+    font-size: 13px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-search input {
+    width: 100%;
+    height: 42px;
+    padding:
+        0
+        14px
+        0
+        38px;
+
+    color: #26271f;
+    background: #fdfbd4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-search input::placeholder {
+    color: #969684;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-search input:focus {
+    background: #fffedc;
+    border-color: #8ca15b;
+    box-shadow:
+        0 0 0 3px
+        rgba(140, 161, 91, 0.16);
+}
+
+
+/* =========================================================
+   PRODUCT META
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-product-meta {
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    color: rgba(255, 253, 212, 0.78);
+    font-size: 10px;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-meta > strong {
+    color: #fdfbd4;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.35px;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-meta > span {
+    flex: 0 0 auto;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-meta > span strong {
+    color: #d9e9a5;
+}
+
+
+/* =========================================================
+   PRODUCT CATALOG
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-product-catalog {
+    width: 100%;
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    align-content: start;
+    gap: 9px;
+
+    padding:
+        2px
+        5px
+        2px
+        1px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-catalog::-webkit-scrollbar {
+    width: 7px;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-catalog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-catalog::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+#editProductLoanModal
+.edit-product-loan-product-catalog::-webkit-scrollbar-thumb:hover {
+    background: #718449;
+}
+
+
+/* =========================================================
+   PRODUCT TILE
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile {
+    position: relative;
+
+    min-width: 0;
+    min-height: 104px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+
+    padding: 12px;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    color: #292a22;
+    background: #fdfbd4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.18s ease,
+        opacity 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile:hover {
+    background: #fffedc;
+
+    border-color:
+        rgba(140, 161, 91, 0.55);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.11);
+}
+
+
+/* SELECTED */
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile.is-selected {
+    background: #e7edc8;
+
+    border:
+        2px solid
+        #8ca15b;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(140, 161, 91, 0.14);
+}
+
+
+/* ALREADY IN REQUEST - SOFT DIM ONLY */
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile.is-added {
+    opacity: 0.62;
+    cursor: pointer;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile.is-added:hover {
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   TILE TOP
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-tile-top {
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns:
+        34px
+        minmax(0, 1fr)
+        20px;
+
+    align-items: center;
+    gap: 9px;
+}
+
+#editProductLoanModal
+.edit-product-loan-tile-icon {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #72844a;
+    background: #ececcf;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+#editProductLoanModal
+.edit-product-loan-tile-top > strong {
+    min-width: 0;
+
+    color: #2b2c24;
+
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.3;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SELECTED CHECK
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-selected-check {
+    width: 19px;
+    height: 19px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: transparent;
+    background: transparent;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile.is-selected
+.edit-product-loan-selected-check {
+    color: #ffffff;
+    background: #8ca15b;
+}
+
+
+/* =========================================================
+   TILE BOTTOM
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-tile-bottom {
+    min-width: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+#editProductLoanModal
+.edit-product-loan-tile-price {
+    flex: 0 0 auto;
+
+    color: #65763f;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   CATALOG EMPTY STATE
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-catalog-empty {
+    grid-column: 1 / -1;
+
+    min-height: 125px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    padding: 18px;
+
+    color: rgba(255, 253, 212, 0.68);
+
+    border:
+        1px dashed
+        rgba(255, 253, 212, 0.22);
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-empty[hidden] {
+    display: none !important;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-empty i {
+    margin-bottom: 3px;
+    font-size: 21px;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-empty strong {
+    color: #fdfbd4;
+    font-size: 11px;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-empty span {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   INTERNAL SELECTED PRODUCT DATA
+========================================================= */
+
+#editProductLoanModal
+#editProductLoanSelectedProductPanel {
+    display: none !important;
+}
+
+
+/* =========================================================
+   QUANTITY + ADD TO REQUEST
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-add-row {
+    display: grid;
+    grid-template-columns:
+        minmax(135px, 0.44fr)
+        minmax(175px, 0.56fr);
+    align-items: end;
+    gap: 11px;
+    padding-bottom: 0;
+    overflow: visible;
+    transition:
+        padding-bottom 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-add-row:has(
+    .edit-product-loan-quantity-message:not(:empty)
+) {
+    padding-bottom: 22px;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-block {
+    position: relative;
+    min-width: 0;
+    overflow: visible;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-block > label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #fdfbd4;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper {
+    width: 100%;
+    height: 41px;
+
+    display: grid;
+    grid-template-columns:
+        38px
+        minmax(45px, 1fr)
+        38px;
+
+    overflow: hidden;
+
+    background: #fdfbd4;
+
+    border-radius: 10px;
+
+    transition:
+        box-shadow 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper.has-error {
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 77, 79, 0.70);
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper button {
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #5f7040;
+    background: #eeeece;
+
+    border: none;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper button:hover {
+    background: #e1e5bd;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0 5px;
+
+    color: #292a23;
+    background: #fdfbd4;
+
+    border: none;
+    outline: none;
+
+    text-align: center;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    -moz-appearance: textfield;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper input::-webkit-outer-spin-button,
+#editProductLoanModal
+.edit-product-loan-quantity-stepper input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper button:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-stepper button:disabled:hover {
+    background: #eeeece;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-message {
+    position: absolute;
+    z-index: 3;
+    top: calc(100% + 7px);
+    left: 2px;
+
+    display: none;
+
+    max-width: calc(100% - 4px);
+    margin: 0;
+
+    color: #ff7072;
+
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.25;
+
+    white-space: normal;
+}
+
+#editProductLoanModal
+.edit-product-loan-quantity-message:not(:empty) {
+    display: block;
+}
+
+#editProductLoanModal
+.edit-product-loan-add-item-btn {
+    width: 100%;
+    height: 41px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    padding: 0 14px;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-add-item-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 12px
+        rgba(0, 0, 0, 0.15);
+}
+
+#editProductLoanModal
+.edit-product-loan-add-item-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#editProductLoanModal
+.edit-product-loan-add-item-btn:disabled:hover {
+    background: #8ca15b;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================================================
+   REQUESTED PRODUCTS SECTION
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-request-section {
+    min-width: 0;
+    margin: 0;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+
+    margin-bottom: 13px;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-title h2 {
+    margin: 0 0 3px;
+
+    color: #fdfbd4;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-title p {
+    margin: 0;
+
+    color: rgba(255, 253, 212, 0.66);
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+#editProductLoanModal
+#editProductLoanRequestCount {
+    flex: 0 0 auto;
+
+    min-width: 58px;
+
+    padding: 5px 9px;
+
+    color: #61713f;
+    background: #eeefce;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+/* =========================================================
+   REQUEST BOX
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-request-box {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #fdfbd4;
+
+    border-radius: 13px;
+}
+
+
+/* =========================================================
+   REQUEST TABLE
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap {
+    flex: 0 0 320px;
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap::-webkit-scrollbar {
+    width: 7px;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table {
+    width: 100%;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(1) {
+    width: 52%;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(2) {
+    width: 12%;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(3) {
+    width: 26%;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(4) {
+    width: 10%;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    padding: 11px 8px;
+
+    color: #5a5c4f;
+    background: #f4f3d9;
+
+    border-bottom:
+        1px solid
+        #dbdac7;
+
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:first-child {
+    text-align: left;
+    padding-left: 13px;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table td {
+    padding: 10px 7px;
+
+    color: #292a23;
+    background: #fdfbd4;
+
+    border-bottom:
+        1px solid
+        #e1dfca;
+
+    font-size: 11px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(2),
+#editProductLoanModal
+.edit-product-loan-request-table td:nth-child(2) {
+    text-align: center;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table td:nth-child(2) {
+    font-size: 11px;
+    font-weight: 800;
+    color: #35362e;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table th:nth-child(3),
+#editProductLoanModal
+.edit-product-loan-request-table td:nth-child(3) {
+    text-align: center;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table td:nth-child(3) {
+    font-size: 11px;
+    font-weight: 800;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control span {
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   CART PRODUCT CELL
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-cart-product {
+    text-align: left !important;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-product strong {
+    display: block;
+
+    color: #2a2b24;
+
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.25;
+
+    overflow-wrap: anywhere;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-product small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777765;
+
+    font-size: 8px;
+    font-weight: 600;
+}
+
+#editProductLoanModal
+.edit-product-loan-legacy-badge {
+    display: inline-flex;
+
+    margin-top: 5px;
+    padding: 3px 6px;
+
+    color: #72715e;
+    background: #ecebd5;
+
+    border-radius: 6px;
+
+    font-size: 7px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CART QUANTITY CONTROLS
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control {
+    display: inline-grid;
+    grid-template-columns:
+        27px
+        29px
+        27px;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #ecebd5;
+
+    border-radius: 8px;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control button {
+    width: 27px;
+    height: 29px;
+
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #5f7040;
+    background: transparent;
+
+    border: none;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control button:hover:not(:disabled) {
+    background: #dcdfbd;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+#editProductLoanModal
+.edit-product-loan-cart-quantity-control span {
+    color: #292a23;
+
+    font-size: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+/* =========================================================
+   CART AMOUNT
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-cart-amount {
+    color: #65763f !important;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   REMOVE PRODUCT
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-remove-item-btn {
+    width: 27px;
+    height: 27px;
+
+    padding: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #d95b60;
+    background: #f9e3e1;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+#editProductLoanModal
+.edit-product-loan-remove-item-btn:hover {
+    color: #c8474d;
+    background: #f5d2d0;
+
+    transform:
+        scale(1.07);
+}
+
+
+/* =========================================================
+   EMPTY REQUEST
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-items-empty td {
+    height: 180px;
+
+    color: #858574;
+
+    text-align: center !important;
+}
+
+#editProductLoanModal
+.edit-product-loan-items-empty td i,
+#editProductLoanModal
+.edit-product-loan-items-empty td strong,
+#editProductLoanModal
+.edit-product-loan-items-empty td span {
+    display: block;
+}
+
+#editProductLoanModal
+.edit-product-loan-items-empty td i {
+    margin-bottom: 7px;
+
+    color: #a5aa78;
+
+    font-size: 25px;
+}
+
+#editProductLoanModal
+.edit-product-loan-items-empty td strong {
+    margin-bottom: 4px;
+
+    color: #6b6c5d;
+
+    font-size: 11px;
+}
+
+#editProductLoanModal
+.edit-product-loan-items-empty td span {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   REQUEST TOTALS
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-request-total-quantity {
+    min-height: 42px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 13px;
+
+    color: #646557;
+    background: #f3f2d9;
+
+    border-top:
+        1px solid
+        #dcdbc8;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-total-quantity span {
+    font-size: 9px;
+    font-weight: 800;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-total-quantity strong {
+    color: #4d4f43;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-principal {
+    min-height: 53px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 11px 13px;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-principal span {
+    font-size: 10px;
+    font-weight: 900;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-principal strong {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   DISABLED AND LOCKED FIELDS
+========================================================= */
+
+.product-loan-input:disabled,
+.product-loan-input.product-loan-locked-input {
+    color: #c4c3aa;
+    background: rgba(52, 54, 50, 0.76);
+    border-color: transparent;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.product-loan-input:disabled::placeholder {
+    color: #979681;
+}
+
+.product-loan-product-builder.product-loan-builder-locked {
+    display: none;
+}
+
+.product-loan-upload-box.product-loan-upload-locked {
+    color: #aaa991;
+    background: rgba(52, 54, 50, 0.7);
+    border-color: #777765;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   EDIT ATTACHMENTS
+========================================================= */
+
+.product-loan-existing-attachment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    color: #282828;
+    background: #fdfbd4;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.product-loan-existing-attachment-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-loan-existing-attachment-info span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-loan-existing-attachment-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-loan-view-attachment-btn,
+.product-loan-remove-existing-attachment-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.product-loan-view-attachment-btn {
+    color: #65783d;
+}
+
+.product-loan-remove-existing-attachment-btn {
+    color: #d84e4e;
+}
+
+.product-loan-view-attachment-btn:hover,
+.product-loan-remove-existing-attachment-btn:hover {
+    background: rgba(140, 161, 91, 0.16);
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PAYMENT SECTION
+========================================================= */
+
+.product-loan-payment-section {
+    margin-top: 18px;
+}
+
+.product-loan-payment-breakdown {
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+    gap: 11px;
+    margin-bottom: 17px;
+}
+
+.product-loan-payment-breakdown > div {
+    min-width: 0;
+    min-height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    padding: 13px;
+    color: #252525;
+    background: #fdfbd4;
+    border-radius: 12px;
+}
+
+.product-loan-payment-breakdown span {
+    color: #686868;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.product-loan-payment-breakdown strong {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.product-loan-payment-breakdown
+.product-loan-payment-payoff {
+    color: #fdfbd4;
+    background: #8ca15b;
+}
+
+.product-loan-payment-breakdown
+.product-loan-payment-payoff span {
+    color: rgba(255, 253, 212, 0.82);
+}
+
+
+/* =========================================================
+   PAYMENT ENTRY
+========================================================= */
+
+.product-loan-payment-entry {
+    display: grid;
+    grid-template-columns:
+        minmax(150px, 0.8fr)
+        minmax(170px, 0.9fr)
+        minmax(230px, 1.4fr)
+        190px;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 21px;
+}
+
+.product-loan-record-payment-btn {
+    height: 46px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 0 17px;
+    color: #fdfbd4;
+    background: #8ca15b;
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.product-loan-record-payment-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.17);
+}
+
+.product-loan-record-payment-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   PAYMENT HISTORY HEADING
+========================================================= */
+
+.product-loan-payment-history-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin: 5px 0 10px;
+}
+
+.product-loan-payment-history-heading h3 {
+    margin: 0;
+    color: #fdfbd4;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.product-loan-payment-history-heading small {
+    color: rgba(255, 253, 212, 0.65);
+    font-size: 10px;
+    text-align: right;
+}
+
+
+/* =========================================================
+   PAYMENT TABLE
+========================================================= */
+
+.product-loan-payment-table-wrapper {
+    width: 100%;
+    max-height: 245px;
+    overflow: auto;
+    background: #fdfbd4;
+    border-radius: 13px;
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+.product-loan-payment-table-wrapper::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.product-loan-payment-table-wrapper::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+.product-loan-payment-table {
+    width: 100%;
+    min-width: 1020px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.product-loan-payment-table th {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    padding: 12px 9px;
+    color: #222222;
+    background: #f7f6e4;
+    border-bottom: 1px solid #d8d8cc;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.product-loan-payment-table td {
+    padding: 11px 9px;
+    color: #252525;
+    background: #fdfbd4;
+    border-bottom: 1px solid #dfded0;
+    font-size: 11px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.product-loan-payment-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.product-loan-payment-empty td {
+    height: 90px;
+    color: #777777;
+}
+
+.product-loan-payment-type {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 72px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.product-loan-payment-type.payment {
+    color: #1e7a44;
+    background: #b0fbd0;
+}
+
+.product-loan-payment-type.reversal {
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+}
+
+.product-loan-reverse-payment-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #c62828;
+    background: #ffebee;
+    border: 1px solid #e53935;
+    border-radius: 7px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.product-loan-reverse-payment-btn:hover {
+    color: #c62828;
+    background: #ffdada;
+    transform: scale(1.08);
+}
+
+.product-loan-reverse-payment-btn:disabled {
+    color: #aaaaaa;
+    background: #eeeeee;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================================================
+   READ-ONLY MODE
+========================================================= */
+
+.product-loan-read-only-message {
+    margin-bottom: 14px;
+    padding: 11px 13px;
+    color: #deddb9;
+    background: rgba(52, 54, 50, 0.65);
+    border-radius: 11px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.product-loan-read-only-message i {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   ATTACHMENT LIST HEIGHT AND SCROLLBAR ALIGNMENT
+========================================================= */
+
+#editProductLoanModal
+.product-loan-attachments-section {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#editProductLoanModal
+.product-loan-attachment-list {
+    flex: 1 1 0;
+    min-height: 130px;
+    max-height: none;
+
+    width: calc(100% + 10px);
+    margin-right: -10px;
+    padding-right: 2px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+#editProductLoanModal
+.product-loan-attachment-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+#editProductLoanModal
+.product-loan-attachment-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#editProductLoanModal
+.product-loan-attachment-list::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+#editProductLoanModal
+.product-loan-attachment-list::-webkit-scrollbar-thumb:hover {
+    background: #6f8347;
+}
+
+
+/* =========================================================
+   EDIT FINANCIAL SUMMARY RESTORE
+========================================================= */
+
+#editProductLoanModal
+.product-loan-summary-list {
+    overflow: hidden;
+
+    color: #252525;
+    background: #fdfbd4;
+
+    border-radius: 13px;
+}
+
+
+#editProductLoanModal
+.product-loan-summary-row {
+    min-height: 42px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding:
+        10px
+        15px;
+
+    border-bottom:
+        1px solid
+        rgba(0, 0, 0, 0.09);
+}
+
+
+#editProductLoanModal
+.product-loan-summary-row span {
+    color: #55574b;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+#editProductLoanModal
+.product-loan-summary-row strong {
+    color: #252525;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-align: right;
+}
+
+
+#editProductLoanModal
+.product-loan-summary-total {
+    min-height: 52px;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    border-bottom: none;
+}
+
+
+#editProductLoanModal
+.product-loan-summary-total span,
+#editProductLoanModal
+.product-loan-summary-total strong {
+    color: #fdfbd4;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   READ-ONLY REQUESTED PRODUCTS
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-section {
+    width: 100%;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-box {
+    min-height: 260px;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-title p {
+    color: rgba(255, 253, 212, 0.78);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #editProductLoanModal
+    .edit-product-loan-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-product-catalog,
+    #editProductLoanModal
+    .edit-product-loan-request-box {
+        height: 290px;
+        min-height: 290px;
+        max-height: 290px;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-request-table-wrap {
+        max-height: none;
+    }
+
+}
+
+
+@media (max-width: 1050px) {
+
+    .product-loan-edit-borrower-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .product-loan-payment-breakdown {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .product-loan-payment-entry {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .product-loan-record-payment-btn {
+        width: 190px;
+        justify-self: center;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    #editProductLoanModal {
+        padding: 10px !important;
+    }
+
+    #editProductLoanModal .modal-dialog {
+        width: calc(100vw - 20px);
+        max-width: none;
+    }
+
+    .product-loan-edit-window {
+        max-height: calc(100vh - 20px);
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-product-catalog {
+        grid-template-columns: 1fr;
+    }
+
+    #editProductLoanModal
+    .product-loan-attachments-section {
+        height: auto;
+    }
+
+    #editProductLoanModal
+    .product-loan-attachment-list {
+        flex: none;
+        height: auto;
+        max-height: 220px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .product-loan-edit-borrower-grid,
+    .product-loan-payment-breakdown,
+    .product-loan-payment-entry {
+        grid-template-columns: 1fr;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-add-row {
+        grid-template-columns: 1fr;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-product-catalog,
+    #editProductLoanModal
+    .edit-product-loan-request-box {
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-request-title {
+        align-items: center;
+    }
+
+    .product-loan-record-payment-btn {
+        width: 100%;
+    }
+
+    .product-loan-payment-history-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-loan-payment-history-heading small {
+        text-align: left;
+    }
+
+}
+
+
+.swal2-popup:not(.system-logout-popup) {
+    border: none !important;
+    border-radius: 20px !important;
+}
+
+
+/* =========================================================
+   PRODUCT CATALOG - PENDING RESERVATION VISIBILITY
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-tile-bottom {
+    flex-wrap: wrap;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-reserved-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 4px 6px;
+
+    color: #8a5b1d;
+    background: #f8e8c7;
+
+    border-radius: 7px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-reserved-pill[hidden] {
+    display: none !important;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-tile-price {
+    margin-left: auto;
+}
+
+#editProductLoanModal
+.edit-product-loan-catalog-tile.is-added
+.edit-product-loan-reserved-pill {
+    opacity: 1;
+}
+
+/* =========================================================
+   READ-ONLY REQUESTED PRODUCTS
+
+   Delivered / Rejected loans no longer need
+   the Remove / Action column.
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(4),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(4) {
+
+    display:
+        none;
+
+}
+
+
+/* Product */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(1),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(1) {
+
+    width:
+        55%;
+
+}
+
+
+/* Quantity */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(2),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(2) {
+
+    width:
+        15%;
+
+}
+
+
+/* Amount */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(3),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(3) {
+
+    width:
+        30%;
+
+}
+
+
+/* Prevent unnecessary horizontal scrolling */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table-wrap {
+
+    overflow-x:
+        hidden;
+
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table {
+
+    width:
+        100%;
+
+    min-width:
+        0;
+
+}
+
+/* =========================================================
+   REQUEST TABLE HEIGHT MATCHES PRODUCT CATALOG
+
+   Keep the scrollable Requested Products table the same
+   height as the Product Catalog. Totals stay below it.
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-request-box {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+}
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap {
+    flex: 0 0 320px;
+
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+}
+
+
+@media (max-width: 1100px) {
+
+    #editProductLoanModal
+    .edit-product-loan-request-box {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-request-table-wrap {
+        flex-basis: 290px;
+
+        height: 290px;
+        min-height: 290px;
+        max-height: 290px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    #editProductLoanModal
+    .edit-product-loan-request-box {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    #editProductLoanModal
+    .edit-product-loan-request-table-wrap {
+        flex-basis: 260px;
+
+        height: 260px;
+        min-height: 260px;
+        max-height: 260px;
+    }
+
+}
+
+/* =========================================================
+   FINAL PRODUCT CATALOG + CART HEIGHT SYNC
+========================================================= */
+
+#editProductLoanModal {
+    --edit-product-area-height: 320px;
+}
+
+
+/* LEFT: PRODUCT CATALOG */
+
+#editProductLoanModal
+.edit-product-loan-product-catalog {
+    height:
+        var(--edit-product-area-height)
+        !important;
+
+    min-height:
+        var(--edit-product-area-height)
+        !important;
+
+    max-height:
+        var(--edit-product-area-height)
+        !important;
+}
+
+
+/* RIGHT: REQUEST BOX */
+
+#editProductLoanModal
+.edit-product-loan-request-box {
+    display: grid !important;
+
+    grid-template-rows:
+        var(--edit-product-area-height)
+        42px
+        53px;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: hidden;
+}
+
+
+/* ACTUAL SCROLLABLE CART TABLE */
+
+#editProductLoanModal
+.edit-product-loan-request-table-wrap {
+    grid-row: 1;
+
+    flex: none !important;
+    flex-basis: auto !important;
+    flex-shrink: 0 !important;
+
+    width: 100%;
+
+    height:
+        var(--edit-product-area-height)
+        !important;
+
+    min-height:
+        var(--edit-product-area-height)
+        !important;
+
+    max-height:
+        var(--edit-product-area-height)
+        !important;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* TOTAL QUANTITY */
+
+#editProductLoanModal
+.edit-product-loan-request-total-quantity {
+    grid-row: 2;
+
+    height: 42px !important;
+    min-height: 42px !important;
+
+    box-sizing: border-box;
+}
+
+
+/* PRINCIPAL */
+
+#editProductLoanModal
+.edit-product-loan-request-principal {
+    grid-row: 3;
+
+    height: 53px !important;
+    min-height: 53px !important;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   READ-ONLY / DELIVERED TABLE COLUMN BALANCE
+========================================================= */
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(1),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(1) {
+    width: 48% !important;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(2),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(2) {
+    width: 14% !important;
+
+    text-align: center !important;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(2) {
+    font-size: 12px !important;
+    font-weight: 800;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table th:nth-child(3),
+
+#editProductLoanModal
+.edit-product-loan-main-grid.is-read-only
+.edit-product-loan-request-table td:nth-child(3) {
+    width: 38% !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE HEIGHT SYNC
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    #editProductLoanModal {
+        --edit-product-area-height: 290px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    #editProductLoanModal {
+        --edit-product-area-height: 260px;
+    }
+
+}
+
+/* =========================================================
+   FINAL PENDING CART VISUAL HEIGHT ALIGNMENT
+========================================================= */
+
+/*
+   The Requested Products table starts higher than the
+   Product Catalog because the left side has Search +
+   Available Products controls above the tiles.
+
+   Add that missing vertical space to the cart table so
+   its bottom visually lines up with the Product Catalog.
+*/
+
+#editProductLoanModal
+.edit-product-loan-main-grid:not(.is-read-only)
+.edit-product-loan-request-box {
+    display: flex !important;
+    flex-direction: column !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: hidden !important;
+}
+
+
+#editProductLoanModal
+.edit-product-loan-main-grid:not(.is-read-only)
+.edit-product-loan-request-table-wrap {
+    flex: 0 0 415px !important;
+    flex-shrink: 0 !important;
+
+    height: 415px !important;
+    min-height: 415px !important;
+    max-height: 415px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+
+/* TOTAL QUANTITY MUST NOT SHRINK */
+
+#editProductLoanModal
+.edit-product-loan-main-grid:not(.is-read-only)
+.edit-product-loan-request-total-quantity {
+    flex: 0 0 42px !important;
+
+    height: 42px !important;
+    min-height: 42px !important;
+}
+
+
+/* PRINCIPAL MUST NOT SHRINK */
+
+#editProductLoanModal
+.edit-product-loan-main-grid:not(.is-read-only)
+.edit-product-loan-request-principal {
+    flex: 0 0 53px !important;
+
+    height: 53px !important;
+    min-height: 53px !important;
+}
+
+/* =========================================================
+   EDIT PRODUCT LOAN SELECT MENU
+   Match Monetary Loan cream / green dropdown appearance
+========================================================= */
+
+/* =========================================================
+   EDIT PRODUCT LOAN SELECT COLORS
+
+   Editable / clickable = cream
+   Locked / disabled = gray
+========================================================= */
+
+#editProductLoanModal
+select.product-loan-input:not(:disabled):not(.product-loan-locked-input) {
+
+    color: #202020;
+
+    background: #FDFBD4;
+
+    color-scheme: light;
+
+    cursor: pointer;
+}
+
+
+#editProductLoanModal
+select.product-loan-input:disabled,
+
+#editProductLoanModal
+select.product-loan-input.product-loan-locked-input {
+
+    color: #c4c3aa;
+
+    background: rgba(52, 54, 50, 0.76);
+
+    border-color: transparent;
+
+    color-scheme: dark;
+
+    cursor: not-allowed;
+
+    opacity: 1;
+}
+
+
+/* DROPDOWN OPTIONS */
+
+#editProductLoanModal
+select.product-loan-input
+option{
+
+    color:#202020;
+
+    background:#FDFBD4;
+
+}
+
+
+/* SELECTED / ACTIVE OPTION */
+
+#editProductLoanModal
+select.product-loan-input
+option:checked{
+
+    color:#33421F;
+
+    background:#DDE7BC;
+
+}
+
+
+/* HOVER / KEYBOARD HIGHLIGHT */
+
+#editProductLoanModal
+select.product-loan-input
+option:hover,
+
+#editProductLoanModal
+select.product-loan-input
+option:focus{
+
+    color:#33421F;
+
+    background:#DDE7BC;
+
+}

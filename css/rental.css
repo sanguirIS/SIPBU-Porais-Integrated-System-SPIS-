@@ -1,0 +1,714 @@
+/* =====================================================
+   RENTAL PAGE HEADER
+===================================================== */
+
+.page-header {
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+.page-header h2 {
+    margin: 0;
+
+    color: #101c2d;
+}
+
+
+/* =====================================================
+   REGISTRY ACTIONS
+===================================================== */
+
+.rental-registry-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   TRACTOR / DRIVER REGISTRY BUTTONS
+===================================================== */
+
+.tractor-registry-btn,
+.driver-registry-btn {
+    min-width: 210px;
+    min-height: 58px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #fffed6;
+    background: #8ca15b;
+
+    border: 1px solid #8ca15b;
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 16px
+        rgba(73, 94, 36, 0.16);
+
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.25px;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease;
+}
+
+
+.tractor-registry-btn i,
+.driver-registry-btn i {
+    font-size: 19px;
+}
+
+
+.tractor-registry-btn:hover,
+.driver-registry-btn:hover {
+    color: #fffed6;
+    background: #748a49;
+
+    border-color: #748a49;
+
+    box-shadow:
+        0 10px 20px
+        rgba(73, 94, 36, 0.22);
+
+    transform: translateY(-2px);
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   RENTAL CARD LAYOUT
+===================================================== */
+
+.rental-container {
+    width: min(100%, 1180px);
+    margin: 34px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.rental-top {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.rental-bottom {
+    width: calc(50% - 12px);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   RENTAL CARD
+===================================================== */
+
+.rental-card {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    min-height: 280px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fffed6;
+    background:
+        radial-gradient(
+            circle at 10% 5%,
+            rgba(255, 254, 214, 0.18),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #98ad67 0%,
+            #839953 54%,
+            #748a49 100%
+        );
+
+    border: 2px solid rgba(255, 254, 214, 0.35);
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 26px rgba(48, 66, 24, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.rental-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 15px;
+    z-index: -1;
+
+    border: 1px solid rgba(255, 254, 214, 0.2);
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+.rental-card::after {
+    content: "OPEN MODULE  \2192";
+
+    position: absolute;
+    right: 28px;
+    bottom: 22px;
+    z-index: 2;
+
+    color: rgba(255, 254, 214, 0.9);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+
+    transition: transform 0.22s ease;
+}
+
+.rental-card:hover {
+    color: #fffed6;
+    border-color: rgba(255, 254, 214, 0.62);
+
+    box-shadow:
+        0 18px 34px rgba(48, 66, 24, 0.23),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+    transform: translateY(-6px);
+}
+
+.rental-card:hover::after {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   NORMAL CARD CONTENT
+===================================================== */
+
+.rental-card-main {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    padding: 42px 34px 48px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease;
+}
+
+.rental-icon {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fffed6;
+    background: rgba(64, 84, 31, 0.23);
+    border: 1px solid rgba(255, 254, 214, 0.26);
+    border-radius: 30px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    font-size: 55px;
+
+    transition: transform 0.25s ease;
+}
+
+.rental-card h3 {
+    margin: 0;
+
+    color: #fffed6;
+
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+.rental-card:hover .rental-icon {
+    transform: scale(1.06) rotate(-2deg);
+}
+
+
+/* =====================================================
+   TOP-RIGHT STATUS SIGNALS
+===================================================== */
+
+.rental-card-status-indicators {
+    position: absolute;
+    top: 25px;
+    right: 27px;
+    z-index: 8;
+
+    min-height: 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    pointer-events: auto;
+}
+
+.rental-card-status-dot {
+    position: relative;
+
+    width: 12px;
+    height: 12px;
+
+    display: inline-block;
+    flex: 0 0 auto;
+
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+}
+
+.rental-card-status-dot.rental-dot-yellow {
+    background: #ffd95a;
+    --rental-dot-rgb: 255, 217, 90;
+}
+
+.rental-card-status-dot.rental-dot-orange {
+    background: #f39a3f;
+    --rental-dot-rgb: 243, 154, 63;
+}
+
+.rental-maintenance-signal {
+    position: relative;
+    top: 1px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ff5b5b;
+
+    filter:
+        drop-shadow(
+            0 1px 0 rgba(255, 255, 255, 0.75)
+        );
+
+    font-size: 19px;
+    line-height: 1;
+
+    animation:
+        rentalMaintenancePulse
+        1.35s
+        ease-in-out
+        infinite;
+}
+
+.rental-dot-status-pulse {
+    animation:
+        rentalStatusPulse
+        1.45s
+        ease-out
+        infinite;
+}
+
+.rental-dot-pending-glow {
+    animation:
+        rentalPendingGlow
+        2.25s
+        ease-in-out
+        infinite;
+}
+
+@keyframes rentalStatusPulse {
+
+    0% {
+        transform: scale(1);
+
+        box-shadow:
+            0 0 0 0
+            rgba(var(--rental-dot-rgb), 0.74);
+    }
+
+    70%,
+    100% {
+        transform: scale(1.06);
+
+        box-shadow:
+            0 0 0 9px
+            rgba(var(--rental-dot-rgb), 0);
+    }
+
+}
+
+@keyframes rentalPendingGlow {
+
+    0%,
+    100% {
+        opacity: 0.75;
+
+        box-shadow:
+            0 0 5px rgba(255, 217, 90, 0.48);
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 15px rgba(255, 217, 90, 1);
+    }
+
+}
+
+@keyframes rentalMaintenancePulse {
+
+    0%,
+    100% {
+        opacity: 0.72;
+
+        transform:
+            translateY(0)
+            scale(0.9);
+
+        text-shadow:
+            0 0 0 rgba(255, 91, 91, 0);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(2px)
+            scale(1.12);
+
+        text-shadow:
+            0 0 12px rgba(255, 91, 91, 0.95);
+    }
+
+}
+
+
+/* =====================================================
+   HOVER HINT / SUMMARY CARD
+===================================================== */
+
+.rental-summary-overlay {
+    position: absolute;
+    inset: 15px;
+    z-index: 6;
+
+    padding: 28px 30px;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        1px
+        minmax(0, 1fr);
+
+    align-items: center;
+    gap: 25px;
+
+    color: #fffed6;
+    background: rgba(42, 50, 36, 0.94);
+
+    border:
+        1px solid rgba(255, 254, 214, 0.22);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(0.97);
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        visibility 0s linear 0.22s;
+
+    pointer-events: none;
+}
+
+.rental-card:not(.rental-card-locked):hover
+.rental-summary-overlay {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+
+    transition-delay:
+        0.28s,
+        0.28s,
+        0s;
+}
+
+.rental-card:not(.rental-card-locked):hover
+.rental-card-main {
+    opacity: 0.08;
+
+    transform: scale(0.98);
+}
+
+.rental-summary-section {
+    width: 100%;
+    align-self: start;
+}
+
+.rental-summary-title {
+    margin-bottom: 12px;
+
+    color: #dce8bd;
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.25px;
+    text-align: left;
+}
+
+.rental-summary-row {
+    width: 100%;
+    min-height: 29px;
+
+    display: grid;
+    grid-template-columns:
+        15px
+        34px
+        minmax(0, 1fr);
+
+    align-items: center;
+    column-gap: 8px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+.rental-summary-count {
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.rental-summary-label {
+    overflow: hidden;
+
+    font-weight: 650;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rental-summary-divider {
+    width: 1px;
+    height: 78%;
+    margin: 0;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.rental-summary-dot {
+    width: 10px;
+    height: 10px;
+
+    display: block;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.rental-summary-maintenance-icon {
+    color: #ff6767;
+
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+}
+
+.rental-dot-green {
+    background: #56c77a;
+}
+
+.rental-dot-yellow {
+    background: #ffd95a;
+}
+
+.rental-dot-orange {
+    background: #f39a3f;
+}
+
+.rental-dot-red {
+    background: #e95d5d;
+}
+
+
+/* =====================================================
+   LOCKED CARD
+===================================================== */
+
+.rental-card-locked {
+    cursor: not-allowed;
+
+    filter: grayscale(0.18);
+
+    opacity: 0.68;
+}
+
+.rental-card-locked::after {
+    content: "REGISTRATION REQUIRED";
+}
+
+.rental-card-locked:hover {
+    border-color: rgba(255, 254, 214, 0.35);
+
+    box-shadow:
+        0 12px 26px rgba(48, 66, 24, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+    transform: none;
+}
+
+.rental-card-locked:hover .rental-icon {
+    transform: none;
+}
+
+.rental-lock-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+
+    width: max-content;
+    max-width: 88%;
+
+    padding: 8px 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: #fffed6;
+    background: rgba(35, 43, 29, 0.42);
+
+    border:
+        1px solid rgba(255, 254, 214, 0.18);
+
+    border-radius: 18px;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    transform: translateX(-50%);
+}
+
+.rental-lock-indicator i {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .rental-container {
+        width: min(100%, 760px);
+    }
+
+    .rental-top {
+        grid-template-columns: 1fr;
+    }
+
+    .rental-bottom {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .page-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tractor-registry-btn {
+        width: 100%;
+    }
+
+    .rental-container {
+        margin-top: 24px;
+    }
+
+    .rental-card {
+        min-height: 260px;
+    }
+
+    .rental-summary-overlay {
+        padding: 23px;
+
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .rental-summary-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rental-card,
+    .rental-icon,
+    .rental-card-status-dot,
+    .rental-maintenance-signal,
+    .rental-summary-overlay {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}

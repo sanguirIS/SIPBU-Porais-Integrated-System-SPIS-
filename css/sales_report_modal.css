@@ -1,0 +1,927 @@
+/* =========================================================
+   SALES GENERATE REPORT
+========================================================= */
+
+
+/* =========================================================
+   PAGE HEADER + GENERATE REPORT BUTTON
+
+   Same layout/style family as Lending.
+========================================================= */
+
+.page-header {
+
+    display:
+        flex !important;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.page-header h2 {
+
+    margin:
+        0;
+
+}
+
+
+#generateSalesReportBtn {
+
+    width:
+        auto;
+
+    min-width:
+        170px;
+
+    height:
+        50px;
+
+    margin-left:
+        auto;
+
+    padding:
+        0 24px;
+
+    border:
+        none;
+
+    border-radius:
+        10px;
+
+    background:
+        #8ca15b;
+
+    color:
+        #fdfbd4;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+#generateSalesReportBtn i {
+
+    margin:
+        0;
+
+    font-size:
+        18px;
+
+}
+
+
+#generateSalesReportBtn:hover,
+#generateSalesReportBtn:focus {
+
+    background:
+        #748a49;
+
+    color:
+        #fdfbd4;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 6px 14px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* =========================================================
+   REPORT MODAL
+========================================================= */
+
+#generateSalesReportModal {
+
+    padding:
+        16px !important;
+
+}
+
+
+#generateSalesReportModal.show {
+
+    display:
+        flex !important;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+#generateSalesReportModal
+.modal-dialog {
+
+    width:
+        min(
+            840px,
+            calc(100vw - 32px)
+        );
+
+    max-width:
+        840px;
+
+    margin:
+        auto;
+
+}
+
+
+/* =========================================================
+   MODAL WINDOW
+========================================================= */
+
+.report-sales-window {
+
+    max-height:
+        calc(100vh - 32px);
+
+    padding:
+        25px;
+
+    overflow:
+        visible;
+
+    background:
+        rgba(
+            78,
+            79,
+            74,
+            0.94
+        );
+
+    border:
+        5px solid
+        #8ca15b;
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 24px 65px
+        rgba(
+            0,
+            0,
+            0,
+            0.34
+        );
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    backdrop-filter:
+        blur(18px);
+
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+body:has(
+    #generateSalesReportModal.show
+)
+.modal-backdrop.show {
+
+    background:
+        rgba(
+            23,
+            27,
+            19,
+            0.62
+        );
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    backdrop-filter:
+        blur(8px);
+
+    opacity:
+        1;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.report-sales-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.report-sales-header h1 {
+
+    margin:
+        0;
+
+    color:
+        #fdfbd4;
+
+    font-size:
+        38px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.report-sales-close-btn {
+
+    flex:
+        0 0 auto;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        #fdfbd4;
+
+    color:
+        #222222;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        38px;
+
+    cursor:
+        pointer;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.report-sales-close-btn:hover,
+.report-sales-close-btn:focus {
+
+    background:
+        #8ca15b;
+
+    color:
+        #fdfbd4;
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.report-sales-body {
+
+    padding:
+        0;
+
+    overflow:
+        visible;
+
+    background:
+        transparent;
+
+}
+
+
+.report-sales-body hr {
+
+    margin:
+        0 0 20px;
+
+    border-color:
+        rgba(
+            255,
+            253,
+            212,
+            0.24
+        );
+
+    opacity:
+        1;
+
+}
+
+
+.report-sales-body
+> hr:last-of-type {
+
+    margin:
+        4px 0 0;
+
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.report-sales-body label {
+
+    display:
+        block;
+
+    margin-bottom:
+        9px;
+
+    color:
+        #fdfbd4;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   DATE INPUTS
+========================================================= */
+
+.report-sales-input {
+
+    width:
+        100%;
+
+    height:
+        58px;
+
+    padding:
+        0 18px;
+
+    border:
+        none;
+
+    border-radius:
+        18px;
+
+    outline:
+        none;
+
+    background:
+        #fdfbd4;
+
+    color:
+        #242424;
+
+    font-size:
+        17px;
+
+    cursor:
+        pointer;
+
+}
+
+
+.report-sales-input:hover {
+
+    background:
+        #f8f4c5;
+
+}
+
+
+.report-sales-input:focus {
+
+    background:
+        #fdfbd4;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            140,
+            161,
+            91,
+            0.45
+        );
+
+}
+
+
+/* =========================================================
+   DROPDOWNS
+========================================================= */
+
+.generate-sales-dropdown {
+
+    position:
+        relative;
+
+}
+
+
+.generate-sales-dropdown-btn {
+
+    width:
+        100%;
+
+    height:
+        58px;
+
+    padding:
+        0 20px;
+
+    border:
+        none;
+
+    border-radius:
+        18px;
+
+    outline:
+        none;
+
+    background:
+        #fdfbd4;
+
+    color:
+        #242424;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    font-size:
+        17px;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.generate-sales-dropdown-btn:hover,
+.generate-sales-dropdown-btn[
+    aria-expanded="true"
+] {
+
+    background:
+        #f8f4c5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            140,
+            161,
+            91,
+            0.35
+        );
+
+}
+
+
+.generate-sales-dropdown-btn i {
+
+    flex:
+        0 0 auto;
+
+    color:
+        #6f8347;
+
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+.generate-sales-dropdown-btn[
+    aria-expanded="true"
+]
+i {
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.generate-sales-dropdown-menu {
+
+    position:
+        absolute;
+
+    top:
+        calc(100% + 8px);
+
+    left:
+        0;
+
+    z-index:
+        1090;
+
+    width:
+        100%;
+
+    display:
+        none;
+
+    overflow:
+        hidden;
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 12px 24px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+}
+
+
+.generate-sales-dropdown-menu.show {
+
+    display:
+        block;
+
+}
+
+
+.generate-sales-dropdown-item {
+
+    width:
+        100%;
+
+    display:
+        block;
+
+    padding:
+        13px 18px;
+
+    border:
+        none;
+
+    background:
+        #ffffff;
+
+    color:
+        #252525;
+
+    font-size:
+        16px;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.2s ease;
+
+}
+
+
+.generate-sales-dropdown-item:hover,
+.generate-sales-dropdown-item:focus {
+
+    background:
+        #ece6c7;
+
+}
+
+
+/* =========================================================
+   CUSTOM DATE FIELDS
+========================================================= */
+
+#generateSalesCustomDateFields[
+    hidden
+] {
+
+    display:
+        none !important;
+
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.report-sales-preview-container {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    margin-top:
+        25px;
+
+}
+
+
+.report-sales-preview-btn {
+
+    width:
+        210px;
+
+    height:
+        62px;
+
+    border:
+        none;
+
+    border-radius:
+        18px;
+
+    background:
+        #8ca15b;
+
+    color:
+        #ffffff;
+
+    font-size:
+        22px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.report-sales-preview-btn:hover,
+.report-sales-preview-btn:focus {
+
+    background:
+        #8ca15b;
+
+    color:
+        #ffffff;
+
+    transform:
+        scale(1.04);
+
+    box-shadow:
+        0 7px 16px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+    max-width:
+    767px
+) {
+
+    #generateSalesReportModal {
+
+        padding:
+            10px !important;
+
+    }
+
+
+    #generateSalesReportModal
+    .modal-dialog {
+
+        width:
+            calc(
+                100vw - 20px
+            );
+
+        max-width:
+            none;
+
+    }
+
+
+    .report-sales-window {
+
+        max-height:
+            calc(
+                100vh - 20px
+            );
+
+        padding:
+            20px;
+
+        overflow-y:
+            auto;
+
+        border-width:
+            4px;
+
+    }
+
+
+    .report-sales-header h1 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .report-sales-close-btn {
+
+        width:
+            50px;
+
+        height:
+            50px;
+
+        font-size:
+            32px;
+
+    }
+
+
+    .report-sales-preview-btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PAGE HEADER
+========================================================= */
+
+@media (
+    max-width:
+    650px
+) {
+
+    .page-header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            13px;
+
+    }
+
+
+    #generateSalesReportBtn {
+
+        width:
+            100%;
+
+        margin-left:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   SWEETALERT
+========================================================= */
+
+.swal2-popup {
+
+    border:
+        none !important;
+
+}

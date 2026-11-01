@@ -1,0 +1,9034 @@
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.rotor-header-buttons{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.btn-set-price{
+    width:170px;
+    height:50px;
+    border:none;
+    border-radius:10px;
+    background:#8CA15B;
+    color:#FDFBD4;
+    font-weight:700;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+}
+
+.btn-set-price:hover{
+    transform:scale(1.05);
+}
+
+.btn-set-price i{
+    font-size:18px;
+}
+
+
+/* =======================================================
+   ROTOR TOOLBAR
+======================================================= */
+
+.rotor-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px 0;
+}
+
+.rotor-toolbar-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.rotor-toolbar-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.rotor-back-btn{
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:#8CA15B;
+    color:#FDFBD4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:22px;
+    transition:.3s;
+}
+
+.rotor-back-btn:hover{
+    color:#FDFBD4;
+    transform:scale(1.08);
+}
+
+.rotor-search-box{
+    width:260px;
+    height:55px;
+    background:#fff;
+    border:none;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.rotor-search-box i{
+    width:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#8CA15B;
+    margin-left:20px;
+}
+
+.rotor-search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:none;
+    padding:0 15px;
+}
+
+
+/* ======================================================
+   DATE FILTER
+====================================================== */
+
+.date-filter-btn{
+    border:none;
+    background:none;
+    color:#8CA15B;
+    font-size:36px;
+    cursor:pointer;
+    transition:.3s;
+    outline:none;
+    box-shadow:none;
+}
+
+.date-filter-btn:hover{
+    transform:scale(1.08);
+}
+
+.date-filter-btn:focus,
+.date-filter-btn:active{
+    outline:none;
+    box-shadow:none;
+}
+
+#rotorDateFilterModal .modal-content{
+    width:620px;
+    margin:auto;
+}
+
+#rotorDateFilterModal .window-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#rotorDateFilterModal .window-header h1{
+    margin:0;
+}
+
+#rotorDateFilterModal hr{
+    border:0;
+    border-top:1px solid rgba(253, 251, 212, 0.18);
+    height:0;
+    margin:18px 0 20px;
+    opacity:1;
+}
+
+#rotorDateFilterModal .custom-input{
+    height:68px;
+    border-radius:22px;
+}
+
+#rotorDateFilterModal label{
+    font-size:18px;
+    font-weight:700;
+    color:#FDFBD4;
+    margin-bottom:8px;
+}
+
+#rotorDateFilterModal .modal-body{
+    padding-top:10px;
+}
+
+#clearRotorDateFilter{
+    width:170px;
+    height:56px;
+    border:none;
+    border-radius:30px;
+    background:#ECECEC;
+    color:#333;
+    font-weight:700;
+    transition:.3s;
+}
+
+#clearRotorDateFilter:hover{
+    background:#D6D6D6;
+    transform:scale(1.05);
+}
+
+#applyRotorDateFilter{
+    width:170px;
+    height:56px;
+    border:none;
+    border-radius:30px;
+    background:#8CA15B;
+    color:#FDFBD4;
+    font-weight:700;
+    transition:.3s;
+}
+
+#applyRotorDateFilter:hover{
+    background:#73884A;
+    transform:scale(1.05);
+}
+
+
+/* =======================================================
+   FILTERS
+======================================================= */
+
+.rotor-filter{
+    width:170px;
+    height:52px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    padding:0 18px;
+    font-weight:600;
+    cursor:pointer;
+    outline:none;
+}
+
+.btn-add-rotor{
+    width:170px;
+    height:55px;
+    border:none;
+    border-radius:30px;
+    background:#8CA15B;
+    color:#FDFBD4;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-add-rotor:hover{
+    transform:scale(1.05);
+}
+
+
+/* =======================================================
+   ROTOR LEDGER
+======================================================= */
+
+.rotor-ledger{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    height:calc(100vh - 210px);
+    width:100%;
+    overflow:hidden;
+}
+
+.rotor-ledger-header{
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1.2fr
+    0.9fr
+    0.9fr
+    1fr
+    1fr
+    1fr
+    1fr
+    0.9fr
+    0.9fr
+    90px;
+
+    gap:15px;
+    background:#8CA15B;
+    color:#fff;
+    padding:18px;
+    border-radius:18px;
+    text-align:center;
+    font-weight:700;
+}
+
+.rotor-ledger-body{
+    margin-top:15px;
+    flex:1;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding-right:6px;
+}
+
+.rotor-ledger-row{
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1.2fr
+    0.9fr
+    0.9fr
+    1fr
+    1fr
+    1fr
+    1fr
+    0.9fr
+    0.9fr
+    70px;
+
+    gap:15px;
+    align-items:center;
+    background:#ffffffe2;
+    margin-bottom:12px;
+    padding:16px 18px;
+    border-radius:18px;
+    text-align:center;
+    min-height:85px;
+    color:#2E2E2E;
+    font-size:14px;
+    font-weight:500;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    transition:all .35s ease;
+    height:90px;
+}
+
+.rotor-ledger-row:hover{
+    transform:translateY(2px);
+    background:#edfbe3;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+/* =======================================================
+   TRACTOR MAINTENANCE LEDGER INDICATOR
+======================================================= */
+
+.rotor-ledger-row.rotor-maintenance-alert-row{
+    border-left:5px solid #C62828;
+    background:#FFF5F5;
+    box-sizing:border-box;
+
+    box-shadow:
+    0 2px 6px
+    rgba(198,40,40,.12);
+}
+
+
+.rotor-ledger-row.rotor-maintenance-alert-row:hover{
+    background:#FFEEEE;
+
+    box-shadow:
+    0 4px 10px
+    rgba(198,40,40,.15);
+}
+
+
+/* TRACTOR COLUMN */
+
+.rotor-tractor-ledger-cell{
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+}
+
+
+.rotor-ledger-tractor-number{
+    font-weight:600;
+}
+
+
+/* MAINTENANCE BADGE */
+
+.rotor-maintenance-ledger-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    max-width:100%;
+
+    padding:3px 6px;
+
+    border:
+    1px solid #EF9A9A;
+
+    border-radius:7px;
+
+    background:#FFEBEE;
+    color:#C62828;
+
+    font-size:8px;
+    font-weight:700;
+
+    line-height:1;
+
+    white-space:nowrap;
+}
+
+
+.rotor-maintenance-ledger-badge i{
+    font-size:9px;
+}
+
+
+/* =======================================================
+   LEDGER SCROLLBAR
+======================================================= */
+
+.rotor-ledger-body::-webkit-scrollbar{
+    width:10px;
+}
+
+.rotor-ledger-body::-webkit-scrollbar-track{
+    background:#FDFBD4;
+    border-radius:20px;
+}
+
+.rotor-ledger-body::-webkit-scrollbar-thumb{
+    background:#8CA15B;
+    border-radius:20px;
+}
+
+.rotor-ledger-body::-webkit-scrollbar-thumb:hover{
+    background:#6F8347;
+}
+
+.rotor-empty{
+    background:#D9D9D9;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    font-weight:600;
+    color:#666;
+}
+
+
+/* =======================================================
+   OLD STATUS BADGES
+======================================================= */
+
+.remarks{
+    display:inline-block;
+    min-width:90px;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+}
+
+.pending{
+    background:#D4A017;
+}
+
+.ongoing{
+    background:#2E86DE;
+}
+
+.completed{
+    background:#2E8B57;
+}
+
+.btn-action{
+    border:none;
+    background:none;
+    font-size:20px;
+    cursor:pointer;
+    color:#555;
+    transition:.25s;
+}
+
+.btn-action:hover{
+    color:#8CA15B;
+}
+
+.badge-status{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:4px 10px;
+    min-width:65px;
+    height:28px;
+    border-radius:10px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.status-done,
+.status-paid{
+    background:#b0fbd0;
+    color:#1E7A44;
+}
+
+.status-pending{
+    background:#f2dea1;
+    color:#B57F00;
+}
+
+.status-ongoing{
+    background:#eec08c;
+    color:#D86A00;
+}
+
+.status-unpaid{
+    background:#fb9090;
+    color:#C62828;
+}
+
+
+/* =======================================================
+   LEDGER STATUS / REMARKS DROPDOWN
+======================================================= */
+
+.status-dropdown,
+.remarks-dropdown{
+    width:100%;
+    height:30px;
+    padding:0;
+    border:1px solid #CFCFCF;
+    border-radius:8px;
+    font-size:12px;
+    background:#fff;
+    cursor:pointer;
+}
+
+.status-dropdown,
+.remarks-dropdown{
+    width:100%;
+    height:30px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:600;
+    text-align:center;
+    outline:none;
+    transition:.2s;
+    cursor:pointer;
+}
+
+.status-pending-select{
+    border:1px solid #F4B400;
+    color:#B57F00;
+    background:#FFF8E1;
+}
+
+.status-ongoing-select{
+    border:1px solid #FB8C00;
+    color:#D86A00;
+    background:#FFF3E0;
+}
+
+.remarks-unpaid-select{
+    border:1px solid #E53935;
+    color:#C62828;
+    background:#FFEBEE;
+}
+
+
+/* =======================================================
+   JS ROTOR STATUS COLORS
+======================================================= */
+
+.rotor-status-pending{
+    border:1px solid #F4B400;
+    color:#B57F00;
+    background:#FFF8E1;
+}
+
+.rotor-status-ongoing{
+    border:1px solid #FB8C00;
+    color:#D86A00;
+    background:#FFF3E0;
+}
+
+.rotor-status-done{
+    border:none;
+    background:#b0fbd0;
+    color:#1E7A44;
+    font-weight:600;
+}
+
+.rotor-remarks-unpaid{
+    border:1px solid #E53935;
+    color:#C62828;
+    background:#FFEBEE;
+}
+
+.rotor-remarks-paid{
+    border:none;
+    background:#b0fbd0;
+    color:#1E7A44;
+    font-weight:600;
+}
+
+
+/* =======================================================
+   ROTOR MODAL
+   SAME AS HAULING
+======================================================= */
+
+.rotor-window{
+    background:#615f5c9a;
+    border:5px solid #8CA15B;
+    border-radius:22px;
+    padding:25px;
+}
+
+.rotor-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.rotor-header h1{
+    font-size:32px;
+    color:#FDFBD4;
+    font-weight:700;
+    margin:0;
+}
+
+.rotor-close-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#FDFBD4;
+    color:#171716;
+    font-size:32px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.rotor-close-btn:hover{
+    background:#8CA15B;
+    color:#FDFBD4;
+}
+
+
+/* =======================================================
+   INPUTS
+======================================================= */
+
+.rotor-input{
+    width:100%;
+    height:55px;
+    background:#FDFBD4;
+    border:none;
+    border-radius:18px;
+    padding:0 18px;
+    box-shadow:none;
+}
+
+.rotor-input:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+.rotor-input:disabled{
+    background:#4A4A4A !important;
+    color:#aaa;
+    cursor:not-allowed;
+    opacity:1;
+}
+
+
+/* =======================================================
+   SAVE BUTTON
+======================================================= */
+
+.rotor-save-container{
+    display:flex;
+    justify-content:center;
+    margin-top:25px;
+}
+
+.rotor-save-btn{
+    width:180px;
+    height:65px;
+    border:none;
+    border-radius:18px;
+    background:#8CA15B;
+    color:white;
+    font-size:26px;
+    font-weight:700;
+}
+
+.rotor-save-btn:hover{
+    background:#6E8342;
+}
+
+.rotor-item{
+    background:#5b5b5b;
+    color:#FDFBD4;
+    padding:12px;
+    border-radius:12px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    font-weight:200;
+    border:1px solid transparent;
+}
+
+.rotor-item:hover{
+    background:#568416;
+    border-color:#FDFBD4;
+    transform:scale(1.02);
+}
+
+
+/* =======================================================
+   AFFILIATE DROPDOWN
+======================================================= */
+
+.rotor-affiliate-dropdown{
+    position:relative;
+}
+
+.rotor-affiliate-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:18px;
+    background:#FDFBD4;
+    padding:0 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+}
+
+.rotor-affiliate-menu{
+    position:absolute;
+    width:100%;
+    background:#fff;
+    margin-top:6px;
+    display:none;
+    z-index:1000;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.rotor-affiliate-item{
+    padding:15px 20px;
+    cursor:pointer;
+    transition:.2s;
+    text-align:left;
+}
+
+.rotor-affiliate-item:hover{
+    background:#ECE6C7;
+}
+
+.rotor-affiliate-menu.show{
+    display:block;
+}
+
+
+/* =======================================================
+   ADD STATUS DROPDOWN
+======================================================= */
+
+.rotor-status-dropdown{
+    position:relative;
+}
+
+.rotor-status-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:18px;
+    background:#FDFBD4;
+    padding:0 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+}
+
+.rotor-status-menu{
+    position:absolute;
+    width:100%;
+    background:#fff;
+    margin-top:6px;
+    display:none;
+    z-index:1000;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.rotor-status-item{
+    padding:15px 20px;
+    cursor:pointer;
+    transition:.2s;
+    text-align:left;
+}
+
+.rotor-status-item:hover{
+    background:#ECE6C7;
+}
+
+.rotor-status-menu.show{
+    display:block;
+}
+
+
+/* =======================================================
+   MEMBER SEARCH
+======================================================= */
+
+.rotor-member-suggestion-box{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:#fff;
+    border:1px solid #d9d9d9;
+    border-radius:12px;
+    max-height:220px;
+    overflow-y:auto;
+    z-index:9999;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+    display:none;
+}
+
+.member-item{
+    padding:12px 15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.member-item:hover{
+    background:#edfbe3;
+}
+
+.member-empty{
+    padding:12px 15px;
+    color:#777;
+    font-size:14px;
+}
+
+.rotor-name-field-wrapper{
+    position:relative;
+    width:100%;
+}
+
+.rotor-name-field-wrapper label{
+    display:block;
+}
+
+.rotor-member-suggestion{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    margin-top:6px;
+    background:#FDFBD4;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    z-index:9999;
+    display:none;
+    max-height:180px;
+    overflow-y:auto;
+}
+
+.rotor-member-suggestion .member-item{
+    padding:13px 18px;
+    cursor:pointer;
+    font-size:15px;
+    color:#222;
+    transition:.2s;
+}
+
+.rotor-member-suggestion .member-item:hover{
+    background:#ECE6C7;
+}
+
+.rotor-member-search-message{
+    padding:13px 18px;
+    color:#777;
+    font-size:14px;
+}
+
+
+/* =======================================================
+   NAME FIELD
+======================================================= */
+
+#rotorCustomerName{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:18px;
+    background:#FDFBD4;
+    padding:0 20px;
+    font-size:16px;
+    outline:none;
+    box-sizing:border-box;
+}
+
+#rotorCustomerName:disabled{
+    background:#555;
+    color:#aaa;
+    cursor:not-allowed;
+}
+
+#rotorCustomerName:not(:disabled){
+    background:#FDFBD4;
+    color:#000;
+}
+
+#rotorCustomerName::placeholder{
+    color:#777;
+}
+
+
+/* =====================================================
+   ROTOR TRACTOR DROPDOWN
+   SAME VALUES AS HAULING
+===================================================== */
+
+.rotor-tractor-dropdown{
+    position:relative;
+    width:100%;
+}
+
+.rotor-tractor-btn{
+    width:100%;
+    height:55px;
+    background:#FDFBD4;
+    border:none;
+    border-radius:18px;
+    padding:0 20px;
+    box-shadow:none;
+    color:#171716;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    text-align:left;
+    cursor:pointer;
+}
+
+.rotor-tractor-btn i{
+    font-size:14px;
+}
+
+.rotor-tractor-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    margin-top:6px;
+    background:#fff;
+    display:none;
+    z-index:3500;
+    border-radius:18px;
+    overflow-y:auto;
+    max-height:280px;
+    box-shadow:
+    0 10px 24px
+    rgba(0,0,0,.16);
+}
+
+.rotor-tractor-menu.show{
+    display:block;
+}
+
+.rotor-tractor-item{
+    min-height:62px;
+    padding:11px 14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    background:#fff;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.rotor-tractor-item:hover{
+    background:#ECE6C7;
+}
+
+
+/*
+Rotor currently has one .rotor-tractor-info wrapper,
+so this gives it the same alignment as the Hauling item.
+*/
+
+.rotor-tractor-info{
+    width:100%;
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+}
+
+
+/* Kept for compatibility if we later use exact Hauling markup */
+
+.rotor-tractor-details{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:2px;
+}
+
+.rotor-tractor-number{
+    color:#222;
+    font-size:14px;
+    font-weight:700;
+}
+
+
+/*
+Current Rotor contains:
+TRACTOR NO - TRACTOR NAME
+
+as one text node, so this is styled like the main Hauling
+tractor number.
+*/
+
+.rotor-tractor-name{
+    max-width:210px;
+    color:#222;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.rotor-tractor-state,
+.rotor-tractor-status{
+    min-width:88px;
+    padding:6px 9px;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    border-radius:10px;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+
+/* AVAILABLE */
+
+.rotor-tractor-available{
+    background:#B0FBD0;
+    color:#1E7A44;
+}
+
+
+/* IN USE */
+
+.rotor-tractor-in-use{
+    background:#FFF3E0;
+    color:#D86A00;
+}
+
+
+/* MAINTENANCE */
+
+.rotor-tractor-maintenance{
+    background:#FFEBEE;
+    color:#C62828;
+}
+
+.rotor-tractor-disabled{
+    background:#F3F3F3;
+    cursor:not-allowed;
+    opacity:.72;
+}
+
+.rotor-tractor-disabled:hover{
+    background:#F3F3F3;
+}
+
+.rotor-tractor-empty{
+    padding:18px;
+    text-align:center;
+    color:#777;
+    font-size:13px;
+}
+
+
+/* =====================================================
+   ROTOR BOOKING DATE
+===================================================== */
+
+.rotor-date-dropdown{
+    position:relative;
+    width:100%;
+}
+
+.rotor-date-btn{
+    width:100%;
+    height:55px;
+    background:#FDFBD4;
+    border:none;
+    border-radius:18px;
+    padding:0 20px;
+    box-shadow:none;
+    color:#171716;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    text-align:left;
+    cursor:pointer;
+}
+
+.rotor-date-btn i{
+    color:#8CA15B;
+    font-size:17px;
+}
+
+
+/* Same disabled appearance as Hauling input */
+
+.rotor-date-btn:disabled{
+    background:#4A4A4A !important;
+    color:#aaa;
+    cursor:not-allowed;
+    opacity:1;
+}
+
+.rotor-date-btn:disabled i{
+    color:#FDFBD4;
+}
+
+#rotorDateText{
+    color:inherit;
+}
+
+
+/* =====================================================
+   DISABLED ADD STATUS
+===================================================== */
+
+.rotor-status-btn:disabled{
+    background:#4A4A4A !important;
+    color:#aaa;
+    cursor:not-allowed;
+    opacity:1;
+}
+
+.rotor-status-btn:disabled i{
+    color:#FDFBD4;
+}
+
+#rotorStatusText{
+    color:inherit;
+}
+
+
+/* =====================================================
+   DISABLED DISCOUNT
+===================================================== */
+
+#rotorDiscount:disabled{
+    background:#4A4A4A !important;
+    color:#aaa;
+    cursor:not-allowed;
+    opacity:1;
+}
+
+#rotorDiscount:disabled::placeholder{
+    color:#777;
+}
+
+
+/* =====================================================
+   CUSTOM ROTOR CALENDAR
+   EXACT HAULING DIMENSIONS / COLORS
+===================================================== */
+
+.rotor-calendar{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:350px;
+    max-width:calc(100vw - 24px);
+
+    margin:0;
+    padding:16px;
+
+    background:#fff;
+
+    display:none;
+
+    z-index:99999;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 12px 28px
+    rgba(0,0,0,.20);
+}
+
+
+/* Same behavior as Add Hauling modal */
+
+#addRotorModal{
+    overflow:hidden !important;
+}
+
+.rotor-calendar.show{
+    display:block;
+}
+
+
+/* =====================================================
+   CALENDAR HEADER
+===================================================== */
+
+.rotor-calendar-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.rotor-calendar-month{
+    color:#333;
+    font-size:15px;
+    font-weight:700;
+}
+
+.rotor-calendar-nav{
+    width:34px;
+    height:34px;
+
+    border:none;
+
+    background:#F3F3F3;
+    color:#555;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.rotor-calendar-nav:hover{
+    background:#ECE6C7;
+    color:#5F713C;
+}
+
+
+/* =====================================================
+   WEEKDAYS
+===================================================== */
+
+.rotor-calendar-weekdays{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-bottom:6px;
+}
+
+
+/*
+Hauling markup uses spans.
+Rotor currently uses divs.
+Both get identical styling.
+*/
+
+.rotor-calendar-weekdays span,
+.rotor-calendar-weekdays div{
+    text-align:center;
+    color:#888;
+    font-size:10px;
+    font-weight:700;
+}
+
+
+/* =====================================================
+   CALENDAR DAYS
+===================================================== */
+
+.rotor-calendar-days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:5px;
+}
+
+.rotor-calendar-empty{
+    height:38px;
+}
+
+.rotor-calendar-day{
+    width:100%;
+    height:38px;
+
+    padding:0;
+
+    border:none;
+
+    background:#F7F7F7;
+    color:#333;
+
+    border-radius:10px;
+
+    font-size:12px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.rotor-calendar-day:hover:not(:disabled){
+    background:#ECE6C7;
+    transform:scale(1.05);
+}
+
+
+/* TODAY */
+
+.rotor-calendar-today{
+    box-shadow:
+    inset 0 0 0 1px
+    #8CA15B;
+}
+
+
+/* SELECTED */
+
+.rotor-calendar-selected{
+    background:#8CA15B !important;
+    color:#fff !important;
+}
+
+
+/* BOOKED */
+
+.rotor-calendar-booked{
+    background:#FFEBEE !important;
+    color:#C62828 !important;
+    cursor:not-allowed;
+    opacity:.75;
+    text-decoration:line-through;
+}
+
+
+/* =====================================================
+   CALENDAR LEGEND
+===================================================== */
+
+.rotor-calendar-legend{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    margin-top:14px;
+    padding-top:12px;
+
+    border-top:1px solid #EEEEEE;
+}
+
+.rotor-calendar-legend span,
+.rotor-calendar-legend div{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#777;
+    font-size:10px;
+}
+
+.rotor-calendar-legend-dot{
+    width:9px;
+    height:9px;
+    display:inline-block;
+    border-radius:50%;
+}
+
+.rotor-calendar-legend-booked{
+    background:#E57373;
+}
+
+.rotor-calendar-legend-today{
+    background:#8CA15B;
+}
+
+
+/* =====================================================
+   KEEP CUSTOM BUTTON HOVER SAME AS HAULING
+===================================================== */
+
+.rotor-affiliate-btn:hover,
+.rotor-tractor-btn:hover,
+.rotor-date-btn:hover:not(:disabled),
+.rotor-status-btn:hover:not(:disabled){
+    background:#FDFBD4;
+}
+
+/* =======================================================
+   MAINTENANCE - DISABLED LEDGER STATUS OPTIONS
+======================================================= */
+
+.rotor-maintenance-alert-row
+.rotor-status-select
+option[value="Ongoing"]:disabled,
+
+.rotor-maintenance-alert-row
+.rotor-status-select
+option[value="Done"]:disabled{
+
+    color:#C62828;
+
+    background:#FFEBEE;
+
+    font-weight:700;
+
+}
+
+/* =======================================================
+   MAINTENANCE STATUS HINT
+======================================================= */
+
+.rotor-maintenance-status-hint{
+    width:100%;
+    max-width:100%;
+
+    margin-top:4px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:3px;
+
+    color:#C62828;
+
+    font-size:8px;
+    font-weight:700;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+}
+
+
+.rotor-maintenance-status-hint i{
+    font-size:8px;
+}
+
+/* =======================================================
+   ROTOR MAINTENANCE LEDGER ALIGNMENT FIX
+   SAME ALIGNMENT AS HAULING
+======================================================= */
+
+/* TRACTOR NO. stays centered */
+.rotor-tractor-ledger-cell{
+    position:relative;
+
+    min-width:0;
+    width:100%;
+    height:58px;
+
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+
+    gap:0;
+}
+
+.rotor-ledger-tractor-number{
+    position:relative;
+    z-index:1;
+
+    font-weight:600;
+}
+
+/* Maintenance badge sits underneath
+   without pushing Tractor No. upward */
+.rotor-maintenance-ledger-badge{
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+}
+
+/* STATUS stays centered */
+.rotor-status-ledger-cell{
+    position:relative;
+
+    width:100%;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Maintenance lock sits underneath
+   without pushing Status upward */
+.rotor-maintenance-status-hint{
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:100%;
+    max-width:100%;
+
+    margin-top:0;
+}
+
+/* =========================================================
+   ADD ROTOR RENTAL MODAL
+   FINAL CLEAN HAULING-MATCH VERSION
+   SEPTEMBER 2026
+========================================================= */
+
+
+/* =========================================================
+   MODAL CONTAINER
+========================================================= */
+
+#addRotorModal{
+    padding:18px !important;
+    overflow:hidden !important;
+
+    background:
+        rgba(
+            20,
+            24,
+            15,
+            .28
+        );
+
+    backdrop-filter:
+        blur(6px);
+
+    -webkit-backdrop-filter:
+        blur(6px);
+}
+
+
+#addRotorModal.show{
+    display:flex !important;
+
+    justify-content:center;
+    align-items:center;
+}
+
+
+#addRotorModal .modal-dialog{
+    width:min(
+        1180px,
+        calc(100vw - 36px)
+    );
+
+    max-width:1180px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   MODAL WINDOW
+========================================================= */
+
+#addRotorModal .rotor-add-window{
+    max-height:calc(100vh - 36px);
+
+    padding:0;
+
+    display:flex;
+    flex-direction:column;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            75,
+            77,
+            70,
+            .88
+        );
+
+    border:
+        5px solid
+        #8CA15B;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0
+        24px
+        70px
+        rgba(
+            0,
+            0,
+            0,
+            .38
+        );
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   FORM STRUCTURE
+========================================================= */
+
+#addRotorModal #rotorForm{
+    min-height:0;
+
+    max-height:
+        calc(
+            100vh - 46px
+        );
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#addRotorModal .rotor-add-header{
+    flex:0 0 auto;
+
+    min-height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    padding:
+        22px
+        28px
+        17px;
+}
+
+
+#addRotorModal .rotor-add-heading{
+    min-width:0;
+}
+
+
+#addRotorModal .rotor-add-heading h1{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            32px
+        );
+
+    font-weight:800;
+
+    line-height:1.1;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+#addRotorModal .rotor-close-btn{
+    flex:0 0 auto;
+
+    width:51px;
+    height:51px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#1C1C1C;
+
+    background:#FDFBD4;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:35px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+
+#addRotorModal .rotor-close-btn:hover{
+    color:#FDFBD4;
+
+    background:#DC5151;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   HEADER DIVIDER
+========================================================= */
+
+#addRotorModal
+.rotor-add-header + hr{
+    flex:0 0 auto;
+
+    height:1px;
+
+    margin:
+        0
+        28px;
+
+    background:
+        rgba(
+            255,
+            253,
+            212,
+            .28
+        );
+
+    border:0;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   SCROLLABLE BODY
+========================================================= */
+
+#addRotorModal .rotor-add-body{
+    flex:1;
+
+    min-height:0;
+
+    padding:
+        22px
+        28px
+        24px;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    box-sizing:border-box;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        #8CA15B
+        transparent;
+}
+
+
+#addRotorModal
+.rotor-add-body::-webkit-scrollbar{
+    width:8px;
+}
+
+
+#addRotorModal
+.rotor-add-body::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+
+#addRotorModal
+.rotor-add-body::-webkit-scrollbar-thumb{
+    background:#8CA15B;
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+#addRotorModal .rotor-form-section{
+    position:relative;
+
+    width:100%;
+
+    margin-bottom:20px;
+
+    padding:20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .08
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            253,
+            212,
+            .20
+        );
+
+    border-radius:19px;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+#addRotorModal
+.rotor-form-section:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   BOOTSTRAP ROW FIX
+========================================================= */
+
+#addRotorModal
+.rotor-form-section
+> .row{
+    width:100%;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+
+#addRotorModal
+.rotor-form-section
+> .row
+> [class*="col-"]{
+    min-width:0;
+
+    padding-left:7px;
+    padding-right:7px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+#addRotorModal .rotor-section-heading{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:
+        0
+        0
+        18px;
+
+    padding:0;
+}
+
+
+#addRotorModal .rotor-section-icon{
+    flex:
+        0
+        0
+        42px;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border-radius:11px;
+
+    font-size:18px;
+}
+
+
+#addRotorModal
+.rotor-section-heading h3{
+    min-height:0;
+
+    margin:0;
+
+    display:block;
+
+    color:#FDFBD4;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    line-height:1.2;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+#addRotorModal label{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#FDFBD4;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   STANDARD INPUTS
+========================================================= */
+
+#addRotorModal input,
+#addRotorModal select,
+#addRotorModal textarea,
+#addRotorModal .rotor-input,
+#addRotorModal .rotor-select,
+#addRotorModal .rotor-affiliate-btn,
+#addRotorModal .rotor-status-btn,
+#addRotorModal .rotor-date-btn,
+#addRotorModal .rotor-tractor-btn,
+#addRotorModal .rotor-driver-btn,
+#addRotorModal .rotor-assignment-btn{
+    width:100%;
+    min-height:58px;
+    height:58px;
+    padding:0 17px;
+    color:#34372F;
+    background:#F6F1C7;
+    border:2px solid transparent;
+    border-radius:16px;
+    outline:none;
+    box-shadow:none;
+    font-size:13px;
+    transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+#addRotorModal .rotor-input:focus,
+#addRotorModal .rotor-affiliate-btn:focus,
+#addRotorModal .rotor-status-btn:focus,
+#addRotorModal .rotor-assignment-btn:focus{
+    border-color:#8CA15B;
+
+    box-shadow:
+        0
+        0
+        0
+        4px
+        rgba(
+            140,
+            161,
+            91,
+            .20
+        );
+}
+
+
+/* =========================================================
+   BUTTON-TYPE FIELDS
+========================================================= */
+
+#addRotorModal .rotor-affiliate-btn,
+#addRotorModal .rotor-status-btn,
+#addRotorModal .rotor-date-btn,
+#addRotorModal .rotor-assignment-btn,
+#addRotorModal .rotor-tractor-btn,
+#addRotorModal .rotor-driver-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+#addRotorModal
+:is(
+    .rotor-affiliate-btn,
+    .rotor-status-btn,
+    .rotor-date-btn,
+    .rotor-assignment-btn,
+    .rotor-tractor-btn,
+    .rotor-driver-btn
+)
+> span{
+    min-width:0;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    font-weight:500;
+}
+
+
+#addRotorModal
+:is(
+    .rotor-affiliate-btn,
+    .rotor-status-btn,
+    .rotor-assignment-btn,
+    .rotor-tractor-btn,
+    .rotor-driver-btn
+)
+> i{
+    flex:0 0 auto;
+
+    color:#6F8347;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   DISABLED / READONLY
+========================================================= */
+
+#addRotorModal .rotor-input:disabled,
+#addRotorModal .rotor-input[readonly],
+#addRotorModal .rotor-status-btn:disabled,
+#addRotorModal .rotor-assignment-btn:disabled,
+#addRotorModal .rotor-tractor-btn:disabled,
+#addRotorModal .rotor-driver-btn:disabled{
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            .78
+        ) !important;
+
+    background:
+        rgba(
+            34,
+            34,
+            34,
+            .44
+        ) !important;
+
+    border-color:
+        transparent !important;
+
+    cursor:not-allowed;
+
+    opacity:1;
+}
+
+
+#addRotorModal
+:is(
+    .rotor-status-btn,
+    .rotor-assignment-btn,
+    .rotor-tractor-btn,
+    .rotor-driver-btn
+):disabled i{
+    color:
+        rgba(
+            255,
+            253,
+            212,
+            .65
+        );
+}
+
+
+/* =========================================================
+   CUSTOMER NAME / MEMBER SEARCH
+========================================================= */
+
+#addRotorModal
+.rotor-name-field-wrapper{
+    position:relative;
+
+    width:100%;
+}
+
+
+#addRotorModal
+.rotor-member-suggestion{
+    position:absolute;
+
+    top:
+        calc(
+            100% + 6px
+        );
+
+    left:0;
+
+    z-index:9000;
+
+    width:100%;
+
+    max-height:190px;
+
+    display:none;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .23
+        );
+}
+
+
+#addRotorModal
+.rotor-member-suggestion
+.member-item{
+    width:100%;
+
+    padding:
+        11px
+        14px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    border-bottom:
+        1px solid
+        #EEEEEE;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    box-sizing:border-box;
+}
+
+
+#addRotorModal
+.rotor-member-suggestion
+.member-item:last-child{
+    border-bottom:none;
+}
+
+
+#addRotorModal
+.rotor-member-suggestion
+.member-item:hover{
+    background:#EDF5DC;
+}
+
+
+/* =========================================================
+   DROPDOWN WRAPPERS
+========================================================= */
+
+#addRotorModal .rotor-affiliate-dropdown,
+#addRotorModal .rotor-status-dropdown,
+#addRotorModal .rotor-date-dropdown,
+#addRotorModal .rotor-tractor-dropdown,
+#addRotorModal .rotor-driver-dropdown,
+#addRotorModal .rotor-assignment-dropdown{
+    position:relative;
+
+    width:100%;
+
+    overflow:visible;
+}
+
+
+/* =========================================================
+   AFFILIATE MENU
+========================================================= */
+
+#addRotorModal .rotor-affiliate-menu{
+    position:absolute;
+
+    top:
+        calc(
+            100% + 6px
+        );
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .23
+        );
+}
+
+
+#addRotorModal
+.rotor-affiliate-menu.show{
+    display:block;
+}
+
+
+#addRotorModal
+.rotor-affiliate-item{
+    padding:
+        12px
+        15px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+#addRotorModal
+.rotor-affiliate-item:hover{
+    background:#EDF5DC;
+}
+
+
+/* =========================================================
+   TRACTOR / DRIVER MENU
+========================================================= */
+
+#addRotorModal .rotor-tractor-menu,
+#addRotorModal .rotor-driver-menu{
+    position:absolute;
+
+    top:
+        calc(
+            100% + 6px
+        );
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    max-height:260px;
+
+    display:none;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .23
+        );
+}
+
+
+#addRotorModal .rotor-tractor-menu.show,
+#addRotorModal .rotor-driver-menu.show{
+    display:block;
+}
+
+
+/* =========================================================
+   TRACTOR / DRIVER ITEMS
+   SAME LAYOUT AS HAULING / REAPER
+========================================================= */
+
+#addRotorModal .rotor-tractor-item,
+#addRotorModal .rotor-driver-item{
+    min-height:60px;
+
+    padding:
+        10px
+        14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    border-bottom:
+        1px solid
+        #EEEEEE;
+
+    transition:
+        background .2s ease;
+}
+
+
+#addRotorModal .rotor-tractor-item:last-child,
+#addRotorModal .rotor-driver-item:last-child{
+    border-bottom:none;
+}
+
+
+#addRotorModal
+.rotor-tractor-item:not(.rotor-tractor-disabled):hover,
+#addRotorModal
+.rotor-driver-item:not(.rotor-driver-disabled):hover{
+    background:#EDF5DC;
+}
+
+
+/* LEFT DETAILS */
+
+#addRotorModal .rotor-tractor-details{
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:2px;
+}
+
+
+#addRotorModal .rotor-tractor-number{
+    color:#222;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+#addRotorModal .rotor-tractor-name{
+    max-width:180px;
+
+    overflow:hidden;
+
+    color:#747474;
+
+    font-size:10px;
+
+    font-weight:400;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+
+/* AVAILABILITY BADGE */
+
+#addRotorModal .rotor-tractor-status{
+    flex:0 0 auto;
+
+    min-width:88px;
+
+    padding:
+        6px
+        9px;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+/* AVAILABLE */
+
+#addRotorModal .rotor-tractor-available{
+    color:#1E7A44;
+
+    background:#B0FBD0;
+}
+
+
+/* RESERVED */
+
+#addRotorModal .rotor-tractor-reserved{
+    color:#59634C;
+
+    background:#E6E8DD;
+}
+
+
+/* IN USE / ASSIGNED */
+
+#addRotorModal .rotor-tractor-in-use{
+    color:#D86A00;
+
+    background:#FFF3E0;
+}
+
+
+/* MAINTENANCE */
+
+#addRotorModal .rotor-tractor-maintenance{
+    color:#C62828;
+
+    background:#FFEBEE;
+}
+
+
+/* DISABLED */
+
+#addRotorModal .rotor-tractor-disabled,
+#addRotorModal .rotor-driver-disabled{
+    background:#F3F3F3;
+
+    cursor:not-allowed;
+
+    opacity:.72;
+}
+
+
+#addRotorModal .rotor-tractor-disabled:hover,
+#addRotorModal .rotor-driver-disabled:hover{
+    background:#F3F3F3;
+}
+
+/* =========================================================
+   EMPTY ASSIGNMENT RESULT
+========================================================= */
+
+#addRotorModal .rotor-tractor-empty,
+#addRotorModal .rotor-driver-empty{
+    padding:18px;
+
+    color:#777;
+
+    background:#FFFFFF;
+
+    font-size:12px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SECONDARY TOGGLE
+========================================================= */
+
+#addRotorModal
+.rotor-secondary-toggle{
+    width:auto;
+
+    min-height:44px;
+
+    margin:
+        2px
+        0
+        4px;
+
+    padding:
+        0
+        15px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .35
+        );
+
+    border-radius:12px;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .08
+        );
+
+    color:#FDFBD4;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.25px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+#addRotorModal
+.rotor-secondary-toggle:hover{
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .22
+        );
+
+    border-color:#8CA15B;
+
+    transform:
+        translateY(
+            -1px
+        );
+}
+
+
+#addRotorModal
+.rotor-secondary-toggle-icon{
+    width:25px;
+    height:25px;
+
+    flex:
+        0
+        0
+        25px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:7px;
+
+    background:#8CA15B;
+
+    color:#FDFBD4;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   SECONDARY WRAPPER
+========================================================= */
+
+#addRotorModal
+.rotor-secondary-wrapper{
+    display:block;
+
+    max-height:0;
+
+    margin-top:0;
+
+    padding-top:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    border-top:
+        1px dashed
+        transparent;
+
+    transform:
+        translateY(
+            -10px
+        );
+
+    pointer-events:none;
+
+    transition:
+        max-height .32s ease,
+        opacity .22s ease,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear .32s;
+}
+
+
+#addRotorModal
+.rotor-secondary-wrapper.is-open{
+    position:relative;
+
+    z-index:100;
+
+    max-height:500px;
+
+    opacity:1;
+
+    visibility:visible;
+
+    margin-top:14px;
+
+    padding-top:15px;
+
+    overflow:visible !important;
+
+    border-top-color:
+        rgba(
+            253,
+            251,
+            212,
+            .20
+        );
+
+    transform:
+        translateY(
+            0
+        );
+
+    pointer-events:auto;
+
+    transition:
+        max-height .32s ease,
+        opacity .26s ease .04s,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear 0s;
+}
+
+
+#addRotorModal
+.rotor-secondary-wrapper
+> .row{
+    margin-left:0 !important;
+
+    margin-right:0 !important;
+}
+
+
+#addRotorModal
+.rotor-secondary-wrapper
+> .row
+> [class*="col-"]{
+    padding-left:7px;
+
+    padding-right:7px;
+}
+
+
+/* =========================================================
+   SECONDARY NOTE
+========================================================= */
+
+#addRotorModal
+.rotor-secondary-assignment-note{
+    min-height:40px;
+
+    padding:
+        9px
+        12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+
+    border-radius:11px;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .10
+        );
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .84
+        );
+
+    font-size:11px;
+
+    line-height:1.4;
+}
+
+
+#addRotorModal
+.rotor-secondary-assignment-note i{
+    flex:0 0 auto;
+
+    color:#AFC477;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   MONEY FIELDS
+========================================================= */
+
+#addRotorModal
+.rotor-money-field{
+    position:relative;
+
+    width:100%;
+}
+
+
+#addRotorModal
+.rotor-money-prefix{
+    position:absolute;
+
+    top:50%;
+
+    left:15px;
+
+    z-index:2;
+
+    color:#6F8347;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transform:
+        translateY(
+            -50%
+        );
+
+    pointer-events:none;
+}
+
+
+#addRotorModal
+.rotor-money-input{
+    padding-left:34px;
+}
+
+
+#addRotorModal
+.rotor-readonly-input{
+    cursor:default;
+}
+
+
+/* =========================================================
+   TOTAL RENTAL
+========================================================= */
+
+#addRotorModal
+.rotor-total-card{
+    min-height:74px;
+
+    padding:
+        9px
+        15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    color:#202020;
+
+    background:#FDFBD4;
+
+    border-radius:15px;
+
+    box-sizing:border-box;
+}
+
+
+#addRotorModal
+.rotor-total-card > span{
+    margin-bottom:3px;
+
+    color:#6F8347;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+
+#addRotorModal
+.rotor-total-value{
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+
+#addRotorModal
+.rotor-total-value > span{
+    color:#53662E;
+
+    font-size:19px;
+
+    font-weight:800;
+}
+
+
+#addRotorModal #rotorTotal{
+    width:100%;
+
+    min-width:0;
+
+    height:auto;
+    min-height:0;
+    line-height:1.1;
+
+    padding:0;
+
+    color:#35451F;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    font-size:20px;
+
+    font-weight:800;
+}
+
+
+#addRotorModal
+#rotorTotal::-webkit-inner-spin-button,
+#addRotorModal
+#rotorTotal::-webkit-outer-spin-button{
+    margin:0;
+
+    -webkit-appearance:none;
+}
+
+
+/* =========================================================
+   PRICE WARNING
+========================================================= */
+
+#addRotorModal
+.rotor-price-warning{
+    margin-top:5px;
+
+    padding:
+        9px
+        12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:#8E302C;
+
+    background:#FBE6E3;
+
+    border-radius:10px;
+
+    font-size:11px;
+
+    font-weight:600;
+}
+
+
+#addRotorModal
+.rotor-price-warning.d-none{
+    display:none !important;
+}
+
+
+/* =========================================================
+   HISTORICAL / AUDIT NOTE
+========================================================= */
+
+#addRotorModal
+.rotor-historical-status-note{
+    margin-top:10px;
+
+    padding:
+        11px
+        14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#315B78;
+
+    background:#DCEEF7;
+
+    border:
+        1px solid
+        rgba(
+            63,
+            111,
+            145,
+            .22
+        );
+
+    border-radius:12px;
+
+    font-size:12px;
+
+    line-height:1.45;
+}
+
+
+#addRotorModal
+.rotor-historical-status-note[hidden]{
+    display:none !important;
+}
+
+
+#addRotorModal
+.rotor-historical-status-note i{
+    flex:0 0 auto;
+
+    color:#3F6F91;
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   STATUS MENU
+========================================================= */
+
+#addRotorModal
+.rotor-status-menu{
+    position:absolute;
+
+    top:auto;
+
+    bottom:
+        calc(
+            100% + 6px
+        );
+
+    left:0;
+
+    z-index:8500;
+
+    width:100%;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:12px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .23
+        );
+}
+
+
+#addRotorModal
+.rotor-status-menu.show{
+    display:block;
+}
+
+
+#addRotorModal
+.rotor-status-item{
+    padding:
+        12px
+        15px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+#addRotorModal
+.rotor-status-item:hover{
+    background:#EDF5DC;
+}
+
+
+/* =========================================================
+   CUSTOM CALENDAR
+========================================================= */
+
+#addRotorModal
+.rotor-calendar{
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:99999;
+
+    width:350px;
+
+    max-width:
+        calc(
+            100vw - 24px
+        );
+
+    margin:0;
+
+    padding:16px;
+
+    display:none;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .20
+        );
+}
+
+
+#addRotorModal
+.rotor-calendar.show{
+    display:block;
+}
+
+
+#addRotorModal
+.rotor-calendar-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+
+#addRotorModal
+.rotor-calendar-month{
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+
+#addRotorModal
+.rotor-calendar-nav{
+    width:34px;
+
+    height:34px;
+
+    padding:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#555;
+
+    background:#F3F3F3;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+#addRotorModal
+.rotor-calendar-nav:hover{
+    color:#5F713C;
+
+    background:#ECE6C7;
+}
+
+
+#addRotorModal
+.rotor-calendar-weekdays{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    margin-bottom:6px;
+}
+
+
+#addRotorModal
+.rotor-calendar-weekdays span{
+    color:#888;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-align:center;
+}
+
+
+#addRotorModal
+.rotor-calendar-days{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            1fr
+        );
+
+    gap:5px;
+}
+
+
+#addRotorModal
+.rotor-calendar-empty{
+    height:38px;
+}
+
+
+#addRotorModal
+.rotor-calendar-day{
+    width:100%;
+
+    height:38px;
+
+    color:#333;
+
+    background:#F7F7F7;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+#addRotorModal
+.rotor-calendar-day:hover:not(:disabled){
+    background:#ECE6C7;
+
+    transform:scale(1.05);
+}
+
+
+#addRotorModal
+.rotor-calendar-today{
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        #8CA15B;
+}
+
+
+#addRotorModal
+.rotor-calendar-selected{
+    color:#FFFFFF !important;
+
+    background:#8CA15B !important;
+}
+
+
+#addRotorModal
+.rotor-calendar-historical{
+    color:#3F6F91 !important;
+
+    background:#EAF4FA !important;
+}
+
+
+#addRotorModal
+.rotor-calendar-limited{
+    color:#9A6700 !important;
+
+    background:#FFF4CE !important;
+}
+
+
+#addRotorModal
+.rotor-calendar-booked{
+    color:#B42318 !important;
+
+    background:#FDECEC !important;
+
+    cursor:not-allowed;
+
+    opacity:.78;
+}
+
+
+/* =========================================================
+   CALENDAR LEGEND
+========================================================= */
+
+#addRotorModal
+.rotor-calendar-legend{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:
+        8px
+        18px;
+
+    margin-top:14px;
+
+    padding-top:12px;
+
+    border-top:
+        1px solid
+        #EEEEEE;
+}
+
+
+#addRotorModal
+.rotor-calendar-legend span{
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#777;
+
+    font-size:10px;
+}
+
+
+#addRotorModal
+.rotor-legend-dot{
+    width:9px;
+
+    height:9px;
+
+    display:inline-block;
+
+    border-radius:50%;
+}
+
+
+#addRotorModal
+.rotor-legend-historical{
+    background:#6FA6C4;
+}
+
+
+#addRotorModal
+.rotor-legend-available{
+    background:#8CA15B;
+}
+
+
+#addRotorModal
+.rotor-legend-limited{
+    background:#D9A928;
+}
+
+
+#addRotorModal
+.rotor-legend-booked{
+    background:#E57373;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+#addRotorModal
+.rotor-add-footer{
+    flex:
+        0
+        0
+        auto;
+
+    padding:
+        17px
+        28px
+        22px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    background:
+        rgba(
+            48,
+            49,
+            45,
+            .68
+        );
+
+    border-top:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .18
+        );
+}
+
+
+#addRotorModal
+.rotor-save-container{
+    margin:0;
+
+    padding:0;
+
+    width:auto;
+
+    display:flex;
+
+    justify-content:flex-end;
+    align-items:center;
+
+    gap:10px;
+
+    background:transparent;
+
+    border:none;
+}
+
+
+/* =========================================================
+   FOOTER BUTTONS
+========================================================= */
+
+#addRotorModal
+.rotor-cancel-btn,
+
+#addRotorModal
+.rotor-save-btn{
+    width:auto;
+
+    height:50px;
+
+    margin:0;
+
+    padding:
+        0
+        22px;
+
+    border-radius:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+#addRotorModal
+.rotor-cancel-btn{
+    min-width:120px;
+
+    font-size:13px;
+}
+
+
+#addRotorModal
+.rotor-save-btn{
+    min-width:145px;
+
+    font-size:14px;
+}
+
+
+#addRotorModal
+.rotor-cancel-btn{
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            253,
+            212,
+            .65
+        );
+}
+
+
+#addRotorModal
+.rotor-save-btn{
+    width:auto;
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border:
+        2px solid
+        #8CA15B;
+}
+
+
+#addRotorModal
+.rotor-cancel-btn:hover,
+
+#addRotorModal
+.rotor-save-btn:hover:not(:disabled){
+    transform:scale(1.03);
+
+    box-shadow:
+        0
+        5px
+        12px
+        rgba(
+            0,
+            0,
+            0,
+            .14
+        );
+}
+
+
+#addRotorModal
+.rotor-save-btn:disabled{
+    cursor:not-allowed;
+
+    opacity:.65;
+}
+
+/* =========================================================
+   INLINE VALIDATION
+   ADD + EDIT ROTOR
+========================================================= */
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-input.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-affiliate-btn.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-date-btn.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-assignment-btn.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-tractor-btn.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-driver-btn.is-invalid,
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-status-btn.is-invalid{
+
+    border-color:#FF7979 !important;
+
+    box-shadow:
+        0
+        0
+        0
+        4px
+        rgba(
+            255,
+            121,
+            121,
+            .14
+        ) !important;
+}
+
+
+:is(#addRotorModal, #editRotorModal)
+.rotor-field-error{
+
+    display:block;
+
+    margin-top:5px;
+
+    color:#FFAAAA;
+
+    font-size:11px;
+    font-weight:600;
+
+    line-height:1.3;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    #addRotorModal
+    .modal-dialog{
+        width:
+            calc(
+                100vw - 28px
+            );
+
+        max-width:none;
+    }
+
+
+    #addRotorModal
+    .rotor-add-body{
+        padding-left:20px;
+
+        padding-right:20px;
+    }
+
+
+    #addRotorModal
+    .rotor-form-section
+    .col-md-3{
+        width:50%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media(max-width:767px){
+
+    #addRotorModal{
+        padding:8px !important;
+    }
+
+
+    #addRotorModal
+    .modal-dialog{
+        width:
+            calc(
+                100vw - 16px
+            );
+
+        max-width:none;
+    }
+
+
+    #addRotorModal
+    .rotor-add-header{
+        padding:
+            18px
+            17px
+            13px;
+    }
+
+
+    #addRotorModal
+    .rotor-add-header + hr{
+        margin:
+            0
+            17px;
+    }
+
+
+    #addRotorModal
+    .rotor-add-body{
+        padding:17px;
+    }
+
+
+    #addRotorModal
+    .rotor-form-section{
+        padding:16px;
+    }
+
+
+    #addRotorModal
+    .rotor-form-section
+    .col-md-3{
+        width:100%;
+    }
+
+
+    #addRotorModal
+    .rotor-secondary-toggle{
+        width:100%;
+
+        justify-content:flex-start;
+    }
+
+
+    #addRotorModal
+    .rotor-driver-info{
+        grid-template-columns:
+            minmax(
+                0,
+                1fr
+            )
+            auto;
+    }
+
+
+    #addRotorModal
+    .rotor-driver-info
+    .rotor-tractor-status{
+        grid-column:
+            1 / -1;
+
+        justify-self:start;
+    }
+
+
+    #addRotorModal
+    .rotor-add-footer{
+        padding:
+            14px
+            17px
+            18px;
+    }
+
+
+    #addRotorModal
+    .rotor-save-container{
+        width:100%;
+
+        flex-direction:column;
+    }
+
+
+    #addRotorModal
+    .rotor-cancel-btn,
+
+    #addRotorModal
+    .rotor-save-btn{
+        width:100%;
+    }
+
+}
+
+/* =========================================================
+   ROTOR LEDGER
+   FINAL HAULING-STYLE 9-COLUMN LAYOUT
+   SEPTEMBER 2026
+========================================================= */
+
+
+/* =========================================================
+   LEDGER CONTAINER
+========================================================= */
+
+.rotor-ledger{
+
+    margin-top:25px;
+
+    width:100%;
+    height:calc(100vh - 210px);
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   SHARED 10-COLUMN GRID
+
+   TRANSACTION
+   CUSTOMER
+   AREA
+   ASSIGNMENT
+   LOCATION
+   TOTAL
+   BALANCE
+   STATUS
+   REMARKS
+   ACTION
+========================================================= */
+
+.rotor-ledger-header,
+.rotor-ledger-row{
+
+    display:grid;
+
+    grid-template-columns:
+        1.00fr
+        1.12fr
+        .46fr
+        1.78fr
+        .95fr
+        .82fr
+        .82fr
+        .80fr
+        .80fr
+        .38fr;
+
+    column-gap:6px;
+
+    align-items:center;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.rotor-ledger-header{
+
+    min-height:68px;
+
+    width:calc(100% - 16px);
+
+    margin-right:16px;
+
+    padding:
+        12px
+        14px;
+
+    flex:0 0 auto;
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    border-radius:18px;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    text-align:center;
+}
+
+
+.rotor-ledger-header > div{
+
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.rotor-ledger-body{
+
+    min-height:0;
+
+    flex:1;
+
+    margin-top:12px;
+
+    padding-right:8px;
+    padding-bottom:10px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.rotor-ledger-row{
+
+    min-height:92px;
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    padding:
+        13px
+        14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .90
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .12
+        );
+
+    border-radius:17px;
+
+    color:#34372F;
+
+    font-size:12px;
+
+    box-shadow:
+        0
+        3px
+        10px
+        rgba(
+            0,
+            0,
+            0,
+            .035
+        );
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+}
+
+
+.rotor-ledger-row:hover{
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .28
+        );
+
+    box-shadow:
+        0
+        5px
+        14px
+        rgba(
+            0,
+            0,
+            0,
+            .055
+        );
+}
+
+
+.rotor-ledger-row > div{
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   TRANSACTION
+========================================================= */
+
+.rotor-transaction-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-align:center;
+}
+
+
+.rotor-transaction-id{
+
+    display:block;
+
+    color:#34451E;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.2;
+
+    white-space:nowrap;
+}
+
+
+.rotor-transaction-date{
+
+    display:block;
+
+    color:#7A8070;
+
+    font-size:9.5px;
+    font-weight:600;
+
+    line-height:1.2;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   HISTORICAL / AUDIT BADGE
+========================================================= */
+
+.rotor-audit-flag{
+
+    max-width:115px;
+
+    padding:
+        3px
+        6px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    border:
+        1px solid
+        rgba(
+            63,
+            111,
+            145,
+            .25
+        );
+
+    border-radius:7px;
+
+    background:#E5F2F9;
+
+    color:#315B78;
+
+    font-size:7.5px;
+    font-weight:800;
+
+    line-height:1.2;
+
+    text-align:center;
+}
+
+
+.rotor-audit-flag i{
+
+    flex:0 0 auto;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   SCHEDULE FLAGS
+========================================================= */
+
+.rotor-schedule-flag{
+
+    padding:
+        3px
+        7px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    border-radius:7px;
+
+    font-size:8px;
+    font-weight:800;
+
+    line-height:1.1;
+
+    white-space:nowrap;
+}
+
+
+.rotor-schedule-flag.is-missed{
+
+    background:#FDE5E5;
+
+    color:#B3261E;
+
+    border:
+        1px solid
+        rgba(
+            179,
+            38,
+            30,
+            .20
+        );
+}
+
+
+.rotor-schedule-flag.is-delayed{
+
+    background:#FFF0DE;
+
+    color:#B86612;
+
+    border:
+        1px solid
+        rgba(
+            184,
+            102,
+            18,
+            .22
+        );
+}
+
+
+.rotor-schedule-flag.is-rescheduled{
+
+    background:#EAF2DB;
+
+    color:#607936;
+
+    border:
+        1px solid
+        rgba(
+            96,
+            121,
+            54,
+            .22
+        );
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.rotor-customer-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    gap:6px;
+}
+
+
+.rotor-customer-name{
+
+    width:100%;
+
+    color:#34372F;
+
+    font-size:12px;
+    font-weight:700;
+
+    line-height:1.3;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   AFFILIATE CHIP
+========================================================= */
+
+.rotor-affiliate-chip{
+
+    min-height:21px;
+
+    padding:
+        3px
+        8px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:999px;
+
+    font-size:8px;
+    font-weight:800;
+
+    line-height:1;
+
+    white-space:nowrap;
+}
+
+
+.rotor-affiliate-chip.is-member{
+
+    color:#496223;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .18
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+}
+
+
+.rotor-affiliate-chip.is-non-member{
+
+    color:#6B6255;
+
+    background:#EEEAE4;
+
+    border:
+        1px solid
+        #DDD5CB;
+}
+
+
+/* =========================================================
+   AREA
+========================================================= */
+
+.rotor-area-cell{
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:2px;
+
+    text-align:center;
+}
+
+
+.rotor-area-value{
+
+    color:#34451E;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+
+.rotor-area-unit{
+
+    color:#7A8070;
+
+    font-size:9px;
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   ASSIGNMENT
+========================================================= */
+
+.rotor-assignment-cell{
+
+    min-width:0;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    gap:6px;
+
+    text-align:left;
+}
+
+
+.rotor-assignment-primary,
+.rotor-assignment-secondary{
+
+    min-width:0;
+
+    padding:
+        7px
+        9px;
+
+    border-radius:10px;
+
+    display:grid;
+
+    grid-template-columns:
+        48px
+        minmax(
+            0,
+            1fr
+        );
+
+    column-gap:7px;
+    row-gap:3px;
+
+    align-items:center;
+}
+
+
+/* PRIMARY */
+
+.rotor-assignment-primary{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .11
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .20
+        );
+}
+
+
+/* SECONDARY */
+
+.rotor-assignment-secondary{
+
+    background:
+        rgba(
+            87,
+            115,
+            131,
+            .07
+        );
+
+    border:
+        1px solid
+        rgba(
+            87,
+            115,
+            131,
+            .15
+        );
+}
+
+
+/* =========================================================
+   ASSIGNMENT LABEL
+========================================================= */
+
+.rotor-assignment-label{
+
+    grid-row:
+        1 / span 2;
+
+    align-self:stretch;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-right:
+        1px solid
+        rgba(
+            79,
+            86,
+            69,
+            .12
+        );
+
+    color:#6A7557;
+
+    font-size:7px;
+    font-weight:900;
+
+    letter-spacing:.35px;
+
+    writing-mode:horizontal-tb;
+}
+
+
+/* =========================================================
+   TRACTOR / DRIVER ITEMS
+========================================================= */
+
+.rotor-assignment-item{
+
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    color:#454A3E;
+
+    font-size:10px;
+    font-weight:650;
+
+    line-height:1.25;
+}
+
+
+.rotor-assignment-item i{
+
+    width:13px;
+
+    flex:0 0 13px;
+
+    display:flex;
+    justify-content:center;
+
+    color:#829653;
+
+    font-size:10px;
+}
+
+
+.rotor-assignment-item span{
+
+    min-width:0;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   ASSIGNMENT MAINTENANCE
+========================================================= */
+
+.rotor-assignment-maintenance{
+
+    grid-column:
+        2;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin-top:2px;
+
+    padding:
+        3px
+        7px;
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:4px;
+
+    border-radius:6px;
+
+    background:#FDE8E6;
+
+    color:#B3261E;
+
+    font-size:7.5px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.rotor-location-cell{
+
+    color:#555B4E;
+
+    font-size:11px;
+    font-weight:600;
+
+    line-height:1.35;
+
+    text-align:center;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.rotor-price-cell{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+
+.rotor-price-value{
+
+    color:#34451E;
+
+    font-size:12px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   STATUS / REMARKS CELLS
+========================================================= */
+
+.rotor-status-ledger-cell,
+.rotor-remarks-ledger-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+}
+
+
+/* =========================================================
+   STATUS / REMARKS SELECTS
+========================================================= */
+
+.rotor-ledger-row .status-dropdown,
+.rotor-ledger-row .remarks-dropdown{
+
+    width:100%;
+    max-width:100px;
+
+    height:36px;
+
+    padding:
+        0
+        8px;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:11px;
+    font-weight:700;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:
+        border-color .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+
+/* PENDING */
+
+.rotor-ledger-row
+.rotor-status-select.rotor-status-pending{
+
+    border:
+        1px solid
+        #E6B934;
+
+    background:#FFF7DB;
+
+    color:#9C7405;
+}
+
+
+/* ONGOING */
+
+.rotor-ledger-row
+.rotor-status-select.rotor-status-ongoing{
+
+    border:
+        1px solid
+        #E6A05A;
+
+    background:#FFF0DF;
+
+    color:#B86112;
+}
+
+
+/* DONE */
+
+.rotor-ledger-row
+.rotor-status-select.rotor-status-done{
+
+    border:
+        1px solid
+        #72B98C;
+
+    background:#E3F5E9;
+
+    color:#237143;
+}
+
+
+/* UNPAID */
+
+.rotor-ledger-row
+.rotor-remarks-select.rotor-remarks-unpaid{
+
+    border:
+        1px solid
+        #E19696;
+
+    background:#FDE9E9;
+
+    color:#AF3434;
+}
+
+
+/* PAID */
+
+.rotor-ledger-row
+.rotor-remarks-select.rotor-remarks-paid{
+
+    border:
+        1px solid
+        #8CA15B;
+
+    background:#EDF3E2;
+
+    color:#51672B;
+}
+
+
+/* =========================================================
+   FINAL BADGES
+========================================================= */
+
+.rotor-ledger-badge{
+
+    min-width:70px;
+    min-height:31px;
+
+    padding:
+        5px
+        9px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    border-radius:9px;
+
+    font-size:10px;
+    font-weight:800;
+
+    line-height:1;
+
+    white-space:nowrap;
+}
+
+
+.rotor-ledger-badge-done{
+
+    background:#A9F2CB;
+
+    color:#11733E;
+}
+
+
+.rotor-ledger-badge-paid{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .17
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .38
+        );
+
+    color:#496223;
+}
+
+.rotor-ledger-badge-unpaid{
+
+    background:
+        rgba(
+            198,
+            40,
+            40,
+            .10
+        );
+
+    border:
+        1px solid
+        rgba(
+            198,
+            40,
+            40,
+            .35
+        );
+
+    color:#C62828;
+}
+
+
+/* =========================================================
+   FUTURE RENTAL
+   LOCKED PENDING
+========================================================= */
+
+.rotor-future-status-lock{
+
+    width:100%;
+    max-width:96px;
+
+    height:36px;
+
+    padding:
+        0
+        7px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    border:
+        1px solid
+        #E6B934;
+
+    border-radius:9px;
+
+    background:#FFF7DB;
+
+    color:#9C7405;
+
+    font-size:10px;
+    font-weight:800;
+
+    cursor:not-allowed;
+}
+
+
+/* =========================================================
+   MAINTENANCE STATUS NOTE
+========================================================= */
+
+.rotor-status-lock-note{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:3px;
+
+    color:#B71C1C;
+
+    font-size:8px;
+    font-weight:800;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   MAINTENANCE ROW
+========================================================= */
+
+.rotor-ledger-row.rotor-maintenance-alert-row{
+
+    border-color:
+        rgba(
+            183,
+            28,
+            28,
+            .20
+        );
+
+    background:
+        rgba(
+            255,
+            249,
+            246,
+            .97
+        );
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.rotor-action-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+
+.rotor-edit-btn{
+
+    width:36px;
+    height:36px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    outline:none;
+
+    transition:
+        transform .18s ease,
+        background .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.rotor-edit-btn:hover{
+
+    background:#748A49;
+
+    color:#FFFFFF;
+
+    transform:
+        translateY(
+            -1px
+        );
+
+    box-shadow:
+        0
+        4px
+        9px
+        rgba(
+            45,
+            55,
+            30,
+            .15
+        );
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.rotor-empty{
+
+    min-height:180px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px dashed
+        rgba(
+            140,
+            161,
+            91,
+            .38
+        );
+
+    border-radius:18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .60
+        );
+
+    color:#6D7462;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.rotor-ledger-body::-webkit-scrollbar{
+
+    width:8px;
+}
+
+
+.rotor-ledger-body::-webkit-scrollbar-track{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .08
+        );
+
+    border-radius:20px;
+}
+
+
+.rotor-ledger-body::-webkit-scrollbar-thumb{
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .75
+        );
+
+    border-radius:20px;
+}
+
+
+.rotor-ledger-body::-webkit-scrollbar-thumb:hover{
+
+    background:#748A49;
+}
+
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media(max-width:1250px){
+
+    .rotor-ledger-header,
+    .rotor-ledger-row{
+
+        grid-template-columns:
+            .95fr
+            1.08fr
+            .45fr
+            1.82fr
+            .90fr
+            .78fr
+            .78fr
+            .78fr
+            .78fr
+            .38fr;
+
+        column-gap:5px;
+    }
+
+
+    .rotor-ledger-header{
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:10.5px;
+    }
+
+
+    .rotor-ledger-row{
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:11.5px;
+    }
+
+
+    .rotor-assignment-item{
+
+        font-size:9.5px;
+    }
+
+
+    .rotor-ledger-row .status-dropdown,
+    .rotor-ledger-row .remarks-dropdown{
+
+        padding-left:4px;
+        padding-right:4px;
+
+        font-size:9.5px;
+    }
+
+
+    .rotor-edit-btn{
+
+        width:33px;
+        height:33px;
+
+        font-size:14px;
+    }
+
+}
+
+/* =========================================================
+   EDIT ROTOR RENTAL
+   COMPACT HAULING-STYLE RECORD EDITOR
+   SEPTEMBER 2026
+========================================================= */
+
+#editRotorModal{
+    padding:18px !important;
+    overflow:hidden !important;
+
+    background:
+        rgba(
+            20,
+            24,
+            15,
+            .28
+        );
+
+    backdrop-filter:
+        blur(6px);
+
+    -webkit-backdrop-filter:
+        blur(6px);
+}
+
+#editRotorModal.show{
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+}
+
+#editRotorModal .modal-dialog{
+    width:min(
+        1100px,
+        calc(100vw - 40px)
+    );
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+#editRotorModal .rotor-edit-window{
+    max-height:calc(100vh - 46px);
+
+    padding:0;
+
+    display:flex;
+    flex-direction:column;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            75,
+            77,
+            70,
+            .88
+        );
+
+    border:
+        5px solid
+        #8CA15B;
+
+    border-radius:26px;
+
+    overflow:hidden !important;
+
+    box-shadow:
+        0
+        24px
+        70px
+        rgba(
+            0,
+            0,
+            0,
+            .38
+        );
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#editRotorModal #editRotorForm{
+    min-height:0;
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#editRotorModal .rotor-edit-header{
+    flex:0 0 auto;
+
+    min-height:auto;
+
+    padding:
+        20px
+        26px
+        16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+#editRotorModal .rotor-add-heading{
+    min-width:0;
+    flex:1;
+}
+
+#editRotorModal .rotor-edit-title-row{
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+#editRotorModal .rotor-edit-title-row > div{
+    min-width:0;
+}
+
+#editRotorModal .rotor-edit-title-row h1{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:27px;
+    font-weight:800;
+
+    line-height:1.08;
+
+    letter-spacing:.2px;
+}
+
+#editRotorModal .rotor-edit-header-sub{
+    margin-top:5px;
+
+    max-width:520px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .62
+        );
+
+    font-size:10.5px;
+    font-weight:500;
+
+    line-height:1.35;
+}
+
+
+/* =========================================================
+   TRANSACTION BADGE
+========================================================= */
+
+#editRotorModal .rotor-edit-transaction-badge{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:30px;
+
+    padding:
+        6px
+        11px;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            253,
+            251,
+            212,
+            .09
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .25
+        );
+
+    border-radius:10px;
+
+    font-size:10.5px;
+    font-weight:800;
+
+    letter-spacing:.35px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+#editRotorModal .rotor-close-btn{
+    flex:0 0 auto;
+
+    width:51px;
+    height:51px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#1C1C1C;
+
+    background:#FDFBD4;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:35px;
+
+    font-weight:300;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+#editRotorModal .rotor-close-btn:hover{
+    color:#FDFBD4;
+
+    background:#DC5151;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   HEADER DIVIDER
+========================================================= */
+
+#editRotorModal .rotor-edit-header + hr{
+    flex:0 0 auto;
+
+    width:auto;
+
+    margin:
+        0
+        26px;
+
+    border:none;
+
+    border-top:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .18
+        );
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+#editRotorModal .rotor-edit-body{
+    min-height:0;
+
+    flex:1;
+
+    padding:
+        17px
+        24px
+        20px;
+
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+
+    box-sizing:border-box;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:
+        #8CA15B
+        transparent;
+}
+
+#editRotorModal .rotor-edit-body::-webkit-scrollbar{
+    width:7px;
+}
+
+#editRotorModal .rotor-edit-body::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+#editRotorModal .rotor-edit-body::-webkit-scrollbar-thumb{
+    background:#8CA15B;
+
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+#editRotorModal .rotor-edit-section{
+    width:100%;
+
+    margin-bottom:14px;
+
+    padding:
+        16px
+        18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .055
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .17
+        );
+
+    border-radius:17px;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+#editRotorModal .rotor-edit-section:last-of-type{
+    margin-bottom:12px;
+}
+
+#editRotorModal
+.rotor-edit-section
+> .row{
+    width:100%;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+#editRotorModal
+.rotor-edit-section
+> .row
+> [class*="col-"]{
+    min-width:0;
+
+    padding-left:6px;
+    padding-right:6px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+#editRotorModal .rotor-section-heading{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:
+        0
+        0
+        13px;
+}
+
+#editRotorModal .rotor-section-icon{
+    width:32px;
+    height:32px;
+
+    flex:0 0 32px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#FDFBD4;
+
+    background:#8CA15B;
+
+    border-radius:9px;
+
+    font-size:14px;
+}
+
+#editRotorModal .rotor-section-heading h3{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:13px;
+    font-weight:800;
+
+    letter-spacing:.15px;
+}
+
+
+/* =========================================================
+   CUSTOMER SUMMARY
+========================================================= */
+
+#editRotorModal .rotor-edit-summary-section{
+    padding-bottom:16px;
+}
+
+#editRotorModal .rotor-edit-summary-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        .8fr
+        1.35fr
+        .65fr;
+
+    gap:10px;
+}
+
+#editRotorModal .rotor-edit-summary-item{
+    min-width:0;
+
+    min-height:64px;
+
+    padding:
+        10px
+        12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:
+        rgba(
+            25,
+            26,
+            23,
+            .24
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:12px;
+
+    box-sizing:border-box;
+}
+
+#editRotorModal .rotor-edit-summary-item-wide{
+    grid-column:auto;
+}
+
+#editRotorModal .rotor-edit-summary-label{
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-bottom:5px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .56
+        );
+
+    font-size:9px;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35px;
+}
+
+#editRotorModal .rotor-edit-summary-label i{
+    color:#9CB866;
+
+    font-size:11px;
+}
+
+#editRotorModal .rotor-edit-summary-value,
+#editRotorModal .rotor-edit-summary-input{
+    width:100%;
+
+    min-width:0;
+
+    margin:0;
+
+    padding:0;
+
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    box-shadow:none;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:650;
+
+    line-height:1.3;
+
+    text-overflow:ellipsis;
+}
+
+#editRotorModal .rotor-edit-summary-input{
+    cursor:default;
+
+    pointer-events:none;
+}
+
+#editRotorModal .rotor-edit-area-value{
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+#editRotorModal .rotor-edit-area-value span{
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .58
+        );
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+#editRotorModal
+.rotor-edit-summary-input::-webkit-inner-spin-button,
+#editRotorModal
+.rotor-edit-summary-input::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   WORKING SECTION
+========================================================= */
+
+#editRotorModal .rotor-edit-working-section{
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .075
+        );
+
+    border-color:
+        rgba(
+            156,
+            184,
+            102,
+            .28
+        );
+
+    overflow:visible !important;
+}
+
+#editRotorModal .rotor-edit-section-top{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:14px;
+
+    margin-bottom:13px;
+}
+
+#editRotorModal
+.rotor-edit-section-top
+.rotor-section-heading{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   LIFECYCLE HINT
+========================================================= */
+
+#editRotorModal .rotor-edit-lifecycle-hint{
+    flex:
+        0
+        1
+        auto;
+
+    max-width:360px;
+
+    min-height:30px;
+
+    padding:
+        6px
+        10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        );
+
+    background:
+        rgba(
+            20,
+            21,
+            18,
+            .17
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:9px;
+
+    font-size:9.5px;
+    font-weight:600;
+
+    line-height:1.25;
+}
+
+#editRotorModal .rotor-edit-lifecycle-hint i{
+    flex:0 0 auto;
+
+    color:#A9C66E;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+#editRotorModal label{
+    display:block;
+
+    margin:
+        0
+        0
+        7px;
+
+    color:#FDFBD4;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   EDITABLE CONTROLS
+========================================================= */
+
+#editRotorModal .rotor-edit-control{
+    width:100%;
+
+    min-height:50px;
+    height:50px;
+
+    padding:
+        0
+        15px;
+
+    color:#34372F;
+
+    background:#FDFBD4;
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius:12px;
+
+    outline:none;
+
+    box-shadow:none;
+
+    font-size:13px;
+    font-family:inherit;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+#editRotorModal
+.rotor-edit-control:not(:disabled):hover{
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .65
+        );
+}
+
+#editRotorModal
+.rotor-edit-control:not(:disabled):focus{
+    border-color:#8CA15B;
+
+    box-shadow:
+        0
+        0
+        0
+        3px
+        rgba(
+            140,
+            161,
+            91,
+            .16
+        );
+}
+
+
+/* =========================================================
+   LOCKED CONTROL
+========================================================= */
+
+#editRotorModal .rotor-edit-control:disabled{
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .72
+        ) !important;
+
+    background:
+        rgba(
+            26,
+            27,
+            24,
+            .34
+        ) !important;
+
+    border-color:
+        rgba(
+            253,
+            251,
+            212,
+            .08
+        ) !important;
+
+    cursor:not-allowed !important;
+
+    box-shadow:none !important;
+
+    opacity:1 !important;
+}
+
+#editRotorModal .rotor-edit-control:disabled i{
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .45
+        ) !important;
+}
+
+
+/* =========================================================
+   BUTTON FIELD
+========================================================= */
+
+#editRotorModal .rotor-date-btn,
+#editRotorModal .rotor-assignment-btn{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    text-align:left;
+}
+
+
+/* =========================================================
+   DROPDOWN WRAPPERS
+========================================================= */
+
+#editRotorModal .rotor-date-dropdown,
+#editRotorModal .rotor-tractor-dropdown,
+#editRotorModal .rotor-driver-dropdown,
+#editRotorModal .rotor-assignment-dropdown{
+    position:relative;
+
+    width:100%;
+
+    overflow:visible !important;
+}
+
+
+/* =========================================================
+   ASSIGNMENT MENUS
+========================================================= */
+
+#editRotorModal .rotor-tractor-menu,
+#editRotorModal .rotor-driver-menu{
+    position:absolute;
+
+    top:calc(100% + 6px);
+    left:0;
+
+    width:100%;
+
+    max-height:230px;
+
+    display:none;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    background:#FFFFFF;
+
+    border-radius:14px;
+
+    box-shadow:
+        0
+        12px
+        28px
+        rgba(
+            0,
+            0,
+            0,
+            .20
+        );
+
+    z-index:9999 !important;
+}
+
+#editRotorModal .rotor-tractor-menu.show,
+#editRotorModal .rotor-driver-menu.show{
+    display:block;
+}
+
+
+/* =========================================================
+   ASSIGNMENT ITEMS
+   SAME LAYOUT AS ADD / HAULING / REAPER
+========================================================= */
+
+#editRotorModal .rotor-tractor-item,
+#editRotorModal .rotor-driver-item{
+    min-height:60px;
+
+    padding:
+        10px
+        14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:12px;
+
+    color:#202020;
+
+    background:#FFFFFF;
+
+    border-bottom:
+        1px solid
+        #EEEEEE;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease;
+}
+
+
+#editRotorModal .rotor-tractor-item:last-child,
+#editRotorModal .rotor-driver-item:last-child{
+    border-bottom:none;
+}
+
+
+#editRotorModal
+.rotor-tractor-item:not(.rotor-tractor-disabled):hover,
+#editRotorModal
+.rotor-driver-item:not(.rotor-driver-disabled):hover{
+    background:#EDF5DC;
+}
+
+
+/* LEFT DETAILS */
+
+#editRotorModal .rotor-tractor-details{
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:2px;
+}
+
+
+#editRotorModal .rotor-tractor-number{
+    color:#222;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+#editRotorModal .rotor-tractor-name{
+    max-width:180px;
+
+    overflow:hidden;
+
+    color:#747474;
+
+    font-size:10px;
+
+    font-weight:400;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+
+/* AVAILABILITY BADGE */
+
+#editRotorModal .rotor-tractor-status{
+    flex:0 0 auto;
+
+    min-width:88px;
+
+    padding:
+        6px
+        9px;
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+#editRotorModal .rotor-tractor-available{
+    color:#1E7A44;
+
+    background:#B0FBD0;
+}
+
+
+#editRotorModal .rotor-tractor-reserved{
+    color:#59634C;
+
+    background:#E6E8DD;
+}
+
+
+#editRotorModal .rotor-tractor-in-use{
+    color:#D86A00;
+
+    background:#FFF3E0;
+}
+
+
+#editRotorModal .rotor-tractor-maintenance{
+    color:#C62828;
+
+    background:#FFEBEE;
+}
+
+
+/* DISABLED */
+
+#editRotorModal .rotor-tractor-disabled,
+#editRotorModal .rotor-driver-disabled{
+    background:#F3F3F3;
+
+    cursor:not-allowed;
+
+    opacity:.72;
+}
+
+
+#editRotorModal .rotor-tractor-disabled:hover,
+#editRotorModal .rotor-driver-disabled:hover{
+    background:#F3F3F3;
+}
+
+
+/* EMPTY RESULT */
+
+#editRotorModal .rotor-tractor-empty,
+#editRotorModal .rotor-driver-empty{
+    padding:18px;
+
+    color:#777;
+
+    background:#FFFFFF;
+
+    font-size:12px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SECONDARY TOGGLE
+========================================================= */
+
+#editRotorModal .rotor-edit-secondary-toggle{
+    width:auto;
+
+    min-height:40px;
+
+    margin-top:0;
+
+    padding:
+        7px
+        11px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    color:#FDFBD4;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .12
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .45
+        );
+
+    border-radius:11px;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+#editRotorModal
+.rotor-edit-secondary-toggle:hover:not(:disabled){
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .22
+        );
+
+    border-color:#8CA15B;
+
+    transform:translateY(-1px);
+}
+
+#editRotorModal
+.rotor-edit-secondary-toggle:disabled{
+    opacity:.48;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+#editRotorModal .rotor-secondary-toggle-icon{
+    width:28px;
+    height:28px;
+
+    flex:0 0 28px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#8CA15B;
+
+    color:#FDFBD4;
+
+    border-radius:8px;
+}
+
+
+/* =========================================================
+   SECONDARY PANEL
+========================================================= */
+
+#editRotorModal .rotor-edit-secondary-wrapper{
+    display:block;
+
+    max-height:0;
+
+    margin-top:0;
+
+    padding-top:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    border-top:
+        1px dashed
+        transparent;
+
+    transform:
+        translateY(
+            -8px
+        );
+
+    transition:
+        max-height .28s ease,
+        opacity .22s ease,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear .3s;
+}
+
+#editRotorModal
+.rotor-edit-secondary-wrapper.is-open{
+    max-height:520px;
+
+    margin-top:10px;
+
+    padding-top:14px;
+
+    overflow:visible !important;
+
+    opacity:1;
+
+    visibility:visible;
+
+    border-top-color:
+        rgba(
+            253,
+            251,
+            212,
+            .20
+        );
+
+    transform:
+        translateY(
+            0
+        );
+
+    transition:
+        max-height .28s ease,
+        opacity .22s ease,
+        transform .28s ease,
+        margin-top .28s ease,
+        padding-top .28s ease,
+        border-color .28s ease,
+        visibility 0s linear 0s;
+}
+
+#editRotorModal
+.rotor-edit-secondary-wrapper
+> .row{
+    margin-left:0 !important;
+
+    margin-right:0 !important;
+}
+
+#editRotorModal .rotor-edit-secondary-note{
+    margin-top:0;
+
+    padding:
+        8px
+        10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .65
+        );
+
+    background:
+        rgba(
+            25,
+            26,
+            23,
+            .17
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .08
+        );
+
+    border-radius:9px;
+
+    font-size:9.5px;
+}
+
+
+/* =========================================================
+   RENTAL SUMMARY
+========================================================= */
+
+#editRotorModal .rotor-edit-financial-section{
+    padding-bottom:16px;
+}
+
+#editRotorModal .rotor-edit-rental-summary{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:10px;
+}
+
+#editRotorModal .rotor-edit-money-summary{
+    min-width:0;
+
+    min-height:70px;
+
+    padding:
+        11px
+        13px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:
+        rgba(
+            26,
+            27,
+            24,
+            .28
+        );
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .10
+        );
+
+    border-radius:12px;
+
+    box-sizing:border-box;
+}
+
+#editRotorModal .rotor-edit-money-label{
+    margin-bottom:5px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .55
+        );
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.35px;
+}
+
+#editRotorModal .rotor-edit-money-value{
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+#editRotorModal .rotor-edit-currency{
+    color:#A5BD70;
+
+    font-size:14px;
+
+    font-weight:800;
+}
+
+#editRotorModal .rotor-edit-money-value input{
+    width:100%;
+
+    min-width:0;
+
+    margin:0;
+
+    padding:0;
+
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    font-weight:750;
+
+    pointer-events:none;
+}
+
+#editRotorModal
+.rotor-edit-money-value
+input::-webkit-inner-spin-button,
+
+#editRotorModal
+.rotor-edit-money-value
+input::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   STATUS / REMARKS
+========================================================= */
+
+#editRotorModal .rotor-edit-status-display{
+    min-height:27px;
+
+    display:flex;
+
+    align-items:center;
+}
+
+#editRotorModal #editRotorStatusText,
+#editRotorModal #editRotorRemarksText{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:78px;
+
+    min-height:27px;
+
+    padding:
+        5px
+        10px;
+
+    color:#53662E;
+
+    background:#EDF5DC;
+
+    border-radius:9px;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+#editRotorModal .rotor-edit-money-total{
+    background:#FDFBD4;
+
+    border-color:#FDFBD4;
+}
+
+#editRotorModal
+.rotor-edit-money-total
+.rotor-edit-money-label{
+    color:#6F8347;
+}
+
+#editRotorModal
+.rotor-edit-money-total
+.rotor-edit-currency{
+    color:#53662E;
+}
+
+#editRotorModal
+.rotor-edit-money-total
+input{
+    color:#35451F;
+
+    font-size:19px;
+
+    font-weight:850;
+}
+
+
+/* =========================================================
+   PAYMENT NOTE
+========================================================= */
+
+#editRotorModal .rotor-edit-payment-note-compact{
+    width:100%;
+
+    margin:
+        0
+        1px
+        2px;
+
+    padding:
+        8px
+        11px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .64
+        );
+
+    background:transparent;
+
+    border:none;
+
+    font-size:9.5px;
+
+    font-weight:500;
+}
+
+#editRotorModal
+.rotor-edit-payment-note-compact
+> i{
+    color:#A4BD6F;
+
+    font-size:12px;
+}
+
+#editRotorModal
+.rotor-edit-payment-note-compact
+strong{
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .88
+        );
+
+    font-weight:750;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+#editRotorModal .rotor-edit-footer{
+    flex:0 0 auto;
+
+    padding:
+        14px
+        24px
+        17px;
+
+    border-top:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .12
+        );
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-save-container{
+    margin:0;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-cancel-btn,
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-save-btn{
+    width:auto;
+
+    min-width:145px;
+
+    height:46px;
+
+    padding:
+        0
+        20px;
+
+    border-radius:12px;
+
+    font-size:10.5px;
+
+    font-weight:800;
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-cancel-btn{
+    color:#FDFBD4;
+
+    background:transparent;
+
+    border:
+        1px solid
+        rgba(
+            253,
+            251,
+            212,
+            .30
+        );
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-cancel-btn:hover{
+    color:#333;
+
+    background:#FDFBD4;
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-save-btn{
+    color:#FFFFFF;
+
+    background:#8CA15B;
+
+    border:none;
+}
+
+#editRotorModal
+.rotor-edit-footer
+.rotor-save-btn:hover:not(:disabled){
+    background:#748A49;
+
+    transform:
+        translateY(
+            -1px
+        );
+}
+
+
+/* =========================================================
+   FINAL / COMPLETED BUTTON
+========================================================= */
+
+#editRotorModal #updateRotorBtn:disabled{
+    color:
+        rgba(
+            253,
+            251,
+            212,
+            .58
+        );
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .25
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .20
+        );
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   EDIT CALENDAR
+========================================================= */
+
+#editRotorCalendar{
+    z-index:100000 !important;
+}
+
+
+/* =========================================================
+   EDIT / RESCHEDULE CALENDAR STATES
+========================================================= */
+
+
+/* AVAILABLE
+   Current Tractor + Driver assignment can be retained.
+*/
+
+#editRotorModal
+.rotor-calendar-available{
+
+    color:#53672D !important;
+
+    background:#EEF5DF !important;
+}
+
+
+/* LIMITED
+   At least one currently assigned Tractor / Driver
+   is unavailable on this date and needs replacement.
+*/
+
+#editRotorModal
+.rotor-calendar-limited{
+
+    color:#9A6700 !important;
+
+    background:#FFF4CE !important;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        1px
+        rgba(
+            217,
+            169,
+            40,
+            .35
+        );
+}
+
+
+/* FULLY BOOKED
+   No valid Tractor + Driver pair is available.
+*/
+
+#editRotorModal
+.rotor-calendar-booked{
+
+    color:#B42318 !important;
+
+    background:#FDECEC !important;
+
+    cursor:not-allowed;
+
+    opacity:.78;
+
+    text-decoration:none;
+}
+
+
+/* PAST DATE
+   Display only during Edit / Reschedule.
+*/
+
+#editRotorModal
+.rotor-calendar-historical{
+
+    color:#A0A0A0 !important;
+
+    background:#F1F1F1 !important;
+
+    cursor:not-allowed;
+
+    opacity:.65;
+
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   EDIT CALENDAR SELECTED DATE
+========================================================= */
+
+#editRotorModal
+.rotor-calendar-selected{
+
+    color:#FFFFFF !important;
+
+    background:#8CA15B !important;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        2px
+        #6F8347 !important;
+
+    opacity:1;
+}
+
+
+/* =========================================================
+   EDIT CALENDAR LEGEND DOTS
+========================================================= */
+
+#editRotorModal
+.rotor-legend-dot{
+
+    width:9px;
+    height:9px;
+
+    display:inline-block;
+
+    border-radius:50%;
+}
+
+
+#editRotorModal
+.rotor-legend-available{
+
+    background:#8CA15B;
+}
+
+
+#editRotorModal
+.rotor-legend-limited{
+
+    background:#D9A928;
+}
+
+
+#editRotorModal
+.rotor-legend-booked{
+
+    background:#E57373;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    #editRotorModal
+    .rotor-edit-summary-grid{
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    #editRotorModal
+    .rotor-edit-rental-summary{
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    #editRotorModal
+    .rotor-edit-section-top{
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-lifecycle-hint{
+        max-width:100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:767px){
+
+    #editRotorModal{
+        padding:8px !important;
+    }
+
+
+    #editRotorModal .modal-dialog{
+        width:
+            calc(
+                100vw - 16px
+            );
+
+        max-width:none;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-header{
+        padding:
+            17px
+            17px
+            13px;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-body{
+        padding:
+            14px
+            15px
+            17px;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-summary-grid,
+
+    #editRotorModal
+    .rotor-edit-rental-summary{
+        grid-template-columns:1fr;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-section{
+        padding:14px;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-title-row{
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-secondary-toggle{
+        width:100%;
+
+        justify-content:flex-start;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-footer{
+        padding:
+            12px
+            15px
+            15px;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-footer
+    .rotor-save-container{
+        width:100%;
+    }
+
+
+    #editRotorModal
+    .rotor-edit-footer
+    .rotor-cancel-btn,
+
+    #editRotorModal
+    .rotor-edit-footer
+    .rotor-save-btn{
+        flex:1;
+
+        min-width:0;
+    }
+
+}
+
+/* =========================================================
+   ROTOR LEDGER
+   FINAL RENTAL LEDGER CONSISTENCY
+   MATCHES HAULING + REAPER
+========================================================= */
+
+
+/* =========================================================
+   LEDGER CONTAINER
+========================================================= */
+
+.rotor-ledger{
+
+    margin-top:22px;
+
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    height:calc(100vh - 210px);
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   SHARED GRID
+========================================================= */
+
+.rotor-ledger-header,
+.rotor-ledger-row{
+
+    display:grid;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    grid-template-columns:
+        1.00fr
+        1.12fr
+        .46fr
+        1.78fr
+        .95fr
+        .82fr
+        .82fr
+        .80fr
+        .80fr
+        .38fr;
+
+    column-gap:6px;
+
+    align-items:center;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.rotor-ledger-header{
+
+    min-height:68px;
+
+    width:calc(100% - 16px);
+
+    margin-right:16px;
+
+    padding:
+        12px
+        14px;
+
+    flex-shrink:0;
+
+    background:#8CA15B;
+
+    color:#FFFFFF !important;
+
+    border-radius:18px;
+
+    font-size:12px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    letter-spacing:.1px;
+
+    text-align:center;
+}
+
+
+.rotor-ledger-header > div{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#FFFFFF !important;
+
+    text-align:center;
+
+    white-space:normal;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.rotor-ledger-body{
+
+    margin-top:14px;
+
+    flex:1;
+
+    min-height:0;
+
+    padding:
+        1px
+        8px
+        12px
+        1px;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    box-sizing:border-box;
+
+    scrollbar-gutter:stable;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.rotor-ledger-row{
+
+    position:relative;
+
+    min-height:82px;
+
+    margin-bottom:11px;
+
+    padding:
+        12px
+        14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+
+    border:
+        1px solid
+        rgba(
+            140,
+            161,
+            91,
+            .12
+        );
+
+    border-radius:18px;
+
+    color:#252820;
+
+    font-size:12.5px;
+    font-weight:600;
+
+    text-align:center;
+
+    box-shadow:
+        0
+        3px
+        10px
+        rgba(
+            45,
+            55,
+            30,
+            .07
+        );
+
+    transition:
+        transform .20s ease,
+        box-shadow .20s ease,
+        border-color .20s ease,
+        background .20s ease;
+}
+
+
+.rotor-ledger-row:hover{
+
+    transform:
+        translateY(
+            -1px
+        );
+
+    background:
+        rgba(
+            250,
+            255,
+            243,
+            .98
+        );
+
+    border-color:
+        rgba(
+            140,
+            161,
+            91,
+            .30
+        );
+
+    box-shadow:
+        0
+        6px
+        16px
+        rgba(
+            45,
+            55,
+            30,
+            .10
+        );
+}
+
+
+/* remove old alternating row design */
+
+.rotor-ledger-row:nth-child(even){
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .92
+        );
+}
+
+
+.rotor-ledger-row:nth-child(even):hover{
+
+    background:
+        rgba(
+            250,
+            255,
+            243,
+            .98
+        );
+}
+
+
+.rotor-ledger-row > div{
+
+    min-width:0;
+}
+
+
+/* =========================================================
+   TRANSACTION
+========================================================= */
+
+.rotor-transaction-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    text-align:center;
+}
+
+
+.rotor-transaction-id{
+
+    display:block;
+
+    color:#34451E;
+
+    font-size:11.5px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+.rotor-transaction-date{
+
+    display:block;
+
+    color:#7A806F;
+
+    font-size:9.5px;
+    font-weight:700;
+
+    line-height:1.15;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.rotor-customer-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    text-align:center;
+}
+
+
+.rotor-customer-name{
+
+    width:100%;
+
+    color:#242820;
+
+    font-size:13px;
+    font-weight:800;
+
+    line-height:1.25;
+
+    text-align:center;
+
+    white-space:normal;
+
+    overflow:visible;
+    text-overflow:clip;
+
+    overflow-wrap:anywhere;
+    word-break:break-word;
+
+    hyphens:auto;
+}
+
+
+/* =========================================================
+   AFFILIATE CHIP
+========================================================= */
+
+.rotor-affiliate-chip{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:21px;
+
+    padding:
+        3px
+        8px;
+
+    border:none;
+
+    border-radius:999px;
+
+    font-size:9.5px;
+    font-weight:800;
+
+    line-height:1;
+}
+
+
+.rotor-affiliate-chip.is-member{
+
+    color:#53672D;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .17
+        );
+
+    border:none;
+}
+
+
+.rotor-affiliate-chip.is-non-member{
+
+    color:#666A62;
+
+    background:
+        rgba(
+            80,
+            80,
+            80,
+            .08
+        );
+
+    border:none;
+}
+
+
+/* =========================================================
+   AREA
+   Rotor-specific data, same visual weight as Rental count
+========================================================= */
+
+.rotor-area-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:2px;
+
+    text-align:center;
+}
+
+
+.rotor-area-value{
+
+    color:#354224;
+
+    font-size:14px;
+    font-weight:800;
+}
+
+
+.rotor-area-unit{
+
+    color:#7A806F;
+
+    font-size:9px;
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   ASSIGNMENT
+   SAME AS HAULING + REAPER
+========================================================= */
+
+.rotor-assignment-cell{
+
+    min-width:0;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+
+    gap:6px;
+
+    text-align:left;
+}
+
+
+/* =========================================================
+   PRIMARY / SECONDARY STRIP
+
+   PRIMARY | Tractor | Driver
+========================================================= */
+
+.rotor-assignment-primary,
+.rotor-assignment-secondary{
+
+    min-width:0;
+
+    display:grid;
+
+    grid-template-columns:
+        62px
+        minmax(
+            0,
+            .9fr
+        )
+        minmax(
+            0,
+            1.1fr
+        );
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:
+        7px
+        8px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:
+        rgba(
+            140,
+            161,
+            91,
+            .07
+        );
+}
+
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.rotor-assignment-secondary{
+
+    padding-top:7px;
+
+    border-top:none;
+
+    background:
+        rgba(
+            90,
+            110,
+            60,
+            .055
+        );
+}
+
+
+/* =========================================================
+   PRIMARY / SECONDARY LABEL
+========================================================= */
+
+.rotor-assignment-primary
+.rotor-assignment-label,
+
+.rotor-assignment-secondary
+.rotor-assignment-label{
+
+    grid-column:auto;
+    grid-row:auto;
+
+    align-self:auto;
+
+    margin:0;
+
+    padding:0;
+
+    display:block;
+
+    border:none;
+
+    color:#718052;
+
+    font-size:8.5px;
+    font-weight:900;
+
+    letter-spacing:.55px;
+
+    line-height:1;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   TRACTOR + DRIVER
+========================================================= */
+
+.rotor-assignment-item{
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    color:#343930;
+
+    font-size:10.5px;
+    font-weight:700;
+
+    line-height:1.2;
+}
+
+
+.rotor-assignment-item i{
+
+    width:auto;
+
+    flex:0 0 auto;
+
+    margin:0;
+
+    display:inline-block;
+
+    color:#8CA15B;
+
+    font-size:11px;
+}
+
+
+.rotor-assignment-item span{
+
+    min-width:0;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    line-height:1.2;
+}
+
+
+/* =========================================================
+   SECONDARY ROW HEIGHT
+========================================================= */
+
+.rotor-ledger-row:has(
+    .rotor-assignment-secondary
+){
+
+    height:auto;
+    min-height:104px;
+}
+
+
+/* =========================================================
+   MAINTENANCE BADGE
+========================================================= */
+
+.rotor-assignment-maintenance{
+
+    grid-column:
+        2 / -1;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin-top:1px;
+
+    padding:
+        3px
+        7px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:4px;
+
+    border-radius:7px;
+
+    background:
+        rgba(
+            183,
+            28,
+            28,
+            .08
+        );
+
+    color:#B71C1C;
+
+    font-size:9px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.rotor-location-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#4D5346;
+
+    font-size:11.5px;
+    font-weight:600;
+
+    line-height:1.35;
+
+    text-align:center;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.rotor-price-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    white-space:nowrap;
+}
+
+
+.rotor-price-value{
+
+    color:#293719;
+
+    font-size:12px;
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   STATUS + REMARKS
+========================================================= */
+
+.rotor-status-ledger-cell,
+.rotor-remarks-ledger-cell{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+}
+
+
+/* =========================================================
+   STATUS / REMARKS DROPDOWN SIZE
+========================================================= */
+
+.rotor-ledger-row .status-dropdown,
+.rotor-ledger-row .remarks-dropdown{
+
+    width:100%;
+
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    border-radius:11px;
+
+    font-size:11px;
+    font-weight:800;
+
+    text-align:center;
+
+    outline:none;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   FINAL BADGES
+========================================================= */
+
+.rotor-ledger-badge{
+
+    width:100%;
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    border-radius:11px;
+
+    font-size:10.5px;
+    font-weight:900;
+
+    line-height:1;
+
+    white-space:nowrap;
+
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   FUTURE LOCK
+========================================================= */
+
+.rotor-future-status-lock{
+
+    width:100%;
+
+    max-width:96px;
+
+    height:38px;
+
+    padding:
+        0
+        8px;
+
+    border-radius:11px;
+
+    font-size:11px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ACTION
+========================================================= */
+
+.rotor-action-cell{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+
+.rotor-edit-btn{
+
+    width:36px;
+    height:36px;
+
+    padding:0;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#8CA15B;
+
+    color:#FFFFFF;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   SMALLER LAPTOP
+========================================================= */
+
+@media(max-width:1450px){
+
+    .rotor-ledger-header,
+    .rotor-ledger-row{
+
+        grid-template-columns:
+            .95fr
+            1.08fr
+            .45fr
+            1.82fr
+            .90fr
+            .78fr
+            .78fr
+            .78fr
+            .78fr
+            .38fr;
+
+        column-gap:5px;
+    }
+
+
+    .rotor-ledger-header{
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:10.5px;
+    }
+
+
+    .rotor-ledger-row{
+
+        padding-left:9px;
+        padding-right:9px;
+
+        font-size:11.5px;
+    }
+
+
+    .rotor-transaction-id{
+
+        font-size:10.5px;
+    }
+
+
+    .rotor-assignment-item{
+
+        font-size:10px;
+    }
+
+
+    .rotor-ledger-row .status-dropdown,
+    .rotor-ledger-row .remarks-dropdown{
+
+        padding-left:5px;
+        padding-right:5px;
+
+        font-size:10px;
+    }
+
+}
+
+/* =========================================================
+   ROTOR - SET PRICE MODAL
+========================================================= */
+
+.rotor-price-dialog{
+    max-width:620px;
+}
+
+
+.rotor-price-window{
+    padding:28px 30px 30px;
+    overflow:visible;
+}
+
+
+.rotor-price-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+
+.rotor-price-heading{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+
+.rotor-price-icon{
+    width:58px;
+    height:58px;
+
+    flex:0 0 58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:#8CA15B;
+    color:#FDFBD4;
+
+    font-size:25px;
+}
+
+
+.rotor-price-heading h1{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:28px;
+    font-weight:700;
+}
+
+
+.rotor-price-heading p{
+    margin:5px 0 0;
+
+    color:#E7E6DD;
+
+    font-size:13px;
+    font-weight:400;
+}
+
+
+.rotor-price-divider{
+    width:100%;
+    height:1px;
+
+    margin:22px 0;
+
+    background:rgba(253,251,212,.28);
+}
+
+
+.rotor-price-body{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+.rotor-price-info{
+    padding:13px 16px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border-radius:14px;
+
+    background:rgba(253,251,212,.12);
+
+    color:#FDFBD4;
+
+    font-size:13px;
+    line-height:1.45;
+}
+
+
+.rotor-price-info i{
+    color:#B9CD7E;
+    font-size:17px;
+}
+
+
+.rotor-price-field label{
+    display:block;
+
+    margin-bottom:9px;
+
+    color:#FDFBD4;
+
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+
+.rotor-price-input-wrap{
+    width:100%;
+    height:64px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:#FDFBD4;
+
+    transition:
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+.rotor-price-input-wrap:focus-within{
+    box-shadow:
+        0 0 0 3px
+        rgba(140,161,91,.32);
+
+    transform:translateY(-1px);
+}
+
+
+.rotor-price-prefix{
+    padding-left:20px;
+
+    color:#536B2F;
+
+    font-size:22px;
+    font-weight:700;
+}
+
+
+.rotor-price-input{
+    flex:1;
+
+    min-width:0;
+    height:100%;
+
+    padding:0 10px;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#252525;
+
+    font-size:22px;
+    font-weight:700;
+}
+
+
+.rotor-price-input::-webkit-inner-spin-button,
+.rotor-price-input::-webkit-outer-spin-button{
+    margin:0;
+}
+
+
+.rotor-price-unit{
+    padding-right:20px;
+
+    color:#747474;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+
+.rotor-current-price{
+    padding:15px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+
+    border-radius:14px;
+
+    background:rgba(140,161,91,.18);
+
+    color:#FDFBD4;
+}
+
+
+.rotor-current-price span{
+    font-size:13px;
+}
+
+
+.rotor-current-price strong{
+    font-size:15px;
+}
+
+
+.rotor-price-footer{
+    margin-top:27px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+
+.rotor-price-cancel-btn,
+.rotor-price-save-btn{
+    height:52px;
+
+    padding:0 23px;
+
+    border:none;
+    border-radius:14px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.rotor-price-cancel-btn{
+    background:#ECECEC;
+    color:#333;
+}
+
+
+.rotor-price-save-btn{
+    min-width:155px;
+
+    background:#8CA15B;
+    color:#FDFBD4;
+}
+
+
+.rotor-price-cancel-btn:hover,
+.rotor-price-save-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0,0,0,.15);
+}
+
+
+@media(max-width:600px){
+
+    .rotor-price-window{
+        padding:22px;
+    }
+
+
+    .rotor-price-heading p{
+        display:none;
+    }
+
+
+    .rotor-price-footer{
+        flex-direction:column-reverse;
+    }
+
+
+    .rotor-price-cancel-btn,
+    .rotor-price-save-btn{
+        width:100%;
+    }
+
+}
+
+/* =========================================================
+   ROTOR - SET PRICE MODAL
+========================================================= */
+
+#setPriceModal{
+    background:rgba(20, 24, 15, 0.28);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+}
+
+
+#setPriceModal .modal-dialog{
+    max-width:650px;
+}
+
+
+#setPriceModal .rotor-price-window{
+    padding:28px 30px 30px;
+
+    border:4px solid #A7BA62;
+    border-radius:28px;
+
+    background:rgba(75,77,70,.88) !important;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.28);
+
+    overflow:visible;
+}
+
+
+#setPriceModal .rotor-price-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+}
+
+
+#setPriceModal .rotor-price-heading{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+
+#setPriceModal .rotor-price-icon{
+    width:72px;
+    height:72px;
+
+    flex:0 0 72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:#97AF58;
+    color:#FDFBD4;
+
+    font-size:31px;
+}
+
+
+#setPriceModal .rotor-price-heading h1{
+    margin:0;
+
+    color:#FDFBD4;
+
+    font-size:31px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+
+#setPriceModal .rotor-price-heading p{
+    margin:6px 0 0;
+
+    color:#EAE7CC;
+
+    font-size:14px;
+    font-weight:500;
+}
+
+
+#setPriceModal .rotor-close-btn{
+    width:62px;
+    height:62px;
+
+    border:none;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#F3EFC9;
+    color:#1F1F1F;
+
+    font-size:46px;
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+#setPriceModal .rotor-close-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 6px 14px rgba(0,0,0,.18);
+}
+
+
+#setPriceModal .rotor-price-divider{
+    width:100%;
+    height:1px;
+
+    margin:20px 0 26px;
+
+    background:rgba(253,251,212,.28);
+}
+
+
+#setPriceModal .rotor-price-body{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+#setPriceModal .rotor-price-info{
+    padding:16px 18px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    border-radius:16px;
+
+    background:#727A5C;
+    color:#FDFBD4;
+
+    font-size:13px;
+    font-weight:600;
+    line-height:1.45;
+}
+
+
+#setPriceModal .rotor-price-info i{
+    color:#C3D57B;
+    font-size:18px;
+}
+
+
+#setPriceModal .rotor-price-field label{
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#FDFBD4;
+
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.4px;
+}
+
+
+#setPriceModal .rotor-price-input-wrap{
+    width:100%;
+    height:82px;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#F1EDC4;
+
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.08);
+
+    transition:
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+#setPriceModal .rotor-price-input-wrap:focus-within{
+    box-shadow:
+        0 0 0 4px rgba(167,186,98,.26);
+
+    transform:translateY(-1px);
+}
+
+
+#setPriceModal .rotor-price-prefix{
+    padding-left:22px;
+
+    color:#556D2F;
+
+    font-size:22px;
+    font-weight:800;
+}
+
+
+#setPriceModal .rotor-price-input{
+    flex:1;
+
+    min-width:0;
+    height:100%;
+
+    padding:0 12px;
+
+    border:none;
+    outline:none;
+
+    background:transparent;
+
+    color:#202020;
+
+    font-size:22px;
+    font-weight:800;
+}
+
+
+#setPriceModal .rotor-price-input::-webkit-inner-spin-button,
+#setPriceModal .rotor-price-input::-webkit-outer-spin-button{
+    margin:0;
+}
+
+
+#setPriceModal .rotor-price-unit{
+    padding-right:22px;
+
+    color:#6D6D6D;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+#setPriceModal .rotor-current-price{
+    padding:18px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+
+    border-radius:18px;
+
+    background:#6B7355;
+    color:#FDFBD4;
+}
+
+
+#setPriceModal .rotor-current-price span{
+    font-size:13px;
+    font-weight:700;
+}
+
+
+#setPriceModal .rotor-current-price strong{
+    font-size:17px;
+    font-weight:800;
+}
+
+
+#setPriceModal .rotor-price-footer{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:flex-end;
+    gap:14px;
+}
+
+
+#setPriceModal .rotor-price-cancel-btn,
+#setPriceModal .rotor-price-save-btn{
+    height:64px;
+    min-width:125px;
+
+    padding:0 26px;
+
+    border:none;
+    border-radius:18px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+#setPriceModal .rotor-price-cancel-btn{
+    background:#F3F3F3;
+    color:#333333;
+}
+
+
+#setPriceModal .rotor-price-save-btn{
+    min-width:190px;
+
+    background:#99AF57;
+    color:#FDFBD4;
+}
+
+
+#setPriceModal .rotor-price-cancel-btn:hover,
+#setPriceModal .rotor-price-save-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(0,0,0,.16);
+}
+
+
+@media(max-width:600px){
+
+    #setPriceModal .rotor-price-window{
+        padding:22px;
+        border-radius:22px;
+    }
+
+    #setPriceModal .rotor-price-header{
+        align-items:flex-start;
+    }
+
+    #setPriceModal .rotor-price-heading h1{
+        font-size:25px;
+    }
+
+    #setPriceModal .rotor-price-heading p{
+        font-size:13px;
+    }
+
+    #setPriceModal .rotor-close-btn{
+        width:52px;
+        height:52px;
+        font-size:36px;
+    }
+
+    #setPriceModal .rotor-price-footer{
+        flex-direction:column-reverse;
+    }
+
+    #setPriceModal .rotor-price-cancel-btn,
+    #setPriceModal .rotor-price-save-btn{
+        width:100%;
+    }
+
+    #setPriceModal .rotor-current-price{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+/* =========================================================
+   EDIT ROTOR - RESCHEDULE DATE GLOW
+========================================================= */
+
+#editRotorModal
+.rotor-date-btn.rotor-reschedule-needed{
+
+    border-color:#D9A928 !important;
+
+    box-shadow:
+        0 0 0 4px rgba(217,169,40,.18),
+        0 0 18px rgba(217,169,40,.34);
+
+    animation:
+        rotorRescheduleGlow
+        1.6s
+        ease-in-out
+        infinite;
+}
+
+#editRotorModal
+.rotor-date-btn.rotor-reschedule-needed i{
+    color:#D9A928;
+}
+
+@keyframes rotorRescheduleGlow{
+    0%,
+    100%{
+        box-shadow:
+            0 0 0 4px rgba(217,169,40,.14),
+            0 0 12px rgba(217,169,40,.24);
+    }
+
+    50%{
+        box-shadow:
+            0 0 0 5px rgba(217,169,40,.22),
+            0 0 24px rgba(217,169,40,.48);
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    #editRotorModal
+    .rotor-date-btn.rotor-reschedule-needed{
+        animation:none;
+    }
+}
+
+
+/* =========================================================
+   EDIT ROTOR - MISSED / DELAYED SELECTED DATE
+========================================================= */
+
+#editRotorModal
+.rotor-date-dropdown:has(
+    .rotor-date-btn.rotor-reschedule-needed
+)
+.rotor-calendar-selected{
+
+    color:#7A5200 !important;
+
+    background:#FFE7A3 !important;
+
+    box-shadow:
+        inset
+        0
+        0
+        0
+        2px
+        #D9A928 !important;
+
+    opacity:1;
+}
+
+.rotor-filter-empty{
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:24px;
+    border:1px dashed rgba(140,161,91,.38);
+    border-radius:18px;
+    background:rgba(255,255,255,.60);
+    color:#6D7462;
+    text-align:center;
+}
+
+.rotor-filter-empty i{
+    margin-bottom:4px;
+    font-size:25px;
+    color:#8CA15B;
+}
+
+.rotor-filter-empty strong{
+    font-size:14px;
+}
+
+.rotor-filter-empty span{
+    font-size:12px;
+    font-weight:500;
+}
+
+
+/* =========================================================
+   EDIT ROTOR - PAYMENT HISTORY
+========================================================= */
+
+#editRotorModal .rotor-edit-payment-history {
+    width: 100%;
+    min-width: 0;
+    margin-top: 18px;
+}
+
+#editRotorModal .rotor-edit-payment-history-heading {
+    margin-bottom: 12px;
+}
+
+#editRotorModal .rotor-edit-payment-history-heading h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 5px;
+    color: #FDFBD4;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+#editRotorModal .rotor-edit-payment-history-heading h4 i {
+    color: #A4BD6F;
+    font-size: 17px;
+}
+
+#editRotorModal .rotor-edit-payment-history-heading small {
+    color: rgba(253, 251, 212, 0.7);
+    font-size: 11px;
+}
+
+/* Scrollable payment table */
+
+#editRotorModal .rotor-edit-payment-table-wrapper {
+    width: 100%;
+    max-height: 270px;
+    overflow: auto;
+    border: 1px solid #D8DEC0;
+    border-radius: 12px;
+    background: #FDFBD4;
+    scrollbar-width: thin;
+    scrollbar-color: #8CA15B transparent;
+}
+
+#editRotorModal .rotor-edit-payment-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #34402A;
+    font-size: 11px;
+}
+
+/* Table header */
+
+#editRotorModal .rotor-edit-payment-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 12px 14px;
+    background: #8CA15B;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 800;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Payment rows */
+
+#editRotorModal .rotor-edit-payment-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #E4E8D0;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+#editRotorModal .rotor-edit-payment-table tbody tr:nth-child(even) {
+    background: #F3F4DC;
+}
+
+#editRotorModal .rotor-edit-payment-table tbody tr:hover {
+    background: #EAF0D8;
+}
+
+#editRotorModal .rotor-edit-payment-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Financial columns */
+
+#editRotorModal .rotor-edit-payment-table th:nth-child(3),
+#editRotorModal .rotor-edit-payment-table th:nth-child(4),
+#editRotorModal .rotor-edit-payment-amount,
+#editRotorModal .rotor-edit-payment-balance {
+    text-align: right;
+}
+
+#editRotorModal .rotor-edit-payment-amount {
+    color: #43632C;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+#editRotorModal .rotor-edit-payment-balance {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Empty payment history */
+
+#editRotorModal .rotor-edit-payment-empty td {
+    padding: 25px 15px;
+    color: #818779;
+    text-align: center;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   EDIT ROTOR - PAYMENT HISTORY FINAL ALIGNMENT
+========================================================= */
+
+/* Center all headers and values */
+
+#editRotorModal .rotor-edit-payment-table th,
+#editRotorModal .rotor-edit-payment-table td {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+/* Keep payment dates readable */
+
+#editRotorModal .rotor-edit-payment-table td:first-child {
+    white-space: nowrap;
+}
+
+/* Scroll when many payment records exist */
+
+#editRotorModal .rotor-edit-payment-table-wrapper {
+    max-height: 270px;
+    overflow-x: auto;
+    overflow-y: auto;
+}

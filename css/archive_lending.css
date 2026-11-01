@@ -1,0 +1,468 @@
+/* =========================================================
+   LENDING ARCHIVE TYPE SWITCHER
+========================================================= */
+
+.lending-archive-section {
+    width: 100%;
+    min-height: 0;
+}
+
+.lending-archive-types {
+    width: 100%;
+    margin: 18px 0 14px;
+    padding: 6px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+
+    background: rgba(221, 226, 200, 0.85);
+    border: 1px solid rgba(140, 161, 91, 0.55);
+    border-radius: 18px;
+}
+
+.lending-archive-type-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    padding: 11px 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    color: #456313;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.lending-archive-type-btn:hover {
+    color: #35530a;
+    background: rgba(255, 254, 214, 0.92);
+}
+
+.lending-archive-type-btn.active {
+    color: #ffffff;
+    background: #8ca15b;
+    border-color: #8ca15b;
+    box-shadow: 0 4px 10px rgba(73, 95, 32, 0.20);
+}
+
+.lending-archive-type-btn i {
+    font-size: 18px;
+}
+
+.lending-archive-type-btn strong {
+    min-width: 28px;
+    height: 28px;
+    padding: 0 8px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #456313;
+    background: #fffed6;
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.lending-archive-type-btn.active strong {
+    color: #456313;
+    background: #fffed6;
+}
+
+@media (max-width: 650px) {
+    .lending-archive-types {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   LENDING ARCHIVE TABLE
+========================================================= */
+
+.lending-archive-table {
+    width: 100%;
+
+    height: calc(100vh - 320px);
+    height: calc(100dvh - 320px);
+    min-height: 300px;
+    max-height: none;
+
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 14px;
+
+    margin-top: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE COLUMNS
+========================================================= */
+
+.lending-archive-header,
+.lending-archive-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.25fr
+        1.35fr
+        1fr
+        0.8fr
+        1.05fr
+        0.9fr
+        0.85fr
+        1.2fr
+        1fr;
+
+    gap: 12px;
+    align-items: center;
+}
+
+.lending-archive-header > div,
+.lending-archive-row > div {
+    min-width: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.lending-archive-header {
+    position: relative;
+    z-index: 2;
+
+    width: calc(100% - 8px);
+    min-height: 70px;
+    margin: 0;
+    padding: 18px 12px;
+
+    color: #ffffff;
+    background: #8ca15b;
+    border-radius: 15px;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.lending-archive-header::before {
+    content: none !important;
+}
+
+
+/* =========================================================
+   SCROLLABLE ROWS
+========================================================= */
+
+.lending-archive-rows {
+    width: 100%;
+    min-height: 0;
+    padding-right: 8px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #8ca15b transparent;
+}
+
+.lending-archive-rows::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lending-archive-rows::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lending-archive-rows::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 20px;
+}
+
+.lending-archive-rows::-webkit-scrollbar-thumb:hover {
+    background: #718746;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.lending-archive-row {
+    min-height: 105px;
+    margin-bottom: 12px;
+    padding: 16px 11px;
+
+    color: #202020;
+    background: rgba(255, 255, 255, 0.89);
+    border-radius: 15px;
+
+    font-size: 13px;
+    line-height: 1.35;
+
+    transition: 0.25s;
+}
+
+.lending-archive-row:hover {
+    background: #edfbe3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CELL FORMATTING
+========================================================= */
+
+.lending-archive-loan-id,
+.lending-archive-member,
+.lending-archive-interest,
+.lending-archive-by {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.lending-archive-loan-id strong,
+.lending-archive-member strong,
+.lending-archive-interest strong,
+.lending-archive-by strong {
+    color: #202020;
+    font-weight: 800;
+}
+
+.lending-archive-loan-id small,
+.lending-archive-member small,
+.lending-archive-interest small,
+.lending-archive-by small {
+    color: #747474;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.lending-archive-money {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MONETARY PURPOSE
+========================================================= */
+
+.lending-archive-purpose {
+    display: -webkit-box;
+
+    max-height: 58px;
+    overflow: hidden;
+
+    line-height: 1.4;
+    text-align: left !important;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.lending-archive-products {
+    max-height: 70px;
+    padding: 2px 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-color: #8ca15b transparent;
+    scrollbar-width: thin;
+}
+
+.lending-archive-products span {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.lending-archive-products::-webkit-scrollbar {
+    width: 5px;
+}
+
+.lending-archive-products::-webkit-scrollbar-thumb {
+    background: #8ca15b;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   STATUS AND REMARKS
+========================================================= */
+
+.lending-archive-status,
+.lending-archive-remarks {
+    width: 100%;
+    max-width: 105px;
+    min-height: 38px;
+    padding: 7px 8px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.lending-archive-status-delivered,
+.lending-archive-status-accepted,
+.lending-archive-remarks-paid {
+    color: #087a42;
+    background: #a7f3d0;
+}
+
+.lending-archive-status-rejected {
+    color: #b42323;
+    background: #ffe5e5;
+}
+
+.lending-archive-remarks-none {
+    color: #777777;
+    background: #eeeeee;
+}
+
+
+/* =========================================================
+   RETRIEVE BUTTON
+========================================================= */
+
+.lending-archive-row .retrieve-btn {
+    width: 100%;
+    max-width: 105px;
+    min-height: 40px;
+    padding: 9px 8px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fdfbd4;
+    background: #8ca15b;
+    border: none;
+    border-radius: 13px;
+
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.lending-archive-row .retrieve-btn:hover {
+    color: #fdfbd4;
+    background: #8ca15b;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+.lending-archive-row .retrieve-btn:disabled,
+.lending-archive-row .lending-retrieve-btn-disabled,
+.lending-archive-row .lending-retrieve-btn-disabled:hover {
+    color: #aaaaaa;
+    background: #dddddd;
+
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.68;
+    transform: none;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.lending-archive-table .archive-empty {
+    margin-top: 15px;
+    padding: 45px 20px;
+
+    color: #35530a;
+    background: #d9d9d9;
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .lending-archive-header,
+    .lending-archive-row {
+        gap: 8px;
+    }
+
+    .lending-archive-header {
+        padding: 16px 8px;
+        font-size: 11px;
+    }
+
+    .lending-archive-row {
+        padding: 14px 8px;
+        font-size: 11px;
+    }
+
+    .lending-archive-loan-id small,
+    .lending-archive-member small,
+    .lending-archive-interest small,
+    .lending-archive-by small {
+        font-size: 9px;
+    }
+
+}

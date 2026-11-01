@@ -1,0 +1,1369 @@
+/* =========================================================
+   SPIS INVENTORY
+========================================================= */
+
+:root {
+    --inventory-green: #8CA15B;
+    --inventory-green-dark: #708449;
+    --inventory-cream: #FDFBD4;
+    --inventory-text: #252720;
+    --inventory-muted: #6F7367;
+    --inventory-danger: #D85C5C;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+
+   Do not override INVENTORY h2 typography.
+   Global SPIS styles handle the page title.
+========================================================= */
+
+.inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   TOP CONTROLS
+========================================================= */
+
+.top-controls {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    width: 310px;
+    height: 50px;
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    background: rgba(255, 255, 255, .92);
+
+    border: 1px solid rgba(140, 161, 91, .18);
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, .05);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.search-box:focus-within {
+    border-color: var(--inventory-green);
+
+    box-shadow:
+        0 4px 15px
+        rgba(140, 161, 91, .15);
+}
+
+
+.search-box i {
+    color: var(--inventory-green-dark);
+    font-size: 17px;
+}
+
+
+.search-box input {
+    width: 100%;
+    padding: 0;
+
+    color: var(--inventory-text);
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.search-box input::placeholder {
+    color: #92968C;
+}
+
+
+/* =========================================================
+   ADD PRODUCT BUTTON
+========================================================= */
+
+.btn-add {
+    min-width: 150px;
+    height: 50px;
+    padding: 0 20px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--inventory-cream);
+    background: var(--inventory-green);
+
+    border: none;
+    border-radius: 11px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 13px
+        rgba(75, 94, 40, .16);
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/*
+   Current inventory.php contains the + icon only.
+   Keep the visible text here for now.
+*/
+
+.btn-add::after {
+    content: "ADD PRODUCT";
+}
+
+
+.btn-add i {
+    font-size: 17px;
+}
+
+
+.btn-add:hover {
+    color: var(--inventory-cream);
+    background: var(--inventory-green-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 15px
+        rgba(75, 94, 40, .22);
+}
+
+
+.btn-add:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   INVENTORY BODY
+========================================================= */
+
+body {
+    overflow: hidden;
+}
+
+
+.inventory-body {
+    height: calc(100vh - 150px);
+    padding: 5px 9px 30px 2px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--inventory-green)
+        var(--inventory-cream);
+}
+
+
+/* =========================================================
+   INVENTORY SCROLLBAR
+========================================================= */
+
+.inventory-body::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+.inventory-body::-webkit-scrollbar-track {
+    background: var(--inventory-cream);
+    border-radius: 20px;
+}
+
+
+.inventory-body::-webkit-scrollbar-thumb {
+    background: var(--inventory-green);
+
+    border:
+        2px solid
+        var(--inventory-cream);
+
+    border-radius: 20px;
+}
+
+
+.inventory-body::-webkit-scrollbar-thumb:hover {
+    background: var(--inventory-green-dark);
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+   ORIGINAL SPIS CARD STYLE
+========================================================= */
+
+.product-card {
+    position: relative;
+
+    padding: 20px;
+
+    background: var(--inventory-cream);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, .08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+
+.product-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(0, 0, 0, .11);
+}
+
+
+/* =========================================================
+   INVENTORY - TARGET PRODUCT HIGHLIGHT
+========================================================= */
+
+.product-card {
+    scroll-margin: 20px;
+}
+
+
+.product-card:target {
+    outline: 3px solid #8CA15B;
+    outline-offset: -5px;
+
+    animation: inventoryTargetHighlight 1.2s ease-out;
+}
+
+@keyframes inventoryTargetHighlight {
+    0% {
+        box-shadow:
+            inset 0 0 0 9px rgba(140, 161, 91, .28),
+            0 8px 20px rgba(0, 0, 0, .08);
+    }
+
+    100% {
+        box-shadow:
+            inset 0 0 0 0 rgba(140, 161, 91, 0),
+            0 8px 20px rgba(0, 0, 0, .08);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .product-card:target {
+        animation: none;
+    }
+}
+
+
+
+/* =========================================================
+   PRODUCT ID
+   HIDDEN BY SYSTEM DESIGN
+========================================================= */
+
+.prod-id {
+    display: none !important;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.card-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 9px;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--inventory-cream);
+    background: var(--inventory-green);
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, .10);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.edit-btn:hover {
+    color: var(--inventory-cream);
+    background: var(--inventory-green-dark);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 6px 13px
+        rgba(0, 0, 0, .15);
+}
+
+
+/* =========================================================
+   CARD ARCHIVE BUTTON
+   Same placement/style pattern as Product List
+========================================================= */
+
+.inventory-archive-form {
+    margin: 0;
+    padding: 0;
+}
+
+
+.inventory-card-archive-btn {
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #A74B4B;
+    background: #FFF1EC;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px
+        rgba(0, 0, 0, .10);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.inventory-card-archive-btn:hover {
+    color: #FFFFFF;
+    background: var(--inventory-danger);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 6px 13px
+        rgba(0, 0, 0, .15);
+}
+
+
+.inventory-card-archive-btn:focus-visible {
+    outline:
+        3px solid
+        rgba(216, 92, 92, .28);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.image-container {
+    width: 220px;
+    height: 220px;
+
+    margin: 20px auto;
+    padding: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #D7E5A3;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+}
+
+
+.image-container img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   PRODUCT NAME
+========================================================= */
+
+.product-search-name {
+    min-height: 52px;
+
+    margin: 0 10px 17px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--inventory-text);
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PRODUCT INFORMATION
+========================================================= */
+
+.details {
+    min-height: 43px;
+
+    margin-top: 0;
+    padding: 10px 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    border-top:
+        1px solid
+        rgba(140, 161, 91, .24);
+
+    font-size: 13px;
+}
+
+
+.product-search-name + .details {
+    border-top:
+        1px solid
+        rgba(140, 161, 91, .30);
+}
+
+
+/* PRODUCT INFORMATION LABEL */
+
+.details span:first-child {
+    color: #6B7063;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .35px;
+
+    text-transform: uppercase;
+}
+
+
+/* PRODUCT INFORMATION VALUE */
+
+.details span:last-child {
+    color: var(--inventory-text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   INVENTORY STOCK INDICATORS
+========================================================= */
+
+.details span:last-child.stock-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 74%;
+    padding: 7px 11px;
+    border-radius: 10px;
+    line-height: 1.25;
+    text-align: center;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.details span:last-child.out-stock {
+    color: #B42328;
+    background: #FFE4E4;
+    border: 1px solid #F4AAAA;
+    font-size: 15px;
+    box-shadow: 0 2px 7px rgba(180, 35, 40, .09);
+}
+
+.details span:last-child.low-stock {
+    color: #95600C;
+    background: #FFF0C2;
+    border: 1px solid #EDCF7B;
+    font-size: 13px;
+}
+
+
+
+/* =========================================================
+   MODAL BACKDROP
+   STANDARD SPIS 8PX BLUR
+========================================================= */
+
+body:has(
+    .modal.show
+    .add-product-window
+)
+.modal-backdrop.show {
+    background:
+        rgba(
+            22,
+            25,
+            18,
+            .62
+        );
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ADD / EDIT PRODUCT MODAL WINDOW
+========================================================= */
+
+.add-product-window {
+    position: relative;
+
+    padding: 22px 24px 24px;
+
+    color: var(--inventory-cream);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(68, 72, 62, .96),
+            rgba(49, 52, 46, .94)
+        );
+
+    border:
+        4px solid
+        var(--inventory-green);
+
+    border-radius: 24px;
+
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0, 0, 0, .42),
+        inset
+        0 1px 0
+        rgba(255, 255, 255, .07);
+
+    overflow: hidden;
+}
+
+
+/* SUBTLE TOP HIGHLIGHT */
+
+.add-product-window::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+    right: 28px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(253, 251, 212, .28),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.window-header {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 2px 2px 17px;
+
+    border-bottom:
+        1px solid
+        rgba(253, 251, 212, .14);
+}
+
+
+.window-header h1 {
+    position: relative;
+
+    margin: 0;
+    padding-bottom: 7px;
+
+    color: var(--inventory-cream);
+
+    font-size: 28px;
+    font-weight: 700;
+
+    letter-spacing: .35px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-btn {
+    flex: 0 0 auto;
+
+    width: 50px;
+    height: 50px;
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #252720;
+    background: var(--inventory-cream);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .35);
+
+    border-radius: 50%;
+
+    font-size: 34px;
+    font-weight: 300;
+
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px
+        rgba(0, 0, 0, .16);
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.close-btn:hover {
+    color: var(--inventory-cream);
+    background: var(--inventory-green);
+
+    transform:
+        rotate(4deg)
+        scale(1.05);
+
+    box-shadow:
+        0 7px 17px
+        rgba(0, 0, 0, .22);
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.add-product-window
+.modal-body {
+    max-height: calc(100vh - 195px);
+
+    padding: 20px 5px 12px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        var(--inventory-green)
+        rgba(255, 255, 255, .07);
+}
+
+
+.add-product-window
+.modal-body::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.add-product-window
+.modal-body::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, .06);
+
+    border-radius: 20px;
+}
+
+
+.add-product-window
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--inventory-green);
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   FORM SECTION PANELS
+========================================================= */
+
+.add-product-window
+.modal-body
+> form
+> .row.g-4
+> .col-lg-7,
+
+.add-product-window
+.modal-body
+> form
+> .row.g-4
+> .col-lg-5 {
+    padding: 20px;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+    border:
+        1px solid
+        rgba(253, 251, 212, .10);
+
+    border-radius: 18px;
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255, 255, 255, .035);
+}
+
+
+/* IMAGE SIDE PANEL */
+
+.add-product-window
+.modal-body
+> form
+> .row.g-4
+> .col-lg-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+.add-product-window label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(253, 251, 212, .92);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .45px;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.custom-input {
+    width: 100%;
+    min-height: 50px;
+
+    padding: 0 16px;
+
+    color: var(--inventory-text);
+    background: var(--inventory-cream);
+
+    border:
+        2px solid
+        transparent;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow:
+        inset
+        0 1px 2px
+        rgba(0, 0, 0, .04);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.custom-input:hover {
+    background: #FFFDDD;
+}
+
+
+.custom-input:focus {
+    color: var(--inventory-text);
+    background: #FFFEE2;
+
+    border-color: var(--inventory-green);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(140, 161, 91, .16);
+}
+
+
+/* =========================================================
+   READ-ONLY SELLING PRICE
+========================================================= */
+
+#selling_price,
+.selling-price {
+    color: #555950 !important;
+
+    background:
+        rgba(
+            238,
+            238,
+            229,
+            .92
+        ) !important;
+
+    border-color:
+        transparent !important;
+
+    cursor: not-allowed;
+
+    box-shadow:
+        inset
+        0 1px 3px
+        rgba(0, 0, 0, .05) !important;
+}
+
+
+#selling_price:focus,
+.selling-price:focus {
+    color: #555950 !important;
+
+    background:
+        rgba(
+            238,
+            238,
+            229,
+            .92
+        ) !important;
+
+    border-color:
+        transparent !important;
+
+    outline:
+        none !important;
+
+    box-shadow:
+        inset
+        0 1px 3px
+        rgba(0, 0, 0, .05) !important;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 360px;
+    height: 240px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFEE5,
+            #F7F3C7
+        );
+
+    border:
+        2px dashed
+        rgba(86, 116, 42, .48);
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset
+        0 1px 0
+        rgba(255, 255, 255, .60);
+
+    /*
+       IMPORTANT:
+       Do not transition background here.
+       Chrome/Edge may briefly flash dark when
+       animating gradient backgrounds.
+    */
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-transform:
+        translate3d(0, 0, 0);
+
+    transform:
+        translate3d(0, 0, 0);
+
+    will-change: transform;
+
+    isolation: isolate;
+}
+
+
+.image-upload-box:hover {
+    -webkit-transform:
+        translate3d(0, -2px, 0);
+
+    transform:
+        translate3d(0, -2px, 0);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFEE8,
+            #F9F6D1
+        );
+
+    border-color:
+        var(--inventory-green);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, .14);
+}
+
+
+/* =========================================================
+   ADD PRODUCT UPLOAD CONTENT
+========================================================= */
+
+#image-text {
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+
+    color: #45631C;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+
+    text-align: center;
+}
+
+
+#image-text i {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 0 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--inventory-green-dark);
+
+    background:
+        rgba(140, 161, 91, .13);
+
+    border-radius: 50%;
+
+    font-size: 27px;
+}
+
+
+#image-text small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #73796A;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-align: center;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+#preview-image {
+    width: 100%;
+    height: 100%;
+
+    padding: 10px;
+
+    object-fit: contain;
+
+    border-radius: 14px;
+
+    display: none;
+}
+
+
+/* =========================================================
+   ADD PRODUCT SAVE CONTAINER
+========================================================= */
+
+.save-container {
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-product-btn {
+    min-width: 190px;
+    height: 52px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--inventory-cream);
+    background: var(--inventory-green);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: .25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px
+        rgba(48, 65, 23, .23);
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.save-product-btn:hover {
+    color: var(--inventory-cream);
+    background: var(--inventory-green-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(48, 65, 23, .28);
+}
+
+
+.save-product-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   EDIT PRODUCT BOTTOM ACTIONS
+========================================================= */
+
+.bottom-buttons {
+    position: relative;
+
+    min-height: 52px;
+
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.inventory-empty {
+    min-height: 280px;
+
+    padding: 40px 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--inventory-muted);
+
+    background:
+        rgba(255, 255, 255, .42);
+
+    border:
+        1px dashed
+        rgba(140, 161, 91, .42);
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+
+.inventory-empty i {
+    color: var(--inventory-green);
+    font-size: 40px;
+}
+
+
+.inventory-empty h3 {
+    margin: 4px 0 0;
+
+    color: var(--inventory-text);
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.inventory-empty p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .search-box {
+        width: 245px;
+    }
+
+
+    .btn-add {
+        min-width: 140px;
+        padding: 0 16px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .inventory-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+
+    .top-controls {
+        width: 100%;
+    }
+
+
+    .search-box {
+        flex: 1;
+        width: auto;
+    }
+
+
+    .btn-add {
+        min-width: 135px;
+    }
+
+
+    .inventory-body {
+        height: calc(100vh - 205px);
+    }
+
+
+    .product-card {
+        min-height: 330px;
+    }
+
+
+    .image-container {
+        height: 165px;
+    }
+
+
+    .add-product-window {
+        padding: 19px;
+        border-width: 4px;
+    }
+
+
+    .window-header h1 {
+        font-size: 25px;
+    }
+
+
+    .close-btn {
+        width: 48px;
+        height: 48px;
+
+        font-size: 31px;
+    }
+
+
+    .bottom-buttons {
+        min-height: auto;
+
+        flex-direction: column;
+    }
+}
