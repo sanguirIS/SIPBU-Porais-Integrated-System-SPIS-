@@ -20,7 +20,7 @@
 [![Status](https://img.shields.io/badge/status-active%20development-FFD95A?style=for-the-badge)](#roadmap)
 [![Made in the Philippines](https://img.shields.io/badge/made%20in-Nueva%20Ecija%2C%20PH-0038A8?style=for-the-badge)](https://en.wikipedia.org/wiki/Nueva_Ecija)
 
-<sub>Capstone Project · Cooperative Enterprise Management Platform</sub>
+<sub>Cooperative Enterprise Management Platform</sub>
 
 </div>
 
@@ -40,9 +40,7 @@
 - [Database Overview](#database-overview)
 - [Security](#security)
 - [Roadmap](#roadmap)
-- [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -213,7 +211,7 @@ SPIS does not rely on a single "admin" flag. Each account carries **eight indepe
 
 ```bash
 cd C:/xampp/htdocs
-git clone https://github.com/sanguirIS/SIPBU-Porais-Integrated-System-SPIS-.git spis
+git clone https://github.com/<owner>/SIPBU-Porais-Integrated-System-SPIS-.git spis
 ```
 
 > 📌 **The folder must be named `spis`.** Module links, redirects, and asset paths are resolved against the `/spis/` base path.
@@ -257,7 +255,7 @@ http://localhost/spis/login.php
 
 ## Demo Account
 
-A pre-seeded account is included for evaluation and defense demonstrations:
+A pre-seeded account is included for evaluation demonstrations:
 
 | Field | Value |
 | :--- | :--- |
@@ -366,44 +364,15 @@ SPIS handles member identities, loan ledgers, and financial records, so security
 
 ---
 
-## Contributing
-
-Contributions, fixes, and suggestions from cooperative staff and fellow student developers are welcome.
-
-```bash
-# 1. Create a feature branch
-git checkout -b feature/your-feature
-
-# 2. Make focused changes and test on XAMPP
-
-# 3. Commit with a clear message
-git commit -m "feat(inventory): add supplier field to product form"
-
-# 4. Push and open a pull request
-git push origin feature/your-feature
-```
-
-**Before submitting:** verify the module still loads under its permission flag, confirm no credentials or database dumps with personal data are included, and keep formatting consistent with the existing files.
-
----
-
 ## License
 
 Distributed under the **MIT License** — see [LICENSE](LICENSE) for the full text.
 
 ```text
-Copyright (c) 2026 DEVKLENN
+Copyright (c) 2026 SIPBU-Porais Integrated System Contributors
 ```
 
 ---
-
-## Acknowledgments
-
-- **Simula ng Panibagong Bukas Multipurpose Cooperative** — for the operational insight and real-world requirements behind this system
-- **Department of Agrarian Reform (DAR)** and **Philippine Carabao Center (PCC)** — for supporting the cooperative's dairy enterprise
-- The faculty panel and advisers of the Capstone Defense for the guidance and review
-- The open-source community behind Bootstrap, Chart.js, SweetAlert2, Flatpickr, and Bootstrap Icons
-- Every SIPBU member who patiently shared how the cooperative actually works, day to day
 
 <div align="center">
 <br>
