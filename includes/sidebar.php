@@ -763,6 +763,21 @@ if (
         </ul>
 
 
+        <!-- =================================================
+             SIDEBAR FOOTER · COPYRIGHT / SECURITY
+        ================================================== -->
+
+        <div class="sidebar-footer">
+
+            <span>© 2026 SIPBU-MPC</span>
+
+            <span>Private corporate system</span>
+
+            <span>Reference only</span>
+
+        </div>
+
+
     </div>
 
 
