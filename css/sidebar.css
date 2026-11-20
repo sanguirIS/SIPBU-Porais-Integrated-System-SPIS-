@@ -84,6 +84,28 @@ body {
     margin-top: auto;
 }
 
+.sidebar-footer {
+    margin-top: auto;
+    padding: 14px 18px 18px;
+    border-top: 1px solid rgba(253, 251, 212, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-align: center;
+    color: rgba(253, 251, 212, 0.75);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+
+.sidebar-footer span:last-child {
+    color: rgba(253, 251, 212, 0.5);
+    font-size: 9px;
+    font-weight: 400;
+}
+
 .main-content{
     flex:1;
     padding:25px;

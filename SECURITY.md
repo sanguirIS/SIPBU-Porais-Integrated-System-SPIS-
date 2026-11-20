@@ -12,6 +12,23 @@
 
 ---
 
+## Security Risk — Read Before Deploying
+
+> ⚠️ **Private corporate system.** SPIS stores member identities, loan ledgers, and cooperative finances. The most common causes of compromise are not code bugs but deployment mistakes:
+
+| Risk | Impact | Required action |
+| :--- | :--- | :--- |
+| Demo account (`demo@spis.com` / `123456`) left active | Full system access for anyone who finds this public repository | Change or delete immediately after installation |
+| `db.php` still uses `root` with an empty password | Database compromise if the host is reachable | Create a dedicated user with only `spis_db` privileges |
+| No HTTPS, even on the LAN | Session hijacking and credential theft | Enable TLS; set secure session cookie flags |
+| `display_errors` left on | Internal paths and SQL errors disclosed | Disable in production; log errors server-side only |
+| Production data committed to Git | Permanent public exposure of member PII and balances | Never commit dumps, uploads, or `.env` files — see `.gitignore` |
+| Stale PHP / MariaDB / Apache | Exploitation of known vulnerabilities | Patch the stack on a schedule; monitor `history_logs` and `login_attempts` |
+
+See [Deployment Hardening](#deployment-hardening) below for the full checklist.
+
+---
+
 ## Supported Versions
 
 Security fixes are applied to the latest release line. Older builds are not maintained.
@@ -19,7 +36,7 @@ Security fixes are applied to the latest release line. Older builds are not main
 | Version | Supported | Notes |
 | :---: | :---: | :--- |
 | **1.0.x** | ✅ | Current release — actively patched |
-| < 1.0 | ❌ | Pre-release / capstone development builds |
+| < 1.0 | ❌ | Pre-release development builds |
 | Forked or modified deployments | ⚠️ | Supported only by the party that modified them |
 
 > Because SPIS is deployed on a local cooperative network, **the security of your installation also depends on your server configuration** — see [Deployment Hardening](#deployment-hardening) below.
@@ -32,7 +49,7 @@ Security fixes are applied to the latest release line. Older builds are not main
 
 ### Preferred channel — GitHub Private Advisory
 
-1. Open the repository's **[Security tab](https://github.com/sanguirIS/SIPBU-Porais-Integrated-System-SPIS-/security)**
+1. Open the repository's **[Security tab](https://github.com/<owner>/SIPBU-Porais-Integrated-System-SPIS-/security)**
 2. Choose **Report a vulnerability**
 3. Describe the issue privately to the maintainers
 
@@ -160,5 +177,7 @@ Thank you for helping keep SIPBU's members and their records safe.
 <br>
 
 **[⬆ Back to README](README.md)** · **[License](LICENSE)**
+
+<sub>© 2026 Simula ng Panibagong Bukas Multipurpose Cooperative (SIPBU-MPC) · All rights reserved · Private corporate system — reference only</sub>
 
 </div>

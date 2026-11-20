@@ -1171,6 +1171,20 @@ if (
             </div>
 
 
+            <div class="login-copyright-note">
+
+                © 2026 Simula ng Panibagong Bukas Multipurpose Cooperative (SIPBU-MPC)
+
+            </div>
+
+
+            <div class="login-security-note">
+
+                Private corporate system · Reference only — unauthorized use prohibited
+
+            </div>
+
+
         </div>
 
     </section>

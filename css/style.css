@@ -847,6 +847,36 @@ body.is-logging-in
 }
 
 
+.login-copyright-note {
+    margin-top: 10px;
+
+    color:
+        rgba(253, 251, 212, 0.62);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+
+.login-security-note {
+    margin-top: 4px;
+
+    color:
+        rgba(253, 251, 212, 0.42);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 8.5px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+
 /* =========================================================
    RIGHT BRAND PANEL
 
