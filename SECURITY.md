@@ -19,7 +19,7 @@ Security fixes are applied to the latest release line. Older builds are not main
 | Version | Supported | Notes |
 | :---: | :---: | :--- |
 | **1.0.x** | ✅ | Current release — actively patched |
-| < 1.0 | ❌ | Pre-release / capstone development builds |
+| < 1.0 | ❌ | Pre-release development builds |
 | Forked or modified deployments | ⚠️ | Supported only by the party that modified them |
 
 > Because SPIS is deployed on a local cooperative network, **the security of your installation also depends on your server configuration** — see [Deployment Hardening](#deployment-hardening) below.
@@ -32,7 +32,7 @@ Security fixes are applied to the latest release line. Older builds are not main
 
 ### Preferred channel — GitHub Private Advisory
 
-1. Open the repository's **[Security tab](https://github.com/sanguirIS/SIPBU-Porais-Integrated-System-SPIS-/security)**
+1. Open the repository's **[Security tab](https://github.com/<owner>/SIPBU-Porais-Integrated-System-SPIS-/security)**
 2. Choose **Report a vulnerability**
 3. Describe the issue privately to the maintainers
 

@@ -1,0 +1,21 @@
+# SPIS — public-repository ignore rules
+# Keep real member documents, credentials, and local data out of version control.
+
+# Uploaded member / loan documents (keep the deny-access rules)
+assets/documents/*/*
+!assets/documents/*/.htaccess
+assets/members/*
+!assets/members/.htaccess
+
+# Local environment and secrets
+.env
+.env.*
+*.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
